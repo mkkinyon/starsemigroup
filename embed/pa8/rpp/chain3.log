@@ -1,0 +1,8 @@
+chain c~x~y~z~b, identifications aaa=c: m4 True, degenerate False, m5 True (72s)
+chain c~x~y~z~b, identifications aab=c: m4 True, degenerate False, m5 True (50s)
+chain c~x~y~z~b, identifications aba=c: m4 True, degenerate False, m5 True (71s)
+chain c~x~y~z~b, identifications abb=c: m4 True, degenerate False, m5 True (28s)
+chain c~x~y~z~b, identifications baa=c: m4 False, degenerate False, m5 None (0s)
+chain c~x~y~z~b, identifications bab=c: m4 False, degenerate False, m5 None (0s)
+chain c~x~y~z~b, identifications bba=c: m4 True, degenerate False, m5 True (45s)
+chain c~x~y~z~b, identifications bbb=c: m4 True, degenerate True, m5 None (1s)

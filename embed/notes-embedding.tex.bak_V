@@ -1,0 +1,966 @@
+\documentclass[11pt]{amsart}
+\usepackage[margin=1.1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage{enumitem}
+\usepackage{booktabs}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=MidnightBlue]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{question}[theorem]{Question}
+\newtheorem{fact}[theorem]{Fact}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
+\newcommand{\R}{\mathcal{R}}
+\newcommand{\Lr}{\mathcal{L}}
+\newcommand{\D}{\mathcal{D}}
+\newcommand{\Hh}{\mathcal{H}}
+\renewcommand{\P}{\mathcal{P}}
+\newcommand{\PP}{\mathcal{P}}
+\newcommand{\Part}{\Pi}
+\newcommand{\supp}{\operatorname{supp}}
+\newcommand{\T}{\mathsf{T}}
+\newcommand{\N}{\mathsf{N}}
+\newcommand{\Sym}{\operatorname{Sym}}
+\newcommand{\rk}{\operatorname{rank}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Inv}{\operatorname{Inv}}
+
+\title[Embeddability in partition monoids]{Necessary conditions for $*$-embeddability in partition monoids:\\ notes on the projection condition and a new obstruction}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+These notes concern regular $*$-semigroups that $*$-embed in a partition monoid $\P_X$. We (1) reformulate the known necessary condition ``projections with a common lower bound commute'' as ``for every projection $p$, the set $\{x : px=xp=p\}$ is an inverse semigroup'' and record some of its consequences; (2) show that the local (completely simple) structure is not constrained at all: every finite completely simple regular $*$-semigroup embeds in some $\P_n$, by an explicit construction, and $\P_4$ already contains non-orthodox completely simple $*$-subsemigroups; (3) prove a family of new necessary conditions indexed by digraphs, the simplest being the \emph{triangle condition} and the \emph{hexagon condition}: quasi-identities in six projection variables which hold in every $\P_X$, are equivalent for finite projection algebras, and fail in a $61$-element regular $*$-semigroup that satisfies the projection condition; the witness is a quotient of $\P_3$, and the obstruction is visible in the projection algebra alone; (4) show that the triangle condition is a \emph{master condition}: in every projection algebra it implies all the other digraph conditions, which therefore hold in every $\P_X$; (5) show that the projection condition and the triangle condition are nevertheless \emph{not sufficient}: a $20$-element regular $*$-semigroup (a Rees matrix semigroup over the trivial group on the path $a-c-b-d$, with its zero split into a $2\times2$ rectangular band) satisfies both, and all the digraph conditions, but embeds in no $\P_X$; the obstruction is a new quasi-identity of ``wiring'' type, valid in every $\P_X$, which mixes matched pairs and commuting pairs, and whose proof in one case is a finite computer check, and, from a census of the projection algebras of order $7$, a fourth quasi-identity, closing a matched path $a\bowtie c\bowtie b$ to $a\bowtie b$ whenever some projection commutes with $a$ and $c$ and sees $b$ as it sees $c$, with a $19$-element counterexample to the sufficiency of the other three, and, from a census of order $8$ (by one-point extensions, which makes orders $8$ and $9$ accessible), seven further candidate obstructions of order $8$ (projection algebras with no embedding into $\P(\P_m)$ for $m\le8$) and quasi-identities of three new shapes, valid in $\P(\P_m)$ for $m\le6$, that they violate; for the family of graph semigroups $Q(G,\bot)$ to which the example belongs, and for a layered generalisation of it, the projection condition and the wiring condition are also sufficient, and they say that $\bot$ is a proper colouring whose bichromatic subgraphs are disjoint unions of complete bipartite graphs; (6) report computations: every regular $*$-semigroup of order $\le 8$ satisfying the projection condition embeds in a partition monoid (in $\P_5$ if it is not inverse), and every projection algebra of order $\le5$ satisfying the projection and triangle conditions embeds in $\P(\P_4)$; and (7) make some general remarks (for finite $S$ the quasi-identities of $\{\P_X\}$ decide embeddability; $\P_X$ embeds in the involuted semigroup of binary relations on $2^X$).
+\end{abstract}
+
+\tableofcontents
+
+\section{Setting and the basic facts about $\P_X$}\label{sec:setup}
+
+Throughout, a \emph{regular $*$-semigroup} is a semigroup with a unary operation satisfying $x^{**}=x$, $(xy)^*=y^*x^*$, $xx^*x=x$; its \emph{projections} are the elements $p=p^2=p^*$, and $\theta_p(q)=pqp$ is the projection algebra operation. For projections $p,q$ we write $p\le q$ for the natural order ($p=pq=qp$, equivalently $p=qpq$). The set of projections of $S$ is $\P(S)$.
+
+\subsection{Partitions}
+For a set $X$ let $X'=\{x':x\in X\}$ be a disjoint copy, and let $\P_X$ be the partition monoid on $X$: its elements are set partitions $\alpha$ of $X\sqcup X'$, the product $\alpha\beta$ is obtained by identifying the lower points of $\alpha$ with the upper points of $\beta$, taking connected components, and forgetting the middle layer; $\alpha^*$ interchanges $X$ and $X'$. This is a regular $*$-semigroup.
+
+A block of $\alpha$ is \emph{transversal} if it meets both $X$ and $X'$, and \emph{upper} (resp.\ \emph{lower}) \emph{nontransversal} if it lies in $X$ (resp.\ $X'$). The \emph{rank} of $\alpha$ is the number of transversal blocks. The \emph{upper partition} $\ker\alpha$ of $\alpha$ is the partition of $X$ into the upper parts of the blocks of $\alpha$; dually the lower partition $\operatorname{coker}\alpha$.
+
+A projection $p$ of $\P_X$ is determined by the pair $(\varepsilon_p,\T(p))$, where $\varepsilon_p$ is a partition of $X$ and $\T(p)$ is a set of $\varepsilon_p$-classes: the blocks of $p$ are $A\cup A'$ for $A\in\T(p)$ (the \emph{$\T$-blocks}) and $B$, $B'$ for the remaining classes $B$ (the \emph{$\N$-blocks}); we write $\N(p)$ for the set of these classes and
+\[
+\supp(p)=\textstyle\bigcup\T(p)\subseteq X .
+\]
+Thus $\rk(p)=|\T(p)|$, and $p$ has rank $0$ iff $\T(p)=\emptyset$.
+
+\subsection{Products}
+Let $\alpha,\beta\in\P_X$. The classes of the join $\operatorname{coker}\alpha\vee\ker\beta$ (a partition of the middle copy of $X$) are the connected components of the middle layer; for such a class $K$ let $U_K\subseteq X$ be the union of the upper parts of those transversal blocks of $\alpha$ whose lower parts lie in $K$, and let $L_K\subseteq X'$ be the union of the lower parts of those transversal blocks of $\beta$ whose upper parts lie in $K$. Then the blocks of $\alpha\beta$ are
+\begin{itemize}[nosep]
+\item $U_K\cup L_K$ for the classes $K$ with $U_K\ne\emptyset\ne L_K$ (the transversal blocks);
+\item the upper nontransversal blocks of $\alpha$, and the sets $U_K$ with $U_K\ne\emptyset=L_K$ (upper nontransversal);
+\item the lower nontransversal blocks of $\beta$, and the sets $L_K$ with $L_K\ne\emptyset=U_K$ (lower nontransversal).
+\end{itemize}
+We shall use this only for projections, in the following forms. For projections $p,q$ the middle join is $\varepsilon_p\vee\varepsilon_q$, and $U_K$ (resp.\ $L_K$) is the union of the $\T(p)$-blocks (resp.\ $\T(q)$-blocks) contained in $K$.
+
+\begin{lemma}\label{lem:PX}
+Let $p,q$ be projections of $\P_X$.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item The blocks of $\theta_p(q)=pqp$ are: all $\N(p)$-blocks, and the sets $U_K$ for the classes $K$ of $\varepsilon_p\vee\varepsilon_q$ meeting $\supp(p)$; the latter is a $\T$-block of $\theta_p(q)$ iff $K$ meets $\supp(q)$. In particular the blocks of $\theta_p(q)$ not contained in $\supp(p)$ are exactly the $\N(p)$-blocks. Consequently, if $e\le p$ then $\supp(e)\subseteq\supp(p)$ and every block of $e$ not contained in $\supp(p)$ is an $\N(p)$-block.
+\item Suppose $pq=qp$. Then every class $K$ of $\varepsilon_p\vee\varepsilon_q$ is of one of the following types: \textup{(i)} $K=U_K=L_K$; \textup{(ii)} $K=U_K$ is a single $\N(q)$-block; \textup{(iii)} $K=L_K$ is a single $\N(p)$-block; \textup{(iv)} $K$ is a single block of both $p$ and $q$. The $\T$-blocks of $pq$ are the classes of type \textup{(i)}; hence $\supp(p)\cap\supp(q)=\supp(pq)$, and every $\N(q)$-block contained in $\supp(p)$ is a union of $\T(p)$-blocks.
+\item Suppose $pqp=p$ and $qpq=q$. Then every class of $\varepsilon_p\vee\varepsilon_q$ meeting $\supp(p)\cup\supp(q)$ contains exactly one $\T(p)$-block and exactly one $\T(q)$-block. In particular $\rk p=\rk q$, and no $\T(p)$-block is an $\N(q)$-block.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) $\theta_p(q)=(pq)(pq)^*$ is the projection whose $\T$-blocks are the upper parts of the transversal blocks of $pq$ and whose $\N$-blocks are the upper nontransversal blocks of $pq$; now read off the description of $pq$. For the last sentence use $e=\theta_p(e)$.
+
+(b) Since $pq$ is symmetric, $U_K\cup L_K$ is a block only if $U_K=L_K$ (when both are nonempty), and the family of upper nontransversal blocks $\N(p)\cup\{U_K:L_K=\emptyset\ne U_K\}$ equals the family of lower ones $\N(q)\cup\{L_K:U_K=\emptyset\ne L_K\}$. Let $K$ be a class. If $U_K\ne\emptyset\ne L_K$, an $\N(p)$-block inside $K$ would be an $\N$-block of $pq$, hence (as $U_K\neq\emptyset$) an $\N(q)$-block; but a set that is a block of both $p$ and $q$ is a class by itself, so $K$ contains no $\N(p)$-blocks and dually no $\N(q)$-blocks: $K=U_K=L_K$, type (i). If $U_K\ne\emptyset=L_K$ then $U_K$ is an $\N(q)$-block; $K$ is a union of $q$-blocks containing the $q$-block $U_K$ and $p$-blocks; as before the remaining $p$-blocks in $K$ would be common blocks, so $K=U_K$, type (ii). Type (iii) is dual, and if $U_K=L_K=\emptyset$ then $K$ consists of $\N(p)$- and $\N(q)$-blocks, which must coincide as above, type (iv). Finally, an $\N(q)$-block $B\subseteq\supp(p)$ lies in a class $K$; $K$ is not of type (i) or (iii) (these consist of $\T(q)$-blocks only), nor of type (iv) ($B$ meets $\supp(p)$), so $K=B$ is of type (ii).
+
+(c) $pqp=p$ says that the upper projection of $pq$ is $p$: its $\T$-blocks $\{U_K: U_K\ne\emptyset\ne L_K\}$ are exactly the $\T(p)$-blocks, and its $\N$-blocks $\N(p)\cup\{U_K:U_K\ne\emptyset=L_K\}$ are exactly the $\N(p)$-blocks. So every class meeting $\supp(p)$ contains exactly one $\T(p)$-block and at least one $\T(q)$-block; by symmetry, exactly one of each. A $\T(p)$-block which is an $\N(q)$-block would be a class by itself, containing no $\T(q)$-block.
+\end{proof}
+
+We say that projections $p,q$ form a \emph{matched pair}, $p\bowtie q$, if $pqp=p$ and $qpq=q$; by (c) this means that $p$ and $q$ have the same rank and their product has that rank (in the trace of the $\D$-class, $pq\ne0$), and it gives a bijection $\T(p)\to\T(q)$ (``the block in the same class''). This is exactly the \emph{friendly} relation $p\,\mathcal F\,q$ of East, Gray, Azeef Muhammed and Ru\v skuc (2025), defined by $pqp=p$ and $qpq=q$; we keep the symbol $\bowtie$ and the word ``matched'' to emphasise the bijection of $\T$-blocks, but the reader may read $\bowtie$ as $\mathcal F$ throughout. Note that $\mathcal F$ is reflexive and symmetric but not transitive, even in $\P(\P_X)$: in $\P_2$ the projection $p$ with the single $\T$-block $\{1,2\}$ is matched with $q=(\{1\}\ \T,\ \{2\}\ \N)$ and with $r=(\{2\}\ \T,\ \{1\}\ \N)$, but $qrq$ has rank $0$ (a $\T$-block and its partner need not meet, they need only lie in the same class of the join).
+
+\section{The projection condition}\label{sec:Q1}
+
+The known necessary condition is
+\begin{equation}\label{eq:Q1}\tag{Q1}
+r=prp\ \&\ r=qrq\ \Longrightarrow\ pq=qp\qquad(p,q,r\ \text{projections}),
+\end{equation}
+equivalently: an idempotent lying above a projection in the natural order is a projection. We record some reformulations and consequences.
+
+\begin{proposition}\label{prop:Q1}
+For a regular $*$-semigroup $S$ the following are equivalent.
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item $S$ satisfies \eqref{eq:Q1}.
+\item For every projection $p$, the set $S_p=\{x\in S: px=xp=p\}$ (the elements above $p$ in the natural order) is an inverse semigroup.
+\item Two projections commute if and only if they have a common lower bound in $\P(S)$.
+\item The projection algebra satisfies the quasi-identity $\theta_p(r)=r=\theta_q(r)\Rightarrow\theta_p(q)=\theta_q(p)$.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+$S_p$ is closed under multiplication and under $*$ (if $px=xp=p$ then $px^*=(xp)^*=p$), so it is a regular $*$-semigroup with zero $p$; it is inverse iff all its idempotents are projections, and its idempotents are exactly the idempotents $e\ge p$. This gives (1)$\Leftrightarrow$(2). For (3): if $pq=qp$ then $pq$ is a projection below $p$ and $q$; the converse is \eqref{eq:Q1}. For (4): for projections $p,q$, $\theta_p(q)=\theta_q(p)$ iff $pq=qp$ (if $pqp=qpq=:r$ then $pq=(pq)^2=pr=r$ and $qp=rp=r$).
+\end{proof}
+
+\begin{remark}[The condition in $\P_X$]\label{rem:Sp}
+In $\P_X$, an element $x$ lies above a projection $p$ iff $x$ maps every $\T(p)$-block onto itself by a ``block bijection'' (a partition of $A\sqcup A'$ into transversal blocks) and permutes the $\N(p)$-blocks among themselves in the same way, so that $(\P_X)_p\cong\prod_{A\in\T(p)}\mathcal I^*_A\times\mathcal J_p$, with $\mathcal I^*_A$ the dual symmetric inverse monoid on $A$ and $\mathcal J_p$ an inverse monoid of partial block bijections between $\N(p)$-blocks. For $p$ the projection with all blocks singletons and nontransversal, $(\P_X)_p$ is the symmetric inverse monoid $\mathcal I_X$. So \eqref{eq:Q1} is exactly the statement that these ``unitary'' subsemigroups are inverse, which is why it resembles $E$-unitarity.
+\end{remark}
+
+Some consequences of \eqref{eq:Q1} which may be useful in the search for further conditions:
+\begin{itemize}[nosep]
+\item For every projection $r$, the projections $\ge r$ pairwise commute; so every principal up-set of $\P(S)$ is a semilattice under multiplication.
+\item Two distinct projections in the same $\D$-class with nonzero product ($p\bowtie q$, $p\ne q$) have no common lower bound (they would commute and then $p=pqp=pq=qp=q$). In particular a completely $0$-simple $*$-subsemigroup of $S$ that contains its own zero is a $0$-direct union of groups (a Brandt semigroup), and if $S$ has a zero then \eqref{eq:Q1} forces $S$ to be inverse.
+\item If $x\ge p$ then $xx^*$ and $x^*x$ commute, being projections above $p$.
+\end{itemize}
+
+\section{The local structure is unconstrained}\label{sec:local}
+
+A natural first guess for a second condition is a restriction on the ``local'' pieces of $S$, i.e.\ on its principal factors (the traces of its $\D$-classes), which are completely $0$-simple regular $*$-semigroups. Some care is needed in saying what such a restriction could be. The zero of a principal factor is not in general an element of $S$, and the second consequence listed above shows that when it is -- that is, when $S$ contains a completely $0$-simple $*$-subsemigroup together with its zero -- \eqref{eq:Q1} already forces that subsemigroup to be a Brandt semigroup. So the zero pattern of a principal factor (which pairs $p,q$ of its projections have $pq=0$) is not local information: it is decided by how the $\D$-class sits inside $S$, and it does interact with the rest of $S$, as the hexagon condition of Section~\ref{sec:hex} shows. What remains genuinely local is the nonzero part of a principal factor -- a set of projections of a $\D$-class with pairwise nonzero products, together with the corresponding sandwich entries and the maximal subgroup. These are exactly the completely simple $*$-subsemigroups of $S$ (conversely, every completely simple $*$-subsemigroup of $S$ lies in a single $\D$-class and arises this way), and any condition on them would have to be a condition on finite completely simple regular $*$-semigroups. The next theorem shows there is none: every one of them embeds.
+
+\begin{theorem}\label{thm:cs}
+Every finite completely simple regular $*$-semigroup embeds in a finite partition monoid. Explicitly, let $S=\mathcal M[G;I,I;P]$ be in normal form ($p_{ii}=1$, $p_{ji}=p_{ij}^{-1}$, $(i,g,j)^*=(j,g^{-1},i)$), let $G\le\Sym(k)$ act on $\{1,\dots,k\}$ on the right, and let
+\[
+X=\{a_{i,s}: i\in I,\ s\le k\}\ \sqcup\ \{c_{ij,s}: i\ne j\in I,\ s\le k\},\qquad |X|=k|I|^2 .
+\]
+Send $(i,g,j)$ to the partition with transversal blocks $\{a_{i,s},a'_{j,sg}\}$ ($s\le k$), upper nontransversal blocks $\{c_{il,s},\,a_{l,sp_{il}},\,c_{li,sp_{il}}\}$ ($l\ne i$, $s\le k$) together with singletons $\{c_{lm,s}\}$ for $i\notin\{l,m\}$, and lower nontransversal blocks defined in the same way from $j$. This is an injective $*$-homomorphism $S\to\P_X$.
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+The transversal blocks of the image of $e_i=(i,1,i)$ are the singletons $a_{i,s}$, so the images of the $e_i$ are projections of rank $k$. In the middle layer of $e_ie_j$ the point $a_{i,s}$ lies in the $e_j$-block $\{c_{ji,t},a_{i,s},c_{ij,s}\}$ (with $s=tp_{ji}$), and $c_{ij,s}$ lies in the $e_i$-block $\{c_{ij,s},a_{j,sp_{ij}},c_{ji,sp_{ij}}\}$; no other blocks are attached (all remaining connectors are singletons for $e_i$ or $e_j$), so the class of $a_{i,s}$ is $\{a_{i,s},c_{ij,s},c_{ji,sp_{ij}},a_{j,sp_{ij}}\}$. Hence $e_ie_j$ has rank $k$ and its matching $\T(e_i)\to\T(e_j)$ is $s\mapsto sp_{ij}$. Classes containing no $a_{i,\cdot}$ or $a_{j,\cdot}$ contribute nothing. The images of the group elements are the elements of the rank-$k$ $\Hh$-classes of $\P_X$ determined by the permutations, and the multiplication $(i,g,j)(l,h,m)=(i,gp_{jl}h,m)$ is then read off block by block. Injectivity is clear. (All of this was also verified by computer for several nonabelian and non-flat sandwich matrices.)
+\end{proof}
+
+Since every finite group embeds in some $\Sym(k)$, every finite completely simple regular $*$-semigroup embeds. Two remarks on what this rules out:
+
+\begin{remark}\label{rem:orthodox}
+Orthodoxy of the completely simple $*$-subsemigroups is not necessary either, even though $\P_n$ for small $n$ looks ``flat'': the projections
+\begin{align*}
+p&: \{0\},\{1\}\ \text{transversal},\ \{2,3\}\ \text{nontransversal};\\
+q&: \{1\},\{3\}\ \text{transversal},\ \{0,2\}\ \text{nontransversal};\\
+r&: \{0\},\{3\}\ \text{transversal},\ \{1,2\}\ \text{nontransversal}
+\end{align*}
+of $\P_4$ satisfy $pqp=p$, $qrq=q$, $rpr=r$ (and the symmetric identities), but $pqr\ne pr$: the sandwich matrix of the rank-$2$ $\D$-class of $\P_4$ has a non-flat triangle, and the $*$-subsemigroup generated by $p,q,r$ is a non-orthodox completely simple regular $*$-semigroup $\mathcal M[\Z_2;3,3;P]$ with $p_{12}\ne1$.
+\end{remark}
+
+\begin{remark}[Normal $*$-bands]\label{rem:normal}
+For a strong semilattice $Y$ of square $*$-bands $A_\alpha\times A_\alpha$ with structure maps $f_{\alpha\beta}\colon A_\alpha\to A_\beta$ ($\alpha\ge\beta$), \eqref{eq:Q1} holds iff all $f_{\alpha\beta}$ are injective (a projection $(c,c)$ of a lower component lies below $(a,b)$ iff $f(a)=f(b)=c$). If $Y$ has a least element $0$, injectivity lets us regard every $A_\alpha$ as a subset of $A=A_0$, and then the band is the $*$-subsemigroup $\{(\alpha,a,b): a,b\in A_\alpha\}$ of $Y\times(A\times A)$. Since semilattices and square bands embed in partition monoids and $\P_X\times\P_Y\le\P_{X\sqcup Y}$, we get: \emph{a finite normal $*$-band embeds in a partition monoid iff it satisfies \eqref{eq:Q1}}. Several strong semilattices of completely simple $*$-semigroups with non-injective group maps were also found to embed by computer.
+\end{remark}
+
+\section{The triangle condition and its relatives}\label{sec:hex}
+
+We now give a family of new necessary conditions. Each is a quasi-identity in $2k$ projection variables ($k\ge3$), and they are independent of \eqref{eq:Q1}. The family is indexed by a pattern of matched pairs, which we encode as a digraph.
+
+\begin{definition}
+Let $k\ge3$. A set $E$ of ordered pairs $(i,j)$ of distinct elements of $[k]=\{1,\dots,k\}$ (a loopless digraph on $[k]$) is \emph{admissible} if
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item every vertex has an out-edge and an in-edge in $E$, and
+\item for every $m\in[k]$ there is an edge $(i,j)\in E$ with $m\notin\{i,j\}$ (no vertex is incident to all edges).
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}[Matching-pattern condition]\label{thm:hex}
+Let $E$ be an admissible digraph on $[k]$, and let $a_1,\dots,a_k,b_1,\dots,b_k$ be projections of a partition monoid $\P_X$ such that
+\begin{enumerate}[label=\textup{(H\arabic*)},leftmargin=3em]
+\item $a_ia_j=a_ja_i=:w$ and $b_ib_j=b_jb_i=:z$ for all $i\ne j$, the products being independent of the pair $\{i,j\}$;
+\item $a_ib_i=b_ia_i$ for all $i$;
+\item $a_ib_ja_i=a_i$ and $b_ja_ib_j=b_j$ for all $(i,j)\in E$.
+\end{enumerate}
+Then $w=z$. Consequently $a_i=b_j$ for all $(i,j)\in E$, and if the bipartite graph $\{a_i\text{---}b_j:(i,j)\in E\}$ is connected then all $2k$ projections coincide.
+\end{theorem}
+
+The hypotheses say: the $a_i$ are $k$ pairwise commuting projections with common meet $w$, the $b_i$ are $k$ pairwise commuting projections with common meet $z$; $a_i$ and $b_i$ commute; and $a_i\bowtie b_j$ for $(i,j)\in E$. All of them are equations of the projection algebra (commutation of projections is expressible by $\theta_p(q)=\theta_q(p)$: if $pqp=qpq=:w$ then $pq\in H_w$ and $w\cdot pq=(pq)^2$, so $pq$ is an idempotent of the group $H_w$, i.e.\ $pq=w=qp$), so each instance of the theorem is a quasi-identity of the projection algebras of partition monoids. The instances of most interest are:
+\begin{itemize}[nosep]
+\item $k=3$, $E=$ all six pairs: the \emph{hexagon condition} (the six matched pairs form the hexagon $a_1\,b_2\,a_3\,b_1\,a_2\,b_3$). This was the original form of the theorem.
+\item $k=3$, $E=\{(1,2),(2,3),(3,1)\}$, a directed $3$-cycle: the \emph{triangle condition}. Only three matched pairs are assumed, $a_1\bowtie b_2$, $a_2\bowtie b_3$, $a_3\bowtie b_1$, so this instance has strictly weaker hypotheses than the hexagon condition and implies it. It is the unique admissible digraph on three vertices with three edges (a derangement of $[3]$ is a $3$-cycle), hence the strongest instance with $k=3$.
+\item $k=4$, $E$ a directed $4$-cycle $\{(1,2),(2,3),(3,4),(4,1)\}$; and $k=4$, $E$ two disjoint $2$-cycles $\{(1,2),(2,1),(3,4),(4,3)\}$ (the ``double square'').
+\end{itemize}
+Restricting to a subset of at least three indices only removes hypotheses, so an instance of the theorem follows from every instance obtained by deleting indices. Every admissible digraph contains, on some subset of its vertices, a directed cycle of length $\ge3$ or two vertex-disjoint $2$-cycles (if all directed cycles are $2$-cycles and any two of them share a vertex, they all share one vertex $v$, or three of them form a directed triangle; in the former case take an edge $(p,q)$ avoiding $v$, follow out-edges from $q$ until $v$ is reached and in-edges from $p$ back to $v$: the resulting closed walk through $v$ contains no vertex twice, since a repetition would produce a cycle avoiding $v$, so it is a directed cycle of length $\ge3$). Both of these are admissible. Hence every instance of the theorem is implied by one of the \emph{basic} instances: a directed $\ell$-cycle $C_\ell$ ($\ell\ge3$), or the double square $D_2$. In fact the triangle condition alone implies every non-star instance, in every projection algebra (Theorem~\ref{thm:master}), so only the case $E=C_3$ of the theorem needs a combinatorial proof. For finite projection algebras the hexagon condition implies all these instances as well (Theorem~\ref{thm:equiv} below), although the implications are not equational ones; in general projection algebras it does not even imply the triangle condition (Theorem~\ref{thm:hinf}).
+
+Write $m_i:=a_ib_i=b_ia_i$. The proof uses the following ``transport'' relations, which are formal consequences of (H1)--(H3); here $(i,j)\in E$:
+\begin{equation}\label{eq:H4}
+a_im_ja_i=w,\qquad b_jm_ib_j=z,\qquad a_iza_i=m_i,\qquad b_jwb_j=m_j .
+\end{equation}
+Indeed $a_im_ja_i=a_ia_jb_ja_i=a_j(a_ib_ja_i)=a_ja_i=w$; $b_jm_ib_j=b_jb_ia_ib_j=b_i(b_ja_ib_j)=b_ib_j=z$; $a_iza_i=a_ib_jb_ia_i=(a_ib_ja_i)b_i=m_i$; and $b_jwb_j=b_ja_ia_jb_j=(b_ja_ib_j)a_j=m_j$. By admissibility (i), every index $i$ has an out-edge and an in-edge, so for every $i$ there are $j,j'$ with $a_im_ja_i=w$, $a_iza_i=m_i$, $b_im_{j'}b_i=z$ and $b_iwb_i=m_i$. (In an earlier version of these notes \eqref{eq:H4} was listed as a fourth hypothesis of the hexagon condition; that it is redundant was pointed out by Prover9, working from the axioms of projection algebras alone.)
+
+For the hexagon condition Prover9 also shows that the hypotheses can be pared down to $21$ equations: in (H1) it suffices to assume the six ``cyclic'' equations $a_2a_1a_2=a_3a_2a_3=a_1a_3a_1$ and $b_2b_1b_2=b_3b_2b_3=b_1b_3b_1$ (if $w$ denotes the common value of the first three, then $a_1a_2a_1=(a_1a_2a_1)^2=a_1(a_2a_1a_2)a_1=a_1wa_1=a_1(a_3a_1a_3)a_1=(a_1a_3a_1)^2=w$, and similarly $a_3a_2a_3=a_1a_3a_1=w$, so the $a_i$ pairwise commute with product $w$ by the remark above); (H2) consists of the three equations $a_ib_ia_i=b_ia_ib_i$; and (H3) consists of twelve equations. The same reduction of (H1) applies to every instance; for the triangle condition the hypotheses are then $6+3+6=15$ equations. The Prover9 inputs are the files \texttt{hexagon.in}, \texttt{triangle.in} and \texttt{octagon.in}.
+
+\begin{proof}
+Write $A_i=\supp(a_i)$, $B_i=\supp(b_i)$, $W=\supp(w)$, $Z=\supp(z)$, and $E_p$ for the partition of $X$ underlying a projection $p$ (its blocks are the $\T$-blocks and $\N$-blocks of $p$). We use Lemma~\ref{lem:PX} throughout.
+
+\emph{Step 0: supports.} By (H1) and Lemma~\ref{lem:PX}(b), $A_i\cap A_j=W$ and $B_i\cap B_j=Z$ for $i\ne j$; by (H2), $A_i\cap B_i=\supp(m_i)$. In particular a point of $X$ lies in at most one $A_i$ unless it lies in $W$ (and then in all of them), and similarly for the $B_i$ and $Z$. Since $k\ge3$,
+\begin{equation}\label{eq:cover}
+\text{every } x\notin W\cup Z \text{ lies outside } A_i\cup B_i \text{ for some } i .
+\end{equation}
+
+\emph{Step 1: $E_w$ and $E_z$ agree outside $W\cup Z$.} By \eqref{eq:H4} and Lemma~\ref{lem:PX}(a) (applied to $z=\theta_{b_i}(m_{j'})$, $w=\theta_{a_i}(m_j)$, $m_i=\theta_{a_i}(z)$, $m_i=\theta_{b_i}(w)$), for every $i$: the blocks of $E_z$ not contained in $B_i$ are exactly the $\N(b_i)$-blocks; the blocks of $E_w$ not contained in $A_i$ are exactly the $\N(a_i)$-blocks; and the blocks of $E_{m_i}$ not contained in $A_i$ (resp.\ $B_i$) are exactly the $\N(a_i)$-blocks (resp.\ $\N(b_i)$-blocks). Consequently, for $x\notin A_i\cup B_i$, the block of $E_z$ containing $x$ is the $\N(b_i)$-block of $x$, which is the block of $E_{m_i}$ containing $x$, which is the $\N(a_i)$-block of $x$, which is the block of $E_w$ containing $x$. By \eqref{eq:cover}, $E_w$ and $E_z$ have the same block at every point of $X\setminus(W\cup Z)$; moreover such a common block is an $\N(a_i)$-block and an $\N(b_i)$-block, hence contained in $X\setminus(A_i\cup B_i)\subseteq X\setminus(W\cup Z)$. It follows that a block of $E_w$ or of $E_z$ is either a common block contained in $X\setminus(W\cup Z)$, or is contained in $W\cup Z$.
+
+\emph{Step 2: matching of $\T(w)$ and $\T(z)$.} Fix an edge $(i,j)\in E$. From (H1) and \eqref{eq:H4}, $wzw=a_i(a_jza_j)a_i=a_im_ja_i=w$ and $zwz=b_j(b_iwb_i)b_j=b_jm_ib_j=z$, so $w\bowtie z$. By Lemma~\ref{lem:PX}(c), every class of $E_w\vee E_z$ meeting $W\cup Z$ contains exactly one $\T(w)$-block and exactly one $\T(z)$-block. Common blocks are classes by themselves, so the class of a $\T(w)$-block $\Omega$ consists of blocks contained in $W\cup Z$: these are $\T(w)$-blocks, $\N(w)$-blocks contained in $Z\setminus W$, $\T(z)$-blocks and $\N(z)$-blocks contained in $W\setminus Z$. An $\N(z)$-block contained in $W$ meets only $\T(w)$-blocks, so it meets only one of them (two would lie in a common class); hence every $\N(z)$-block contained in $W$ lies inside a single $\T(w)$-block, and dually. Therefore the class of $\Omega$ is
+\[
+\{\Omega\}\ \cup\ \{\N(z)\text{-blocks inside }\Omega\}\ \cup\ \{\T(z)\text{-blocks meeting }\Omega\}\ \cup\ \{\N(w)\text{-blocks inside those}\},
+\]
+and since it contains exactly one $\T(z)$-block, \emph{there is exactly one $\T(z)$-block $Z_\Omega$ meeting $\Omega$}, and dually exactly one $\T(w)$-block $W_\Theta$ meeting a given $\T(z)$-block $\Theta$.
+
+\emph{Step 3: $\Omega\subseteq Z_\Omega$.} Suppose $y\in\Omega\setminus Z_\Omega$. Then $y\notin Z$ (a $\T(z)$-block containing $y$ would meet $\Omega$, hence be $Z_\Omega$), so the block $N$ of $E_z$ containing $y$ is an $\N(z)$-block, and by Step~2, $N\subseteq\Omega\subseteq W\subseteq A_1\cap\dots\cap A_k$. For each $i$, $N$ is a block of $E_z=\theta_{b_i}(m_{j'})$ (with $(j',i)\in E$), so by Lemma~\ref{lem:PX}(a) either $N\subseteq B_i$ or $N$ is an $\N(b_i)$-block. As $N\cap Z=\emptyset$ and $B_i\cap B_l=Z$, $N\subseteq B_i$ holds for at most one index $i=m$; by admissibility (ii) there is an edge $(i,j)\in E$ with $m\notin\{i,j\}$, so that $N$ is both an $\N(b_i)$-block and an $\N(b_j)$-block. Since $N\subseteq A_i$ and $a_ib_i=b_ia_i$, Lemma~\ref{lem:PX}(b) shows that $N$ is a union of $\T(a_i)$-blocks; let $\tau$ be one of them. Now $a_i\bowtie b_j$ by (H3). The class of $\varepsilon_{a_i}\vee\varepsilon_{b_j}$ containing $\tau$ contains the $b_j$-block $N\supseteq\tau$, hence all $\T(a_i)$-blocks inside $N$; by Lemma~\ref{lem:PX}(c) there is only one, so $N=\tau$. But then $N$ is simultaneously a $\T(a_i)$-block and an $\N(b_j)$-block, which is impossible for a matched pair by Lemma~\ref{lem:PX}(c). Hence $\Omega\subseteq Z_\Omega$.
+
+\emph{Step 4: conclusion.} Dually $Z_\Omega\subseteq W_{Z_\Omega}$ (the dual argument uses the same edge $(i,j)$ with the roles of $a$ and $b$ exchanged: an $\N(w)$-block $N\subseteq Z\subseteq B_j$ is a union of $\T(b_j)$-blocks because $b_j$ commutes with $a_j$, and $b_j\bowtie a_i$); since $\Omega$ meets $Z_\Omega$ and $W_{Z_\Omega}$ is the only $\T(w)$-block meeting $Z_\Omega$, we get $W_{Z_\Omega}=\Omega$ and so $\Omega=Z_\Omega$. Thus $\T(w)=\T(z)$ and $W=Z$. Inside $W=Z$ both $E_w$ and $E_z$ consist of these $\T$-blocks, and outside $W\cup Z$ they agree by Step~1. Hence $E_w=E_z$ and $\T(w)=\T(z)$, i.e.\ $w=z$.
+
+Finally, $w=z$ is a common lower bound of $a_i$ and $b_j$, so by \eqref{eq:Q1} (which holds in $\P_X$) $a_ib_j=b_ja_i$ for all $i,j$; for $(i,j)\in E$ this gives $a_i=a_ib_ja_i=a_ib_j$, i.e.\ $a_i\le b_j$, and dually $b_j\le a_i$, so $a_i=b_j$. If the bipartite graph of $E$ is connected, all $2k$ projections coincide.
+\end{proof}
+
+\begin{remark}\label{rem:2k}
+(1) The hypothesis $k\ge3$ is needed: for $k=2$ (two matched pairs $a_1\bowtie b_2$, $a_2\bowtie b_1$, the ``square'') the statement is false, and $\P_2$ already contains counterexamples (\texttt{digraph.py}). The admissibility conditions, on the other hand, are conditions of the proof rather than of the statement: for every $X$ the exact condition is that $E$ is not a star (Theorems~\ref{prop:path} and~\ref{thm:master} below; for instance the $k=3$ ``star'' $\{(1,2),(2,1),(1,3),(3,1)\}$ -- a star in the graph-theoretic but not in our sense, since it has two tails and two heads -- the transitive tournament $\{(1,2),(2,3),(1,3)\}$, the path $\{(1,2),(2,3)\}$ and the two disjoint pairs $\{(1,2),(3,4)\}$ are all valid in $\P_n$ for finite $n$; an earlier version of this remark wrongly reported counterexamples to the first two, due to a bug in the search program).
+
+(2) Exhaustive search (allowing coincidences among the variables) confirms that the hexagon, triangle, directed $4$-cycle, double-square and cyclic-octagon instances have no counterexamples among the projections of $\P_n$ for $n\le4$ (\texttt{digraph.py}, \texttt{octcheck.py}).
+
+(3) For finite algebras the hexagon condition implies all the others (Theorem~\ref{thm:equiv}) and is equivalent to the conditions on three indices; in general it does not even imply the triangle condition (Theorem~\ref{thm:hinf} below), while the conditions on four or more indices do not imply the hexagon condition even for finite algebras ($\P(Q_0)$). Whether the hexagon condition implies $C_4$, $D_2$ or the cyclic octagon condition in general is open. A separating model for ``hexagon $\not\Rightarrow$ octagon'' (or ``hexagon $\not\Rightarrow$ triangle'') cannot be small: in any regular $*$-semigroup with the hexagon hypotheses, a pair $a_i,b_j$ ($i\ne j$) that is \emph{not} assumed matched can be neither matched (else the configuration contains a hexagon) nor commuting: in the cyclic octagon, if $a_i$ and $b_{i+2}$ commuted with product $u$, then $a_{i+2}ua_{i+2}=(a_{i+2}a_i)(b_{i+2}a_{i+2})=wm_{i+2}$ would be a projection, so $w$ and $m_{i+2}$ would commute; but $w\bowtie m_l$ always ($wm_lw=wzw=w$ and $m_lwm_l=a_lzwza_l=m_l$ by \eqref{eq:H4}), whence $w=m_{i+2}$, a degenerate case. Mace4 experiments by M.~Kinyon find that the smallest projection algebra violating the cyclic octagon condition has $14$ elements -- the $8$ vertices, $w$, $z$ and the four $m_i$ -- and that it violates the hexagon condition as well; indeed, of the $3^8$ ways to complete such a $14$-element table, exactly one is a projection algebra, and in it every antipodal pair $a_i,b_{i+2}$ is matched (\texttt{oct14.py}). So a separating example needs further projections $a_ib_ja_i$ in ``general position''. On the partition side, the quotients $\P_4/\mu_1$ (57 projections) and $\P_5/\mu_1$ (303 projections) contain hexagon configurations with $w\ne z$ but no octagon configurations; $\P_5$ contains no octagon configuration with eight distinct vertices even when the products in (H1) are only required to commute, while $\P_6$ does.
+\end{remark}
+
+\subsection{The hexagon condition implies the triangle condition (finite case)}\label{subsec:equiv}
+
+Since the triangle condition assumes only three of the six matched pairs of the hexagon condition, it implies the hexagon condition trivially. The converse is true for finite projection algebras, but for a rather subtle reason: no fixed sextuple of terms in $a_1,\dots,b_3$ satisfies the hexagon hypotheses in every triangle configuration (see Remark~\ref{rem:equiv}), and the six projections to which the hexagon condition has to be applied are found by an iteration. Throughout this subsection $a_1,a_2,a_3,b_1,b_2,b_3$ is a triangle configuration ($a_1\bowtie b_2$, $a_2\bowtie b_3$, $a_3\bowtie b_1$, and (H1), (H2)) in a projection algebra $P=\P(S)$, $w$ and $z$ are the products, and $m_i=a_ib_i$. Indices are mod~$3$. We call a projection $x$ \emph{bounded} if $x\le a_i$ and $w,m_i\le x$ for some $i$, or $x\le b_j$ and $z,m_j\le x$ for some $j$; e.g.\ the six vertices are bounded.
+
+We use freely the transport relations \eqref{eq:H4}, which by the argument of Lemma~\ref{lem:rev} hold for all $i\ne j$.
+
+\begin{lemma}\label{lem:rev}
+$b_jm_ib_j=z$ and $a_jm_ia_j=w$ for all $i\ne j$.
+\end{lemma}
+\begin{proof}
+Put $e=b_jm_ib_j$. Writing $m_i=b_ia_i$ and $b_jb_i=z$ gives $e=za_ib_j$; writing $m_i=a_ib_i$ gives $e=b_ja_iz$. Hence $e=ze=ez$, so $e\le z$. Conversely $zez=zm_iz=za_iz=z$ because $z\le b_{i+1}\bowtie a_i$ (here index $i$ has an out-edge); so $z\le e$ and $e=z$. Dually for $w$.
+\end{proof}
+
+\begin{lemma}[bounded elements]\label{lem:bounded}
+Let $e\le a_i$, $e'\le a_j$ with $i\ne j$, and $w\le e,e'$. Then $ee'=e'e=w$. Dually two bounded elements under distinct $b$'s commute with product $z$. If $e\le a_i$, $f\le b_i$ and $m_i\le e,f$, then $ef=fe=m_i$.
+\end{lemma}
+\begin{proof}
+$ee'e=e(a_ia_j)e'(a_ja_i)e=ewe'we=ewe=w$, and symmetrically $e'ee'=w$; two projections with $pqp=qpq=w$ commute with product $w$ (Section~\ref{sec:hex}). Likewise $efe=e(a_ib_i)f(b_ia_i)e=em_ifm_ie=m_i=fef$.
+\end{proof}
+
+Thus any six bounded projections, one under each vertex, satisfy the commutation hypotheses (H1), (H2) of the hexagon condition with the same $w$ and $z$; only the six cross matchings are at issue. They will come from the following \emph{walk}: for a projection $x\le a_1$ put
+\[
+x\ \xrightarrow{\ \theta_{b_3}\ }\ x_1\ \xrightarrow{\ \theta_{a_2}\ }\ x_2\ \xrightarrow{\ \theta_{b_1}\ }\ x_3\ \xrightarrow{\ \theta_{a_3}\ }\ x_4\ \xrightarrow{\ \theta_{b_2}\ }\ x_5\ \xrightarrow{\ \theta_{a_1}\ }\ x_6=:\Phi(x)\le a_1 ,
+\]
+alternately projecting onto the free partner ($a_i\mapsto b_{i-1}$) and transporting through a matched pair ($b_j\mapsto a_{j-1}$, where $a_{j-1}\bowtie b_j$). The six elements $x_1,\dots,x_6$ lie under $b_3,a_2,b_1,a_3,b_2,a_1$ respectively.
+
+\begin{lemma}[invariance]\label{lem:inv}
+The walk preserves boundedness: if $x\le a_i$ is bounded then so is $\theta_{b_{i-1}}(x)$, and if $y\le b_j$ is bounded then so is $\theta_{a_{j-1}}(y)$.
+\end{lemma}
+\begin{proof}
+Let $y=\theta_b(x)$ with $b=b_{i-1}$. Since $z\le b$, $yzy=b\,x(bzb)x\,b=b(xzx)b$, and $xzx=x(a_iza_i)x=xm_ix=m_i$, so $yzy=bm_ib=z$, i.e.\ $z\le y$. Similarly $ym_{i-1}y=b(xm_{i-1}x)b=b(x(a_im_{i-1}a_i)x)b=b(xwx)b=bwb=m_{i-1}$. The transport step is the same computation with the roles of $a$ and $b$ exchanged: for $x'=\theta_a(y)$, $a=a_{j-1}$, one has $x'wx'=a(ywy)a=a(y(b_jwb_j)y)a=am_ja=w$ and $x'm_{j-1}x'=a(y(b_jm_{j-1}b_j)y)a=aza=m_{j-1}$.
+\end{proof}
+
+\begin{lemma}[monotonicity]\label{lem:mono}
+In every projection algebra, $x\le y$ implies $\theta_p(x)\le\theta_p(y)$.
+\end{lemma}
+\begin{proof}
+In the binary notation $u*v=u\theta_v$, the axioms imply $(x*y)*(z*y)=x*(z*y)$ and $(x*y)*(y*z)=(x*y)*z$ (both are found by Prover9 in a few steps from (P2)--(P5)). If $x\le y$, i.e.\ $x*y=x$, then $(x*p)*(y*p)=x*(y*p)=(x*y)*(y*p)=(x*y)*p=x*p$, i.e.\ $\theta_p(x)\le\theta_p(y)$.
+\end{proof}
+
+\begin{lemma}[stabilisation]\label{lem:stab}
+Suppose $\P(S)$ is finite. If $x_0\to x_1=\theta_{p_1}(x_0)\to\dots\to x_n=\theta_{p_n}(x_{n-1})=x_0$ is a closed walk of projections, then $x_{j-1}\bowtie x_j$ for all $j$.
+\end{lemma}
+\begin{proof}
+Put $s_j=x_{j-1}p_j$, so that $s_j^*s_j=x_j$ and $s_js_j^*=\theta_{x_{j-1}}(p_j)\le x_{j-1}$, and $s=s_1s_2\cdots s_n$. Since $s_j^*s_js_{j+1}=x_js_{j+1}=s_{j+1}$, we get $s^*s=x_n=x_0$, and $ss^*\le s_1s_1^*=\theta_{x_0}(p_1)\le x_0$ (using $s_j(\cdot)s_j^*$ maps projections $\le s_j^*s_j$ to projections $\le s_js_j^*$). Now $t\mapsto s^*ts$ is an order isomorphism from the projections below $ss^*$ onto the projections below $s^*s$; as $ss^*\le s^*s$ and $\P(S)$ is finite, $ss^*=s^*s$. Hence $\theta_{x_0}(p_1)=x_0$, so $x_0x_1x_0=(x_0p_1x_0)(p_1x_0)=x_0$, while $x_1x_0x_1=x_1$ always ($\theta_{\theta_p(q)}(q)=\theta_p(q)$ is an axiom consequence). Rotating the cycle gives the other pairs.
+\end{proof}
+
+\begin{theorem}\label{thm:equiv}
+Let $P$ be a finite projection algebra (more generally, $P=\P(S)$ with $S$ a regular $*$-semigroup having finitely many projections) satisfying the hexagon condition. Let $k\ge3$, let $E$ be a digraph on $[k]$ in which every vertex has an in-edge and an out-edge, and let $a_1,\dots,a_k,b_1,\dots,b_k$ satisfy (H1)--(H3) of Theorem~\ref{thm:hex} for $E$. Then $w=z$. In particular, for finite projection algebras the hexagon condition implies the triangle condition and the matching-pattern conditions of all digraphs with in- and out-edges at every vertex (on any number $k\ge3$ of vertices, e.g.\ $C_\ell$, $D_2$ and the cyclic octagon); on three vertices the converse holds too, since every $E$ on $[3]$ has fewer hypotheses than the hexagon, so for finite projection algebras the hexagon condition, the triangle condition and all the other non-star conditions on three indices (Theorem~\ref{prop:path}) are equivalent. The conditions on $k\ge4$ indices are strictly weaker: $\P(Q_0)$ satisfies the $C_4$, $D_2$ and cyclic-octagon conditions (\texttt{mace4parse.py}), as no fourth pair can be added to its hexagon.
+\end{theorem}
+\begin{proof}
+By a theorem of Imaoka (see East and Azeef Muhammed, arXiv:2301.04845, Section~4) every projection algebra is $\P(S)$ for some regular $*$-semigroup $S$. We first treat a triangle configuration $a_1,\dots,b_3$ in $P$; at the end we explain why only the transport relations were used. The operator $\Phi$ is a composite of maps $\theta_p$, hence monotone by Lemma~\ref{lem:mono}, and $\Phi(a_1)\le a_1$. Therefore $a_1\ge\Phi(a_1)\ge\Phi^2(a_1)\ge\cdots$ is a descending chain, which is eventually constant since $P$ is finite: there is $x^*=\Phi^n(a_1)$ with $\Phi(x^*)=x^*$. By Lemma~\ref{lem:inv} (and induction from the bounded element $a_1$) all elements of the walk from $x^*$ are bounded, and this walk $x^*\to x_1\to\dots\to x_6=x^*$ is closed, so by Lemma~\ref{lem:stab} consecutive elements are matched. Put
+\[
+A_3=x_1\le b_3,\ \ A_1=x_3\le b_1,\ \ A_2=x_5\le b_2,\qquad B_2=x_2\le a_2,\ \ B_3=x_4\le a_3,\ \ B_1=x_6\le a_1 .
+\]
+By Lemma~\ref{lem:bounded} the $A_j$ pairwise commute with product $z$, the $B_i$ with product $w$, and $A_iB_i=B_iA_i$; the six consecutive matchings $x_1\bowtie x_2\bowtie\dots\bowtie x_6\bowtie x_1$ are exactly the matchings $A_i\bowtie B_j$, $i\ne j$. So $(B_1,B_2,B_3\,|\,A_1,A_2,A_3)$ satisfies the hexagon hypotheses with products $w$ and $z$, and the hexagon condition gives $w=z$.
+
+For a general $E$ with in- and out-edges at every vertex, fix three indices $i,j,l$ and run the same walk $a_i\to b_j\to a_l\to b_i\to a_j\to b_l\to a_i$. Lemmas~\ref{lem:rev}, \ref{lem:bounded}, \ref{lem:mono} and \ref{lem:stab} are general, and the proof of Lemma~\ref{lem:inv} used, at a step from a vertex of index $i$ to a vertex of index $j$, only the transport relations $a_iza_i=m_i$, $b_jm_ib_j=z$ (an out-edge at $i$) and $a_im_ja_i=w$, $b_jwb_j=m_j$ (an in-edge at $j$), and dually. So the walk from $a_i$ stays bounded, and the rest of the argument is unchanged.
+\end{proof}
+
+\begin{remark}\label{rem:equiv}
+(1) The proof was found with substantial help from Prover9 and Mace4, run by M.~Kinyon. Mace4 models with $w\ne z$ showed that the derived projections forming the hexagon vary from model to model (the walk from $a_1$ stabilises after $0$, $1$ or $2$ turns in the models found), and Prover9 proved the ground equations behind Lemmas \ref{lem:bounded}, \ref{lem:inv} and \ref{lem:mono}, from whose output the hand proofs were extracted.
+
+(2) The implication cannot be obtained by a single application of the hexagon condition to a fixed sextuple of terms in $a_1,\dots,b_3$: for any such sextuple, one of its hexagon hypotheses $t=t'$ fails in some model of the triangle hypotheses in which $w=z$ (Mace4 finds them), while $w=z$ fails in others; since the theory ``axioms $+$ triangle hypotheses'' is Horn, its initial model satisfies neither $t=t'$ nor $w=z$. For infinite projection algebras the hexagon condition does not imply the triangle condition (Theorem~\ref{thm:hinf}); in the example the walk closes after one turn but Lemma~\ref{lem:stab} fails, and Mace4 also finds finite models of the triangle hypotheses in which the chain $a_1>\Phi(a_1)>\Phi^2(a_1)$ descends strictly for two turns before closing (sizes $13$, $21$, and at least $30$ for three turns; \texttt{chain.py}).
+
+(3) Applied to $\P(\P_X)$ for finite $X$, which satisfies the hexagon condition by Theorem~\ref{thm:hex}, the theorem shows that condition (ii) of admissibility is not needed in Theorem~\ref{thm:hex} for finite $X$: in- and out-edges at every vertex suffice. (Indeed Steps 1 and 2 of the proof of Theorem~\ref{thm:hex} only use (i) -- in Step 1 the $\N(b_i)$-block and the $\N(a_i)$-block of a point outside $A_i\cup B_i$ coincide by Lemma~\ref{lem:PX}(b), since $a_ib_i=b_ia_i$ -- and only Step 3 used (ii).) Theorem~\ref{prop:path} below goes further.
+
+(4) The argument shows more generally that in a finite projection algebra, for any bounded $x\le a_1$, the walk from $x$ ends in a closed $6$-cycle which is a hexagon configuration with products $w$ and $z$. Two further closed cycles always exist, through $z$ and through $w$ ($z\to m_2\to z\to m_3\to z\to m_1\to z$ and dually); they are not hexagons, which is why the bounds in Lemma~\ref{lem:inv} involve $m_i$ as well as $w$ or $z$.
+\end{remark}
+
+
+\begin{theorem}[non-star patterns]\label{prop:path}
+Let $E$ be a digraph on $[k]$, $k\ge3$. Call $E$ a \emph{star} if it is empty, or all its edges have the same tail (an out-star), or all have the same head (an in-star); equivalently, $E$ is not a star iff it has two distinct tails and two distinct heads.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item If $E$ is not a star, then in every projection algebra the hypotheses (H1)--(H3) for $E$ imply $w\bowtie z$ and the four transport relations
+\begin{equation}\label{eq:transport}
+a_iza_i=m_i,\qquad b_iwb_i=m_i,\qquad za_iz=z,\qquad wb_iw=w
+\end{equation}
+at every non-isolated index $i$ (hence also $b_jm_ib_j=z$ and $a_jm_ia_j=w$ for all $j\ne i$); moreover each isolated index $i$ can be replaced by the pair $a_i':=\theta_{a_i}(b_{j_0})$, $b_i':=\theta_{b_i}(a_{j_0})$, where $j_0$ is any non-isolated index, after which (H1)--(H3) still hold with the same $w,z$ and \eqref{eq:transport} holds at every index. Consequently, in a finite projection algebra satisfying the hexagon condition, and in particular in $\P(\P_X)$ for finite $X$, (H1)--(H3) for $E$ force $w=z$.
+\item If $E$ is a star, then $\P_2$ contains projections satisfying (H1)--(H3) for $E$ with $w\ne z$.
+\end{enumerate}
+So for finite $X$ the matching-pattern condition of Theorem~\ref{thm:hex} holds in $\P_X$ for exactly the non-star digraphs $E$. The smallest instances beyond the hexagon are the \emph{path} $a_1\bowtie b_2$, $a_2\bowtie b_3$, the \emph{$2$-cycle-plus-spare} $a_1\bowtie b_2$, $a_2\bowtie b_1$ (both on three indices, with (H1), (H2)), and the \emph{two disjoint pairs} $a_1\bowtie b_2$, $a_3\bowtie b_4$ on four indices.
+\end{theorem}
+\begin{proof}
+(a) For an index $i$ with an out-edge $(i,l)$ we have $a_iza_i=a_ib_lb_ia_i=(a_ib_la_i)b_i=m_i$ and $za_iz=zb_la_ib_lz=z$; dually an in-edge $(l,i)$ gives $b_iwb_i=m_i$ and $wb_iw=w$. By the argument of Lemma~\ref{lem:rev}, $za_iz=z$ gives $b_jm_ib_j=z$ for all $j\ne i$, and $wb_iw=w$ gives $a_jm_ia_j=w$ for all $j\ne i$.
+
+\emph{Step 1: $b_iwb_i=m_i$ at every tail $i$.} Let $i\ne i'$ be tails. Since $w\le a_i$, $wb_iw=wa_ib_ia_iw=wm_iw=w(a_iza_i)w=wzw$, and likewise $wb_{i'}w=wzw$. Hence, $b_iwb_i$ being a projection,
+\[
+b_iwb_i=b_i(wb_iw)b_i=b_i(wb_{i'}w)b_i=b_ia_ia_{i'}b_{i'}a_{i'}a_ib_i=m_i\,m_{i'}\,m_i=a_ib_i\,(b_{i'}a_{i'}b_{i'})\,b_ia_i=a_iza_{i'}za_i=a_iza_i=m_i ,
+\]
+using $b_ib_{i'}=z$, $za_{i'}z=z$ and $a_iza_i=m_i$. Dually $a_jza_j=m_j$ at every head $j$, since there are two distinct heads: $za_jz=zm_jz=z(b_jwb_j)z=zwz=zb_{j'}wb_{j'}z=zm_{j'}z$, so $a_jza_j=a_j(zm_{j'}z)a_j=m_jm_{j'}m_j=b_ja_j(a_{j'}b_{j'}a_{j'})a_jb_j=b_jwb_{j'}wb_j=b_jwb_j=m_j$.
+
+\emph{Step 2: $w\bowtie z$.} Choose a tail $i$ and a head $j$ with $i\ne j$ (possible since there are two of each). Then $wzw=a_ia_jza_ja_i=a_im_ja_i=a_ia_jb_ja_ja_i=wb_jw=w$ by Step~1 and the in-edge at $j$, and $zwz=b_jb_iwb_ib_j=b_jm_ib_j=b_jb_ia_ib_ib_j=za_iz=z$ by Step~1 and the out-edge at $i$.
+
+\emph{Step 3: the remaining relations.} At a tail $i$ we now have $a_iza_i=m_i$, $za_iz=z$ (out-edge) and $b_iwb_i=m_i$ (Step~1), and $wb_iw=w$ follows from $w\bowtie z$ by monotonicity (Lemma~\ref{lem:mono}): $z\le b_i$ gives $w=wzw\le wb_iw\le w$. Dually at a head. So \eqref{eq:transport} holds at every non-isolated index, and Lemma~\ref{lem:rev} gives $b_jm_ib_j=z$, $a_jm_ia_j=w$ for all $j\ne i$.
+
+\emph{Step 4: isolated indices.} Let $i$ be isolated and $j_0$ non-isolated. Since $w\le a_i$, monotonicity gives $z=zwz\le za_iz\le z$, so $za_iz=z$, and dually $wb_iw=w$; by Lemma~\ref{lem:rev} again, $b_lm_ib_l=z$ and $a_lm_ia_l=w$ for $l\ne i$. The other two relations of \eqref{eq:transport} may fail at $i$ (Mace4 finds models with $a_iza_i<m_i$, and so does $\P_2$), but the two sandwiches are equal:
+\[
+u_i:=a_iza_i=b_iwb_i=m_im_{j_0}m_i .
+\]
+Indeed $z=b_im_{j_0}b_i$ (Lemma~\ref{lem:rev} at $j_0$), and writing $m_{j_0}=a_{j_0}b_{j_0}$, $b_{j_0}b_i=z$ in one copy and $m_{j_0}=b_{j_0}a_{j_0}$ in the other, $z=b_ia_{j_0}z=za_{j_0}b_i$; hence $a_iza_i=a_i(b_ia_{j_0}z)(za_{j_0}b_i)a_i=m_i(a_{j_0}za_{j_0})m_i=m_im_{j_0}m_i$, and dually $b_iwb_i=m_i(b_{j_0}wb_{j_0})m_i=m_im_{j_0}m_i$. Thus $u_i=\theta_{m_i}(m_{j_0})\le m_i$, and for $l\ne i$ we get $b_lu_ib_l=z$: it is $\le b_lm_ib_l=z$ by monotonicity, and $z(b_lu_ib_l)z=zu_iz=za_iza_iz=z$; dually $a_lu_ia_l=w$.
+
+Put $a_i'=a_ib_{j_0}a_i$ and $b_i'=b_ia_{j_0}b_i$. Then $a_i'\le a_i$ and $w\le a_i'$, since $a_i'wa_i'=a_i(b_{j_0}wb_{j_0})a_i=a_im_{j_0}a_i=w$; dually $z\le b_i'\le b_i$. By Lemma~\ref{lem:bounded}, $a_i'$ commutes with every $a_l$ ($l\ne i$), and with $a_l'$ if $l$ is also isolated, with product $w$, and dually for $b_i'$: (H1) holds for the new family, with the same $w$ and $z$. For (H2),
+\[
+a_i'b_i'a_i'=a_ib_{j_0}(m_ia_{j_0}m_i)b_{j_0}a_i=a_ib_{j_0}\bigl(b_i(a_ia_{j_0}a_i)b_i\bigr)b_{j_0}a_i=a_i(b_{j_0}u_ib_{j_0})a_i=a_iza_i=u_i ,
+\]
+and dually $b_i'a_i'b_i'=b_iwb_i=u_i$; so $a_i'b_i'=b_i'a_i'=u_i=:m_i'$. (H3) is unaffected, as $i$ lies on no edge. Finally \eqref{eq:transport} holds at $i$ for the new pair: $a_i'za_i'=a_ib_{j_0}(a_iza_i)b_{j_0}a_i=a_i(b_{j_0}u_ib_{j_0})a_i=u_i=m_i'$, dually $b_i'wb_i'=m_i'$, and $za_i'z=z$, $wb_i'w=w$ as before since $w\le a_i'$, $z\le b_i'$. The relations at the other indices only involve $a_l,b_l,m_l,w,z$ for $l\ne i$ and are unchanged.
+
+\emph{Step 5.} After the replacement all four relations hold at every index, and with them the proof of Lemma~\ref{lem:inv}, hence of Theorem~\ref{thm:equiv}, goes through for any three indices of $E$: the walk from $a_i$ ends in a closed $6$-cycle which is a hexagon configuration with products $w$ and $z$, and the hexagon condition gives $w=z$.
+
+(b) In $\P_2$ let $F$ be the projection with the single block $\{1,2,1',2'\}$ (rank $1$) and $e$ the projection with blocks $\{1,2\}$, $\{1',2'\}$ (rank $0$); then $e\le F$, $eF=Fe=e$, $F\bowtie F$. For an out-star with tail $v$ (or for $E=\emptyset$) take $a_v=F$, $a_i=e$ for $i\ne v$, and $b_j=F$ for all $j$: then $w=e$, $z=F$, all pairs commute, $a_v\bowtie b_j$ for all $j$, and $w\ne z$. For an in-star with head $v$ take $a_i=F$ for all $i$, $b_v=F$ and $b_j=e$ for $j\ne v$.
+\end{proof}
+
+The transport relations are all that the matchings of $E$ contribute; once they are available, matchings can be manufactured at will, because of the following elementary fact.
+
+\begin{lemma}\label{lem:friends}
+For any two projections $p,q$ of a regular $*$-semigroup, $\theta_p(q)\bowtie\theta_q(p)$.
+\end{lemma}
+\begin{proof}
+$pq$ is idempotent, being $(pq)(pq)^*(pq)$. Hence $(pqp)(qpq)(pqp)=p(qp)^4=p(qp)=pqp$ and symmetrically $(qpq)(pqp)(qpq)=qpq$.
+\end{proof}
+
+Call a family $a_1,\dots,a_k,b_1,\dots,b_k$ satisfying (H1), (H2) \emph{transported} if the four relations \eqref{eq:transport} hold at every index. By Theorem~\ref{prop:path}(a) and its proof, a configuration for a non-star digraph becomes transported after the isolated indices are replaced, and in a transported family $w\bowtie z$, $b_jm_ib_j=z$ and $a_jm_ia_j=w$ for all $i\ne j$ (Lemma~\ref{lem:rev}), and the bounded-elements Lemma~\ref{lem:bounded} applies.
+
+\begin{lemma}[edge creation]\label{lem:create}
+Let $a_1,\dots,a_k,b_1,\dots,b_k$ be transported, $k\ge2$, and $i\ne j$. Put $a_i'=\theta_{a_i}(b_j)$, $b_j'=\theta_{b_j}(a_i)$, and replace $a_i$ by $a_i'$ and $b_j$ by $b_j'$. The new family is again transported, with the same $w$, $z$ and $m_1,\dots,m_k$; $a_i'\bowtie b_j'$; and every pair $a_l,b_m$ with $l\ne i$, $m\ne j$ is unchanged.
+\end{lemma}
+\begin{proof}
+$a_i'\le a_i$, and $w,m_i\le a_i'$: indeed $a_i'wa_i'=a_i(b_jwb_j)a_i=a_im_ja_i=w$ and $a_i'm_ia_i'=a_i(b_jm_ib_j)a_i=a_iza_i=m_i$. Dually $b_j'\le b_j$ and $z,m_j\le b_j'$. By Lemma~\ref{lem:bounded}, $a_i'$ commutes with every $a_l$ ($l\ne i$) with product $w$, and with $b_i$ with product $m_i$; dually for $b_j'$; so (H1), (H2) hold with the same $w,z,m_l$. The transport relations at $i$: $a_i'za_i'=a_i(b_jm_ib_j)a_i=m_i$, $b_iwb_i=m_i$ is unchanged, $za_i'z=z$ since $z=zwz\le za_i'z\le z$ by monotonicity ($w\le a_i'$), and $wb_iw=w$ is unchanged; dually at $j$; the other indices are untouched. Finally $a_i'\bowtie b_j'$ by Lemma~\ref{lem:friends}.
+\end{proof}
+
+\begin{theorem}[the triangle condition is a master condition]\label{thm:master}
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item Every transported family on $k\ge3$ indices yields, on any three of its indices, a triangle configuration with the same $w$ and $z$. Consequently, in \emph{every} projection algebra, the triangle condition implies the matching-pattern condition of every non-star digraph.
+\item For every set $X$, the matching-pattern condition of $E$ holds in $\P_X$ iff $E$ is not a star ($|X|\ge2$ for the ``only if'').
+\end{enumerate}
+\end{theorem}
+\begin{proof}
+(a) Apply Lemma~\ref{lem:create} three times on the indices $1,2,3$: create $(1,2)$, replacing $a_1,b_2$; then $(2,3)$, replacing $a_2,b_3$; then $(3,1)$, replacing $a_3,b_1$. Each step leaves the pairs created before untouched, since they involve different elements: after the three steps $a_1'\bowtie b_2'$, $a_2'\bowtie b_3'$, $a_3'\bowtie b_1'$, and (H1), (H2) hold with the original $w,z$ by the lemma. For the consequence, take a configuration for a non-star $E$, replace its isolated indices (Theorem~\ref{prop:path}), obtaining a transported family with the same $w,z$, and build the triangle configuration; the triangle condition gives $w=z$.
+
+(b) The triangle condition holds in $\P_X$ for every $X$ by Theorem~\ref{thm:hex}, so the non-star conditions hold by (a); the stars fail already in $\P_2\subseteq\P_X$ (Theorem~\ref{prop:path}(b)).
+\end{proof}
+
+Thus the matchings of a pattern serve only to establish the transport relations; and among all matching-pattern conditions the triangle condition is the strongest one valid in partition monoids, in the sense that it implies all the others in every projection algebra, while the path and the $2$-cycle conditions are equivalent to it (they imply it trivially, having fewer hypotheses). In the proof of Theorem~\ref{thm:hex} only the triangle is now needed; the other admissible digraphs follow from it algebraically. The hexagon condition is strictly weaker than the triangle condition in general (Theorem~\ref{thm:hinf} below), although the two are equivalent on finite projection algebras (Theorem~\ref{thm:equiv}).
+
+
+\begin{remark}\label{rem:path}
+(1) Theorem~\ref{prop:path} was found in three stages, each driven by Mace4 and Prover9 experiments of M.~Kinyon. First, on three indices, exhaustive search in $\P_n$, $n\le4$, showed that two matched pairs force $w=z$ iff they form a directed path $\{(1,2),(2,3)\}$ (up to relabelling) or the $2$-cycle $\{(1,2),(2,1)\}$, while two pairs with a common tail $\{(1,2),(1,3)\}$ or a common head $\{(2,1),(3,1)\}$, the pair $\{(1,2),(3,2)\}$, and a single pair all admit counterexamples in $\P_2$ (\texttt{digraph3.py}, \texttt{digraph4.py}); the path is the case of a \emph{full} vertex (in- and out-edge), where $w\bowtie z$ is immediate ($wzw=a_i(a_{j_0}za_{j_0})a_i=a_im_{j_0}a_i=w$), and for such $E$ with every vertex on an edge the argument of Steps 3 and 5 was the first version of the theorem.
+
+(2) The $2$-cycle-plus-spare required the treatment of isolated indices (Step~4). There is no projection algebra of size $\le12$ with $a_1\bowtie b_2$, $a_2\bowtie b_1$, (H1), (H2), $w\ne z$ and none of the pairs $(a_1,b_3),(a_2,b_3),(a_3,b_1),(a_3,b_2)$ matched; there is exactly one of size $13$, $45$ of size $14$ and $2054$ of size $15$ (\texttt{square.in}, isofiltered). All of them violate the hexagon condition in the same way: the walk from $a_1$ closes after a single turn, $a_1\to b_3a_1b_3\to a_2\to b_1\to a_3b_1a_3\to b_2\to a_1$, and $\{a_1,a_2,a_3b_1a_3\mid b_1,b_2,b_3a_1b_3\}$ is a hexagon with $w\ne z$ generating a copy of $\P(Q_0)$ (\texttt{sqfilter2.py}; the size-$13$ algebra is $\P(Q_0)$ with $a_3,b_3$ adjoined above it, and $1934$ of the size-$15$ algebras contain it). The elements $a_3b_1a_3=\theta_{a_3}(b_1)$ and $b_3a_1b_3=\theta_{b_3}(a_1)$ appearing here are exactly the replacements $a_3'$, $b_3'$ of Step~4, and in $49$ of the models $a_3za_3<m_3$, which showed that the transport relations themselves cannot be recovered at an isolated index; the identity $a_3za_3=b_3wb_3=m_3m_1m_3$ and the computation of $a_3'b_3'a_3'$ were first checked on these models (\texttt{sqstar.py}) and then proved by hand.
+
+(3) With four indices the full-vertex condition is no longer the boundary: the pattern $\{(1,2),(3,4)\}$ of two \emph{disjoint} matched pairs has no full vertex, yet admits no counterexample in $\P_n$ for $n\le4$ nor in the $57$-element projection algebra of $\P_4/\mu_1$, which violates the hexagon condition (\texttt{nofull.py}, \texttt{nofull3.py}, \texttt{p4mu\_disjoint.py}), and the walk argument is unavailable for it as it stands, since a closed walk alternating between out-vertices $\{1,3\}$ and in-vertices $\{2,4\}$ only produces the $k=2$ square. Mace4 finds a projection algebra with $w\ne z$ for this pattern (the $14$-element algebra of Remark~\ref{rem:2k}(3), in which all twelve cross pairs are matched, and, excluding the extra pairs that would create a full vertex, a unique one of size $18$ with $a_1\bowtie b_4$, $a_3\bowtie b_2$ as well; \texttt{disjoint.in}, \texttt{disjoint2.in}), so the pattern is not a quasi-identity of all projection algebras, but both models violate the hexagon condition and in both $w\bowtie z$ and all sixteen transport relations hold. Prover9 then proved $wzw=w$ from the two disjoint pairs in $0.12$ seconds (\texttt{disjoint3.in}, a $165$-step proof); Steps 1 and 2 of the proof above are the hand version, and they apply verbatim whenever $E$ has two tails and two heads, which is what unifies the full-vertex and the disjoint-pair cases. Patterns with fewer than two tails or two heads are the stars, which fail in $\P_2$ by (b).
+
+(4) The non-star conditions do not follow from the hexagon condition in infinite projection algebras (Theorem~\ref{thm:hinf}), but they do follow from the triangle condition, in every projection algebra (Theorem~\ref{thm:master}), and hence hold in $\P_X$ for every $X$. A direct combinatorial proof in $\P_X$ would have to handle the case of Step~3 of the proof of Theorem~\ref{thm:hex} in which the bad index is the middle vertex of a path; the algebraic reduction to the triangle avoids it.
+\end{remark}
+
+\subsection{The infinite case: the unrolled hexagon}\label{subsec:hinf}
+
+The finiteness hypothesis of Theorems~\ref{thm:equiv} and~\ref{prop:path} cannot be dropped. The counterexample is obtained by ``unrolling'' the hexagon of $\P(Q_0)$ along its cycle of matchings $a_1\bowtie b_2\bowtie a_3\bowtie b_1\bowtie a_2\bowtie b_3\bowtie a_1$: each vertex is replaced by a descending chain, all matchings are taken level by level except the last one, which shifts the level by one.
+
+Recall the structure of $\P(Q_0)$ (Section~\ref{subsec:witness}): it consists of six projections $a_1,a_2,a_3,b_1,b_2,b_3$ and five \emph{low} elements $w,z,m_1,m_2,m_3$ (the images of the five partitions of $\{1,2,3\}$), with $a_ia_j=w$, $b_ib_j=z$ ($i\ne j$), $a_ib_i=b_ia_i=m_i$, $a_i\bowtie b_j$ ($i\ne j$); $\theta_\ell(x)=\ell$ for every low $\ell$ and every $x$ (so the low elements form a right-zero subalgebra, $\ell*\ell'=\ell'$, and any two of them are matched); and $\theta_{a_i}(w)=w$, $\theta_{a_i}(z)=m_i$, $\theta_{a_i}(m_i)=m_i$, $\theta_{a_i}(m_j)=w$ ($j\ne i$), dually $\theta_{b_i}(z)=z$, $\theta_{b_i}(w)=m_i$, $\theta_{b_i}(m_i)=m_i$, $\theta_{b_i}(m_j)=z$.
+
+\begin{definition}\label{def:hinf}
+The \emph{unrolled hexagon} is the set
+\[
+H_\infty=\{w,z,m_1,m_2,m_3\}\ \cup\ \{e_{i,n},f_{i,n}: i\in\{1,2,3\},\ n\in\N\}
+\]
+with the operation $x*y=\theta_y(x)$ defined as follows, where $\ell$ denotes a low element, $i,j\in\{1,2,3\}$, and $M=\{(1,2),(3,2),(3,1),(2,1),(2,3)\}$ is the set of \emph{level-preserving} pairs (all $(i,j)$ with $i\ne j$ except the \emph{crossing} pair $(1,3)$):
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $\theta_\ell(x)=\ell$ for all $x$; $\theta_{e_{i,n}}(\ell)$ and $\theta_{f_{i,n}}(\ell)$ are $\theta_{a_i}(\ell)$ and $\theta_{b_i}(\ell)$ as in $\P(Q_0)$ (independent of $n$);
+\item $\theta_{e_{i,m}}(e_{i,n})=e_{i,\max(n,m)}$, $\theta_{f_{i,m}}(f_{i,n})=f_{i,\max(n,m)}$; $\theta_{e_{j,m}}(e_{i,n})=w$ and $\theta_{f_{j,m}}(f_{i,n})=z$ for $i\ne j$;
+\item $\theta_{f_{i,m}}(e_{i,n})=\theta_{e_{i,m}}(f_{i,n})=m_i$;
+\item for $(i,j)\in M$: $\theta_{f_{j,m}}(e_{i,n})=f_{j,\max(n,m)}$ and $\theta_{e_{i,m}}(f_{j,n})=e_{i,\max(n,m)}$;
+\item for the crossing pair: $\theta_{f_{3,m}}(e_{1,n})=f_{3,\max(m,n-1)}$ and $\theta_{e_{1,m}}(f_{3,n})=e_{1,\max(m,n+1)}$.
+\end{enumerate}
+\end{definition}
+
+Thus $e_{i,0}>e_{i,1}>\cdots$ and $f_{i,0}>f_{i,1}>\cdots$ are chains (``level'' $n$), $w,m_i\le e_{i,n}$ and $z,m_i\le f_{i,n}$, no low element is below another one and no chain element is below a low one. Two chain elements are matched iff they are equal, or of the form $e_{i,n},f_{j,n}$ with $(i,j)\in M$, or $e_{1,n+1},f_{3,n}$; a low element is matched with every low element and with no chain element. Two elements commute iff they are on the same chain, or are $e_{i,n},e_{j,m}$ (product $w$), $f_{i,n},f_{j,m}$ ($z$), $e_{i,n},f_{i,m}$ ($m_i$), or a low element and an element above it. Level $0$ is a copy of $\P(Q_0)$ with the matching $a_1\bowtie b_3$ broken in one direction: $\theta_{f_{3,0}}(e_{1,0})=f_{3,0}$ but $\theta_{e_{1,0}}(f_{3,0})=e_{1,1}<e_{1,0}$.
+
+\begin{theorem}\label{thm:hinf}
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item $H_\infty$ is a projection algebra satisfying \eqref{eq:Q1}.
+\item $H_\infty$ satisfies the hexagon condition and the matching-pattern condition of every non-star digraph on $k\ge4$ vertices.
+\item $(e_{1,0},e_{2,0},e_{3,0}\mid f_{1,0},f_{2,0},f_{3,0})$ is a triangle configuration with $w\ne z$. More generally, $H_\infty$ violates the matching-pattern condition of every digraph on three vertices other than the hexagon, and of every star.
+\end{enumerate}
+Consequently the hexagon condition does not imply the triangle condition, nor any other non-star condition on three indices, in the variety of projection algebras; and a regular $*$-semigroup $S$ with $\P(S)\cong H_\infty$ (which exists by Imaoka's theorem) satisfies \eqref{eq:Q1} and the hexagon condition but embeds in no partition monoid.
+\end{theorem}
+
+\begin{proof}
+(a) By construction, the \emph{type} of a product (low, or which chain) depends only on the types of the factors, and the level of a product of two chain elements of levels $n,m$ is $\max(n+c,m+c')$ with $c,c'\in\{-1,0,1\}$, while a product involving a low element is low. Hence for a term $t(x_1,\dots,x_r)$ of depth $d$ and an assignment of types to the variables, either $t$ is low for all levels, or its value lies on a fixed chain at level $\max_{v\in S}(n_v+c_v)$ for some set $S$ of the variables and constants $|c_v|\le d$. Two such expressions of the same type agree on $\N^r$ as soon as they agree on $\{0,\dots,2d+1\}^r$, since evaluating at $n_v=2d+1$, $n_u=0$ ($u\ne v$) tells whether $v\in S$ and recovers $c_v$. The axioms (P1)$'$--(P5)$'$ have depth $\le4$, so it suffices to check them on all triples of level $\le9$; this was done by computer (\texttt{hinf2.py}, levels $\le12$). For \eqref{eq:Q1}: by the description of the order, two elements with a common lower bound are comparable, or of the form $e_{i,n},f_{i,m}$, or $e_{i,n},e_{j,m}$, or $f_{i,n},f_{j,m}$, or a low element and an element above it, and all these pairs commute.
+
+(b) We first classify the tuples $(x_1,\dots,x_k)$, $k\ge2$, in which all products $x_i*x_j$ ($i\ne j$, both orders) are equal to one element $w'$, using the description of commuting pairs: ($\alpha$) all $x_i$ on one chain, $w'$ on that chain; ($\beta$) each $x_i$ is $w$ or an $e$-element, the $e$-elements on pairwise distinct chains, $w'=w$; ($\beta'$) dually with $z$ and $f$-elements; ($\gamma$) each $x_i$ is $m_p$ or on $e_p$ or on $f_p$, at most one on $e_p$ and at most one on $f_p$, $w'=m_p$. (Two low elements have equal products in both orders only if they are equal; a low $\ell$ and a chain element $c$ only if $\ell\le c$; and $e_{i,n},f_{j,m}$ with $i\ne j$ never.)
+
+\emph{The hexagon.} Let $(x_1,x_2,x_3\mid y_1,y_2,y_3)$ satisfy the hexagon hypotheses with products $w',z'$, and suppose $w'\ne z'$. If some $x_i$ is low, then $w'=x_i$, the $y_j$ ($j\ne i$) are low, being matched with $x_i$, so $z'=y_j$, and $x_l$ ($l\ne i$) is low, being matched with some $y_j$, $j\notin\{i,l\}$; so $x_1=x_2=x_3=w'$ and $y_j=z'$ for $j\ne i$; finally $y_i$ is matched with the low element $x_l$, so $y_i$ is low, $y_i=z'$, and (H2) at $i$ gives $w'=z'$. So all six are chain elements. Case ($\gamma$) is then impossible (three chain elements in $e_p\cup f_p$ with at most one on each). In case ($\alpha$), say all $x_i\in e_p$: the elements matched with an element of $e_p$ are that element itself and the $f_{q,m}$ with $(p,q)\in M\cup\{(1,3)\}$, $q\ne p$; if $y_j=f_{q,m}$, then by (H2) $y_j$ commutes with $x_j\in e_p$, which requires $q=p$; so every $y_j$ lies on $e_p$ and equals both $x_i$, $i\ne j$, whence all six elements coincide. In case ($\beta$), $x_i=e_{\sigma(i),n_i}$ with $\sigma$ injective and $w'=w$. A $y_j$ equal to some $x_i$ would be matched with the other $x_{i'}$, on a different $e$-chain, impossible; so $y_j=f_{\tau(j),m_j}$ with $(\sigma(i),\tau(j))\in M\cup\{(1,3)\}$ for all $i\ne j$. If $\tau$ is not injective, $z'$ is on an $f$-chain, all $\tau(j)$ are equal, $=q$, and the three values $\sigma(i)$ lie in the two-element set $\{i:(i,q)\in M\cup\{(1,3)\}\}$, impossible; so $\tau$ is a permutation and $z'=z$. By (H2), $x_i$ and $y_i$ commute, which fails if $\sigma(i)\ne\tau(i)$; so $\sigma=\tau$. The six matchings $x_i\bowtie y_j$ then involve each ordered pair $(\sigma(i),\sigma(j))$, $i\ne j$, exactly once; the five level-preserving ones give $n_i=m_j$ and the crossing one gives $n_{i_0}=m_{j_0}+1$. The five equalities connect all six levels ($K_{3,3}$ minus a perfect matching is a $6$-cycle, and deleting one more edge leaves a path), so all levels are equal, a contradiction. Case ($\beta'$) is dual.
+
+\emph{Non-star patterns on $k\ge4$ vertices.} Every non-star digraph contains two disjoint edges, a directed path of length two, or a $2$-cycle, and its condition on $[k]$ follows from the condition of $\{(1,2),(3,4)\}$, $\{(1,2),(2,3)\}$ or $\{(1,2),(2,1)\}$ on $[4]$ (restrict to four indices containing the two edges). In each of these patterns the two edges have distinct tails and distinct heads. Suppose $(x_1,\dots,x_4\mid y_1,\dots,y_4)$ satisfies (H1)--(H3) for one of them with $w'\ne z'$. Since $k=4>3$, in case ($\beta$) some $x_i=w$, and in case ($\gamma$) at least two $x_i$ equal $m_p$. Recall that the elements matched with a chain element $c$ are $c$ itself and chain elements on a chain of the other letter, and that the elements commuting with $e_{p,n}$ are those of $e_p$, $f_p$, of the other $e$-chains, and $w,m_p$.
+
+\emph{Case ($\alpha$), all $x_i\in e_p$.} The head $y_b$ of each edge is matched with its tail $x_a\in e_p$ and commutes with $x_b\in e_p$, hence $y_b=x_a$: the $y$'s contain two elements of $e_p$ (the two tails, of distinct indices). This rules out cases ($\beta$), ($\gamma$) (at most one element on $e_p$) and ($\beta'$) for the $y$'s, and case ($\alpha$) on a chain other than $e_p$. So all $y_j\in e_p$, $w'=e_{p,N}$, $z'=e_{p,N'}$, at most one $x$ has level $<N$ and at most one $y$ has level $<N'$. One of the two heads has level $N'$ and equals a tail, whose level is $\le N$; so $N'\le N$, and symmetrically $N\le N'$; so $w'=z'$.
+
+\emph{Case ($\beta$), some $x_i=w$.} Then $y_i$ is $w$ or an $e$-element. So the $y$'s are not in case ($\beta'$); in case ($\beta$), $z'=w=w'$. In case ($\alpha$) they lie on one chain $e_q$; each tail is matched with its head, an element of $e_q$, hence equals it, and two tails on one $e$-chain contradict ($\beta$). In case ($\gamma$) they lie in $e_q\cup f_q\cup\{m_q\}$ with at most one on $e_q$; every $x_i=w$ needs $y_i\in e_q$, so exactly one $x_i$ is $w$ and the others lie on the three distinct $e$-chains, and the two of them not on $e_q$ need $y$'s in $e_q\cup f_q\cup\{m_q\}$ commuting with them, i.e.\ again on $e_q$; impossible.
+
+\emph{Case ($\gamma$), at least two $x_i=m_p$.} An element commutes with $m_p$ iff it is above $m_p$, i.e.\ lies in $e_p\cup f_p\cup\{m_p\}$. So the $y$'s are not in case ($\gamma$) for $q\ne p$ (and for $q=p$, $z'=m_p=w'$), nor in cases ($\beta$), ($\beta'$) (two of them would lie on $e_p$, resp.\ $f_p$). In case ($\alpha$) they lie on $e_p$ or on $f_p$; the tails equal their heads, so two $x$'s lie on that chain, contradicting ($\gamma$).
+
+The cases ($\alpha$) on $f_p$ and ($\beta'$) are dual. Hence $w'=z'$.
+
+(c) The level-$0$ vertices satisfy (H1), (H2), $e_{1,0}\bowtie f_{2,0}$, $e_{2,0}\bowtie f_{3,0}$, $e_{3,0}\bowtie f_{1,0}$ (all in $M$), and $w\ne z$. For $E$ on $[3]$ missing the ordered pair $(p,q)$, choose a permutation $\sigma$ with $(\sigma(p),\sigma(q))=(1,3)$ and put $x_i=e_{\sigma(i),0}$, $y_j=f_{\sigma(j),0}$: all matchings required by $E$ are in $M$, hence hold at level $0$. For an out-star with tail $1$ on $[k]$ take $x_1=e_{1,0}$, $x_i=w$ ($i\ge2$), and all $y_j=e_{1,0}$: then $w'=w$, $z'=e_{1,0}$, all required pairs commute, and $x_1\bowtie y_j$ trivially. In-stars are dual, and the empty pattern is contained in a star.
+
+The final assertion follows because $\P(\P_X)$ satisfies the triangle condition for every $X$ (Theorem~\ref{thm:hex}), and the projection algebra of a $*$-subsemigroup of $\P_X$ is a subalgebra of $\P(\P_X)$.
+\end{proof}
+
+\begin{remark}\label{rem:hinf}
+(1) Together with Theorems~\ref{thm:equiv}, \ref{prop:path} and $\P(Q_0)$ this gives the complete picture of the implications between the matching-pattern conditions: on finite projection algebras the hexagon condition is equivalent to every non-star condition on three indices and implies every non-star condition on more indices, but not conversely ($\P(Q_0)$ satisfies all the conditions on $k\ge4$ indices); on arbitrary projection algebras the non-star conditions on three indices other than the hexagon are strictly stronger than the hexagon condition ($H_\infty$). On arbitrary projection algebras the triangle, path and $2$-cycle conditions are equivalent and imply all the others (Theorem~\ref{thm:master}). Whether the hexagon condition implies the conditions on $k\ge4$ indices in general is open; an ``unrolled octagon'' would separate them, but there the products of non-adjacent vertices have to be new elements (Remark~\ref{rem:2k}(3)) and we have not constructed it. All these conditions were verified on $H_\infty$ by computer as well (\texttt{hinf2\_run.py}, \texttt{hinf2\_pat.py}).
+
+(2) In $H_\infty$ the walk of Section~\ref{subsec:equiv} from $e_{1,0}$ closes after one turn, $e_{1,0}\to f_{3,0}\to e_{2,0}\to f_{1,0}\to e_{3,0}\to f_{2,0}\to e_{1,0}$, but its consecutive elements $e_{1,0},f_{3,0}$ are not matched: in the semigroup $S$ the element $s=e_{1,0}f_{3,0}e_{2,0}f_{1,0}e_{3,0}f_{2,0}$ has $s^*s=e_{1,0}$ and $ss^*=e_{1,1}<e_{1,0}$. So it is the Dedekind-finiteness used in Lemma~\ref{lem:stab}, not the descending chain condition, that fails here. Mace4 finds finite models of the triangle hypotheses with $w\ne z$ in which the chain $a_1>\Phi(a_1)>\Phi^2(a_1)$ descends strictly for two turns before closing (sizes $13$ and $21$; three turns need at least $30$ elements; \texttt{chain.py}), which suggests that an example of the other kind, with an infinite strictly descending walk, exists as well.
+
+(3) The non-star conditions all hold in $\P_X$ for every $X$ (Theorem~\ref{thm:master}); $H_\infty$ is not a partition monoid. Before this was known, the natural place to look for counterexamples was among \emph{periodic} projections of $\P_{\Z\times[m]}$, invariant under the level shift $(n,i)\mapsto(n+1,i)$, since these can carry the level-shifting matchings of $H_\infty$ inside an honest partition monoid. Such a projection is described by a partition of $[m]$ into types $c$, each with a modulus $d_c\ge0$ and a potential $\phi_c:c\to\Z$ (mod $d_c$) up to a constant -- its blocks are $\{(n+\phi(i),i):i\in c\}$ for $d_c=0$ and $\{(n,i):i\in c,\ n\equiv\phi(i)+r\ (\mathrm{mod}\ d_c)\}$ for $d_c>0$ -- together with a $\T$/$\N$ label per type, and the products $\theta_p(q)$ are computed exactly by a union-find with potentials on $[m]$ (\texttt{periodic.py}; the description of $\theta_p(q)$ in Lemma~\ref{lem:PX}(a) makes this a finite computation). Exhaustive search over all periodic projections with $m\le3$ points per level, potentials in $\{-1,0,1\}$ and moduli $\le2$ ($460$ projections for $m=3$), and with $m=4$, potentials in $\{-1,0,1\}$ and moduli $\le2$ ($5064$ projections), finds no counterexample to the path condition, the $2$-cycle condition, or (for $m\le3$) the two-disjoint-pairs, $K_{2,2}$ and $C_4$ conditions, while reproducing the counterexamples to the star patterns and, as a check, none to the triangle and hexagon conditions (\texttt{periodic3.py}). These searches were run before Theorem~\ref{thm:master} was found; that theorem explains their outcome, and the direct combinatorial attack on Step~3 of the proof of Theorem~\ref{thm:hex} at the middle vertex of a path (where one only obtains that the offending $\N(z)$-block $N\subseteq B_2$ is a union of blocks that are simultaneously $\T(a_1)$- and $\T(b_2)$-blocks, a union of $\T(a_3)$-blocks, and contained in a single $\T(a_2)$-block) is no longer needed.
+\end{remark}
+
+\subsection{The witness}\label{subsec:witness}
+
+\begin{theorem}\label{thm:witness}
+Let $\rho$ be the relation on $\P_3$ defined by $\alpha\,\rho\,\beta$ iff $\alpha=\beta$, or $\rk\alpha,\rk\beta\le1$ and $\ker\alpha=\ker\beta$, $\operatorname{coker}\alpha=\operatorname{coker}\beta$, or $\rk\alpha=\rk\beta=2$ and $\alpha\,\Hh\,\beta$. Then $\rho$ is a $*$-congruence, $Q:=\P_3/\rho$ has $67$ elements and satisfies \eqref{eq:Q1}, and $Q$ embeds in no partition monoid. The same holds for the $61$-element $*$-subsemigroup $Q_0$ of $Q$ generated by the six projections of rank $2$, and for the $103$-element quotient $\P_3/\mu$ where $\mu$ identifies only the elements of rank $\le1$ with equal kernel and cokernel.
+\end{theorem}
+
+\begin{proof}
+That $\rho$ and $\mu$ are $*$-congruences, that the quotients satisfy \eqref{eq:Q1}, and that $Q_0$ has $61$ elements were checked by direct computation (see Section~\ref{sec:comp}; $\rho$ and $\mu$ are among the ten $*$-congruences of $\P_3$). Write $a_i$ for the image of the rank-$2$ projection of $\P_3$ whose transversal blocks are $\{i\}$ and $\{1,2,3\}\setminus\{i\}$, and $b_i$ for the image of the rank-$2$ projection whose transversal blocks are the two singletons $\{j\}$, $\{k\}$ ($\{i,j,k\}=\{1,2,3\}$) and whose nontransversal block is $\{i\}$. In $Q$ (and already in $\P_3/\mu$) the hypotheses (H1)--(H3) hold with $E$ the set of all six pairs (so in particular for the triangle): $w$ is the class of the partition of $\{1,2,3\}$ into one block, $z$ that of the discrete partition, $m_i$ that of the partition $\{i\}\mid\{j,k\}$, and the products $a_ib_j$ ($i\ne j$) have rank $2$; all this is a direct verification in $\P_3$ (also done by computer). But $w\ne z$, since the two partitions are different. By Theorem~\ref{thm:hex} no $*$-homomorphism $Q\to\P_X$ is injective on $\{w,z\}$.
+\end{proof}
+
+\begin{remark}
+(1) The obstruction lives in the projection algebra: the eleven-element projection algebra of $Q_0$ (six projections of rank $2$ and the five ``partition'' projections $w,z,m_1,m_2,m_3$) satisfies the hypotheses of Theorem~\ref{thm:hex} with $w\ne z$, so it is not a subalgebra of the projection algebra of any $\P_X$. Both known obstructions, \eqref{eq:Q1} and the hexagon condition, are therefore statements about projection algebras.
+
+(2) Concretely, $Q_0=D\cup(\Part_3\times\Part_3)$ where $\Part_3$ is the set of five partitions of $\{1,2,3\}$, $\Part_3\times\Part_3$ is a $5\times5$ square band (the image of the ideal of rank $\le1$, via $\alpha\mapsto(\ker\alpha,\operatorname{coker}\alpha)$), and $D$ is the rank-$2$ $\D$-class of $\P_3$ with its $\Hh$-classes collapsed, a $6\times6$ ``trace'' with trivial groups whose zero pattern is the $6$-cycle $a_1b_2a_3b_1a_2b_3$ of matched pairs. The elements of $D$ act on $\Part_3$ by $\varepsilon\mapsto\ker(x\alpha)$ for any $\alpha$ with $\ker\alpha=\varepsilon$. Every proper $*$-subsemigroup of $Q_0$ generated by five of the six rank-$2$ projections embeds in $\P_3$; all six are needed.
+
+(3) Computer searches confirm that $\P_3/\mu$ has no $*$-embedding into $\P_n$ for $n\le7$, that $Q_0$ has none for $n\le5$, and that the hypotheses of Theorem~\ref{thm:hex} have no solution with $w\ne z$ among the projections of $\P_n$ for $n\le4$ (a check of the theorem, not needed for it).
+
+(4) The congruence $\mu$ is the $*$-invariant congruence of $\P_3$ that collapses the ideal of rank $\le1$ onto the square band $\Part_3\times\Part_3$; in the classification of the congruences of partition monoids (East--Ruškuc; East--Mitchell--Ruškuc--Torpey) it is one of the congruences below the Rees congruence of that ideal, and $\rho$ is its join with the ``$\Hh$-relation on rank $2$''. For $n=4$ the analogous quotients contain those of $\P_3$ and give nothing new (Section~\ref{sec:comp}); the further obstruction of Section~\ref{sec:wiring} was found instead by enumerating small projection algebras.
+\end{remark}
+
+\section{The conditions are not sufficient: a wiring obstruction}\label{sec:wiring}
+
+In this section we show that \eqref{eq:Q1} together with the triangle condition, and indeed together with all the matching-pattern conditions of Section~\ref{sec:hex}, is not sufficient for embeddability, even for finite regular $*$-semigroups. The obstruction is a quasi-identity of a new kind: its hypotheses involve matched pairs and commuting pairs at the same time, and its validity in $\P_X$ rests on the fact that commuting projections share their $\N$-blocks (Lemma~\ref{lem:PX}(b)), so that matched pairs to a commuting pair are ``wired'' through the same nontransversal blocks.
+
+\subsection{Graph semigroups}\label{subsec:graphsg}
+
+Let $G=(V,E)$ be a graph, $B$ a set and $\bot\colon V\to B$ a map; extend $\bot$ to $V\sqcup B$ by $\bot(m)=m$ for $m\in B$, and write $v\bowtie v'$ for $v=v'$ or $vv'\in E$. On the set
+\[
+Q(G,\bot)=(V\times V)\sqcup(B\times B)
+\]
+define $(x,y)^*=(y,x)$ and
+\[
+(p,q)(r,s)=\begin{cases}(p,s)&\text{if }q,r\in V\text{ and }q\bowtie r,\\ (\bot p,\bot s)&\text{otherwise.}\end{cases}
+\]
+
+\begin{lemma}\label{lem:graphsg}
+$Q(G,\bot)$ is a regular $*$-semigroup with $|V|^2+|B|^2$ elements. Its projections are the pairs $(v,v)$, $v\in V$, and $(m,m)$, $m\in B$; identifying them with $V\sqcup B$, the projection algebra is
+\[
+\theta_v(v')=\begin{cases}v&v\bowtie v'\\ \bot v&\text{otherwise,}\end{cases}\qquad \theta_v(m)=\bot v,\qquad \theta_m(x)=m\qquad(v,v'\in V,\ m\in B,\ x\in V\sqcup B).
+\]
+Its matched pairs of top projections are the edges of $G$, and it satisfies \eqref{eq:Q1} iff $\bot$ is a proper colouring of $G$ (adjacent vertices have distinct values).
+\end{lemma}
+\begin{proof}
+For $x=(p,q)$, $y=(r,s)$, $z=(t,u)$ one checks the four cases according to whether $q\bowtie r$ and $s\bowtie t$: if both hold, $(xy)z=(p,u)=x(yz)$; in the other three cases both products equal $(\bot p,\bot u)$, because a pair with a coordinate in $B$ is never matched. The identities $(xy)^*=y^*x^*$ and $xx^*x=x$ are immediate ($q\bowtie q$ for all $q$). The projections are the symmetric pairs, and $\theta_{(v,v)}(v',v')=(v,v')(v,v)=(v,v)$ if $v\bowtie v'$, while otherwise it is $(\bot v,\bot v')(v,v)=(\bot v,\bot v)$; the other values are computed in the same way. The projections below $(v,v)$ are $(v,v)$ and $(\bot v,\bot v)$, and $(m,m)$ has no other projection below it; so two distinct top projections $v,v'$ have a common lower bound iff $\bot v=\bot v'$, and then $(v,v)(v',v')=(v,v')\ne(v',v)=(v',v')(v,v)$ if $vv'\in E$, while the two products are both $(\bot v,\bot v)$ if $vv'\notin E$.
+\end{proof}
+
+Thus $Q(G,\bot)$ is the Rees matrix semigroup over the trivial group with sandwich matrix ``adjacency plus identity'' of $G$, in which the zero has been replaced by the rectangular band $B\times B$ via $\bot$. For $|V|\le3$ and every proper colouring $\bot$ the semigroup $Q(G,\bot)$ embeds in $\P_4$ (computer search); our counterexample is the smallest graph for which this fails, and Theorem~\ref{thm:graphsg} in Section~\ref{subsec:graphthm} determines exactly which $Q(G,\bot)$ embed.
+
+\begin{definition}\label{def:Qpath}
+Let $\mathfrak Q=Q(G,\bot)$ where $G$ is the path $a-c-b-d$ on $V=\{a,b,c,d\}$, $B=\{w,z\}$, $\bot(a)=\bot(b)=w$ and $\bot(c)=\bot(d)=z$; so $|\mathfrak Q|=20$. Its projection algebra $\mathfrak P=\{a,b,c,d,w,z\}$ has the matched pairs
+\[
+a\bowtie c,\qquad b\bowtie c,\qquad b\bowtie d,\qquad w\bowtie z,
+\]
+and every other value of $\theta$ is ``the bottom of the subscript'': $\theta_a(b)=\theta_b(a)=w$, $\theta_c(d)=\theta_d(c)=z$, $\theta_a(d)=w$, $\theta_d(a)=z$, $\theta_a(z)=\theta_b(z)=w$, $\theta_c(w)=\theta_d(w)=z$, and $\theta_w\equiv w$, $\theta_z\equiv z$.
+\end{definition}
+
+The colouring is proper, so $\mathfrak Q$ satisfies \eqref{eq:Q1}. The triangle condition holds in $\mathfrak P$ (a direct search over the $6^6$ assignments), hence by Theorem~\ref{thm:master} so do all the non-star matching-pattern conditions; in fact the same search shows that the hexagon, cyclic octagon, directed $4$-cycle and double $2$-cycle conditions hold in $\mathfrak P$, and so do the $2$-index square and $3$-index star conditions, which fail in $\P_2$.
+
+\subsection{The obstruction}
+
+\begin{theorem}\label{thm:wiring}
+Let $a,b,c,d$ be projections of a partition monoid $\P_X$ such that
+\[
+a\bowtie c,\qquad b\bowtie c,\qquad b\bowtie d,\qquad cd=dc=:z,\qquad \theta_a(z)=\theta_b(z)=\theta_a(d).
+\]
+Then $z=c$ and $a=b$.
+\end{theorem}
+
+This is a quasi-identity of projection algebras: $cd=dc$ is equivalent to $\theta_c(d)=\theta_d(c)$ in every regular $*$-semigroup (if $cdc=dcd=:e$ then $cd\in\Hh_e$ and $(cd)^2=cdcd=ed=e$, so $dc=(cd)^*=(cd)^{-1}=cd$), and $p\bowtie q$ means $\theta_p(q)=p$, $\theta_q(p)=q$. In the binary notation $x*y=\theta_y(x)$ of Lemma~\ref{lem:mono}, the theorem reads
+\[
+c*a=a,\ a*c=c,\ c*b=b,\ b*c=c,\ d*b=b,\ b*d=d,\ d*c=c*d,\ (d*c)*a=(d*c)*b=d*a\ \Longrightarrow\ a=b,
+\]
+and it is independent of the conditions found so far: it is not implied by \eqref{eq:Q1} and the triangle condition ($\mathfrak P$), and together with \eqref{eq:Q1} it does not imply the triangle condition, since it holds in the projection algebra $\P(Q_0)$ of Theorem~\ref{thm:witness} and in the Mace4 models of Remark~\ref{rem:path} (a direct check of all quadruples). It does not imply \eqref{eq:Q1} either (it holds in the $5$-element $Q(K_2,\bot)$ with constant $\bot$).
+
+Before the proof we note the consequence.
+
+\begin{corollary}\label{cor:wiring}
+The projection algebra $\mathfrak P$ does not embed in $\P(\P_X)$, and the $20$-element regular $*$-semigroup $\mathfrak Q$ does not $*$-embed in $\P_X$, for any set $X$. Consequently \eqref{eq:Q1} together with the triangle condition (or with all the matching-pattern conditions of Section~\ref{sec:hex}) is not sufficient for a finite regular $*$-semigroup to embed in a partition monoid; the smallest counterexample has order between $9$ and $20$.
+\end{corollary}
+\begin{proof}
+In $\mathfrak P$ the hypotheses of Theorem~\ref{thm:wiring} hold, but $a\ne b$. The bound $9$ is Section~\ref{sec:comp}.
+\end{proof}
+
+The rest of the section proves Theorem~\ref{thm:wiring}. Recall from Lemma~\ref{lem:PX}(c) that a matched pair $p\bowtie q$ comes with a bijection $\T(p)\to\T(q)$, sending a $\T(p)$-block to the unique $\T(q)$-block in the same class of $\varepsilon_p\vee\varepsilon_q$; we write $\varphi\colon\T(a)\to\T(c)$, $\psi\colon\T(b)\to\T(c)$, $\chi\colon\T(b)\to\T(d)$ for the three bijections, and $w=\theta_a(z)$. For projections $p,q$ let $\Gamma(p,q)$ be the bipartite graph whose vertices are the blocks of $p$ and the blocks of $q$ (a set which is a block of both appears twice) and whose edges join a $p$-block to a $q$-block meeting it; the classes of $\varepsilon_p\vee\varepsilon_q$ are the unions of the connected components of $\Gamma(p,q)$, and Lemma~\ref{lem:PX}(c) says that for $p\bowtie q$ every component contains at most one $\T(p)$-block and at most one $\T(q)$-block, one of each if any. We say that a subgraph \emph{touches} a block if one of its vertices meets that block.
+
+\smallskip
+\emph{Step 1: the structure of $z$.} By Lemma~\ref{lem:PX}(b) applied to $cd=dc$, every class $K$ of $\varepsilon_c\vee\varepsilon_d$ is of one of the types (i) $K$ is a union of $\T(c)$-blocks and a union of $\T(d)$-blocks; (ii) $K$ is a union of $\T(c)$-blocks and a single $\N(d)$-block; (iii) $K$ is a union of $\T(d)$-blocks and a single $\N(c)$-block; (iv) $K$ is a single block of both. By Lemma~\ref{lem:PX}(a) the blocks of $z=\theta_c(d)$ are exactly these classes, the $\T$-blocks being those of type (i). In particular $\N(z)$ consists of the $\N(c)$-blocks (types (iii), (iv)) and the type (ii) classes, and symmetrically of the $\N(d)$-blocks and the type (iii) classes.
+
+\smallskip
+\emph{Step 2: transport.} Let $p\bowtie q$ with bijection $\varphi\colon\T(p)\to\T(q)$, and let $x\le q$. For a set $Y$ which is a union of $\T(q)$-blocks put $\varphi^{-1}[Y]=\bigcup\{\varphi^{-1}(C):C\in\T(q),\ C\subseteq Y\}$. We claim: the blocks of $\theta_p(x)$ are the $\N(p)$-blocks and the sets $\varphi^{-1}[Y]$ for the blocks $Y\subseteq\supp(q)$ of $x$, with the label of $Y$; and the class of $\varepsilon_p\vee\varepsilon_x$ containing $\varphi^{-1}[Y]$ is
+\[
+\Omega_Y=\varphi^{-1}[Y]\cup\textstyle\bigcup\{\text{$\N(p)$-blocks}\}=Y\cup\bigcup\{\text{$\N(q)$-blocks}\},
+\]
+these being all the classes meeting $\supp(p)$. Indeed, by Lemma~\ref{lem:PX}(a) the blocks of $x$ outside $\supp(q)$ are $\N(q)$-blocks and those inside are unions of $\T(q)$-blocks. The classes of $\varepsilon_p\vee\varepsilon_q$ meeting $\supp(p)$ are the sets $A\cup(\N(p)\text{-blocks})=\varphi(A)\cup(\N(q)\text{-blocks})$, $A\in\T(p)$, each containing exactly one $\T(q)$-block. Passing to $\varepsilon_p\vee\varepsilon_x\ge\varepsilon_p\vee\varepsilon_q$, a block $Y\subseteq\supp(q)$ of $x$ merges the classes of the $\T(q)$-blocks it contains, and the other blocks of $x$ lie inside single classes; since each class contains one $\T(q)$-block, which lies in one $Y$, the classes of $\varepsilon_p\vee\varepsilon_x$ meeting $\supp(p)$ are the $\Omega_Y$. Now Lemma~\ref{lem:PX}(a) gives the blocks $\Omega_Y\cap\supp(p)=\varphi^{-1}[Y]$, transversal iff $\Omega_Y$ meets $\supp(x)$, i.e.\ (as $\Omega_Y\cap\supp(q)=Y$) iff $Y$ is a $\T$-block of $x$.
+
+Applied to $(a,c,z)$, $(b,c,z)$ and $(b,d,z)$, this describes $w$ in three ways: its blocks are the $\N(a)$-blocks and the sets $\varphi^{-1}[K]$, $K$ of type (i) or (ii); the $\N(b)$-blocks and the sets $\psi^{-1}[K]$, $K$ of type (i) or (ii); the $\N(b)$-blocks and the sets $\chi^{-1}[K]$, $K$ of type (i) or (iii); in each case the block is transversal iff $K$ is of type (i).
+
+\smallskip
+\emph{Step 3: the common join.} Since $w\le a$, every block of $w$ is a union of $a$-blocks, and by Step~2 every block of $w$ lies in a class of $\varepsilon_a\vee\varepsilon_z$; hence $\varepsilon_a\vee\varepsilon_z=\varepsilon_w\vee\varepsilon_z$, and likewise for $b$. Write $\Pi=\varepsilon_a\vee\varepsilon_z=\varepsilon_b\vee\varepsilon_z$. By Step~2 the classes of $\Pi$ meeting $\supp(a)$, equivalently meeting $\supp(c)$ (a class containing $\varphi(A)$ contains $A$), are the sets $\Omega_K=K\cup(\N(c)\text{-blocks})=\varphi^{-1}[K]\cup(\N(a)\text{-blocks})=\psi^{-1}[K]\cup(\N(b)\text{-blocks})$ for $K$ of type (i), (ii); and the classes meeting $\supp(d)$ are $\Omega'_K=K\cup(\N(d)\text{-blocks})=\chi^{-1}[K]\cup(\N(b)\text{-blocks})$ for $K$ of type (i), (iii). Fix a class $\Omega$ of $\Pi$ meeting one of the four supports and write $S_p=\Omega\cap\supp(p)$ and $\N(p)|_\Omega$ for the set of $\N(p)$-blocks contained in $\Omega$. All classes of $\varepsilon_a\vee\varepsilon_c$, $\varepsilon_b\vee\varepsilon_c$, $\varepsilon_b\vee\varepsilon_d$, $\varepsilon_a\vee\varepsilon_d$ are contained in classes of $\Pi$, so all the joins may be computed inside $\Omega$, using only the blocks contained in $\Omega$.
+
+\emph{(F1) If $\Omega=\Omega_K$ with $K$ of type \textup{(i)}}, then $\Omega=\Omega'_K$, so $S_c=S_d=K$ and $S_a=S_b=\varphi^{-1}[K]=\psi^{-1}[K]=\chi^{-1}[K]=:W$; moreover $\N(a)|_\Omega=\N(b)|_\Omega$ and $\N(c)|_\Omega=\N(d)|_\Omega$. Indeed, the blocks of $w$ inside $\Omega$ are, by the first description, the $\N(a)$-blocks in $\Omega$ and the single $\T$-block $\varphi^{-1}[K]$ (the sets $\varphi^{-1}[K']$, $K'\ne K$, lie in other classes); by the second and third descriptions they are the $\N(b)$-blocks in $\Omega$ and $\psi^{-1}[K]$, resp.\ $\chi^{-1}[K]$. Comparing gives the claims about $a$ and $b$. An $\N(c)$-block $E\subseteq\Omega$ is a block of $z$ of type (iii) or (iv); type (iii) is impossible, since $E\subseteq\Omega\setminus K$, which is a union of $\N(d)$-blocks, whereas a type (iii) class is a union of $\T(d)$-blocks. So $E$ is of type (iv), an $\N(d)$-block; symmetrically.
+
+\emph{(F2) If $\Omega=\Omega_K$ with $K$ of type \textup{(ii)}}, then $\Omega$ contains exactly one class $K'$ of type (iii), and $\Omega=\Omega'_{K'}$; $S_c=K$ is an $\N(d)$-block, $S_d=K'$ is an $\N(c)$-block, and the remaining $\N(c)$-blocks in $\Omega$ are exactly the remaining $\N(d)$-blocks in $\Omega$ (the type (iv) classes inside $\Omega$). The sets $S_a=\varphi^{-1}[K]$ and $S_b=\psi^{-1}[K]=\chi^{-1}[K']$ are $\N$-blocks of $w$, and either $S_a=S_b$ and $\N(a)|_\Omega=\N(b)|_\Omega$, or $S_a\cap S_b=\emptyset$, $S_a\in\N(b)$, $S_b\in\N(a)$ and $\N(a)|_\Omega\setminus\{S_b\}=\N(b)|_\Omega\setminus\{S_a\}$. Indeed, $\Omega$ contains a $\T(b)$-block $B$ and hence $\chi(B)$, so it meets $\supp(d)$ and $\Omega=\Omega'_{K'}$ for some $K'$ of type (i) or (iii); as $K'\subseteq\Omega\setminus K\subseteq\bigcup\N(c)$, $K'$ is of type (iii), and it is the only type (iii) class in $\Omega$ because $\Omega\setminus K'$ is a union of $\N(d)$-blocks; $\Omega\cap\supp(c)=K$ excludes further classes of types (i), (ii). The $\N(c)$-blocks in $\Omega$ are the blocks of $z$ of types (iii), (iv) in $\Omega$, i.e.\ $K'$ and the type (iv) classes, and symmetrically for $d$. Finally the blocks of $w$ inside $\Omega$ are the $\N(a)$-blocks in $\Omega$ together with $\varphi^{-1}[K]$, and also the $\N(b)$-blocks together with $\psi^{-1}[K]$, and also the $\N(b)$-blocks together with $\chi^{-1}[K']$; a union of $\T(b)$-blocks is not an $\N(b)$-block, so $\psi^{-1}[K]=\chi^{-1}[K']$, and comparing the first two descriptions gives the alternative.
+
+\smallskip
+\emph{Step 4: the hypothesis $\theta_a(d)=w$.} By Lemma~\ref{lem:PX}(a), the blocks of $\theta_a(d)$ inside $\supp(a)$ are the sets $L\cap\supp(a)$, $L$ a class of $\varepsilon_a\vee\varepsilon_d$, transversal iff $L$ meets $\supp(d)$; and each $L$ lies in a class of $\Pi$. Since $\theta_a(d)=w$, we get from Step~2: in a class $\Omega$ of type (F1) all $\T(a)$-blocks contained in $W$ lie in one class of $\varepsilon_a\vee\varepsilon_d$; in a class of type (F2) all $\T(a)$-blocks contained in $S_a$ lie in one class $L$ of $\varepsilon_a\vee\varepsilon_d$, and $L$ does not meet $\supp(d)$. We show that both are impossible unless they are vacuous, i.e.\ that $|\T(c)\cap K|=1$ for $K$ of type (i) (Step~5) and that there is no $K$ of type (ii) (Step~6). Then $\T(z)=\T(c)$ and $\N(z)=\N(c)$ by Step~1, i.e.\ $z=c$; and then $w=\theta_a(c)=a$ and $w=\theta_b(c)=b$, so $a=b$, proving the theorem.
+
+\smallskip
+\emph{Step 5: in a class $\Omega$ of type \textup{(F1)}, distinct $\T(a)$-blocks lie in distinct classes of $\varepsilon_a\vee\varepsilon_d$.} Let $\mathcal N'=\N(a)|_\Omega=\N(b)|_\Omega$ and $\mathcal N=\N(c)|_\Omega=\N(d)|_\Omega$, and let $\mathcal G$ be the graph on $\mathcal N'\sqcup\mathcal N$ joining blocks that meet. Since the blocks of $\mathcal N'$ are $a$-blocks and $b$-blocks and those of $\mathcal N$ are $c$-blocks and $d$-blocks, $\mathcal G$ is a subgraph of each of $\Gamma(a,c)$, $\Gamma(b,c)$, $\Gamma(b,d)$, $\Gamma(a,d)$, so each component $\kappa$ of $\mathcal G$ lies in a single component of each of them. By Lemma~\ref{lem:PX}(c) for the three matched pairs, $\kappa$ touches at most one $\T(a)$-block, at most one $\T(b)$-block, at most one $\T(c)$-block and at most one $\T(d)$-block, and if it touches $A$ and $C$ then $C=\varphi(A)$; if $B$ and $C$ then $C=\psi(B)$; if $B$ and $D$ then $D=\chi(B)$. Moreover, if $\kappa$ touches a $\T(a)$-block $A$ then the point of contact lies in $W=\bigcup\T(b)$, so $\kappa$ touches a $\T(b)$-block, and conversely; likewise for $c$ and $d$, as $K=\bigcup\T(c)=\bigcup\T(d)$. Consequently, if $\kappa$ touches $A$ and $D$ then $D=\sigma(A)$, where $\sigma=\chi\psi^{-1}\varphi$: $\kappa$ touches some $B$ and some $C$, and $C=\varphi(A)=\psi(B)$, $D=\chi(B)$. The same holds for a point $x\in W\cap K$ and the blocks $A,B,C,D$ containing it, since meeting blocks lie in the same component.
+
+Now let $A_1\ne A_2$ be $\T(a)$-blocks in the same class of $\varepsilon_a\vee\varepsilon_d$, and take a path in $\Gamma(a,d)$ from $A_1$ to $A_2$ with no $\T(a)$-block in its interior. The interior vertices are blocks of $\mathcal N'$, of $\mathcal N$ and $\T(d)$-blocks. A maximal interior segment without $\T(d)$-blocks is a connected subgraph of $\mathcal G$, hence lies in a component $\kappa$. If the path contains no $\T(d)$-block, a single $\kappa$ touches $A_1$ and $A_2$, which is impossible. Otherwise let $D_1,\dots,D_r$ be the $\T(d)$-blocks on the path in order. The segment from $A_1$ to $D_1$ is empty ($A_1$ meets $D_1$) or a $\kappa$ touching $A_1$ and $D_1$; either way $D_1=\sigma(A_1)$, and likewise $D_r=\sigma(A_2)$. The segment between $D_i$ and $D_{i+1}$ is a $\kappa$ touching both, so $D_i=D_{i+1}$. Hence $\sigma(A_1)=\sigma(A_2)$ and $A_1=A_2$, a contradiction.
+
+\smallskip
+\emph{Step 6: in a class $\Omega$ of type \textup{(F2)}, some $\T(a)$-block lies in a class of $\varepsilon_a\vee\varepsilon_d$ meeting $\supp(d)$.} Write $\sim$ for ``in the same class of $\varepsilon_a\vee\varepsilon_d$'' (for blocks of $a$ and of $d$ inside $\Omega$), $\mathcal N$ for the common $\N(c)$/$\N(d)$-blocks in $\Omega$, and recall that the $c$-blocks in $\Omega$ are the $\T(c)$-blocks, $K'$ and $\mathcal N$, the $d$-blocks are the $\T(d)$-blocks, $K$ and $\mathcal N$, every $\N(b)$-block in $\Omega$ is an $\N(a)$-block or $S_a$, and every $\N(a)$-block in $\Omega$ is an $\N(b)$-block or $S_b$. Suppose, for a contradiction, that no $\T(a)$-block is $\sim$ to a $\T(d)$-block.
+
+($\alpha$) \emph{Every $\T(a)$-block $A$ satisfies $A\sim K$.} Take a path in $\Gamma(a,c)$ from $A$ to $\varphi(A)$ with no $\T$-block in its interior; its interior $c$-blocks are blocks of $\mathcal N$ or $K'$, and its interior $a$-blocks are $\N(a)$-blocks. If $K'$ occurs, consider its first occurrence and the $a$-block $u$ preceding it ($u=A$ if $K'$ comes first): $u$ meets $K'=\bigcup\T(d)$, hence some $\T(d)$-block $D$, so $u\sim D$; the path from $A$ to $u$ is a path in $\Gamma(a,d)$ (its $c$-blocks are in $\mathcal N$), so $A\sim D$, contrary to assumption. So $K'$ does not occur, and the $a$-block $u$ preceding $\varphi(A)$ ($u=A$ if the path has length one) meets $\varphi(A)\subseteq K$; as $K$ is a $d$-block, $u\sim K$ and $A\sim K$.
+
+($\beta$) Hence $K\not\sim D$ for every $\T(d)$-block $D$.
+
+($\gamma$) \emph{Every $\T(d)$-block $D$ satisfies $S_b\sim D$, and $S_a\ne S_b$.} Let $D=\chi(B)$ and take a path in $\Gamma(b,d)$ from $B$ to $D$ with no $\T$-block in its interior; its interior $d$-blocks are in $\mathcal N\cup\{K\}$ and its interior $b$-blocks are $\N(a)$-blocks or $S_a$. If $S_a$ occurs, look at its last occurrence and the $d$-block $v$ following it: $v$ meets $S_a=\bigcup\T(a)$, hence some $\T(a)$-block $A$, and the path from $v$ to $D$ is a path in $\Gamma(a,d)$, so $A\sim D$, contrary to assumption. If $K$ occurs, the path from $K$ to $D$ is a path in $\Gamma(a,d)$, contradicting ($\beta$). So the interior consists of blocks of $\mathcal N$ and $\N(a)$-blocks, and the first $d$-block $v_1$ meets $B$. If $S_a=S_b$ then $B\cap v_1$ contains a point of some $\T(a)$-block $A$, and $A\sim D$ along the path, a contradiction; so $S_a\ne S_b$, $S_b$ is an $a$-block meeting $v_1$, and $S_b\sim D$ along the path (if the path is $B,D$ alone, $S_b$ meets $D$). As $\chi$ is a bijection onto the $\T(d)$-blocks in $\Omega$, this holds for every $D$.
+
+($\delta$) Now take any $\T(b)$-block $B$ and a path $B=u_0,v_1,u_1,v_2,\dots,v_m=\psi(B)$ in $\Gamma(b,c)$ with no $\T$-block in its interior: the $c$-blocks $v_j$ ($j<m$) are in $\mathcal N\cup\{K'\}$ and the $b$-blocks $u_j$ ($1\le j<m$) are $\N(a)$-blocks or $S_a$. We show by induction on $j$ that $u_j$ is an $\N(a)$-block with $u_j\sim S_b$ (where $u_0=S_b\supseteq B$). For $u_{j-1}$ (an $a$-block $\sim S_b$) and $v_j$: if $v_j\in\mathcal N$ then $v_j$ is a $d$-block meeting $u_{j-1}$, so $v_j\sim S_b$, and if $v_j=K'$ then $u_{j-1}$ meets some $\T(d)$-block $D\sim S_b$ (by ($\gamma$)). If now $u_j=S_a$: in the first case $v_j$ meets $S_a$ in a point of some $\T(a)$-block $A$, so $A\sim v_j\sim S_b\sim D$ for any $D$; in the second case a point of $S_a\cap K'$ lies in some $\T(a)$-block $A$ and some $\T(d)$-block $D$, so $A\sim D$; both contradict the assumption. So $u_j$ is an $\N(a)$-block, and $u_j\sim v_j\sim S_b$ resp.\ $u_j\sim D\sim S_b$ (it meets $K'$ in a point of some $D$). Finally $u_{m-1}$ (or $S_b$ itself if $m=1$) meets $\psi(B)\subseteq K$, so $K\sim S_b\sim D$, contradicting ($\beta$). This contradiction proves Step~6 and the theorem. \qed
+
+\begin{remark}\label{rem:wiring}
+(1) The hypothesis $\theta_a(d)=\theta_a(z)$ was used only in Step~4; Theorem~\ref{thm:S} below removes it. (2) The mechanism is different from that of the matching-pattern conditions. There the matchings alone carry the information (Theorem~\ref{thm:master}); here the commuting pair $c,d$ forces $c$ and $d$ to share their $\N$-blocks (Lemma~\ref{lem:PX}(b)), and the equality $\theta_a(z)=\theta_b(z)$ forces $a$ and $b$ to share theirs (Step~3); through these shared blocks the matchings $a\bowtie c$, $b\bowtie c$, $b\bowtie d$ transport the pairing of $\T$-blocks to a pairing between $a$ and $d$. The hubs $K$, $K'$ of Step~6 (a union of $\T(c)$-blocks which is a single $\N(d)$-block, and vice versa) are the only place where this is delicate.
+\end{remark}
+
+\subsection{The full wiring condition}\label{subsec:S}
+
+\begin{theorem}\label{thm:S}
+In every partition monoid $\P_X$, for projections $a,b,c,d$,
+\[
+a\bowtie c,\quad b\bowtie c,\quad b\bowtie d,\quad cd=dc,\quad \theta_a(cd)=\theta_b(cd)\ \Longrightarrow\ a\bowtie d .
+\tag{S}
+\]
+In the binary notation: $c*a=a$, $a*c=c$, $c*b=b$, $b*c=c$, $d*b=b$, $b*d=d$, $d*c=c*d$, $(d*c)*a=(d*c)*b$ imply $d*a=a$ and $a*d=d$.
+\end{theorem}
+
+Condition (S) implies Theorem~\ref{thm:wiring} in every projection algebra (Prover9 finds the derivation in a fraction of a second): $a\bowtie d$ gives $\theta_a(d)=a$, so $\theta_a(z)=a=\theta_a(c)$ with $z\le c$, and $\theta_a$ is injective on $c^{\downarrow}$ (its inverse there is $\theta_c$), so $z=c$; then $w=\theta_a(c)=a$ and $w=\theta_b(c)=b$. The converse fails, even in the presence of \eqref{eq:Q1} and the triangle condition: see Example~\ref{ex:P9}.
+
+\begin{proof}
+We keep the notation of the proof of Theorem~\ref{thm:wiring}; Steps 1--3 there did not use the extra hypothesis. Since $\varepsilon_a\vee\varepsilon_d\le\Pi$, it suffices to show that inside each class $\Omega$ of $\Pi$ meeting $\supp(a)\cup\supp(d)$ every class of $\varepsilon_a\vee\varepsilon_d$ contains exactly one $\T(a)$-block and one $\T(d)$-block. Classes of type (F1) are handled by Step~5 and its mirror image: Step~5 shows that distinct $\T(a)$-blocks are not connected in $\Gamma(a,d)$; the same argument with the roles of $a$ and $d$ exchanged (a path between distinct $\T(d)$-blocks with no interior $\T(d)$-block; the segments between consecutive $\T(a)$-blocks are components $\kappa$ touching two $\T(a)$-blocks, which is impossible, so there is at most one $\T(a)$-block on the path, and it is $\sigma^{-1}$ of both ends) shows that distinct $\T(d)$-blocks are not connected; and every $\T(a)$-block $A$ is connected to a $\T(d)$-block, because a path in $\Gamma(a,c)$ from $A$ to $\varphi(A)$ ends with an $a$-block meeting $\varphi(A)\subseteq K=\bigcup\T(d)$, hence meeting some $\T(d)$-block, and its other vertices are $\Gamma(a,d)$-vertices; dually for $\T(d)$-blocks. It remains to treat a class $\Omega$ of type (F2), which we do in three steps: a bound on $p=|\T(a)\cap\Omega|$, a reduction to a finite combinatorial statement, and a verification of that statement by computer.
+
+\smallskip
+\emph{The bound.} We use the notation of Step~6: $K=S_c$, $K'=S_d$, $\mathcal N$ the common $\N(c)/\N(d)$-blocks in $\Omega$, and the alternative (B1) $S_a=S_b$ with $\N(a)|_\Omega=\N(b)|_\Omega$, or (B2) $S_a\cap S_b=\emptyset$ with $S_a\in\N(b)$, $S_b\in\N(a)$ and the remaining $\N(a)$- and $\N(b)$-blocks in $\Omega$ equal; in both cases write $\mathcal N'$ for the common ones. Let $\mathcal G$ be the graph on $\mathcal N'\sqcup\mathcal N$ joining blocks that meet, with components $\kappa$; as in Step~5, every $\kappa$ lies in a single component of each of the four graphs $\Gamma(a,c)$, $\Gamma(b,c)$, $\Gamma(b,d)$, $\Gamma(a,d)$, and (by the three hypotheses) touches at most one $\T(a)$-, one $\T(b)$-, one $\T(c)$- and one $\T(d)$-block. Now let $A\in\T(a)$ and take a path in $\Gamma(a,c)$ from $A$ to $\varphi(A)$ with no $\T$-block in its interior. Its interior vertices are plain blocks, $K'$ and (in case (B2)) $S_b$. If it contains no hub, it is $A$ followed by a single $\kappa$ touching $A$ and $\varphi(A)$, or $A$ meets $\varphi(A)$; in case (B1) the point of contact of $\kappa$ (or of $A$) with $A$ lies in some $B\in\T(b)$ and $\kappa$ (or that point) meets $K$, so $B$ lies in the component of $K$ in $\Gamma(b,d)$ and in the component of $\varphi(A)$ in $\Gamma(b,c)$, whence $A=\varphi^{-1}\psi(B_K)$ where $B_K$ is the unique $\T(b)$-block in the $\Gamma(b,d)$-component of $K$; in case (B2) the point of contact lies in $S_a$, so $\varphi(A)$ lies in the component of $S_a$ in $\Gamma(b,c)$, whence $A=\varphi^{-1}(C_a)$ where $C_a$ is the unique $\T(c)$-block of that component. If the path contains $K'$ then $A$ lies in the component of $K'$ in $\Gamma(a,c)$, which contains a unique $\T(a)$-block; and if it contains $S_b$ then $A$ lies in the component of $S_b$ in $\Gamma(a,c)$, again with a unique $\T(a)$-block. Hence $p\le2$ in case (B1) and $p\le3$ in case (B2).
+
+\smallskip
+\emph{The reduction.} Every point of $\Omega$ lies in one block of each of $a,b,c,d$. On the $a$-side its blocks are either a pair $(A,B)$ of $\T$-blocks (case (B1)), or $(A,S_a)$ or $(S_b,B)$ (case (B2)), or a common block $F\in\mathcal N'$; on the $c$-side they are $(C,K)$, $(K',D)$ or a common $E\in\mathcal N$. The four graphs $\Gamma(\cdot,\cdot)$, and hence the truth of the hypotheses and of the conclusion, depend only on which pairs (an $a$-side datum, a $c$-side datum) occur as points. Points whose two data are both plain lie in a component $\kappa$ of $\mathcal G$, and in all four graphs the blocks of $\kappa$ are connected to each other and to exactly the $\T$-blocks (and, through them, hubs) that $\kappa$ touches. Consequently the component structure of the four graphs is determined by (i) the set of \emph{direct overlaps}, i.e.\ pairs of a special $a$-side datum and a special $c$-side datum occurring as a point, and (ii) the set of \emph{types} of the components $\kappa$, the type of $\kappa$ being the set of $\T$-blocks it touches (at most one of each of the four kinds, and in case (B1) a $\T(a)$-block iff a $\T(b)$-block, since the contact points lie in cells $A\cap B$, which must be nonempty). Two components of the same type can be merged without changing anything, and a component touching no $\T$-block is irrelevant. So a class of type (F2) is described, up to the equivalence that matters, by a subset of the at most $(p+1)^4$ types and a set of direct overlaps, subject to: every $\T$-block occurs in some type or overlap (blocks are nonempty), and in case (B1) a type or overlap involving the cell $(A,B)$ requires that cell to be nonempty, i.e.\ to occur.
+
+\smallskip
+\emph{The verification.} For each $p\le6$ and each of the cases (B1), (B2) we encoded the finitely many such descriptions as a propositional formula (presence variables for types, overlaps and cells; reachability in each of the four finite graphs by iterated squaring), added the fineness of $\Gamma(a,c)$, $\Gamma(b,c)$, $\Gamma(b,d)$ and the negation of the fineness of $\Gamma(a,d)$, and found the formula unsatisfiable (three different SAT solvers, well under a second each; \texttt{hubtypes.py}). Together with the bound $p\le3$ this proves the theorem in classes of type (F2). (The same encoding shows that classes of type (F2) with $p\ge3$ do not exist at all, so the actual bound is $p\le2$; and a randomised test with an independent implementation of the reachability found no counterexample either, \texttt{hubcheck\_rand.py}.)
+\end{proof}
+
+\begin{example}\label{ex:P9}
+Let $\mathfrak P_9=\{a,b,c,d,m,n,k,w,z\}$ with $\theta$ given by the table (rows $p$, columns $q$, entry $\theta_p(q)$):
+\[
+\begin{array}{c|ccccccccc}
+ & a & b & c & d & m & n & k & w & z\\ \hline
+a & a & m & a & m & m & m & m & w & w\\
+b & m & b & b & b & m & m & m & w & w\\
+c & c & c & c & z & n & n & z & z & z\\
+d & k & d & z & d & k & z & k & z & z\\
+m & m & m & m & m & m & m & m & w & w\\
+n & n & n & n & z & n & n & z & z & z\\
+k & k & k & z & k & k & z & k & z & z\\
+w & w & w & w & w & w & w & w & w & w\\
+z & z & z & z & z & z & z & z & z & z
+\end{array}
+\]
+It is $\mathfrak P$ with a middle layer inserted: the matched pairs are $a\bowtie c$, $b\bowtie c$, $b\bowtie d$, $m\bowtie n$, $m\bowtie k$, $w\bowtie z$; $m\le a,b$, $n\le c$, $k\le d$, $w\le m$, $z\le n,k$; and $\theta_a(d)=\theta_a(b)=\theta_b(a)=m$, $\theta_d(a)=k$, $\theta_c(d)=\theta_d(c)=z$, $\theta_a(z)=\theta_b(z)=w$. Mace4 produced it as a model of the projection algebra axioms, \eqref{eq:Q1}, the triangle clause and the quasi-identity of Theorem~\ref{thm:wiring}, with the hypotheses of (S) as ground equations and $\theta_a(d)\ne a$ (there is none of order $\le8$; the run needs the memory limit raised because of the six-variable triangle clause). So $\mathfrak P_9$ satisfies \eqref{eq:Q1}, the triangle condition and Theorem~\ref{thm:wiring}, but violates (S): the pair $a,d$ is only ``half wired'', $\theta_a(d)=m$ lying strictly between $w$ and $a$. By Theorem~\ref{thm:S} it does not embed in any $\P(\P_X)$ (the SAT search confirms this for $\P(\P_m)$, $m\le8$), and any regular $*$-semigroup with projection algebra $\mathfrak P_9$ (it has at least $16+9+4=29$ elements) is a further finite counterexample to sufficiency which Theorem~\ref{thm:wiring} does not detect. Thus (S) is the condition to keep.
+\end{example}
+
+\subsection{Graph semigroups: the complete answer}\label{subsec:graphthm}
+
+For the family of Section~\ref{subsec:graphsg} the two conditions \eqref{eq:Q1} and (S) are also sufficient, and both have a transparent graph-theoretic meaning. For a colouring $\bot\colon V\to B$ write $V_m=\bot^{-1}(m)$, and for $m\ne n$ let $G[V_m,V_n]$ be the bipartite graph of edges between $V_m$ and $V_n$.
+
+\begin{theorem}\label{thm:graphsg}
+Let $G=(V,E)$ be a graph, $B$ a set and $\bot\colon V\to B$ a map. The following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $Q(G,\bot)$ $*$-embeds in some partition monoid;
+\item the projection algebra $V\sqcup B$ of $Q(G,\bot)$ embeds in some $\P(\P_X)$;
+\item $V\sqcup B$ satisfies \eqref{eq:Q1} and (S);
+\item $\bot$ is a proper colouring, and for any two colours $m\ne n$ the bipartite graph $G[V_m,V_n]$ contains no induced path $a-c-b-d$ with $\bot a=\bot b=m$ and $\bot c=\bot d=n$; equivalently, every $G[V_m,V_n]$ is a disjoint union of complete bipartite graphs and isolated vertices.
+\end{enumerate}
+When they hold, $Q(G,\bot)$ embeds in $\P_X$ with $|X|=|V|+\beta+2|B|$, where $\beta$ is the number of connected components with at least one edge of the graphs $G[V_m,V_n]$, $m\ne n$, and the image consists of elements of rank $\le1$.
+\end{theorem}
+
+\begin{proof}
+(i)$\Rightarrow$(ii) is clear and (ii)$\Rightarrow$(iii) is \eqref{eq:Q1} together with Theorem~\ref{thm:S}.
+
+(iii)$\Rightarrow$(iv). By Lemma~\ref{lem:graphsg}, \eqref{eq:Q1} says that $\bot$ is proper. We work out what (S) says in $V\sqcup B$. A vertex and a bottom element are never matched ($\theta_v(m)=\bot v\ne v$), so in an instance of (S) either all of $a,b,c,d$ lie in $B$, where everything is matched and the conclusion holds, or all lie in $V$, with $a\bowtie c$, $b\bowtie c$, $b\bowtie d$ meaning equality or adjacency. Two distinct vertices $c,d$ commute iff $\theta_c(d)=\theta_d(c)$, i.e.\ iff they are non-adjacent with $\bot c=\bot d$ (if $c\bowtie d$ the two values are $c\ne d$). If $c=d$ then $cd=c$, and $\theta_a(c)=a$, $\theta_b(c)=b$, so the last hypothesis forces $a=b$ and the conclusion $a\bowtie d=b\bowtie d$ holds. If $c\ne d$ then $cd=\bot c\in B$, $\theta_a(cd)=\bot a$ and $\theta_b(cd)=\bot b$. Hence, for a proper colouring, (S) is exactly the statement
+\[
+a\bowtie c,\quad b\bowtie c,\quad b\bowtie d,\quad c\ne d,\quad \bot c=\bot d,\quad \bot a=\bot b\ \Longrightarrow\ a\bowtie d\qquad(a,b,c,d\in V).
+\]
+An induced path $a-c-b-d$ in some $G[V_m,V_n]$ with $a,b\in V_m$, $c,d\in V_n$ satisfies the hypotheses ($c,d$ are distinct and, having the same colour, non-adjacent), so (S) gives $a\bowtie d$, i.e.\ $ad\in E$, contradicting ``induced''. Finally, a bipartite graph without induced $4$-vertex paths is a disjoint union of complete bipartite graphs: if a connected component is not complete bipartite, choose non-adjacent $p\in V_m$, $q\in V_n$ in it at minimal distance; the distance is odd and $\ge3$, and the first four vertices of a shortest path from $p$ to $q$ form an induced path $p-c-b-d$ with $b\in V_m$, $c,d\in V_n$ ($p\not\sim d$ by minimality). The converse is obvious.
+
+(iv)$\Rightarrow$(i). Let $\mathcal C$ be the set of connected components with at least one edge of the graphs $G[V_m,V_n]$, $m\ne n$; by (iv) each $C\in\mathcal C$ is complete bipartite between its two nonempty sides $C\cap V_m$ and $C\cap V_n$. Let
+\[
+X=\{x_v:v\in V\}\sqcup\{y_C:C\in\mathcal C\}\sqcup\{z_m,z_m':m\in B\},
+\]
+and for $m\in B$ let $\varepsilon_m$ be the partition of $X$ whose non-singleton blocks are $\{z_m,z_m'\}$ and, for every $C\in\mathcal C$ one of whose colours is $m$, the block $\{y_C\}\cup\{x_u:u\in C\setminus V_m\}$ (the point $y_C$ together with the points of the side of $C$ \emph{not} coloured $m$). These blocks are pairwise disjoint: a vertex $u\in V_n$ lies in at most one component of $G[V_m,V_n]$, and components with different second colours involve points $x_u$ of different colours. Note that $x_v$ is a singleton of $\varepsilon_{\bot v}$.
+
+\emph{Claim.} Let $v\in V_m$ and $v'\in V_n$. Then $x_v$ and $x_{v'}$ lie in the same class of $\varepsilon_m\vee\varepsilon_n$ iff $v\bowtie v'$ (i.e.\ $v=v'$ or $vv'\in E$). Indeed, if $m=n$ the join is $\varepsilon_m$, in which both points are singletons, and $v\bowtie v'$ iff $v=v'$ since the colouring is proper. If $m\ne n$ and $v$ lies in a component $C\in\mathcal C$ of $G[V_m,V_n]$, then the set $\{y_C\}\cup\{x_u:u\in C\}$ is a union of blocks of $\varepsilon_m$ (the block of $y_C$, which is $\{y_C\}\cup\{x_u:u\in C\cap V_n\}$, and the singletons $x_u$, $u\in C\cap V_m$) and likewise of $\varepsilon_n$, so it is a class of the join; if $v$ lies in no such component, $\{x_v\}$ is a class. So $x_v\sim x_{v'}$ iff $v,v'$ lie in a common component of $G[V_m,V_n]$ iff $vv'\in E$, by completeness of the components.
+
+Now define $\varphi\colon Q(G,\bot)\to\P_X$: $\varphi(v,v')$ is the partition of $X\sqcup X'$ whose blocks are the blocks of $\varepsilon_{\bot v}$ on $X$ and of $\varepsilon_{\bot v'}$ on $X'$, except that the two singletons $\{x_v\}$ and $\{x'_{v'}\}$ are merged into one transversal block; and $\varphi(m,n)$ consists of the blocks of $\varepsilon_m$ on $X$ and of $\varepsilon_n$ on $X'$ (rank $0$). Clearly $\varphi(x^*)=\varphi(x)^*$, and $\varphi$ is injective: $\varphi(x)$ determines its rank, its upper and lower partitions (which determine the colours, since $\{z_m,z_m'\}$ is a block of $\varepsilon_m$ only) and, in rank $1$, the transversal pair $(x_v,x'_{v'})$. For the products, consider $\varphi(v,q)\varphi(r,s)$ with $v,q,r,s\in V$. The only point of the upper row of $\varphi(v,q)$ connected to the middle row is $x_v$, and its partner there is $x_q$; the middle row is glued by $\varepsilon_{\bot q}\vee\varepsilon_{\bot r}$, so by the Claim $x_q$ reaches the point $x_r$, and through it the lower point $x'_s$, iff $q\bowtie r$. Hence the product has the upper blocks of $\varepsilon_{\bot v}$, the lower blocks of $\varepsilon_{\bot s}$, and the transversal block $\{x_v,x'_s\}$ if $q\bowtie r$ and no transversal block otherwise: it is $\varphi(v,s)$ or $\varphi(\bot v,\bot s)$, as required. If one of the factors has rank $0$ there is no transversal block in the product, whose upper and lower partitions are those of the first and the last factor: $\varphi(m,n)\varphi(r,s)=\varphi(m,\bot s)$, $\varphi(v,q)\varphi(m,n)=\varphi(\bot v,n)$, $\varphi(m,n)\varphi(m',n')=\varphi(m,n')$. So $\varphi$ is an injective $*$-homomorphism.
+\end{proof}
+
+\begin{remark}\label{rem:graphthm}
+(1) For an induced subgraph $G'=G[V']$ the semigroup $Q(G',\bot|_{V'})$ is a $*$-subsemigroup of $Q(G,\bot)$ (products of pairs over $V'\sqcup\bot(V')$ stay there). So a non-embeddable $Q(G,\bot)$ with $\bot$ proper contains a copy of $\mathfrak Q$, and $\mathfrak Q$ is the smallest non-embeddable graph semigroup satisfying \eqref{eq:Q1}; the ``finite list of forbidden coloured subgraphs'' consists of the monochromatic edge and the bichromatic path $a-c-b-d$.
+
+(2) The theorem was found by a computer survey (\texttt{graphsg\_survey.py}): for the $108$ coloured graphs with at most $4$ vertices (up to isomorphism and renaming of colours) the projection algebra embeds in some $\P(\P_m)$, $m\le5$, exactly when (iv) holds (the search was run for the $48$ proper colourings; the others fail \eqref{eq:Q1}), and then already for $m\le4$; the triangle condition holds in all of them. The explicit embedding of the proof was then verified by computer for all $788$ coloured graphs with $5$ vertices ($190$ embeddable) and all $13\,712$ with $6$ vertices ($1\,824$ embeddable) (\texttt{graphsg\_thm.py}). The construction is not economical: for $\mathfrak Q$ with $\bot$ injective it uses $|X|=4+3+8=15$ while $\P_4$ suffices.
+
+(3) The triangle condition holds in every $Q(G,\bot)$ with $\bot$ proper, and for a trivial reason. Three pairwise commuting projections with a common pairwise product $w$ are either all equal or three distinct pairwise non-adjacent vertices of one colour $w\in B$ (or elements of $B$, all equal to $w$); a triangle configuration with $w\ne z$ therefore has $a_i\in V_w$ and $b_i\in V_z$ with $w\ne z$, and then $a_i$ and $b_i$ cannot commute. Thus the family $Q(G,\bot)$ sees only \eqref{eq:Q1} and (S), and by the theorem it can witness no further obstruction: an embedding, when it exists, uses only projections of rank $\le1$, whose $\T$-blocks are single points. The layered graph semigroups of Section~\ref{subsec:layered}, which contain $\mathfrak P_9$, allow the commuting products to lie several levels below the matched vertices; they see no further obstruction either (Theorem~\ref{thm:layered}).
+\end{remark}
+
+\subsection{Layered graph semigroups}\label{subsec:layered}
+
+Theorem~\ref{thm:graphsg} shows that graph semigroups cannot witness obstructions beyond \eqref{eq:Q1} and (S). The algebra $\mathfrak P_9$ of Example~\ref{ex:P9} suggests a generalisation in which the bottom band of $Q(G,\bot)$ is replaced by another graph semigroup, and so on, so that the product of two unmatched projections may lie several levels below them. It turns out that this family, too, sees only \eqref{eq:Q1} and (S).
+
+\begin{definition}\label{def:layered}
+A \emph{layered graph} is a finite set $V=V_1\sqcup\dots\sqcup V_L$ ($L\ge1$) with a reflexive symmetric relation $\bowtie$ on each level $V_i$, complete on the bottom level $V_L$, and maps $\bot\colon V_i\to V_{i+1}$ ($1\le i<L$) which preserve $\bowtie$. For $p\in V_i$ and $\ell\ge i$ write $p_\ell=\bot^{\ell-i}p$ ($p$ descended to level $\ell$), call $p_L$ the \emph{root} of $p$ and $T_r=\{p:p_L=r\}$ the \emph{tree} of the root $r\in V_L$; the trees partition $V$. For $q,r\in V$ let
+\[
+f(q,r)=\min\{\ell\ge\max(\operatorname{lv}q,\operatorname{lv}r): q_\ell\bowtie r_\ell\},
+\]
+which exists because the bottom level is complete. The \emph{layered graph semigroup} $Q(V)$ is the set of pairs $(p,q)$ with $p,q$ on a common level, with $(p,q)^*=(q,p)$ and
+\[
+(p,q)(r,s)=(p_\ell,s_\ell),\qquad \ell=f(q,r).
+\]
+\end{definition}
+
+For $L=2$ this is $Q(G,\bot)$ ($V_1=V$, $V_2=B$); every map into a complete graph preserves $\bowtie$. The layered graph with $V_1=\{a,b,c,d\}$ ($a\bowtie c$, $b\bowtie c$, $b\bowtie d$), $V_2=\{m,n,k\}$ ($m\bowtie n$, $m\bowtie k$), $V_3=\{w,z\}$, $\bot\colon a,b\mapsto m$, $c\mapsto n$, $d\mapsto k$, $m\mapsto w$, $n,k\mapsto z$ gives a $29$-element regular $*$-semigroup whose projection algebra is $\mathfrak P_9$ (\texttt{layered.py}).
+
+\begin{lemma}\label{lem:layered}
+$Q(V)$ is a regular $*$-semigroup; its projections are the pairs $(p,p)$, identified with $V$, and
+\[
+\theta_p(q)=p_{f(p,q)},\qquad q\le p\iff q=p_\ell\text{ for some }\ell .
+\]
+(If $\bot$ does not preserve $\bowtie$, the multiplication is not associative.) Moreover:
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item \eqref{eq:Q1} holds in $Q(V)$ iff distinct matched elements have different roots;
+\item two elements $p,q$ commute iff $p_f=q_f$ for $f=f(p,q)$, and then $pq=p_f$; under \eqref{eq:Q1} this says that $p,q$ lie in a common tree, and $p_f$ is their least common ancestor;
+\item assuming \eqref{eq:Q1}, (S) holds in $Q(V)$ iff for every level $i$ and every two roots $r\ne r'$ the bipartite graph of matched pairs between $T_r\cap V_i$ and $T_{r'}\cap V_i$ contains no induced path on four vertices, i.e.\ is a disjoint union of complete bipartite graphs and isolated vertices;
+\item assuming \eqref{eq:Q1}, the triangle condition holds in $Q(V)$.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+Preservation of $\bowtie$ gives $q_\ell\bowtie r_\ell\Rightarrow q_{\ell'}\bowtie r_{\ell'}$ for $\ell'\ge\ell$, hence $f(q_k,r)=\max(k,f(q,r))$ for $k\ge\operatorname{lv}q$. So $((p,q)(r,s))(t,u)=(p_{\ell_2},u_{\ell_2})$ with $\ell_2=f(s_{\ell_1},t)=\max(f(q,r),f(s,t))$, $\ell_1=f(q,r)$, and symmetrically $(p,q)((r,s)(t,u))=(p_{\ell_4},u_{\ell_4})$ with $\ell_4=f(q,r_{\ell_3})=\max(f(s,t),f(q,r))$, $\ell_3=f(s,t)$. The identities $(xy)^*=y^*x^*$ and $xx^*x=x$ are clear ($f$ is symmetric and $f(q,q)=\operatorname{lv}q$). If $p\bowtie q$ but $\bot p\not\bowtie\bot q$ (so $\operatorname{lv}p+1<L$), then $((p,p)(q,q))(\bot q,\bot q)=(p,q)(\bot q,\bot q)=(\bot p,\bot q)$, while $(p,p)((q,q)(\bot q,\bot q))=(p,p)(\bot q,\bot q)=(p_\ell,q_\ell)$ with $\ell\ge\operatorname{lv}p+2$. The projections are the symmetric pairs, and $\theta_p(q)=(p,p)(q,q)(p,p)=(p_f,q_f)(p,p)=(p_f,p_f)$ with $f=f(p,q)$, since $f(q_f,p)=f$; so $\theta_p(q)=q$ iff $q=p_f$.
+
+(b) is the formula for $\theta$ together with the remark after Theorem~\ref{thm:hex}. Note that within a tree, $p_f\bowtie q_f$ with $p_f\ne q_f$ would be two distinct matched elements with a common descendant, so under \eqref{eq:Q1} ``matched'' means ``equal'' inside a tree and $f(p,q)$ is the level of the least common ancestor of $p$ and $q$.
+
+(a) Matched elements lie on a common level, so ``no common descendant'' means ``different roots''. If $p\bowtie q$ are distinct with a common root then $r=p_L=q_L$ satisfies $r\le p,q$ but $\theta_p(q)=p\ne q=\theta_q(p)$. Conversely let $r\le p$, $r\le q$ with $p\ne q$, say $r=p_\ell=q_\ell$; at the level $f=f(p,q)\le\ell$ the matched elements $p_f,q_f$ have the common descendant $r$, so $p_f=q_f$ and $\theta_p(q)=p_f=q_f=\theta_q(p)$.
+
+(c) Matched elements lie on a common level, so in an instance of (S) all of $a,b,c,d$ lie on one level $i$. If $c=d$ then $cd=c$, $\theta_a(c)=a$, $\theta_b(c)=b$ and the hypothesis $\theta_a(cd)=\theta_b(cd)$ gives $a=b$, so the instance is trivial. If $c\ne d$ then $cd=dc$ says by (b) that $c,d$ lie in a common tree, with $z:=c_f=d_f$, $f=f(c,d)$; since $a_f\bowtie c_f=z$ we get $f(a,z)=f$ and $\theta_a(z)=a_f$, similarly $\theta_b(z)=b_f$, so the last hypothesis says that $a,b$ lie in a common tree and their least common ancestor is at level $\le f$. By \eqref{eq:Q1} the tree of $a,b$ differs from that of $c,d$. Thus, writing $\mu(p,q)$ for the level of the least common ancestor of two elements of a tree, (S) says: for every path $a-c-b-d$ of matchings with $a,b\in T_r$, $c,d\in T_{r'}$, $r\ne r'$, if $\mu(a,b)\le\mu(c,d)$ then $a\bowtie d$. Applied to the reversed path $d-b-c-a$ (with $c,d$ in the role of $a,b$) it says the same under $\mu(c,d)\le\mu(a,b)$; one of the two always holds. So (S) is equivalent to: every path $a-c-b-d$ with $a,b\in T_r\cap V_i$ and $c,d\in T_{r'}\cap V_i$ closes up, $a\bowtie d$; that is, the bipartite graph in (c) has no induced $4$-vertex path, which (as in the proof of Theorem~\ref{thm:graphsg}) means that it is a disjoint union of complete bipartite graphs.
+
+(d) Let $a_1,a_2,a_3,b_1,b_2,b_3$ be a triangle configuration. By (b) the $a_i$ pairwise commute, so they lie in one tree; likewise the $b_i$ lie in one tree; and $a_i$ commutes with $b_i$, so all six lie in one tree. Then $a_1\bowtie b_2$ forces $a_1=b_2$ by (a), and similarly $a_2=b_3$, $a_3=b_1$. Hence $\{a_1,a_2,a_3\}=\{b_1,b_2,b_3\}$ and $w=a_1a_2=b_2b_3=z$.
+\end{proof}
+
+\begin{theorem}\label{thm:layered}
+For a layered graph $V$ the following are equivalent:
+\begin{enumerate}[label=\textup{(\roman*)},nosep]
+\item $Q(V)$ $*$-embeds in some partition monoid;
+\item the projection algebra $V$ of $Q(V)$ embeds in some $\P(\P_X)$;
+\item $V$ satisfies \eqref{eq:Q1} and (S);
+\item distinct matched elements have different roots, and for every level $i$ and every two roots $r\ne r'$ the bipartite graph of matched pairs between $T_r\cap V_i$ and $T_{r'}\cap V_i$ is a disjoint union of complete bipartite graphs and isolated vertices.
+\end{enumerate}
+When they hold, $Q(V)$ embeds in $\P_X$ with $|X|=|V|+|V_L|+\beta$, where $\beta$ is the number of complete bipartite components in (iv), and every $\T$-block of the image is a single point.
+\end{theorem}
+
+\begin{proof}
+(i)$\Rightarrow$(ii) is clear, (ii)$\Rightarrow$(iii) is \eqref{eq:Q1} and Theorem~\ref{thm:S}, and (iii)$\Leftrightarrow$(iv) is Lemma~\ref{lem:layered}(a),(c). For (iv)$\Rightarrow$(i) we generalise the construction of Theorem~\ref{thm:graphsg}, with trees in the role of colours and the non-root elements in the role of vertices. Let $\mathcal C$ be the set of complete bipartite components in (iv), over all levels $i<L$ and pairs of roots; each $C\in\mathcal C$ lies on one level and meets exactly two trees. Let
+\[
+X=\{x_v: v\in V\setminus V_L\}\sqcup\{y_C:C\in\mathcal C\}\sqcup\{z_r,z_r': r\in V_L\},
+\]
+and for a root $r$ let $\varepsilon_r$ be the partition of $X$ whose non-singleton blocks are $\{z_r,z_r'\}$ and, for each $C\in\mathcal C$ meeting $T_r$, the block $\{y_C\}\cup\{x_u: u\in C\setminus T_r\}$. These blocks are disjoint (an element lies in at most one component per level and pair of trees, and for a fixed $r$ the elements $x_u$ in the blocks belong to the other tree of $C$). As in the Claim in the proof of Theorem~\ref{thm:graphsg}, for $u\in T_r$ and $v\in T_{r'}$, $r\ne r'$, the points $x_u,x_v$ lie in a common class of $\varepsilon_r\vee\varepsilon_{r'}$ iff $u,v$ lie in a common component $C\in\mathcal C$, iff $u\bowtie v$; the class of $x_u$ is $\{y_C\}\cup\{x_w:w\in C\}$ or $\{x_u\}$, and in particular contains no other point $x_{u'}$ with $u'\in T_r$ on a different level. Note also that every $x_v$, $v\in T_r$, is a singleton of $\varepsilon_r$.
+
+For $p\in T_r$ let $\hat p$ be the projection with partition $\varepsilon_r$ whose $\T$-blocks are the singletons $\{x_{p_j}\}$, $\operatorname{lv}p\le j<L$ (the chain from $p$ down to, but excluding, the root); so $\hat r$ has rank $0$, $\rk\hat p=L-\operatorname{lv}p$, and $\supp\hat p$ determines $p$. We check $\theta_{\hat p}(\hat q)=\widehat{p_f}$, $f=f(p,q)$, using Lemma~\ref{lem:PX}(a). If $p,q\in T_r$, the join is $\varepsilon_r$ itself, whose classes meeting $\supp\hat p$ are the singletons $\{x_{p_j}\}$, transversal in $\theta_{\hat p}(\hat q)$ iff $x_{p_j}\in\supp\hat q$, i.e.\ iff $p_j=q_k$ for some $k\ge\operatorname{lv}q$, i.e.\ iff $j\ge f$ (the level of the least common ancestor); so $\theta_{\hat p}(\hat q)$ is $\varepsilon_r$ with the $\T$-blocks $\{x_{p_j}\}$, $j\ge f$, which is $\widehat{p_f}$. If $p\in T_r$, $q\in T_{r'}$ with $r\ne r'$, the classes of $\varepsilon_r\vee\varepsilon_{r'}$ meeting $\supp\hat p$ are the classes $K_j$ of the points $x_{p_j}$, each containing only this one $\T$-block of $\hat p$; $K_j$ meets $\supp\hat q=\{x_{q_k}:k\ge\operatorname{lv}q\}$ iff $p_j\bowtie q_k$ for some $k\ge\operatorname{lv}q$, which forces $k=j$, iff $j\ge\operatorname{lv}q$ and $p_j\bowtie q_j$, iff $j\ge f$ (by preservation of $\bowtie$ and the definition of $f$). So again $\theta_{\hat p}(\hat q)=\widehat{p_f}$. (For $q=r'$ a root, $\supp\hat q=\emptyset$ and $\theta_{\hat p}(\hat q)=\hat r=\widehat{p_L}$, as required; and $\theta_{\hat r}(\hat q)=\hat r$ for every $q$ since $\hat r$ has rank $0$.) Injectivity: $\varepsilon_r$ determines $r$ (the block $\{z_r,z'_r\}$), and the $\T$-blocks determine $p$. So $p\mapsto\hat p$ embeds the projection algebra.
+
+For the semigroup, send $(p,q)$ (with $p,q$ on level $i$) to the element $\varphi(p,q)$ whose upper and lower partitions are those of $\hat p$ and $\hat q$, with the transversal blocks $\{x_{p_j},x'_{q_j}\}$, $i\le j<L$. This is injective and $*$-compatible, and $\varphi(p,q)\varphi(r,s)=\varphi(p_\ell,s_\ell)$, $\ell=f(q,r)$: in the product, the upper point $x_{p_j}$ is joined to the middle point $x_{q_j}$, whose class in the middle join $\varepsilon_{T(q)}\vee\varepsilon_{T(r)}$ contains a point $x_{r_k}$, $k\ge\operatorname{lv}r$ (necessarily $k=j$), iff $j\ge f(q,r)$, by the two computations above, and then $x_{p_j}$ is joined to $x'_{s_j}$; for $j<\ell$ the block of $x_{p_j}$ in the product is the nontransversal singleton $\{x_{p_j}\}$, and the other blocks are unchanged. This is $\varphi(p_\ell,s_\ell)$.
+\end{proof}
+
+\begin{remark}\label{rem:layered}
+(1) The search behind the theorem (\texttt{layered\_search.py}, \texttt{layered\_search2.py}) enumerated the layered graphs with surjective descent maps and level sizes $(n_1,n_2,n_3)$, $n_1\le4$, $n_2\le3$, $n_3\le2$ (the largest shape $(4,3,2)$ only partly, the run having been interrupted), and the four-level shapes $(2,2,2,1)$, $(3,2,2,1)$, $(2,2,2,2)$, $(3,2,2,2)$; it computed their projection algebras, kept those satisfying \eqref{eq:Q1} (up to isomorphism) and tested the triangle condition, (S) and embeddability into $\P(\P_m)$, $m\le8$ (backtracking, then SAT). The triangle condition never failed, and every algebra satisfying (S) embedded, with $m\le7$; the trees (no matchings above the bottom level) need the largest $m$. The construction of the theorem was then verified as an injective $*$-homomorphism on all these structures and on several hundred random layered graphs with up to four levels, and the predicate (iv) was checked against \eqref{eq:Q1} and (S) computed from the table (\texttt{layered\_thm.py}).
+
+(2) In a layered graph every principal down-set $p^{\downarrow}$ is a chain, every value $\theta_p(q)$ lies in that chain, and (under \eqref{eq:Q1}) the commuting pairs are the pairs in a common tree. This is the reason why the triangle condition is invisible here: it needs two commuting triples with a common meet, which in a tree forces the triples to coincide. Any semigroup separating \eqref{eq:Q1}$+$(S) from embeddability must therefore have projections with non-chain down-sets (as $\P(Q_0)$ does, where the triangle condition fails), or must force $\T$-blocks of size $>1$; both constructions of this section use only singleton $\T$-blocks.
+\end{remark}
+
+\subsection{A fourth obstruction}\label{subsec:fourth}
+
+Theorems~\ref{thm:graphsg} and \ref{thm:layered} say where \emph{not} to look for further obstructions. A census of the projection algebras of order $7$ finds one.
+
+\emph{The census.} Mace4 enumerated the projection algebras of order $7$ satisfying \eqref{eq:Q1} and (S) (the axioms, the clause for \eqref{eq:Q1} and the two four-variable clauses for (S); the six-variable triangle clause was omitted and the triangle condition tested afterwards). To make the run resumable it was split into $49$ chunks by the values of $0*1$ and $1*0$, of which $21$ are redundant by the symmetry exchanging $0$ and $1$ (\texttt{pa7\_driver.sh}); isofilter within the chunks and a canonical form across them (\texttt{pa7\_post.py}) leave $1\,663$ algebras up to isomorphism (there are $295$ of order $6$). All of them satisfy the triangle condition. For $1\,662$ of them the SAT search finds an embedding into $\P(\P_m)$ with $m\le6$. The remaining one has no embedding into $\P(\P_m)$ for $m\le8$ (the case $m=8$ takes a quarter of an hour). With the elements renamed it is the following algebra.
+
+\begin{definition}\label{def:P7}
+$\mathfrak P_7=\{a,c,b,x,u,v,w\}$ with $\theta$ given by (rows $p$, columns $q$, entry $\theta_p(q)$)
+\[
+\begin{array}{c|ccccccc}
+ & a & c & b & x & u & v & w\\ \hline
+a & a & a & u & u & u & u & u\\
+c & c & c & c & v & v & v & v\\
+b & w & b & b & w & w & w & w\\
+x & u & v & v & x & u & v & v\\
+u & u & u & u & u & u & u & u\\
+v & v & v & v & v & v & v & v\\
+w & w & w & w & w & w & w & w
+\end{array}
+\]
+\end{definition}
+
+In words: $a\bowtie c\bowtie b$ is a path; $u,v,w$ form a bottom rectangular band ($\theta_u\equiv u$ etc., all pairs matched); $u\le a$, $v\le c$, $w\le b$, and every value not listed so far is the bottom of the subscript---so far this is the projection algebra of the graph semigroup $Q(a-c-b,\bot)$ with the injective colouring $\bot a=u$, $\bot c=v$, $\bot b=w$, which embeds in $\P_4$. The new element is $x$, with $u,v\le x$: it commutes with $a$ and with $c$, $xa=u$, $xc=v$, and it sees $b$ as it sees $c$, $\theta_x(b)=v$, while $\theta_b(x)=w$. Deleting any element leaves a subalgebra (of order $6$, hence embeddable), so $\mathfrak P_7$ is a minimal non-embeddable algebra. There is a $19$-element regular $*$-semigroup $\mathfrak T_{19}$ with projection algebra $\mathfrak P_7$: adjoin to $Q(a-c-b,\bot)$ an element $x$ with $x\cdot(p,q)=(\lambda p,\bot q)$, $(p,q)\cdot x=(\bot p,\lambda q)$ for the pairs $(p,q)$ of top elements, $x\cdot(m,n)=(\lambda m,n)$, $(m,n)\cdot x=(m,\lambda n)$ for the pairs of bottom elements, $x^2=x$, $x^*=x$, where $\lambda a=\lambda u=u$ and $\lambda c=\lambda b=\lambda v=\lambda w=v$ (\texttt{fourth.py} checks associativity and computes the projection algebra).
+
+$\mathfrak P_7$ satisfies \eqref{eq:Q1}, the triangle condition and (S) (by the census, and directly by computer), hence all the matching-pattern conditions. The obstruction is the following quasi-identity.
+
+\begin{proposition}\label{prop:R}
+Let
+\[
+a\bowtie c,\quad b\bowtie c,\quad xa=ax,\quad xc=cx,\quad \theta_x(b)=\theta_x(c)\ \Longrightarrow\ a\bowtie b .
+\tag{R}
+\]
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item (R) holds in $\P(\P_m)$ for $m\le5$ (all $580\,902$ instances of the hypotheses in $\P(\P_5)$ were checked), and for $m\le6$ in the following stronger sense: a SAT search for four projections of $\P_6$ satisfying the hypotheses with $\theta_a(b)\ne a$, or with $\theta_b(a)\ne b$, is unsatisfiable (\texttt{fourth.py}, \texttt{pa\_sat.py} with a partial table).
+\item (R) fails in $\mathfrak P_7$, with $(a,b,c,x)$ as named; it is the only instance. Theorem~\ref{thm:R} below proves (R) in every $\P_X$; the computations in (a) were the evidence that led to it.
+\item (R) holds in every projection algebra of order $\le7$ satisfying \eqref{eq:Q1} and (S) other than $\mathfrak P_7$, and in every projection algebra of order $\le6$ satisfying \eqref{eq:Q1} and the triangle condition, in particular in $\mathfrak P$; and it holds in $\mathfrak P_9$. Hence (R) is independent of \eqref{eq:Q1}, the triangle condition and (S): $\mathfrak P$ satisfies (R) but not (S), $\mathfrak P_7$ satisfies (S) but not (R), and $\P(Q_0)$ and $Q(K_2,\text{const})$ show the rest as before.
+\item In $\P(\P_5)$ the hypothesis $\theta_a(b)=\theta_a(x)$ (which also holds in $\mathfrak P_7$) does not strengthen (R): adding it changes nothing, and each of the five hypotheses listed is needed.
+\end{enumerate}
+\end{proposition}
+
+\begin{theorem}\label{thm:R}
+(R) holds in every partition monoid $\P_X$. Consequently $\mathfrak P_7$ embeds in no $\P(\P_X)$, $\mathfrak T_{19}$ embeds in no $\P_X$, and the smallest regular $*$-semigroup satisfying \eqref{eq:Q1}, the triangle condition and (S) that embeds in no partition monoid has order between $9$ and $19$.
+\end{theorem}
+
+\begin{proof}
+Let $a,b,c,x$ be projections of $\P_X$ with $a\bowtie c$, $b\bowtie c$, $xa=ax=:u$, $xc=cx=:v$ and $\theta_x(b)=v$. We use the notation of Lemma~\ref{lem:PX}; ``block'' means a block of the relevant partition $\varepsilon_p$ of $X$, and two blocks of different partitions are \emph{adjacent} if they meet. A \emph{chain} in a join $\varepsilon_p\vee\varepsilon_q$ is a sequence of blocks, alternately of $p$ and of $q$, in which consecutive blocks are adjacent; two blocks lie in a common class of the join iff they are joined by a chain. Write $A_1,\dots,A_s$ for the $\T(a)$-blocks, $C_i$ for the $\T(c)$-block matched with $A_i$ by $a\bowtie c$ and $B_i$ for the $\T(b)$-block matched with $C_i$ by $b\bowtie c$ (Lemma~\ref{lem:PX}(c)); $\Gamma_i$ and $\Delta_i$ denote the classes of $\varepsilon_a\vee\varepsilon_c$ and $\varepsilon_b\vee\varepsilon_c$ containing $C_i$, so that $\Gamma_i$ contains exactly the $\T$-blocks $A_i,C_i$ and $\Delta_i$ exactly $B_i,C_i$. Write $H$ for a generic $\T(x)$-block and $Y=X\setminus\supp x$.
+
+\smallskip
+\emph{Step 1: the commuting pairs.} By Lemma~\ref{lem:PX}(b) the classes of $\varepsilon_x\vee\varepsilon_a$ are of four types: the $\T(u)$-blocks $U_1,\dots,U_t$ (each a union of $A$'s and a union of $H$'s), the $\N(a)$-blocks inside $\supp x$ (unions of $H$'s), the $\N(x)$-blocks inside $\supp a$ (unions of $A$'s), and the common $\N$-blocks; and $\varepsilon_u=\varepsilon_x\vee\varepsilon_a$. Likewise for $c$, with the $\T(v)$-blocks $V_1,\dots,V_{t'}$. In particular every block of $a$ and every block of $c$ lies inside $\supp x$ or inside $Y$; every $A_i$ lies in some $U_l$ or in an $\N(x)$-block, and every $C_i$ in some $V_k$ or in an $\N(x)$-block. An $\N(x)$-block $M$ containing a $\T(c)$-block $C_i$ is a union of $C$'s; it is not an $\N(a)$-block (an $\varepsilon_a$-block which is a union of $\varepsilon_c$-blocks would be a class of $\varepsilon_a\vee\varepsilon_c$ containing $C_i$ and no $A$), so it is a union of $A$'s as well, and the class of $C_i$ in $\varepsilon_a\vee\varepsilon_c$, being made of the $A$'s and $C$'s inside $M$, is $A_i=C_i$. Hence, with $I=\{i:A_i\subseteq\supp u\}$:
+\[
+A_i\subseteq\supp u\iff C_i\subseteq\supp v,\qquad\text{and } A_i=C_i\subseteq Y\text{ for } i\notin I
+\]
+(if $A_i\subseteq\supp u\subseteq\supp x$ but $C_i\subseteq Y$, then $A_i=C_i\subseteq Y$, a contradiction). Similarly an $\N(x)$-block is an $\N(a)$-block iff it is an $\N(c)$-block. So \emph{$a$ and $c$ have the same blocks inside $Y$}, with the same labels. For $i\in I$ let $U_{l(i)}\supseteq A_i$ and $V_{k(i)}\supseteq C_i$.
+
+\emph{Step 2: two elementary facts.} (a) An $\N(a)$-block meets at most one $C$, an $\N(c)$-block meets at most one $A$ and at most one $B$, an $\N(b)$-block meets at most one $C$, a $C$ meets at most one $A$ and at most one $B$: for instance an $\N(a)$-block meeting $C_i$ and $C_j$ lies in $\Gamma_i\cap\Gamma_j$. (b) $u\bowtie v$, and $\theta_u(b)=u$, $\theta_v(b)=v$. Indeed $g=ac$ satisfies $gg^*=a$, $g^*g=c$, and $xg=xac=uc=uxc=uv=axc=acx=gx$; so $u=xgg^*x=(uv)(uv)^*=uvu$ and $v=xg^*gx=(uv)^*(uv)=vuv$. Since $u\le x$, $\theta_u(y)=\theta_u(\theta_x(y))$ for every projection $y$ (as $u=ux=xu$); so $\theta_u(b)=\theta_u(v)=u$ and $\theta_v(b)=\theta_v(v)=v$. By $u\bowtie v$ every class of $\varepsilon_u\vee\varepsilon_v=\varepsilon_x\vee\varepsilon_a\vee\varepsilon_c$ meeting $\supp u\cup\supp v$ contains exactly one $U$ and one $V$; since $\Gamma_i$ lies in such a class, $l(i)=l(j)$ iff $k(i)=k(j)$ for $i,j\in I$, i.e.\ the $A$'s inside $U_l$ are matched with the $C$'s inside one $V_{k(l)}$, and $U_l$ and $V_{k(l)}$ lie in one class of $\varepsilon_x\vee\varepsilon_a\vee\varepsilon_c$; two $\T(x)$-blocks lying in $U_l$ and $V_k$ respectively are connected in that join only if $k=k(l)$.
+
+\emph{Step 3: the hypothesis $\theta_x(b)=v$.} By Lemma~\ref{lem:PX}(a) the blocks of $\theta_x(b)$ are the $\N(x)$-blocks and the sets $U_K=K\cap\supp x$ (a union of $H$'s) for the classes $K$ of $\varepsilon_x\vee\varepsilon_b$ meeting $\supp x$, $U_K$ being transversal iff $K$ meets $\supp b$; and the blocks of $v$ are the $\N(x)$-blocks, the $\T$-blocks $V_k$ and the $\N(c)$-blocks inside $\supp x$. So the partition $\mathcal Q$ of $\supp x$ into the $V_k$ and the $\N(c)$-blocks inside $\supp x$ is also the partition induced by $\varepsilon_x\vee\varepsilon_b$: there is a class $K_k$ with $K_k\cap\supp x=V_k$, which meets $\supp b$, and for each $\N(c)$-block $\tilde N\subseteq\supp x$ a class $K_{\tilde N}$ with $K_{\tilde N}\cap\supp x=\tilde N$, which does not meet $\supp b$. Consequently every $\varepsilon_b$-block $Z$ meets $\supp x$ inside a single part of $\mathcal Q$.
+
+\emph{Step 4: the classes $\Delta_i$ avoid $\supp x$ except through $C_i$.} We claim that no $\N(c)$-block inside $\supp x$ lies in a $\Delta_i$. Suppose $\tilde N\subseteq\Delta_i$ and take a shortest chain $\tilde N=E_0,Z_1,E_1,Z_2,\dots,B_i$ in $\Delta_i$ ($Z$'s blocks of $b$, $E$'s blocks of $c$). $Z_1$ meets an $H\subseteq\tilde N$, so $Z_1\subseteq K_{\tilde N}$. Inductively all blocks of the chain lie in $K_{\tilde N}$: an $\varepsilon_b$-block meeting a block of $K_{\tilde N}$ lies in $K_{\tilde N}$; an $\N(c)$-block $E$ meeting such a $Z$ is an $\N(x)$-block (then $E\subseteq K_{\tilde N}$) or lies inside $\supp x$ (then the $H\subseteq E$ meeting $Z$ lies in $K_{\tilde N}\cap\supp x=\tilde N$, so $E=\tilde N$, excluded by minimality); and if $E=C_i$ then either $C_i\subseteq V_{k(i)}$, and the $H\subseteq V_{k(i)}$ meeting $Z$ would lie in $\tilde N$, or $C_i$ lies in an $\N(x)$-block, which is then in $K_{\tilde N}$. So $B_i\subseteq K_{\tilde N}$, contradicting $K_{\tilde N}\cap\supp b=\emptyset$. Consequently: every $\N(c)$-block in $\Delta_i$ lies in $Y$ and is an $\N(x)$-block and an $\N(a)$-block (Step~1); an $\varepsilon_b$-block $Z$ meeting $\supp x$ inside some $V_k$ meets a $C_p\subseteq V_k$, so $Z\subseteq\Delta_p$ and $Z\cap V_k\subseteq C_p$ by Step~2(a); and an $\varepsilon_b$-block meeting $\supp x$ inside an $\N(c)$-block $\tilde N$ lies in a class of $\varepsilon_b\vee\varepsilon_c$ containing $\tilde N$, hence containing no $B$ and no $C$.
+
+\emph{Step 5: the indices outside $I$.} Let $i\notin I$, so $A_i=C_i\subseteq Y$, and let $D$ be the class of $A_i$ in $\varepsilon_a\vee\varepsilon_b$. We claim that every $\varepsilon_a$-block in $D$ lies in $Y$. Otherwise take a shortest chain $A_i,Z_1,Y_1,\dots,Z_t,Y_t$ in $D$ from $A_i$ to a block $Y_t\subseteq\supp x$ of $a$; then $Y_1,\dots,Y_{t-1}\subseteq Y$ are blocks of $c$ (Step~1), so the chain up to $Z_t$ lies in $\varepsilon_b\vee\varepsilon_c$ and $Z_t\subseteq\Delta_i$. Now $Z_t$ meets $Y_t\subseteq\supp x$ inside one part of $\mathcal Q$ (Step~3): inside a $V_k$ is impossible, since then $Z_t\subseteq\Delta_p$ for a $C_p\subseteq V_k$, so $p=i$ and $C_i\subseteq\supp v$; and inside an $\N(c)$-block $\tilde N$ is impossible since then $\tilde N\subseteq\Delta_i$, contradicting Step~4. So all blocks of $a$ in $D$ are blocks of $c$, $D$ is contained in $\Delta_i$, and $D$ contains no $A$ or $B$ other than $A_i$ and $B_i$. Moreover $B_i\in D$: a chain from $C_i=A_i$ to $B_i$ in $\Delta_i$ has interior $\varepsilon_c$-blocks which are $\N(a)$-blocks (Step~4), so it is a chain in $\varepsilon_a\vee\varepsilon_b$. Thus the classes of $\varepsilon_a\vee\varepsilon_b$ containing $A_i$ or $B_i$ with $i\notin I$ contain exactly one $\T(a)$-block and one $\T(b)$-block. In particular every class containing a block $A_i$ or $B_i$ with $i\in I$ contains no $A_j$, $B_j$ with $j\notin I$.
+
+\emph{Step 6: consecutive blocks of $a$ inside $\supp x$.} Let $Y_1,Z_1,\dots,Z_r,Y_2$ be a chain in $\varepsilon_a\vee\varepsilon_b$ whose end blocks $Y_1,Y_2$ are blocks of $a$ inside $\supp x$ and whose interior blocks of $a$ lie in $Y$. The interior blocks of $a$ are $\N(x)$-blocks and $\N(c)$-blocks (Step~1, Step~5: no $A_j$ with $j\notin I$ occurs), so all $Z$'s lie in one class $K$ of $\varepsilon_x\vee\varepsilon_b$ and in one class of $\varepsilon_b\vee\varepsilon_c$; $K$ meets $\supp x$ (as $Z_1$ meets $Y_1$), and $Z_1\cap Y_1$, $Z_r\cap Y_2$ lie in the part $K\cap\supp x$ of $\mathcal Q$. If this part is $V_k$, then $Z_1\subseteq\Delta_p$, $Z_r\subseteq\Delta_{p'}$ with $Z_1\cap V_k\subseteq C_p$, $Z_r\cap V_k\subseteq C_{p'}$ (Step~4), $p=p'$ because $Z_1,Z_r$ lie in one class of $\varepsilon_b\vee\varepsilon_c$, and $Y_1,Y_2$ both meet $C_p$. If the part is an $\N(c)$-block $\tilde N$, then $Y_1,Y_2$ both meet $\tilde N$. In both cases \emph{$Y_1$ and $Y_2$ lie in a common class of $\varepsilon_a\vee\varepsilon_c$}.
+
+\emph{Step 7: no class of $\varepsilon_a\vee\varepsilon_b$ contains two $\T(a)$-blocks or two $\T(b)$-blocks.} Let $A_i,A_j$ lie in a class $D$, $i\ne j$. By Step~5, $i,j\in I$, and $D$ contains no $A_p$ with $p\notin I$. Take a chain from $A_i$ to $A_j$ in $D$ and list its blocks of $a$ lying inside $\supp x$: the first is $A_i$, the last is $A_j$, and by Step~6 consecutive ones lie in a common class of $\varepsilon_a\vee\varepsilon_c$. Hence $\Gamma_i=\Gamma_j$, so $i=j$. Now let $B_i,B_j$ lie in a class $D$, $i\ne j$; again $i,j\in I$ by Step~5. Note that $B_i$ lies in the class $K_{k(i)}$ of $\varepsilon_x\vee\varepsilon_b$: a chain from $C_i$ to $B_i$ in $\Delta_i$ has interior $\varepsilon_c$-blocks which are $\N(x)$-blocks (Step~4), and its first $\varepsilon_b$-block meets $C_i\subseteq V_{k(i)}$. Take a chain from $B_i$ to $B_j$ in $D$. If it contains no block of $a$ inside $\supp x$, its blocks of $a$ are blocks of $c$ and $\Delta_i=\Delta_j$. Otherwise let $Y_1$ be the first block of $a$ inside $\supp x$ on the chain; the blocks between $B_i$ and $Y_1$ are $\varepsilon_b$-blocks and $\N(x)$-blocks, so they lie in $K_{k(i)}$ and in $\Delta_i$; the last of them, $Z$, meets $Y_1$ inside $K_{k(i)}\cap\supp x=V_{k(i)}$, and $Z\cap V_{k(i)}\subseteq C_i$ (Step~4, as $Z\subseteq\Delta_i$); so $Y_1$ meets $C_i$ and lies in $\Gamma_i$. Symmetrically the last block of $a$ inside $\supp x$ lies in $\Gamma_j$, and by Step~6 all of them lie in one class of $\varepsilon_a\vee\varepsilon_c$; so $\Gamma_i=\Gamma_j$ and $i=j$.
+
+\emph{Step 8: $xb=xcb$.} For a class $K$ of $\varepsilon_x\vee\varepsilon_b$ let $B(K)=\{p:B_p\subseteq K\}$, and let $C(K)$ be the set of $p$ with $C_p\subseteq V_k=K\cap\supp x$ or $C_p\subseteq M\subseteq K$ for an $\N(x)$-block $M$. We claim $B(K)=C(K)$, that no class $K$ meeting $\supp x$ contains an $\N(x)$-block containing a $C$, and that a class not meeting $\supp x$ contains at most one such $\N(x)$-block. Take a shortest chain from $B_p$ to $C_p$ in $\Delta_p$; its interior $\varepsilon_c$-blocks are $\N(x)$-blocks (Step~4), so all its blocks except $C_p$ lie in the class $K$ of $B_p$, and the last $\varepsilon_b$-block $Z$ meets $C_p$. If $C_p\subseteq V_k$, the $\T(x)$-block containing a point of $Z\cap C_p$ lies in $K$, so $K=K_k$ and $p\in C(K)$; if $C_p\subseteq M$ then $M\subseteq K$ and again $p\in C(K)$. Reading the chain backwards gives the converse, so $B(K)=C(K)$. Next let $M\subseteq K$ be an $\N(x)$-block containing $C$'s (a union of $C$'s and of $A$'s), let $W$ be any block of $x$ in $K$ other than $M$, and take a shortest chain $M,Z_1,X_1,Z_2,\dots,Z_t,W$ in $K$. Let $C_p\subseteq M$ be a $\T(c)$-block met by $Z_1$; then $Z_1\subseteq\Delta_p$. We show inductively that all $Z_j$ lie in $\Delta_p$ and all $X_j$ are $\N(x)$-blocks which are $\N(c)$-blocks. If $X_j$ is a $\T(x)$-block $H$, then $Z_j$ meets $H$, which lies in a $V_k$ (then $Z_j$ meets a $C_q\subseteq V_k$, $q=p$, contradicting $C_p\subseteq M\subseteq Y$) or in an $\N(c)$-block $\tilde N$ (then $\tilde N\subseteq\Delta_p$, contradicting Step~4). If $X_j$ is an $\N(x)$-block containing $C$'s, it meets $Z_j\subseteq\Delta_p$ in a point of some $C_q$, so $q=p$ and $X_j\supseteq C_p$, i.e.\ $X_j=M$, contradicting minimality. So $X_j$ is an $\N(c)$-block, $X_j\subseteq\Delta_p$, and $Z_{j+1}\subseteq\Delta_p$. The same alternatives apply to $W$: $W$ is not a $\T(x)$-block, so $K$ does not meet $\supp x$; and if $W$ contains $C$'s then $W=M$. This proves the claim. Now compare the elements $xb$ and $xcb$ of $\P_X$. The upper blocks of $xb$ are the $\N(x)$-blocks and the sets $U_K$, transversal iff $K$ meets $\supp b$; the lower blocks are the $\N(b)$-blocks and, for each class $K$, $\bigcup_{p\in B(K)}B_p'$, attached to $U_K$ if $K$ meets $\supp x$. For $xcb=x(cb)$ the middle join is $\varepsilon_x\vee\varepsilon_c=\varepsilon_v$: the upper blocks are the $\N(x)$-blocks, the $V_k$ (transversal) and the $\N(c)$-blocks inside $\supp x$; the lower blocks are the $\N(b)$-blocks, $\bigcup_{C_p\subseteq V_k}B'_p$ attached to $V_k$, and $\bigcup_{C_p\subseteq M}B'_p$ for the $\N(x)$-blocks $M$ containing $C$'s. By Step~3 and the claim these coincide: $B(K_k)=C(K_k)=\{p:C_p\subseteq V_k\}$, and the classes $K$ not meeting $\supp x$ with $B(K)\ne\emptyset$ correspond bijectively to the $\N(x)$-blocks $M$ containing $C$'s, with $B(K)=\{p:C_p\subseteq M\}$. So $xb=xcb$, and multiplying by $a$ on the left, $ub=axb=axcb=ucb$.
+
+\emph{Step 9: every $\T(a)$-block shares its class with a $\T(b)$-block.} By Step~7 the upper blocks of the element $ab$ are the $\N(a)$-blocks and the single blocks $A_p$, and $A_p$ is transversal in $ab$ iff its class $D(A_p)$ in $\varepsilon_a\vee\varepsilon_b$ contains a $\T(b)$-block, in which case the lower part of that block is the union of the $B$'s in $D(A_p)$. Multiply by $x$ on the left: the middle join is $\varepsilon_x\vee\varepsilon_a$, so the transversal block of $x(ab)$ at $U_l$ has lower part the union of the $\T(b)$-blocks lying in the classes $D(A_p)$, $p\in I_l=\{p:A_p\subseteq U_l\}$; by Step~7 each $D(A_p)$ contains at most one $\T(b)$-block, and distinct $p$ give distinct classes, so this is a union of at most $|I_l|$ distinct $\T(b)$-blocks, with equality iff every $D(A_p)$, $p\in I_l$, contains one. On the other hand $x(ab)=(xa)b=ub=ucb$ by Step~8, and in $u(cb)$ the middle join is $\varepsilon_u\vee\varepsilon_c=\varepsilon_x\vee\varepsilon_a\vee\varepsilon_c$, whose class containing $U_l$ contains the $C$'s of $V_{k(l)}$ and no other $C$ (Step~2(b); an $\N(x)$-block which is a union of $A$'s and $C$'s is a class by itself); so the transversal block of $ucb$ at $U_l$ has lower part $\bigcup_{p\in I_l}B_p$, a union of $|I_l|$ distinct $\T(b)$-blocks. Comparing the two lower parts, which are unions of pairwise disjoint nonempty sets, $D(A_p)$ contains a $\T(b)$-block for every $p\in I_l$ and every $l$, i.e.\ for every $p\in I$; for $p\notin I$ this is Step~5.
+
+\emph{Conclusion.} The $s$ blocks $A_1,\dots,A_s$ lie in $s$ distinct classes of $\varepsilon_a\vee\varepsilon_b$ (Step~7), each of which contains at least one of the $s$ blocks $B_1,\dots,B_s$ (Step~9); so each contains exactly one, and no other class meets $\supp a\cup\supp b$. By Lemma~\ref{lem:PX}(c) (and its proof, which shows that this property characterises matched pairs), $a\bowtie b$.
+\end{proof}
+
+\begin{remark}\label{rem:Rproof}
+The proof uses the hypothesis $\theta_x(b)=\theta_x(c)$ only through Step~3, i.e.\ through the partition $\mathcal Q$ of $\supp x$ common to $\varepsilon_x\vee\varepsilon_b$ and $\varepsilon_x\vee\varepsilon_c$; the commutation of $x$ with $a$ and with $c$ enters through the four types of Lemma~\ref{lem:PX}(b), which make every block of $a$ and of $c$ lie inside $\supp x$ or outside it and make $a$ and $c$ coincide outside $\supp x$ (Step~1). The mechanism is thus different from that of (S): there the commuting pair $c,d$ shares its nontransversal blocks and the matchings transport the transversal blocks across them; here the single projection $x$ splits $X$ into a part where $a$ and $c$ agree and a part where $b$ and $c$ induce the same coarse structure, and the two parts communicate only through the $\T(c)$-blocks (Step~4). The identity $xb=xcb$ of Step~8 holds in $\mathfrak P_7$ as well (for the elements of $\mathfrak T_{19}$), so it is not by itself an obstruction; what $\mathfrak T_{19}$ violates is Step~9, i.e.\ the way $ab$ and $ucb$ are compared through their transversal blocks.
+
+
+Like \eqref{eq:Q1}, the triangle condition and (S), the condition (R) defines a proper quasivariety, i.e.\ the class it defines is not closed under $*$-homomorphic images: $\mathfrak T_{19}$ is a $*$-homomorphic image of a $*$-subsemigroup of $\P_5$. Indeed, let $\mathfrak T_{26}$ be defined like $\mathfrak T_{19}$ but with the bottom band $\{u,v,v',w\}\times\{u,v,v',w\}$ and $\lambda b=\lambda v'=\lambda w=v'$, $\lambda c=\lambda v=v$, $\lambda a=\lambda u=u$ (so $xbx=v'$ is no longer equal to $xcx=v$). Then $\mathfrak T_{26}$ is a regular $*$-semigroup, identifying $v'$ with $v$ is a $*$-homomorphism onto $\mathfrak T_{19}$, and $\mathfrak T_{26}$ $*$-embeds in $\P_5$ (its $8$-element projection algebra embeds in $\P(\P_5)$ by the SAT search, and since $\mathfrak T_{26}$ is generated by its projections the embedding extends; \texttt{fourth\_pre.py}). The same example shows that the class of regular $*$-semigroups embeddable in partition monoids is not closed under $*$-homomorphic images with a $19$-element image, the previous witnesses being the $32$-element $Q(a-c-b-d,\bot)$ with $\bot$ injective and its image $\mathfrak Q$.
+\end{remark}
+
+\subsection{A uniform view: path-closing conditions}\label{subsec:pathclose}
+
+Both (S) and (R) have the same shape: a \emph{matched path} $p_0\bowtie p_1\bowtie\dots\bowtie p_n$, an auxiliary projection $x$ tied to some vertices of the path by commutation or order, two vertices which are ``indistinguishable through $x$'', and the conclusion that the path \emph{closes}, $p_0\bowtie p_n$:
+\begin{align*}
+\text{(R)}:\quad& p_0\bowtie p_1\bowtie p_2,\ xp_0=p_0x,\ xp_1=p_1x,\ \theta_x(p_1)=\theta_x(p_2)\ \Longrightarrow\ p_0\bowtie p_2,\\
+\text{(S)}:\quad& p_0\bowtie p_1\bowtie p_2\bowtie p_3,\ x=p_1p_3=p_3p_1,\ \theta_{p_0}(x)=\theta_{p_2}(x)\ \Longrightarrow\ p_0\bowtie p_3 .
+\end{align*}
+In (R) the auxiliary projection \emph{sees} two consecutive vertices alike; in (S) it \emph{is seen} alike by the two even vertices, and it lies below the two odd ones. To find out whether this scheme contains further obstructions we searched it systematically (\texttt{pathclose\_np.py}): for a path of length $n$ and the atomic relations $xp_i=p_ix$, $x\le p_i$, $p_i\le x$, $\theta_x(p_i)=\theta_x(p_j)$, $\theta_{p_i}(x)=\theta_{p_j}(x)$, $x=\theta_{p_i}(p_j)$, we listed all sets of at most three atoms $H$ such that ``path $+$ $H$ $\Rightarrow$ $p_0\bowtie p_n$'' holds for all instances in $\P(\P_4)$ with distinct vertices and $x$ not a vertex, is not vacuous (some closed instance satisfies $H$), and is minimal; each survivor was then tested on more than a million random instances in $\P(\P_5)$ (\texttt{pathclose5.py}; none failed) and, by Mace4, for countermodels among the projection algebras of order $\le9$ satisfying \eqref{eq:Q1} alone, \eqref{eq:Q1}$+$(S), and \eqref{eq:Q1}$+$(S)$+$(R) (\texttt{pc\_mace.sh}). The outcome:
+\begin{itemize}[nosep]
+\item $n=2$: ten minimal conditions. Two of them are (R) and its mirror image; the other eight have no countermodel of order $\le9$ with \eqref{eq:Q1}, so they are, at least up to that order, consequences of \eqref{eq:Q1}.
+\item $n=3$: $42$ minimal conditions. Fourteen are consequences of \eqref{eq:Q1} in the same sense; the other $28$ fail in $\mathfrak P$ (a countermodel of order $6$ with \eqref{eq:Q1}) and have no countermodel of order $\le9$ with \eqref{eq:Q1}$+$(S). Among them are (S), its mirror image, the variants in which $x=p_1p_3$ is weakened to $x\le p_1,\,x\le p_3$ or to $x\le p_1,\,xp_3=p_3x$, and the symmetric form
+\[
+\text{(S$'$)}:\quad p_0\bowtie p_1\bowtie p_2\bowtie p_3,\ \theta_{p_0}(x)=\theta_{p_2}(x),\ \theta_{p_1}(x)=\theta_{p_3}(x),\ x\le p_i\text{ or }xp_i=p_ix\text{ for some }i\ \Longrightarrow\ p_0\bowtie p_3,
+\]
+in which $x$ is seen alike by the two even and by the two odd vertices. (R) plays no role for $n=3$: adding it to \eqref{eq:Q1} produces no further consequences here.
+\item $n=4$: $18$ minimal conditions, all without countermodels of order $\le9$ with \eqref{eq:Q1} alone.
+\item Two auxiliary projections $x,y$ (\texttt{pathclose2.py}; the atoms above for each of $x,y$, together with $xy=yx$, $x\le y$, $y\le x$, $\theta_x(p_i)=\theta_y(p_i)$, $\theta_{p_i}(x)=\theta_{p_i}(y)$, $x=\theta_y(p_i)$, $y=\theta_x(p_i)$, $x=\theta_{p_i}(y)$, $y=\theta_{p_i}(x)$; $x,y$ distinct and not vertices). Length $2$: $60$ minimal conditions, $40$ consequences of \eqref{eq:Q1} and $20$ of \eqref{eq:Q1}$+$(R) (up to order $9$), all surviving the random test in $\P(\P_5)$; among the latter is the cleaner form
+\[
+p_0\bowtie p_1\bowtie p_2,\quad xp_0=p_0x,\quad y\le p_1,\quad \theta_x(p_2)=\theta_y(p_2)\ \Longrightarrow\ p_0\bowtie p_2
+\]
+(in (R) one has $y=xp_1$). Length $3$: $184$ minimal conditions in $\P(\P_4)$, of which $16$ fail in $\P(\P_5)$ (all of the form ``$x$ is seen alike by $p_0,p_2$ and by $p_1,p_3$, and $y=\theta_x(p_i)$''); of the remaining $168$, $52$ are consequences of \eqref{eq:Q1} and $116$ of \eqref{eq:Q1}$+$(S) up to order $9$, none needing (R). Typical members of the second group are
+\[
+p_0\bowtie p_1\bowtie p_2\bowtie p_3,\quad xp_0=p_0x,\quad \theta_{p_1}(x)=\theta_{p_3}(x),\quad \theta_{p_0}(y)=\theta_{p_2}(y)\ \Longrightarrow\ p_0\bowtie p_3 ,
+\]
+with two different auxiliary projections seen alike by the odd and by the even vertices. No condition with a countermodel of order $\le9$ satisfying \eqref{eq:Q1}, (S) and (R) was found.
+\end{itemize}
+So within this scheme (one or two auxiliary projections, at most three atoms, paths of length $\le4$ resp.\ $\le3$) the only obstructions beyond \eqref{eq:Q1} are (R), at length $2$, and (S), at length $3$, each with a cluster of equivalent forms; and, curiously, (R) is of ``sees'' type and (S) of ``seen'' type, the ``seen'' conditions of length $2$ and the ``sees'' conditions of length $3$ being consequences of \eqref{eq:Q1}. The triangle condition is of a different shape (two commuting triples, an equality as conclusion) and needs six variables; whether it, too, is the first member of a family, and whether two auxiliary projections or longer paths produce further path-closing obstructions, is open.
+
+
+\subsection{The census of order $8$: seven more candidate obstructions}\label{subsec:census8}
+
+The chunked Mace4 enumeration of Section~\ref{subsec:fourth} does not scale to order $8$ (the first of $4096$ chunks alone has millions of labelled models). The following observation replaces it by a census ``by extension''.
+
+\begin{lemma}\label{lem:extension}
+Let $P$ be a finite projection algebra with $|P|\ge2$ and let $e$ be a maximal element of $(P,\le)$. Then $P\setminus\{e\}$ is a subalgebra. Consequently, if $\mathcal K$ is a class of projection algebras defined by quasi-identities, the members of $\mathcal K$ of order $n+1$ are exactly the one-point extensions, by a new maximal element, of the members of $\mathcal K$ of order $n$.
+\end{lemma}
+
+\begin{proof}
+If $\theta_q(p)=e$ then $e\le q$, so $q=e$. Subalgebras of members of $\mathcal K$ are in $\mathcal K$.
+\end{proof}
+
+For each algebra $B$ of order $n$ Mace4 is given the table of $B$ as ground equations and finds all values $\theta_e(q)$, $\theta_q(e)$ ($q\in B$) with $e$ maximal, subject to the axioms, \eqref{eq:Q1}, (S) and (R); the results are reduced by a canonical form (\texttt{pa8/extend.py}, a fraction of a second per base algebra). Starting from the one-element algebra, the numbers of projection algebras satisfying \eqref{eq:Q1}, (S) and (R) are
+\[
+1,\ 2,\ 5,\ 16,\ 62,\ 295,\ 1\,662,\ 10\,828,\ 80\,039\qquad(\text{orders }1,\dots,9),
+\]
+in agreement with the direct enumerations of orders $6$ and $7$ ($1\,662=1\,663-1$, the missing algebra being $\mathfrak P_7$, which violates (R)); the step from order $8$ to order $9$ takes about $40$ minutes on two cores. Every algebra of order $8$ in the list satisfies the triangle condition, and $10\,821$ of them embed in $\P(\P_m)$ with $m\le7$ (\texttt{pa8/post8.py}: backtracking for $m\le4$, SAT for $5\le m\le7$). The remaining seven do not embed in $\P(\P_m)$ for $m\le8$ (SAT; the case $m=8$ takes from $25$ seconds for $\mathfrak P_8^2$ to $2.6$ hours for $\mathfrak P_8^7$; \texttt{pa8/sat8.py}). Since every algebra of order $7$ satisfying \eqref{eq:Q1}, (S) and (R) embeds, all proper subalgebras of the seven embed; so each of them, if it embeds in no $\P(\P_X)$ at all, is a minimal non-embeddable algebra. Rows $p$, columns $q$, entries $\theta_p(q)$:
+\begin{gather*}
+\scriptsize
+\mathfrak P_8^{1}:\ \begin{array}{c|cccccccc} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 1 & 0 & 1 & 0 & 0 & 0 & 0 & 6 & 6\\ 2 & 0 & 0 & 2 & 0 & 0 & 2 & 0 & 2\\ 3 & 0 & 0 & 0 & 3 & 0 & 3 & 0 & 3\\ 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4\\ 5 & 4 & 4 & 5 & 5 & 4 & 5 & 4 & 5\\ 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6\\ 7 & 6 & 6 & 7 & 7 & 6 & 7 & 6 & 7\\\end{array}\qquad \mathfrak P_8^{2}:\ \begin{array}{c|cccccccc} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 1 & 0 & 1 & 0 & 0 & 6 & 6 & 6 & 6\\ 2 & 0 & 0 & 2 & 0 & 0 & 0 & 0 & 2\\ 3 & 0 & 0 & 0 & 3 & 0 & 3 & 0 & 3\\ 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4\\ 5 & 4 & 4 & 4 & 5 & 4 & 5 & 4 & 4\\ 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6\\ 7 & 6 & 6 & 7 & 7 & 6 & 6 & 6 & 7\\\end{array}\\[1ex]
+\mathfrak P_8^{3}:\ \begin{array}{c|cccccccc} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 1\\ 2 & 0 & 0 & 2 & 2 & 0 & 0 & 0 & 2\\ 3 & 0 & 0 & 2 & 3 & 4 & 4 & 0 & 2\\ 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4 & 4\\ 5 & 4 & 5 & 4 & 4 & 4 & 5 & 4 & 4\\ 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6\\ 7 & 6 & 7 & 7 & 7 & 6 & 6 & 6 & 7\\\end{array}\qquad \mathfrak P_8^{4}:\ \begin{array}{c|cccccccc} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 1 & 0 & 1 & 0 & 6 & 6 & 6 & 6 & 6\\ 2 & 0 & 0 & 2 & 0 & 0 & 2 & 0 & 0\\ 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3\\ 4 & 3 & 3 & 3 & 3 & 4 & 3 & 3 & 4\\ 5 & 3 & 3 & 5 & 3 & 3 & 5 & 3 & 5\\ 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6\\ 7 & 6 & 6 & 6 & 6 & 7 & 7 & 6 & 7\\\end{array}\\[1ex]
+\mathfrak P_8^{5}:\ \begin{array}{c|cccccccc} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 1 & 0 & 1 & 0 & 0 & 0 & 1 & 0 & 0\\ 2 & 0 & 0 & 2 & 6 & 7 & 7 & 6 & 7\\ 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3\\ 4 & 3 & 3 & 4 & 3 & 4 & 3 & 3 & 4\\ 5 & 3 & 5 & 5 & 3 & 3 & 5 & 3 & 5\\ 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6\\ 7 & 6 & 6 & 7 & 6 & 7 & 7 & 6 & 7\\\end{array}\qquad \mathfrak P_8^{6}:\ \begin{array}{c|cccccccc} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 1 & 0 & 1 & 0 & 0 & 0 & 0 & 0 & 1\\ 2 & 0 & 0 & 2 & 0 & 2 & 2 & 0 & 2\\ 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3\\ 4 & 3 & 3 & 4 & 3 & 4 & 4 & 3 & 3\\ 5 & 3 & 3 & 4 & 3 & 4 & 5 & 6 & 6\\ 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6\\ 7 & 6 & 7 & 7 & 6 & 6 & 6 & 6 & 7\\\end{array}\\[1ex]
+\mathfrak P_8^{7}:\ \begin{array}{c|cccccccc} & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7\\ \hline 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0\\ 1 & 0 & 1 & 0 & 3 & 3 & 0 & 3 & 0\\ 2 & 0 & 0 & 2 & 0 & 2 & 5 & 5 & 5\\ 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3 & 3\\ 4 & 3 & 3 & 4 & 3 & 4 & 6 & 6 & 3\\ 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5 & 5\\ 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6 & 6\\ 7 & 7 & 7 & 7 & 7 & 7 & 7 & 7 & 7\\\end{array}
+\end{gather*}
+
+Six of the seven are one-point extensions of projection algebras of graph semigroups. Deleting the element $x$ indicated below leaves the projection algebra of $Q(G,\bot)$ with $|V|=4$ and three colours (\texttt{pa8/cand8b.py}):
+\begin{itemize}[nosep]
+\item $\mathfrak P_8^1$, $x=1$: $V=\{2,3,5,7\}$, $E=\{25,27,35,37,57\}$ ($K_4$ minus the edge $23$), $\bot\colon2,3\mapsto0$, $5\mapsto4$, $7\mapsto6$; $x$ lies above $0$ and $6$, commutes with $2,3$ (product $0$) and with $7$ (product $6$), and $\theta_x(5)=0$, $\theta_5(x)=4$.
+\item $\mathfrak P_8^2$, $x=1$: same $V$ and $\bot$, $E=\{27,35,37\}$ (a path $2-7-3-5$); $x$ as in $\mathfrak P_8^1$ except $\theta_x(5)=6$ (and $\theta_x(4)=6$).
+\item $\mathfrak P_8^3$, $x=3$: $V=\{1,2,5,7\}$, $E=\{15,17,27\}$ (a path $5-1-7-2$), $\bot\colon1,2\mapsto0$, $5\mapsto4$, $7\mapsto6$; $x$ lies above $0$, $4$ and the vertex $2$, commutes with $1$ (product $0$) and with $5$ (product $4$), and $\theta_x(7)=2$, $\theta_7(x)=7$.
+\item $\mathfrak P_8^4$, $x=1$: $V=\{2,4,5,7\}$, $E=\{25,47,57\}$ (a path $2-5-7-4$), $\bot\colon2\mapsto0$, $4,5\mapsto3$, $7\mapsto6$; $x$ lies above $0$ and $6$, commutes with $2$ (product $0$) and with $7$ (product $6$), and $\theta_x(4)=\theta_x(5)=6$, $\theta_4(x)=\theta_5(x)=3$.
+\item $\mathfrak P_8^5$, $x=2$: $V=\{1,4,5,7\}$, $E=\{15,47,57\}$ (a path $1-5-7-4$), $\bot\colon1\mapsto0$, $4,5\mapsto3$, $7\mapsto6$; $x$ lies above $0$, $6$ and the vertex $7$, commutes with $1$ (product $0$), and $\theta_x(4)=\theta_x(5)=7$, $\theta_4(x)=4$, $\theta_5(x)=5$.
+\item $\mathfrak P_8^6$, $x=5$: $V=\{1,2,4,7\}$, $E=\{17,24,27\}$ (a path $1-7-2-4$), $\bot\colon1,2\mapsto0$, $4\mapsto3$, $7\mapsto6$; $x$ lies above $3$, $6$ and the vertex $4$, commutes with $7$ (product $6$), and $\theta_x(1)=3$, $\theta_1(x)=0$, $\theta_x(2)=4$, $\theta_2(x)=2$.
+\end{itemize}
+The seventh, $\mathfrak P_8^7$, is different: its bottom band has five elements $0,3,5,6,7$, and above it lie $1\ge0,3$, $2\ge0,5$, $4\ge3,6$ with $2\bowtie4$, $1$ commuting with $2$ (product $0$) and with $4$ (product $3$); the element $7$ lies below no other element, and $\theta_1(7)=0$, $\theta_2(7)=5$, $\theta_4(7)=3$.
+
+Each of the seven violates a quasi-identity valid in $\P(\P_6)$, found by the methods of Section~\ref{subsec:pathclose} (\texttt{pa8/pc3\_hit.py}: for an instance in $\mathfrak P_8^k$ of a matched path with auxiliaries, the minimal subsets of the atoms true there that are contained in no counterexample signature of $\P(\P_4)$, then a SAT check of validity without distinctness assumptions, \texttt{pa8/pc3\_verify.py}) or by greedy minimisation of the diagram of $\mathfrak P_8^k$ under a SAT validity test (\texttt{pa8/qi\_extract.py}). Since $\mathfrak P_8^k$ satisfies \eqref{eq:Q1}, the triangle condition, (S) and (R), each of these quasi-identities is independent of those four.
+
+\emph{Caveat.} Unlike $\mathfrak P_7$ (Theorem~\ref{thm:R}), none of the seven has been \emph{proved} non-embeddable, and none of the quasi-identities below has been proved for all $\P_X$: the evidence is the absence of embeddings into $\P(\P_m)$ for $m\le8$ and the validity of the quasi-identities in $\P(\P_m)$ for $m\le6$. That a finite algebra embeds in some $\P(\P_X)$ but in no $\P(\P_m)$ with $m$ small does happen: a semilattice with $k$ join-irreducible elements embeds in $\P(\P_k)$ (partial identities) and, e.g.\ for the $9$-element semilattice consisting of chains of lengths $1$, $4$ and $3$ glued at the bottom, in no $\P(\P_m)$ with $m\le7$ (SAT); so in the census of order $9$ an SAT search with $m\le7$ is not conclusive, and the SAT results below for the seven algebras of order $8$ are evidence, not proof.
+
+\begin{proposition}\label{prop:census8}
+The following quasi-identities hold in $\P(\P_m)$ for $m\le6$ (SAT, variables not assumed distinct; \texttt{pa8/verify6.py}, the case $m=6$ taking between $20$ seconds and $12$ minutes each).
+\begin{enumerate}[label=\textup{(\alph*)},nosep]
+\item \textup{(R$'$)}: $a\bowtie c,\ b\bowtie c,\ xc=cx,\ \theta_x(a)=\theta_x(c),\ ya=ay,\ \theta_x(b)=\theta_y(b)\ \Longrightarrow\ a\bowtie b$. It fails in $\mathfrak P_8^3$ ($(a,c,b,x,y)=(5,1,7,2,3)$) and in $\mathfrak P_7$ ($(a,c,b,x,y)=(a,c,b,v,x)$). In every partition monoid (R$'$) implies (R): given the hypotheses of (R) with $u=xa$, $v=xc$, the projections $x'=v$, $y'=x$ satisfy the hypotheses of (R$'$), because $v\le c$, $\theta_v(a)=vxaxv=vuv=v=\theta_v(c)$ by $u\bowtie v$ (Step~2(b) of the proof of Theorem~\ref{thm:R}) and $\theta_v(b)=v\theta_x(b)v=v=\theta_x(b)$. Mace4 finds no projection algebra of order $\le8$ satisfying \eqref{eq:Q1} and (R$'$) but not (R). Each of the four hypotheses on $x,y$ is needed, and with $y=x$ the hypotheses force $a=c$ (since then $xa=xc\le a,c$ and matched projections with a common lower bound are equal by \eqref{eq:Q1}).
+\item \textup{(V)}: $bcb=b,\ ata\le b,\ ctc\le a\ \Longrightarrow\ ata\le btb$. It fails in $\mathfrak P_8^7$ ($(a,b,c,t)=(1,2,4,7)$: $ata=0$, $btb=5$, $ctc=3$). In $\P(\P_m)$, $m\le6$, the hypotheses of (V) even force $ata=btb$ and $tat=tbt$ (SAT), and each of the three hypotheses is needed for $tat=tbt$ already in $\P(\P_4)$; but $tat=tbt$ together with $ata\le b$ does not give $ata\le btb$, so this is not a decomposition of (V) into two steps.
+\item \textup{(P$_1$)}: $p_0\bowtie p_1\bowtie p_2\bowtie p_3,\ xp_0=p_0x,\ xp_1=p_1x,\ \theta_{p_0}(x)=\theta_{p_2}(x),\ \theta_x(p_1)=\theta_x(p_3)\ \Longrightarrow\ p_0\bowtie p_3$, and \textup{(P$_2$)}: $p_0\bowtie p_1\bowtie p_2\bowtie p_3,\ xp_0=p_0x,\ xp_2=p_2x,\ \theta_x(p_1)=\theta_x(p_2),\ \theta_{p_1}(x)=\theta_{p_3}(x)\ \Longrightarrow\ p_0\bowtie p_3$. (P$_1$) fails in $\mathfrak P_8^2$ ($(p_0,\dots,p_3;x)=(2,7,3,5;1)$) and (P$_2$) in $\mathfrak P_8^4$ ($(2,5,7,4;1)$). More precisely (\texttt{pa8/pc1\_classify.py}): with one auxiliary projection, a path of length $3$, the atoms of Section~\ref{subsec:pathclose} and the chords $p_0\bowtie p_2$, $p_1\bowtie p_3$ as further atoms, there are $76$ minimal valid hypothesis sets of size $\le4$ and $8$ of size $5$, all valid in $\P(\P_5)$; exactly $8$ of size $4$ and $2$ of size $5$ have a countermodel among the $12\,870$ algebras of order $\le8$ satisfying \eqref{eq:Q1}, (S) and (R), always a single one, $\mathfrak P_8^2$ or $\mathfrak P_8^4$. Up to reversal of the path the eight of size $4$ are (P$_1$), (P$_2$), and
+\begin{align*}
+&xp_0=p_0x,\ xp_2=p_2x,\ \theta_{p_1}(x)=\theta_{p_3}(x),\ \theta_x(p_2)=\theta_x(p_3)\quad(\mathfrak P_8^4),\\
+&xp_1=p_1x,\ xp_2=p_2x,\ \theta_x(p_0)=\theta_x(p_2),\ \theta_{p_1}(x)=\theta_{p_3}(x)\quad(\mathfrak P_8^2);
+\end{align*}
+the two of size $5$ are $xp_0=p_0x,\ xp_1=p_1x,\ xp_2=p_2x,\ \theta_x(p_0)=\theta_x(p_2),\ \theta_x(p_1)=\theta_x(p_3)$ and its reversal ($\mathfrak P_8^2$). All of them combine two commutation atoms, one ``seen alike'' atom for two vertices of the same parity and one ``sees alike'' atom.
+\item \textup{(Q)}: $p_0\bowtie p_1\bowtie p_2\bowtie p_3,\ xp_0=p_0x,\ \theta_{p_1}(x)=\theta_{p_3}(x),\ yp_0=p_0y,\ yp_2=p_2y,\ \theta_y(p_1)=\theta_y(p_2)\ \Longrightarrow\ p_0\bowtie p_3$, which fails in $\mathfrak P_8^5$ ($(p_0,\dots,p_3;\,x,y)=(1,5,7,4;\,0,2)$) and also in $\mathfrak P_8^4$ ($(2,5,7,4;\,0,1)$). No condition of the scheme of Section~\ref{subsec:pathclose} with two auxiliaries, a path of length $\le3$, chords and at most $5$ atoms fails in $\mathfrak P_8^1$ or $\mathfrak P_8^6$.
+\item For $\mathfrak P_8^6$: $dbd=d,\ aca=a,\ ada=a,\ u\le c,\ u\le d,\ bcb=aua\ \Longrightarrow\ aua=a$ (fails with $(a,b,c,d,u)=(2,1,5,7,6)$; the conclusion was found in the form $aua\bowtie a$, which is equivalent because $\theta_a(aua)=aua$). For $\mathfrak P_8^1$: $z\le b,\ aba=z,\ dbd=d,\ xcx=z,\ aca=a,\ bcb=b,\ e\le x,\ e\le d,\ ada=a\ \Longrightarrow\ aba=a$ (fails with $(a,b,c,d,x,e,z)=(2,3,5,7,1,6,0)$; here $e$ only serves, via \eqref{eq:Q1}, to make $x$ and $d$ commute). Both are greedy-minimal subsets of the diagram of the algebra, and need not be the most natural formulations.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}\label{rem:census8}
+(1) The path-closing scheme now contains, besides (R) and (S), the one-auxiliary conditions of size $4$ and $5$ of (c) and the two-auxiliary conditions (R$'$) (length $2$) and (Q) (length $3$); the searches of Section~\ref{subsec:pathclose} stopped at three atoms, which is why these were missed. Whether the conditions of (c) are the complete list of one-auxiliary conditions of length $3$ (no bound on the size) is a finite question for $\P(\P_4)$, but its answer must then be checked in larger $\P(\P_m)$, as all conditions above were only verified for $m\le6$. (2) (V) is of a new shape: four variables, one ``fixing'' hypothesis $bcb=b$ (half of a matched pair), two order hypotheses on products, and an order conclusion; in $\P_X$ it can be read as a statement about the restrictions $\theta_a(t)$, $\theta_b(t)$, $\theta_c(t)$ of a fourth projection. (3) \emph{Order $9$.} The $80\,039$ algebras of order $9$ satisfying \eqref{eq:Q1}, (S) and (R) were analysed in the same way (\texttt{pa8/post8.py} with the quasi-identities of Proposition~\ref{prop:census8} as a first filter, \texttt{pa8/newconds.py}; then \texttt{pa8/pass2\_9.py}). All satisfy the triangle condition. Exactly $163$ contain one of $\mathfrak P_8^1,\dots,\mathfrak P_8^7$ as a subalgebra, and these are exactly the algebras violating one of (R$'$), (V), (P$_1$), (P$_2$), (Q) or the two conditions of (e), with one exception: one algebra violates (R$'$) and contains none of the seven (so, if (R$'$) is valid, (R$'$) has at least two minimal witnesses). Of the remaining $79\,875$, $79\,783$ embed in $\P(\P_m)$ with $m\le7$, $39$ are semilattices (which embed in $\P(\P_8)$ but, by SAT, in no $\P(\P_7)$: they have $8$ join-irreducibles), $46$ embed in $\P(\P_8)$ but in no $\P(\P_7)$, and $7$ embed in no $\P(\P_m)$ with $m\le8$ (SAT, $1$ to $30$ minutes each; \texttt{pa8/cand9.json}, \texttt{pa8/cand9.out}). These seven are the candidates of order $9$: all their proper subalgebras embed. Three of them are one-point extensions of graph-semigroup projection algebras ($|V|=4$ with four colours, and $|V|=5$ twice), one has a five-element bottom band like $\mathfrak P_8^7$, and none violates a two-auxiliary path-closing condition of length $\le3$ with at most four atoms. One of them (the second in \texttt{cand9.json}) violates the five-atom condition $p_0\bowtie p_1\bowtie p_2\bowtie p_3,\ xp_0=p_0x,\ \theta_{p_0}(x)=\theta_{p_2}(x),\ yp_1=p_1y,\ \theta_y(p_0)=\theta_y(p_1),\ \theta_x(p_3)=\theta_y(p_3)\Rightarrow p_0\bowtie p_3$ (valid in $\P(\P_5)$), a length-$3$ relative of (R$'$); for all seven, greedy minimisation of the diagram (\texttt{pa8/qi\_all9.py}, results in \texttt{pa8/qi\_all9.jsonl}) gives quasi-identities with $9$ to $14$ atoms, valid in $\P(\P_5)$, which we have not tried to interpret. So the count of candidates for minimal non-embeddable algebras is $1, 7, 7$ for orders $7, 8, 9$, and the number of points needed by embeddable algebras of order $n$ has reached $n-1$ at $n=9$.
+\end{remark}
+
+\section{Computations}\label{sec:comp}
+
+All regular $*$-semigroups of order $n\le8$ were enumerated up to $*$-isomorphism by a backtracking search on multiplication tables with propagation of associativity, $(xy)^*=y^*x^*$ and $xx^*x=x$; for $n=7,8$ only the semigroups whose involution is not the identity were generated, since $x^*=x$ for all $x$ forces commutativity and hence an inverse (Clifford) semigroup, which embeds by Wagner--Preston. For each non-inverse semigroup satisfying \eqref{eq:Q1}, a $*$-embedding into $\P_n$ was searched for, $n\le5$, by assigning images to projections first and forcing the images of all products.
+
+\begin{center}
+\begin{tabular}{@{}rrrrrr@{}}
+\toprule
+order & classes & inverse & non-inverse, \eqref{eq:Q1} & non-inverse, not \eqref{eq:Q1} & of these, in $\P_5$\\
+\midrule
+4 & 17 & 16 & 1 & 0 & 1\\
+5 & 55 & 52 & 2 & 1 & 2\\
+6 & 222 & 208 & 9 & 5 & 9\\
+7 & $259^{\dagger}$ & 196 & 35 & 28 & 35\\
+8 & $1310^{\dagger}$ & 970 & 178 & 162 & 178\\
+\bottomrule
+\end{tabular}
+
+\smallskip
+{\small $^\dagger$ nontrivial involution only. The last column counts the non-inverse semigroups satisfying \eqref{eq:Q1} that embed in $\P_5$.}
+\end{center}
+
+Thus, up to order $8$, a regular $*$-semigroup embeds in a partition monoid if and only if it satisfies \eqref{eq:Q1} (the ones failing \eqref{eq:Q1} do not embed, the others embed in $\P_5$, inverse ones by Wagner--Preston). The smallest known counterexample to sufficiency of \eqref{eq:Q1} is the $61$-element $Q_0$ of Theorem~\ref{thm:witness}. The smallest known counterexample to sufficiency of \eqref{eq:Q1} together with the triangle condition is the $20$-element $\mathfrak Q$ of Definition~\ref{def:Qpath}; so the smallest counterexample has order between $9$ and $20$ (the order-$9$ enumeration, some $10^7$ tables, was not completed).
+
+The ten $*$-congruences of $\P_3$ have quotients of orders $203$, $179$, $103$, $79$, $67$, $43$, $7$, $3$, $2$, $1$. The quotients of orders $179,79,43$ have a zero and are not inverse, so they fail \eqref{eq:Q1}; those of orders $7,3,2,1$ are inverse; the two remaining proper quotients, of orders $103$ and $67$, satisfy \eqref{eq:Q1} and are the semigroups of Theorem~\ref{thm:witness}. For $\P_2$ all proper quotients satisfying \eqref{eq:Q1} embed. For $\P_4$ the classification of East, Mitchell, Ru\v skuc and Torpey (Adv.\ Math.\ 2018) leaves only two proper $*$-congruences whose quotients have no zero (a quotient with a zero satisfying \eqref{eq:Q1} is inverse, as every idempotent lies above the zero); they are $\mu$, which identifies each partition of rank $\le1$ with the rank-$0$ partition obtained by cutting its transversal block, and $\mu\vee\lambda_{S_2}$, which moreover identifies the two elements of each rank-$2$ $\Hh$-class. We verified directly that these are $*$-congruences of $\P_4$ (with $2771$ and $1810$ classes) and that they are the only ones contained in the second. Both quotients satisfy \eqref{eq:Q1} and fail the triangle condition, as they must: they contain the corresponding quotients of $\P_3$ (add the singletons $\{4\},\{4'\}$). So the $*$-congruences of $\P_4$ give nothing new.
+
+\emph{Projection algebras.} Mace4 with isofilter enumerated all projection algebras (axioms (P1)$'$--(P5)$'$) satisfying \eqref{eq:Q1} and the triangle clause, up to isomorphism: there are $2,5,16,62$ of orders $2,3,4,5$. Each was tested for embeddability into $\P(\P_m)$, $m\le5$, by a backtracking search which forces the image of every product of already assigned elements; all embed, in $\P(\P_2)$, $\P(\P_3)$ or $\P(\P_4)$ ($3$, $39$, $20$ of the $62$ of order $5$). Of order $6$ there are exactly $296$ (from $79332$ Mace4 models before isofilter). All but one embed in $\P(\P_m)$ with $m\le5$: one in $\P(\P_2)$, $90$ in $\P(\P_3)$, $173$ in $\P(\P_4)$ and $31$ in $\P(\P_5)$; the exception is $\mathfrak P$, which is also the only one of the $296$ violating the wiring condition (S). So up to order $6$ the projection algebras that embed in some $\P(\P_X)$ are exactly those satisfying \eqref{eq:Q1}, the triangle condition and (S). Of order $9$, $\mathfrak P_9$ (Example~\ref{ex:P9}) satisfies \eqref{eq:Q1}, the triangle condition and the quasi-identity of Theorem~\ref{thm:wiring} but not (S), and does not embed in $\P(\P_m)$ for $m\le8$ (SAT). ($\mathfrak P$ does not embed in $\P(\P_m)$ for $m\le6$ by exhaustive search, nor for $m\le8$ by a SAT encoding of the join and product structure solved by CaDiCaL, $m=8$ taking about $25$ minutes, in agreement with Theorem~\ref{thm:wiring}.) Of order $7$ there are $1\,663$ projection algebras satisfying \eqref{eq:Q1} and (S) (Section~\ref{subsec:fourth}; $295$ of order $6$); all satisfy the triangle condition, and all but $\mathfrak P_7$ embed in $\P(\P_m)$ with $m\le6$ ($161$ in $\P(\P_3)$, $924$ in $\P(\P_4)$, $531$ in $\P(\P_5)$, $46$ in $\P(\P_6)$), while $\mathfrak P_7$ does not embed at all (Theorem~\ref{thm:R}; the SAT search confirms this for $m\le8$). Of order $8$ there are $10\,828$ projection algebras satisfying \eqref{eq:Q1}, (S) and (R) (Lemma~\ref{lem:extension}); all satisfy the triangle condition, $10\,821$ embed in $\P(\P_m)$ with $m\le7$, and the seven of Section~\ref{subsec:census8} do not embed for $m\le8$ (whether they embed for larger $m$ is open). Of order $9$ there are $80\,039$, of which seven embed in no $\P(\P_m)$ with $m\le8$ and contain none of the seven of order $8$ (Remark~\ref{rem:census8}(3)). The graph semigroups $Q(G,\bot)$ with $|V|\le3$ and $\bot$ a proper colouring all embed in $\P_4$ (and Theorems~\ref{thm:graphsg}, \ref{thm:layered} settle all graph and layered graph semigroups).
+
+Further checks: several completely simple semigroups with non-flat sandwich matrices (an $\mathcal M[\Z_2;3,3;P]$ embeds in $\P_4$; an $\mathcal M[\Z_3;3,3;P]$ and the $48$-element $\mathcal M[\Z_3;4,4;P]$ of the previous paper do not embed in $\P_5$ but embed in $\P_{27}$ and $\P_{48}$ by Theorem~\ref{thm:cs}); strong semilattices of Rees matrix semigroups with injective-on-projections structure maps (all embedded); $H\cup(A\times A)$ with various actions (all embedded).
+
+\section{General remarks and questions}\label{sec:general}
+
+\begin{proposition}\label{prop:finite}
+A finite regular $*$-semigroup embeds in some partition monoid if and only if it satisfies every quasi-identity (in the language $\{\cdot,{}^*\}$) that holds in all partition monoids.
+\end{proposition}
+
+\begin{proof}
+Necessity is clear. Conversely, a finite $S$ satisfying all quasi-identities of the class $\{\P_X\}$ lies in the quasivariety it generates, so $S$ embeds in a product $\prod_j A_j$ of ultraproducts $A_j$ of partition monoids $\P_{X_{ij}}$, $i\in I_j$, over ultrafilters $\mathcal U_j$. As $S$ is finite, finitely many factors suffice, and by \L o\'s's theorem each $*$-homomorphism $S\to A_j$ is, for $\mathcal U_j$-almost all $i$, induced by a $*$-homomorphism $S\to\P_{X_{ij}}$ with the same kernel. Taking one such $i$ for each of the finitely many $j$ and using $\P_X\times\P_Y\le\P_{X\sqcup Y}$ gives an embedding of $S$ into a partition monoid.
+\end{proof}
+
+So for finite semigroups the programme of finding quasi-identities is complete in principle; whether finitely many suffice is unclear. We have three pairwise independent ones: \eqref{eq:Q1}, the triangle condition and the wiring condition (S) of Theorem~\ref{thm:S} (independence: Section~\ref{sec:wiring}), and a fourth one, the condition (R) of Theorem~\ref{thm:R}, independent of the other three; by Theorem~\ref{thm:master} all the other matching-pattern conditions of Section~\ref{sec:hex} follow from the triangle condition, so they add nothing; up to order $6$ the first three describe the projection algebras embeddable in some $\P(\P_X)$ exactly, and up to order $7$ the four do (Section~\ref{sec:comp}). Whether the class of all (possibly infinite) embeddable regular $*$-semigroups is closed under ultraproducts, i.e.\ is a universal class, I do not know; the natural map from an ultraproduct of partition monoids to a partition monoid is not a homomorphism, because connectivity through the middle layer is not a first-order property.
+
+\begin{proposition}\label{prop:relations}
+For every set $X$, the map $\alpha\mapsto R_\alpha$, where
+\[
+R_\alpha=\{(A,B)\in 2^X\times2^X: A\sqcup B'\text{ is a union of blocks of }\alpha\},
+\]
+is an injective homomorphism of involuted semigroups from $\P_X$ into the semigroup of binary relations on $2^X$ with converse as involution.
+\end{proposition}
+
+\begin{proof}
+$(A,C)\in R_\alpha\circ R_\beta$ iff there is $B$ which is a union of lower blocks of $\alpha$ and of upper blocks of $\beta$, i.e.\ a union of classes of the middle join, with $A\sqcup B'$ and $B\sqcup C'$ unions of blocks; this is exactly the condition for $A\sqcup C'$ to be a union of blocks of $\alpha\beta$. Injectivity: the minimal nonempty $A$ with $(A,\emptyset)\in R_\alpha$ are the upper nontransversal blocks, and the pairs $(A,B)$ with $A,B$ minimal and nonempty are the transversal blocks.
+\end{proof}
+
+Consequently every $*$-subsemigroup of a partition monoid is representable by binary relations with converse, so Schein's quasi-identities for representable involuted semigroups are necessary conditions. They seem, however, to carry no information here: every regular $*$-semigroup of order $\le5$ is representable by relations on at most $5$ points (checked by computer), including the $5$-element band with zero which fails \eqref{eq:Q1} (represent the $2\times2$ band by $A\times A$, $B\times B$ with $A\cap B\ne\emptyset$ and the zero by the empty relation). The point of $\P_X$ is that its relations $R_\alpha$ are \emph{Boolean subalgebras} of $2^X\times2^X$ containing $(X,X)$; conversely every such subalgebra comes from a partition. Thus $S$ embeds in $\P_X$ iff $S$ has a faithful representation by relations on the Boolean algebra $2^X$ each of which is a subalgebra of $2^X\times 2^X$.
+
+\begin{question}
+\begin{enumerate}[label=\textup{(\arabic*)}]
+\item Is embeddability of a finite regular $*$-semigroup determined by its projection algebra? All known obstructions, \eqref{eq:Q1}, the triangle condition, (S), (R) and those of Proposition~\ref{prop:census8}, are projection-algebra quasi-identities, and Theorem~\ref{thm:cs} shows that groups and sandwich matrices impose nothing; but a regular $*$-semigroup is far from determined by its projection algebra.
+\item \eqref{eq:Q1} and the triangle condition do \emph{not} suffice, even together with all matching-pattern conditions (Corollary~\ref{cor:wiring}). What is the smallest counterexample (order $9$ to $19$)? Is there a proof of Theorem~\ref{thm:S} in the hub case that does not rely on a computer check? Are there further wiring-type obstructions, e.g.\ with longer paths of matchings or with two commuting pairs? For graph semigroups and for layered graph semigroups the answer is complete (Theorems~\ref{thm:graphsg} and \ref{thm:layered}): \eqref{eq:Q1} and (S) suffice, and the triangle condition is automatic; so new obstructions have to be sought in families whose projections have non-chain down-sets or large $\T$-blocks (Remark~\ref{rem:layered}(2)). More generally, is the quasivariety generated by the projection algebras $\P(\P_X)$ finitely based? Its members of order $\le6$ are exactly the algebras satisfying \eqref{eq:Q1}, the triangle condition and (S), and (S) is needed only once, for $\mathfrak P$; of order $7$ one further condition, (R), is needed, once ($\mathfrak P_7$); of order $8$ seven further candidates appear (Section~\ref{subsec:census8}), and the quasi-identities they violate, valid in $\P(\P_m)$ for $m\le6$, are of at least three different shapes, so the list of obstructions is not closing up quickly. Are (R$'$), (V), (P$_1$), (P$_2$), (Q) of Proposition~\ref{prop:census8} valid in every $\P_X$, and is there a proof of (V) as short as its statement?
+\item Is there a conceptual description of the quasi-identities of Section~\ref{sec:hex}, e.g.\ in terms of ``two commuting families with a common meet-preserving matching must have the same meet''? Theorem~\ref{prop:path} says that for finite $X$ the pattern of matchings is irrelevant as long as it is not a star. The proof of Theorem~\ref{thm:hex} suggests a general principle: in $\P_X$, a projection is determined by its behaviour outside its support together with its $\T$-blocks, and matched pairs cannot share a set which is transversal for one and nontransversal for the other.
+\item The infinite case. By Theorem~\ref{thm:master} the triangle condition implies every non-star condition in every projection algebra, and by Theorem~\ref{thm:hinf} the hexagon condition does not imply the triangle condition; so for infinite regular $*$-semigroups the triangle condition is the matching-pattern condition to use; but by Section~\ref{sec:wiring} the wiring conditions are needed as well, and their infinite-case behaviour is unexplored. Does the hexagon condition imply the conditions on $k\ge4$ indices in general (Remark~\ref{rem:hinf}(1))? Which pattern conditions are equivalent to the triangle condition in the variety of projection algebras (the path and the $2$-cycle are; the hexagon is not)?
+\end{enumerate}
+\end{question}
+
+\section*{Files}
+The directory \texttt{embed/} contains the code: \texttt{pmon.py} (partition monoids), \texttt{enum\_rss.py} (enumeration of regular $*$-semigroups), \texttt{embed.py} (embedding search), \texttt{analyse.py}, \texttt{congr.py} (congruences and quotients), \texttt{qsearch.py}, \texttt{hexsearch*.py}, \texttt{hexmin*.py}, \texttt{hexqi.py}, \texttt{qi.py} (searches for the hexagon configuration and quasi-identity tests), \texttt{hexagon.in}, \texttt{triangle.in}, \texttt{octagon.in} (Prover9/Mace4 inputs, in the binary-operation language of projection algebras of East and Azeef Muhammed, arXiv:2301.04845, Remark~4.2), \texttt{digraph.py} (clauses and $\P_n$-checks for the matching-pattern conditions), \texttt{oct14.py}, \texttt{p4mu.py}, \texttt{octmin.py}, \texttt{octsub6.py} (the octagon experiments of Remark~\ref{rem:2k}), \texttt{invariant.in}, \texttt{stab.in}, \texttt{period.in}, \texttt{uniform.in}, \texttt{derived.in} (Prover9/Mace4 inputs behind Section~\ref{subsec:equiv}), \texttt{mace4parse.py}, \texttt{walk\_hex.py}, \texttt{uniform\_hex.py} (analysis of Mace4 models), \texttt{path.in}, \texttt{path2.in}, \texttt{square.in}, \texttt{square2.in}, \texttt{disjoint.in}, \texttt{disjoint2.in}, \texttt{disjoint3.in}, \texttt{sqfilter2.py}, \texttt{sqstar.py}, \texttt{digraph3.py}, \texttt{digraph4.py}, \texttt{nofull.py}, \texttt{nofull3.py}, \texttt{p4mu\_disjoint.py} (Theorem~\ref{prop:path} and Remark~\ref{rem:path}); \texttt{pa\_enum.py}, \texttt{pa\_embed2.py}, \texttt{pa\_sat.py} (enumeration of projection algebras with \eqref{eq:Q1} and the triangle clause, embedding into $\P(\P_m)$ by backtracking and by SAT), \texttt{graphsg.py}, \texttt{graphsg\_survey.py}, \texttt{graphsg\_thm.py} (the semigroups $Q(G,\bot)$, the survey of Remark~\ref{rem:graphthm}(2) and the verification of the construction of Theorem~\ref{thm:graphsg}), \texttt{layered.py}, \texttt{layered\_search.py}, \texttt{layered\_search2.py}, \texttt{layered\_thm.py} (layered graph semigroups, Section~\ref{subsec:layered}), \texttt{pa7\_q1S.in}, \texttt{pa7\_driver.sh}, \texttt{pa7\_post.py}, \texttt{fourth.py}, \texttt{fourth\_pre.py} (the order-$7$ census, $\mathfrak P_7$, $\mathfrak T_{19}$, $\mathfrak T_{26}$ and the tests of (R), Section~\ref{subsec:fourth}), \texttt{pathclose.py}, \texttt{pathclose\_np.py}, \texttt{pathclose4.py}, \texttt{pathclose5.py}, \texttt{pathclose\_check.py}, \texttt{pc\_prover.py}, \texttt{pc\_mace\_in.py}, \texttt{pc\_mace.sh}, \texttt{pathclose2.py}, \texttt{pathclose2r.py}, \texttt{pc2\_mace.py} (the search for path-closing conditions, Section~\ref{subsec:pathclose}), \texttt{pa8/extend.py}, \texttt{pa8/post8.py}, \texttt{pa8/cand8.py}, \texttt{pa8/cand8b.py}, \texttt{pa8/qi\_extract.py}, \texttt{pa8/qi\_all.py}, \texttt{pathclose3.py}, \texttt{pa8/pc3\_hit.py}, \texttt{pa8/pc3\_verify.py}, \texttt{pa8/pc1\_classify.py}, \texttt{pa8/verify6.py}, \texttt{pa8/verify7.py}, \texttt{pa8/sat8.py}, \texttt{pa8/newconds.py}, \texttt{pa8/pass2\_9.py}, and the census files \texttt{pa8/ord\emph{n}.json}, \texttt{pa8/post8.log} (the census by extension, the seven algebras of order $8$ and the quasi-identities of Section~\ref{subsec:census8}), \texttt{m172*.py}, \texttt{qi2.py}, \texttt{wiringcheck.py} (tests of the wiring conditions in $\P_n$ and in given projection algebras), \texttt{hubtypes.py}, \texttt{hubcheck\_rand.py} (the finite verification in the proof of Theorem~\ref{thm:S}), \texttt{wiring\_*.in} (Prover9/Mace4 inputs relating (S), Theorem~\ref{thm:wiring}, \eqref{eq:Q1} and the triangle clause; \texttt{mace\_WnotS9.out} is $\mathfrak P_9$), \texttt{p4cong.py}, \texttt{p4cong2.py} (the $*$-congruences of $\P_4$) (Section~\ref{sec:wiring}; the Mace4 models are the files \texttt{mace\_*.out}), \texttt{hinf2.py}, \texttt{hinf2\_run.py}, \texttt{hinf2\_pat.py}, \texttt{chain.py} (the unrolled hexagon of Theorem~\ref{thm:hinf} and the chain models), \texttt{periodic.py}, \texttt{periodic3.py} (periodic projections of $\P_{\Z\times[m]}$ and the pattern searches of Remark~\ref{rem:hinf}(3)), \texttt{cs\_embed.py} (the construction of Theorem~\ref{thm:cs}), \texttt{normalband*.py}, \texttt{strongsl.py}, \texttt{examples*.py} (further test families), \texttt{relrep.py} (representations by binary relations), and the pickled enumerations \texttt{rss\_*.pkl}.
+
+\end{document}

@@ -1,0 +1,26 @@
+% Two disjoint matched pairs a1 |><| b2, a3 |><| b4 on four indices: does  w z w = w  follow?
+% For this pattern the walk argument needs exactly w |><| z (equivalently z a2 z = z, or
+% z a4 z = z, or w b1 w = w, or w b3 w = w -- all equivalent under the hypotheses), and it holds
+% in every model found so far.  Mace4 search for a model in which it FAILS; such a model has
+% w != z automatically and lies outside the reach of the walk argument.
+%   x * y = y x y  (= x theta_y).  Constants: a1..a4, b1..b4, cw, cz.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+% (H1)
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a4 = cw.   a4 * a1 = cw.   a1 * a3 = cw.   a2 * a4 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b4 = cz.   b4 * b1 = cz.   b1 * b3 = cz.   b2 * b4 = cz.
+% (H2)
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.   a4 * b4 = b4 * a4.
+% (H3)  a1 |><| b2,  a3 |><| b4
+b2 * a1 = a1.   a1 * b2 = b2.
+b4 * a3 = a3.   a3 * b4 = b4.
+cz * cw != cw.        % w z w != w
+end_of_list.

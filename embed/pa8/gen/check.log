@@ -1,0 +1,6 @@
+S_Q(x,y) valid: True ['X~p0', 'Y~p0', 'Y~p2', 'thY(p1)=thY(p2)', 'thX(p1)=thX(p3)', 'thY(p1)=thY(p3)', 'thp1(X)=thp3(X)', 'p1~p3', 'thY(p2)=thY(p3)']
+S_P1(x,x) valid: True ['X~p0', 'Y~p0', 'thX(p0)=thY(p0)', 'thp0(X)=thp0(Y)', 'X~p1', 'Y~p1', 'thX(p1)=thY(p1)', 'thp1(X)=thp1(Y)', 'X~p2', 'Y~p2', 'thX(p2)=thY(p2)', 'thp2(X)=thp2(Y)', 'thX(p3)=thY(p3)', 'thp3(X)=thp3(Y)', 'X~Y', 'X<=Y', 'Y<=X', 'thX(p0)=thX(p2)', 'thY(p0)=thY(p2)', 'thp0(X)=thp2(X)', 'thp0(Y)=thp2(Y)', 'p0~p2', 'thX(p0)=thp2(X)', 'thX(p2)=thp0(X)', 'thX(p1)=thX(p3)', 'thY(p1)=thY(p3)', 'thX(p3)=thp1(X)']
+S_R'(accb,x,y) valid: True ['Y~p0', 'thp0(X)=thp0(Y)', 'X~p1', 'Y~p1', 'thX(p1)=thY(p1)', 'thp1(X)=thp1(Y)', 'X~p2', 'Y~p2', 'thX(p2)=thY(p2)', 'thp2(X)=thp2(Y)', 'thX(p3)=thY(p3)', 'thp3(X)=thp3(Y)', 'X~Y', 'thX(p0)=thX(p1)', 'thX(p0)=thp1(X)', 'thX(p0)=thX(p2)', 'p0|><|p2', 'thX(p0)=thp2(X)', 'thX(p1)=thX(p2)', 'thY(p1)=thY(p2)', 'thp1(X)=thp2(X)', 'thp1(Y)=thp2(Y)', 'thX(p1)=thp2(X)', 'thX(p2)=thp1(X)', 'p1|><|p3']
+Q&P1 valid pairs: 0 None
+Q&R' valid pairs: 0 None
+P1&R' valid pairs: 0 None

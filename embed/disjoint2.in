@@ -1,0 +1,44 @@
+% Two disjoint matched pairs a1 |><| b2, a3 |><| b4 on four indices, with cw != cz, for Mace4.
+% The unique model of size 14 without the clauses below is the 14-element algebra of Remark 4.2(3)
+% (all twelve cross pairs a_i, b_j matched; it violates the hexagon condition).  The clauses below
+% forbid every additional matched pair that would create a FULL vertex (in- and out-edge): such a
+% model would violate the hexagon condition anyway (Prop. 4.11), so nothing is lost.  The two
+% extra edges (1,4) and (3,2) keep every vertex a source or a sink and are allowed; forbid them
+% too (two more clauses, commented out) for full general position.
+% A model found here is to be tested for the hexagon condition (mace4parse.py): one satisfying it
+% would show that the disjoint-pair condition does NOT follow from the hexagon condition, i.e.
+% it would be a new necessary condition for embeddability (it holds in P_n, n <= 4).
+%   x * y = y x y  (= x theta_y).  Constants: a1..a4, b1..b4, cw, cz.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+% (H1)
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a4 = cw.   a4 * a1 = cw.   a1 * a3 = cw.   a2 * a4 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b4 = cz.   b4 * b1 = cz.   b1 * b3 = cz.   b2 * b4 = cz.
+% (H2)
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.   a4 * b4 = b4 * a4.
+% (H3)  a1 |><| b2,  a3 |><| b4
+b2 * a1 = a1.   a1 * b2 = b2.
+b4 * a3 = a3.   a3 * b4 = b4.
+cw != cz.
+
+% no additional matched pair with tail 2 or 4, or head 1 or 3 (would create a full vertex):
+b1 * a2 != a2 | a2 * b1 != b1.
+b3 * a2 != a2 | a2 * b3 != b3.
+b4 * a2 != a2 | a2 * b4 != b4.
+b1 * a4 != a4 | a4 * b1 != b1.
+b2 * a4 != a4 | a4 * b2 != b2.
+b3 * a4 != a4 | a4 * b3 != b3.
+b3 * a1 != a1 | a1 * b3 != b3.
+b1 * a3 != a3 | a3 * b1 != b1.
+% full general position (also forbid (1,4) and (3,2)):
+% b4 * a1 != a1 | a1 * b4 != b4.
+% b2 * a3 != a3 | a3 * b2 != b2.
+end_of_list.

@@ -1,0 +1,23 @@
+set(prolog_style_variables).
+assign(max_seconds, 280). assign(max_megs, 1500).
+op(400, infix, "*").
+formulas(assumptions).
+X*X = X.
+(Y*X)*X = Y*X.
+(X*Y)*X = Y*X.
+((Z*X)*Y)*X = Z*(Y*X).
+(((Z*X)*Y)*X)*Y = (Z*X)*Y.
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X.
+% known valid conditions (S), (R), (R'), (V)
+(C*A = A & A*C = C & C*B = B & B*C = C & D*B = B & B*D = D & C*D = D*C & (C*D)*A = (C*D)*B) -> (D*A = A & A*D = D).
+(C*A = A & A*C = C & C*B = B & B*C = C & X*A = A*X & X*C = C*X & B*X = C*X) -> (B*A = A & A*B = B).
+(C*A = A & A*C = C & C*B = B & B*C = C & X*C = C*X & A*X = C*X & Y*A = A*Y & B*X = B*Y) -> (B*A = A & A*B = B).
+(C*B = B & (T*A)*B = T*A & (T*C)*A = T*C) -> (T*A)*(T*B) = T*A.
+% (R'') hypotheses
+c*a = a. a*c = c. c*b = b. b*c = c. x*c = c*x. a*x = c*x. y*b = b*y. b*x = a*y.
+% derived identities (verified in P(P_m), m <= 6): th_y(c) = th_y(a), th_c(y) = th_c(x), th_b(y) = th_b(x)
+c*y = a*y. y*c = x*c. y*b = x*b.
+end_of_list.
+formulas(goals).
+b*a = a & a*b = b.
+end_of_list.

@@ -1,0 +1,20 @@
+set(prolog_style_variables). assign(max_seconds, 3000). assign(max_megs, 3000). op(400, infix, "*").
+formulas(assumptions).
+X*X = X.
+(Y*X)*X = Y*X.
+(X*Y)*X = Y*X.
+((Z*X)*Y)*X = Z*(Y*X).
+(((Z*X)*Y)*X)*Y = (Z*X)*Y.
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X.
+% (R'_2) = (R'): c ~ X ~ Y ~ a, th_X(a) = th_X(c), th_X(b) = th_Y(b) => a ~ b
+(C*A = A & A*C = C & C*B = B & B*C = C & X*C = C*X & A*X = C*X & Y*A = A*Y & B*X = B*Y) -> (B*A = A & A*B = B).
+% (S), (R), (V), (W2), (R'')
+(C*A = A & A*C = C & C*B = B & B*C = C & D*B = B & B*D = D & C*D = D*C & (C*D)*A = (C*D)*B) -> (D*A = A & A*D = D).
+(C*A = A & A*C = C & C*B = B & B*C = C & X*A = A*X & X*C = C*X & B*X = C*X) -> (B*A = A & A*B = B).
+(C*B = B & (T*A)*B = T*A & (T*C)*A = T*C) -> (T*A)*(T*B) = T*A.
+(C*A = A & A*C = C & C*B = B & B*C = C & X*C = C*X & Y*B = B*Y & X*Y = Y*X & A*X = C*X & A*Y = C*Y) -> (B*A = A & A*B = B).
+(C*A = A & A*C = C & C*B = B & B*C = C & X*C = C*X & A*X = C*X & Y*B = B*Y & B*X = A*Y) -> (B*A = A & A*B = B).
+% negated (R'_3): c ~ p ~ q ~ k ~ a, th_p(a) = th_p(c), th_p(b) = th_q(b) = th_k(b), not a ~ b
+c*a = a. a*c = c. c*b = b. b*c = c. p*c = c*p. p*q = q*p. q*k = k*q. k*a = a*k. a*p = c*p. b*p = b*q. b*q = b*k.
+b*a != a | a*b != b.
+end_of_list.

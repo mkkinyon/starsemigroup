@@ -1,0 +1,201 @@
+============================== Mace4 =================================
+Mace4 (64) version 2017-11A (CIIRC), November 2017.
+Process 1046 was started by root on vm,
+Sat Sep 12 16:59:50 2026
+The command was "mace4 -n 2 -N 9 -m 1 -b 2000 -f pc34_mace/25.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file pc34_mace/25.in
+
+op(400,infix,"*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+z * x != z | z * y != z | x * y = y * x.
+v * x != x | x * v != v | v * y != y | y * v != v | w * y != y | y * w != w | w * v != v * w | (w * v) * x != (w * v) * y | w * x = x.
+v * x != x | x * v != v | v * y != y | y * v != v | w * y != y | y * w != w | w * v != v * w | (w * v) * x != (w * v) * y | x * w = w.
+z1 * x1 != x1 | x1 * z1 != z1 | z1 * y1 != y1 | y1 * z1 != z1 | x1 * x != x * x1 | z1 * x != x * z1 | y1 * x != z1 * x | y1 * x1 = x1.
+z1 * x1 != x1 | x1 * z1 != z1 | z1 * y1 != y1 | y1 * z1 != z1 | x1 * x != x * x1 | z1 * x != x * z1 | y1 * x != z1 * x | x1 * y1 = y1.
+a1 * a0 = a0.
+a0 * a1 = a1.
+a2 * a1 = a1.
+a1 * a2 = a2.
+a3 * a2 = a2.
+a2 * a3 = a3.
+c * a3 = c.
+c * a0 = c * a2.
+a3 * a1 = c.
+a3 * a0 != a0 | a0 * a3 != a3.
+end_of_list.
+    % assign(domain_size, 2) -> assign(start_size, 2).
+    % assign(domain_size, 2) -> assign(end_size, 2).
+
+% From the command line: assign(domain_size, 2).
+
+% From the command line: assign(end_size, 9).
+
+% From the command line: assign(max_models, 1).
+
+% From the command line: assign(max_megs, 2000).
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+x * x = x.
+(x * y) * y = x * y.
+(x * y) * x = y * x.
+((x * y) * z) * y = x * (z * y).
+(((x * y) * z) * y) * z = (x * y) * z.
+x * y != x | x * z != x | y * z = z * y.
+x * y != y | y * x != x | x * z != z | z * x != x | u * z != z | z * u != u | u * x != x * u | (u * x) * y != (u * x) * z | u * y = y.
+x * y != y | y * x != x | x * z != z | z * x != x | u * z != z | z * u != u | u * x != x * u | (u * x) * y != (u * x) * z | y * u = u.
+x * y != y | y * x != x | x * z != z | z * x != x | y * u != u * y | x * u != u * x | z * u != x * u | z * y = y.
+x * y != y | y * x != x | x * z != z | z * x != x | y * u != u * y | x * u != u * x | z * u != x * u | y * z = z.
+a1 * a0 = a0.
+a0 * a1 = a1.
+a2 * a1 = a1.
+a1 * a2 = a2.
+a3 * a2 = a2.
+a2 * a3 = a3.
+c * a3 = c.
+c * a0 = c * a2.
+a3 * a1 = c.
+a3 * a0 != a0 | a0 * a3 != a3.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 2 =========================
+
+============================== STATISTICS ============================
+
+For domain size 2.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.00 seconds).
+Ground clauses: seen=108, kept=64.
+Selections=8, assignments=15, propagations=9, current_models=0.
+Rewrite_terms=665, rewrite_bools=176, indexes=9.
+Rules_from_neg_clauses=0, cross_offs=0.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 3 =========================
+
+============================== STATISTICS ============================
+
+For domain size 3.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.00 seconds).
+Ground clauses: seen=436, kept=307.
+Selections=10, assignments=25, propagations=23, current_models=0.
+Rewrite_terms=3206, rewrite_bools=956, indexes=112.
+Rules_from_neg_clauses=0, cross_offs=0.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 4 =========================
+
+============================== STATISTICS ============================
+
+For domain size 4.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.00 seconds).
+Ground clauses: seen=1262, kept=974.
+Selections=11, assignments=31, propagations=40, current_models=0.
+Rewrite_terms=9434, rewrite_bools=3257, indexes=430.
+Rules_from_neg_clauses=1, cross_offs=3.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 5 =========================
+
+============================== STATISTICS ============================
+
+For domain size 5.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.02 seconds).
+Ground clauses: seen=2940, kept=2395.
+Selections=11, assignments=32, propagations=55, current_models=0.
+Rewrite_terms=26166, rewrite_bools=8170, indexes=1429.
+Rules_from_neg_clauses=2, cross_offs=11.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 6 =========================
+
+============================== STATISTICS ============================
+
+For domain size 6.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.04 seconds).
+Ground clauses: seen=5920, kept=4996.
+Selections=11, assignments=32, propagations=66, current_models=0.
+Rewrite_terms=52668, rewrite_bools=16306, indexes=2570.
+Rules_from_neg_clauses=1, cross_offs=18.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 7 =========================
+
+============================== STATISTICS ============================
+
+For domain size 7.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.08 seconds).
+Ground clauses: seen=10748, kept=9299.
+Selections=12, assignments=38, propagations=66, current_models=0.
+Rewrite_terms=74384, rewrite_bools=25369, indexes=4120.
+Rules_from_neg_clauses=0, cross_offs=19.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 8 =========================
+
+============================== STATISTICS ============================
+
+For domain size 8.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.17 seconds).
+Ground clauses: seen=18066, kept=15922.
+Selections=12, assignments=38, propagations=67, current_models=0.
+Rewrite_terms=97480, rewrite_bools=36044, indexes=5882.
+Rules_from_neg_clauses=0, cross_offs=19.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 9 =========================
+
+============================== STATISTICS ============================
+
+For domain size 9.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.30 seconds).
+Ground clauses: seen=28612, kept=25579.
+Selections=12, assignments=38, propagations=68, current_models=0.
+Rewrite_terms=123760, rewrite_bools=48555, indexes=7932.
+Rules_from_neg_clauses=0, cross_offs=19.
+
+============================== end of statistics =====================
+
+User_CPU=0.30, System_CPU=0.02, Wall_clock=0.
+
+Exiting with failure.
+
+Process 1046 exit (exhausted) Sat Sep 12 16:59:50 2026
+The process finished Sat Sep 12 16:59:50 2026

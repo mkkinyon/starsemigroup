@@ -1,0 +1,63 @@
+% Hexagon condition in the language of binary projection algebras.
+%
+% Convention (East & Azeef Muhammed, arXiv:2301.04845, Remark 4.2):
+%     q <> p  :=  q theta_p   ( = p q p  in a regular *-semigroup ),
+% so   x <> y  =  y x y.   We write the operation as  *  below (NOT semigroup
+% multiplication!).  The operation is not associative: everything is bracketed.
+%
+% Translation table (p, q, r, s projections):
+%     p r p = s              <=>   r * p = s
+%     p q = q p = s          <=>   q * p = s  &  p * q = s
+%     (for projections, p q p = q p q already forces p q = q p)
+%
+% Goal:  cw = cz.   (Constants are named cw, cz: in Prover9 symbols beginning
+% with u,v,w,x,y,z are variables, so plain w, z would be universally quantified!)   This is NOT provable from (P1)-(P5) alone: the 11-element
+% projection algebra of the semigroup Q_0 (a quotient of P_3) satisfies the
+% hypotheses with w != z, so Mace4 should find a countermodel of size <= 11.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+
+% ---- axioms of a (binary) projection algebra ----
+x * x = x.                                  % (P1)'
+(y * x) * x = y * x.                        % (P2)'
+(x * y) * x = y * x.                        % (P3)'
+((z * x) * y) * x = z * (y * x).            % (P4)'
+(((z * x) * y) * x) * y = (z * x) * y.      % (P5)'
+
+% ---- hexagon hypotheses: constants a1,a2,a3,b1,b2,b3,cw,cz ----
+
+% (H1)  a_i a_j = a_j a_i = w  and  b_i b_j = b_j b_i = z   (i != j)
+%       The three cyclic equations suffice: from (P3)' and (P2)',
+%       a2 * a1 = (a1 * a2) * a1 = cw * a1 = (a3 * a1) * a1 = a3 * a1 = cw, etc.
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+%   redundant:  a2 * a1 = cw.  a3 * a2 = cw.  a1 * a3 = cw.
+%               b2 * b1 = cz.  b3 * b2 = cz.  b1 * b3 = cz.
+
+% (H2)  a_i b_i = b_i a_i   (the products m_i are not needed as symbols:
+%       the transport relations below, which used them, are redundant)
+a1 * b1 = b1 * a1.
+a2 * b2 = b2 * a2.
+a3 * b3 = b3 * a3.
+
+% (H3)  a_i b_j a_i = a_i  and  b_j a_i b_j = b_j   (i != j)
+%       i.e.  b_j * a_i = a_i  and  a_i * b_j = b_j
+b2 * a1 = a1.  a1 * b2 = b2.
+b3 * a1 = a1.  a1 * b3 = b3.
+b1 * a2 = a2.  a2 * b1 = b1.
+b3 * a2 = a2.  a2 * b3 = b3.
+b1 * a3 = a3.  a3 * b1 = b1.
+b2 * a3 = a3.  a3 * b2 = b2.
+
+% (H4)  The ``transport'' relations  m_j * b_i = z,  m_j * a_i = w,  z * a_i = m_i,
+%       w * b_i = m_i  (m_i := a_i * b_i, i != j) were originally listed as a fourth
+%       hypothesis; Prover9 shows they follow from (P1)'-(P5)' and (H1)-(H3)
+%       (in a regular *-semigroup e.g. a_i m_j a_i = a_j (a_i b_j a_i) = a_j a_i = w).
+
+end_of_list.
+
+formulas(goals).
+cw = cz.
+end_of_list.

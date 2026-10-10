@@ -1,0 +1,265 @@
+set(prolog_style_variables). assign(max_seconds, 3600). assign(max_megs, 3000). op(400, infix, "*").
+formulas(assumptions).
+X*X = X.
+(Y*X)*X = Y*X.
+(X*Y)*X = Y*X.
+((Z*X)*Y)*X = Z*(Y*X).
+(((Z*X)*Y)*X)*Y = (Z*X)*Y.
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X.
+% (W_3)
+(C*A = A & A*C = C & C*B = B & B*C = C & V1*C = C*V1 & V3*B = B*V3 & V1*V2 = V2*V1 & V2*V3 = V3*V2 & A*V1 = C*V1 & A*V2 = C*V2 & A*V3 = C*V3) -> (B*A = A & A*B = B).
+(C*A = A & A*C = C & C*B = B & B*C = C & D*B = B & B*D = D & C*D = D*C & (C*D)*A = (C*D)*B) -> (D*A = A & A*D = D).
+(C*B = B & (T*A)*B = T*A & (T*C)*A = T*C) -> (T*A)*(T*B) = T*A.
+% fixed part of the table (X*Y = theta_Y(X))
+a*d = d.
+b*d = d.
+c*d = d.
+x1*d = d.
+x2*d = d.
+x3*d = d.
+x4*d = d.
+d*d = d.
+e0*d = d.
+e1*d = d.
+e2*d = d.
+e3*d = d.
+e4*d = d.
+a*e0 = e0.
+b*e0 = e0.
+c*e0 = e0.
+x1*e0 = e0.
+x2*e0 = e0.
+x3*e0 = e0.
+x4*e0 = e0.
+d*e0 = e0.
+e0*e0 = e0.
+e1*e0 = e0.
+e2*e0 = e0.
+e3*e0 = e0.
+e4*e0 = e0.
+a*e1 = e1.
+b*e1 = e1.
+c*e1 = e1.
+x1*e1 = e1.
+x2*e1 = e1.
+x3*e1 = e1.
+x4*e1 = e1.
+d*e1 = e1.
+e0*e1 = e1.
+e1*e1 = e1.
+e2*e1 = e1.
+e3*e1 = e1.
+e4*e1 = e1.
+a*e2 = e2.
+b*e2 = e2.
+c*e2 = e2.
+x1*e2 = e2.
+x2*e2 = e2.
+x3*e2 = e2.
+x4*e2 = e2.
+d*e2 = e2.
+e0*e2 = e2.
+e1*e2 = e2.
+e2*e2 = e2.
+e3*e2 = e2.
+e4*e2 = e2.
+a*e3 = e3.
+b*e3 = e3.
+c*e3 = e3.
+x1*e3 = e3.
+x2*e3 = e3.
+x3*e3 = e3.
+x4*e3 = e3.
+d*e3 = e3.
+e0*e3 = e3.
+e1*e3 = e3.
+e2*e3 = e3.
+e3*e3 = e3.
+e4*e3 = e3.
+a*e4 = e4.
+b*e4 = e4.
+c*e4 = e4.
+x1*e4 = e4.
+x2*e4 = e4.
+x3*e4 = e4.
+x4*e4 = e4.
+d*e4 = e4.
+e0*e4 = e4.
+e1*e4 = e4.
+e2*e4 = e4.
+e3*e4 = e4.
+e4*e4 = e4.
+a*a = a.
+a*c = c.
+a*b = e4.
+b*a = d.
+b*c = c.
+b*b = b.
+c*a = a.
+c*c = c.
+c*b = b.
+x1*a = d.
+x1*c = e0.
+x1*b = e4.
+x2*a = d.
+x2*c = e0.
+x2*b = e4.
+x3*a = d.
+x3*c = e0.
+x3*b = e4.
+x4*a = d.
+x4*c = e0.
+x4*b = e4.
+d*a = d.
+d*c = e0.
+d*b = e4.
+e0*a = d.
+e0*c = e0.
+e0*b = e4.
+e1*a = d.
+e1*c = e0.
+e1*b = e4.
+e2*a = d.
+e2*c = e0.
+e2*b = e4.
+e3*a = d.
+e3*c = e0.
+e3*b = e4.
+e4*a = d.
+e4*c = e0.
+e4*b = e4.
+a*x1 = e0 | a*x1 = e1 | a*x1 = x1.
+b*x1 = e0 | b*x1 = e1 | b*x1 = x1.
+c*x1 = e0.
+x1*x1 = x1.
+x2*x1 = e1.
+x3*x1 = e0 | x3*x1 = e1 | x3*x1 = x1.
+x4*x1 = e0 | x4*x1 = e1 | x4*x1 = x1.
+d*x1 = e0 | d*x1 = e1 | d*x1 = x1.
+e0*x1 = e0.
+e1*x1 = e1.
+e2*x1 = e0 | e2*x1 = e1 | e2*x1 = x1.
+e3*x1 = e0 | e3*x1 = e1 | e3*x1 = x1.
+e4*x1 = e0 | e4*x1 = e1 | e4*x1 = x1.
+a*x1 = c*x1.
+a*x2 = e1 | a*x2 = e2 | a*x2 = x2.
+b*x2 = e1 | b*x2 = e2 | b*x2 = x2.
+c*x2 = e1 | c*x2 = e2 | c*x2 = x2.
+x1*x2 = e1.
+x2*x2 = x2.
+x3*x2 = e2.
+x4*x2 = e1 | x4*x2 = e2 | x4*x2 = x2.
+d*x2 = e1 | d*x2 = e2 | d*x2 = x2.
+e0*x2 = e1 | e0*x2 = e2 | e0*x2 = x2.
+e1*x2 = e1.
+e2*x2 = e2.
+e3*x2 = e1 | e3*x2 = e2 | e3*x2 = x2.
+e4*x2 = e1 | e4*x2 = e2 | e4*x2 = x2.
+a*x2 = c*x2.
+a*x3 = e2 | a*x3 = e3 | a*x3 = x3.
+b*x3 = e2 | b*x3 = e3 | b*x3 = x3.
+c*x3 = e2 | c*x3 = e3 | c*x3 = x3.
+x1*x3 = e2 | x1*x3 = e3 | x1*x3 = x3.
+x2*x3 = e2.
+x3*x3 = x3.
+x4*x3 = e3.
+d*x3 = e2 | d*x3 = e3 | d*x3 = x3.
+e0*x3 = e2 | e0*x3 = e3 | e0*x3 = x3.
+e1*x3 = e2 | e1*x3 = e3 | e1*x3 = x3.
+e2*x3 = e2.
+e3*x3 = e3.
+e4*x3 = e2 | e4*x3 = e3 | e4*x3 = x3.
+a*x3 = c*x3.
+a*x4 = e3 | a*x4 = e4 | a*x4 = x4.
+b*x4 = e4.
+c*x4 = e3 | c*x4 = e4 | c*x4 = x4.
+x1*x4 = e3 | x1*x4 = e4 | x1*x4 = x4.
+x2*x4 = e3 | x2*x4 = e4 | x2*x4 = x4.
+x3*x4 = e3.
+x4*x4 = x4.
+d*x4 = e3 | d*x4 = e4 | d*x4 = x4.
+e0*x4 = e3 | e0*x4 = e4 | e0*x4 = x4.
+e1*x4 = e3 | e1*x4 = e4 | e1*x4 = x4.
+e2*x4 = e3 | e2*x4 = e4 | e2*x4 = x4.
+e3*x4 = e3.
+e4*x4 = e4.
+a*x4 = c*x4.
+a != b.
+a != c.
+a != x1.
+a != x2.
+a != x3.
+a != x4.
+a != d.
+a != e0.
+a != e1.
+a != e2.
+a != e3.
+a != e4.
+b != c.
+b != x1.
+b != x2.
+b != x3.
+b != x4.
+b != d.
+b != e0.
+b != e1.
+b != e2.
+b != e3.
+b != e4.
+c != x1.
+c != x2.
+c != x3.
+c != x4.
+c != d.
+c != e0.
+c != e1.
+c != e2.
+c != e3.
+c != e4.
+x1 != x2.
+x1 != x3.
+x1 != x4.
+x1 != d.
+x1 != e0.
+x1 != e1.
+x1 != e2.
+x1 != e3.
+x1 != e4.
+x2 != x3.
+x2 != x4.
+x2 != d.
+x2 != e0.
+x2 != e1.
+x2 != e2.
+x2 != e3.
+x2 != e4.
+x3 != x4.
+x3 != d.
+x3 != e0.
+x3 != e1.
+x3 != e2.
+x3 != e3.
+x3 != e4.
+x4 != d.
+x4 != e0.
+x4 != e1.
+x4 != e2.
+x4 != e3.
+x4 != e4.
+d != e0.
+d != e1.
+d != e2.
+d != e3.
+d != e4.
+e0 != e1.
+e0 != e2.
+e0 != e3.
+e0 != e4.
+e1 != e2.
+e1 != e3.
+e1 != e4.
+e2 != e3.
+e2 != e4.
+e3 != e4.
+end_of_list.

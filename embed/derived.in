@@ -1,0 +1,73 @@
+% Does the triangle condition follow from the hexagon condition?
+% Conjectured derivation: from the triangle hypotheses, the derived projections
+%   p1 = a1 * b3 (= b3 a1 b3),  q1 = b3 * a1 (= a1 b3 a1),
+%   p2 = a2 * b1 (= b1 a2 b1),  q2 = b1 * a2 (= a2 b1 a2),
+%   p3 = a3 * b2 (= b2 a3 b2),  q3 = b2 * a3 (= a3 b2 a3)
+% satisfy the HEXAGON hypotheses in the arrangement (p1,p3,p2 | q3,q2,q1) with the
+% products swapped: p_i * p_j = cz, q_i * q_j = cw, p1,q3 / p3,q2 / p2,q1 commute,
+% and matched pairs p_i|><|q_i, p1|><|q2, p3|><|q1, p2|><|q3.
+% All 20 equations hold in every triangle configuration of P_2, P_3, P_4 and of the
+% 17-element Mace4 model.  If Prover9 proves them, the hexagon condition applied to
+% the derived sextuple gives cz = cw, i.e. hexagon => triangle (and so the two
+% conditions are equivalent modulo the axioms).
+%
+% STATUS (hand proofs, see notes):  all of (1)-(27) below EXCEPT the six cross
+% matchings (3),(4),(16),(17),(21),(22) are proved by hand from the axioms and
+% the triangle hypotheses.  The cross matchings reduce to the single identity
+%     theta_{b3}(theta_{a2}(b1)) = theta_{b3}(a1),   i.e.   (b1 * a2) * b3 = a1 * b3,
+% and its two cyclic versions (goals (K1)-(K3)); it holds in every triangle
+% configuration of P_2, P_3, P_4 and of the 17-element model.
+% Prover9 treats several goals as a DISJUNCTION, so prove them one at a time
+% (or write the conjunction as a single goal).
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+b2 * a1 = a1.   a1 * b2 = b2.
+b3 * a2 = a2.   a2 * b3 = b3.
+b1 * a3 = a3.   a3 * b1 = b1.
+end_of_list.
+
+formulas(goals).
+% key identities (each implies the corresponding pair of cross matchings)
+(b1 * a2) * b3 = a1 * b3.   % (K1)  => (3),(4):  p1 |><| q2
+(b2 * a3) * b1 = a2 * b1.   % (K2)  => (21),(22): p2 |><| q3
+(b3 * a1) * b2 = a3 * b2.   % (K3)  => (16),(17): p3 |><| q1
+% the remaining derived-hexagon equations (all proved by hand; listed for reference)
+(a1 * b3) * (a3 * b2) = cz.   % (1)
+(b2 * a3) * (b1 * a2) = cw.   % (2)
+(b1 * a2) * (a1 * b3) = (a1 * b3).   % (3)
+(a1 * b3) * (b1 * a2) = (b1 * a2).   % (4)
+(a1 * b3) * (a2 * b1) = cz.   % (5)
+(b2 * a3) * (b3 * a1) = cw.   % (6)
+(b3 * a1) * (a1 * b3) = (a1 * b3).   % (7)
+(a1 * b3) * (b3 * a1) = (b3 * a1).   % (8)
+(a1 * b3) * (b2 * a3) = (b2 * a3) * (a1 * b3).   % (9)
+(a3 * b2) * (a1 * b3) = cz.   % (10)
+(b1 * a2) * (b2 * a3) = cw.   % (11)
+(b2 * a3) * (a3 * b2) = (a3 * b2).   % (12)
+(a3 * b2) * (b2 * a3) = (b2 * a3).   % (13)
+(a3 * b2) * (a2 * b1) = cz.   % (14)
+(b1 * a2) * (b3 * a1) = cw.   % (15)
+(b3 * a1) * (a3 * b2) = (a3 * b2).   % (16)
+(a3 * b2) * (b3 * a1) = (b3 * a1).   % (17)
+(a3 * b2) * (b1 * a2) = (b1 * a2) * (a3 * b2).   % (18)
+(a2 * b1) * (a1 * b3) = cz.   % (19)
+(b3 * a1) * (b2 * a3) = cw.   % (20)
+(b2 * a3) * (a2 * b1) = (a2 * b1).   % (21)
+(a2 * b1) * (b2 * a3) = (b2 * a3).   % (22)
+(a2 * b1) * (a3 * b2) = cz.   % (23)
+(b3 * a1) * (b1 * a2) = cw.   % (24)
+(b1 * a2) * (a2 * b1) = (a2 * b1).   % (25)
+(a2 * b1) * (b1 * a2) = (b1 * a2).   % (26)
+(a2 * b1) * (b3 * a1) = (b3 * a1) * (a2 * b1).   % (27)
+end_of_list.

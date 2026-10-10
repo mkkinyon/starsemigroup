@@ -1,0 +1,27 @@
+193 equalities on all 3000 instances (6s)
+a = aca = aba
+b = bab = bcb
+c = cac = cbc
+ab = acb
+ac = abc
+ax = acx = axc = ayc
+ay = acy = abx = axy = ayx
+ba = bca
+bc = bac
+bx = bay = bcy = bxy = byx = ybx
+by = yb = bxb = byb = yby
+ca = cba
+cb = cab
+cx = xc = cax = cxc = cyc = xac = xax = xcx
+cy = cay = cbx = cxy = cyx = xay = xcy
+xa = cxa = cya = xca
+xb = xby = xyb = yab = ycb = yxb
+xy = yx = xyx = yxy
+ya = xba = xya = yca = yxa
+yc = xbc = xyc = yac = yax = ycx = yxc
+aby = axb = ayb
+axa = aya
+bax = bcx = bxc = byc = ybc
+bxa = bya = yba
+cby = cxb = cyb = xab = xcb
+xbx = yay = ycy

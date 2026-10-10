@@ -1,0 +1,189 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2017-11A (CIIRC), November 2017.
+Process 807 was started by root on vm,
+Sun Sep 13 18:13:31 2026
+The command was "/home/claude/bin/prover9 -f lemA.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file lemA.in
+
+assign(max_seconds,1200).
+assign(max_weight,40).
+op(400,infix,"*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+z * x != z | z * y != z | x * y = y * x.
+(t * a) * b = t * a.
+end_of_list.
+
+formulas(goals).
+t * (a * b) = t * a.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 t * (a * b) = t * a # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+x * x = x.  [assumption].
+(x * y) * y = x * y.  [assumption].
+(x * y) * x = y * x.  [assumption].
+((x * y) * z) * y = x * (z * y).  [assumption].
+(((x * y) * z) * y) * z = (x * y) * z.  [assumption].
+x * y != x | x * z != x | y * z = z * y.  [assumption].
+(t * a) * b = t * a.  [assumption].
+t * (a * b) != t * a.  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ a, t, b, * ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+  % set(hyper_resolution).  % (nonunit Horn with equality)
+    % set(hyper_resolution) -> set(pos_hyper_resolution).
+  % set(neg_ur_resolution).  % (nonunit Horn with equality)
+  % assign(para_lit_limit, 3).  % (nonunit Horn with equality)
+
+Auto_process settings:  (no changes).
+
+kept:      2 x * x = x.  [assumption].
+kept:      3 (x * y) * y = x * y.  [assumption].
+kept:      4 (x * y) * x = y * x.  [assumption].
+kept:      5 ((x * y) * z) * y = x * (z * y).  [assumption].
+           6 (((x * y) * z) * y) * z = (x * y) * z.  [assumption].
+kept:      7 (x * (y * z)) * y = (x * z) * y.  [copy(6),rewrite([5(3)])].
+kept:      8 x * y != x | x * z != x | y * z = z * y.  [assumption].
+kept:      9 (t * a) * b = t * a.  [assumption].
+kept:      10 t * (a * b) != t * a.  [deny(1)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+2 x * x = x.  [assumption].
+3 (x * y) * y = x * y.  [assumption].
+4 (x * y) * x = y * x.  [assumption].
+5 ((x * y) * z) * y = x * (z * y).  [assumption].
+7 (x * (y * z)) * y = (x * z) * y.  [copy(6),rewrite([5(3)])].
+8 x * y != x | x * z != x | y * z = z * y.  [assumption].
+9 (t * a) * b = t * a.  [assumption].
+10 t * (a * b) != t * a.  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+2 x * x = x.  [assumption].
+3 (x * y) * y = x * y.  [assumption].
+4 (x * y) * x = y * x.  [assumption].
+5 ((x * y) * z) * y = x * (z * y).  [assumption].
+7 (x * (y * z)) * y = (x * z) * y.  [copy(6),rewrite([5(3)])].
+9 (t * a) * b = t * a.  [assumption].
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=5): 2 x * x = x.  [assumption].
+
+given #2 (I,wt=9): 3 (x * y) * y = x * y.  [assumption].
+
+given #3 (I,wt=9): 4 (x * y) * x = y * x.  [assumption].
+
+given #4 (I,wt=13): 5 ((x * y) * z) * y = x * (z * y).  [assumption].
+
+given #5 (I,wt=13): 7 (x * (y * z)) * y = (x * z) * y.  [copy(6),rewrite([5(3)])].
+
+given #6 (I,wt=17): 8 x * y != x | x * z != x | y * z = z * y.  [assumption].
+
+given #7 (I,wt=9): 9 (t * a) * b = t * a.  [assumption].
+-------- Proof 1 -------- 
+
+============================== PROOF =================================
+
+% Proof 1 at 0.01 (+ 0.00) seconds.
+% Length of proof is 9.
+% Level of proof is 3.
+% Maximum clause weight is 17.000.
+% Given clauses 7 (2.333 givens/level).
+
+1 t * (a * b) = t * a # label(non_clause) # label(goal).  [goal].
+3 (x * y) * y = x * y.  [assumption].
+5 ((x * y) * z) * y = x * (z * y).  [assumption].
+8 x * y != x | x * z != x | y * z = z * y.  [assumption].
+9 (t * a) * b = t * a.  [assumption].
+10 t * (a * b) != t * a.  [deny(1)].
+38 b * a = a * b.  [hyper(8,a,3,a,b,9,a),flip(a)].
+41 t * (a * b) = t * a.  [para(9(a,1),5(a,1,1)),rewrite([3(5),38(7)]),flip(a)].
+42 $F.  [resolve(41,a,10,a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=7. Generated=123. Kept=39. proofs=1.
+Usable=7. Sos=25. Demods=23. Limbo=3, Disabled=11. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=84. Back_subsumed=0.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=26 (0 lex), Back_demodulated=3. Back_unit_deleted=0.
+Demod_attempts=1185. Demod_rewrites=189.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=51. Nonunit_bsub_feature_tests=68.
+Megabytes=0.11.
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 807 exit (max_proofs) ------
+
+Process 807 exit (max_proofs) Sun Sep 13 18:13:31 2026

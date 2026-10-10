@@ -1,0 +1,21 @@
+assign(max_seconds, 1500).
+op(400, infix, "*").
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+% Q1
+z * x != z | z * y != z | x * y = y * x.
+% (L**): bcb = b, s <= b, z <= b, csc = czc -> s = z    (x*y = theta_y(x): bcb = b is c*b = b; s<=b is s*b = s; csc is s*c)
+w * y != y | u * y != u | v * y != v | u * w != v * w | u = v.
+(t*a)*b = t*a.
+(t*c)*a = t*c.
+c*b = b.
+% Lemma D: c(btb)c = ctc
+(t*b)*c = t*c.
+end_of_list.
+formulas(goals).
+(t*a)*(t*b) = t*a.
+end_of_list.

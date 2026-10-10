@@ -1,0 +1,537 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2017-11A (CIIRC), November 2017.
+Process 1400 was started by root on vm,
+Sun Sep 13 21:23:13 2026
+The command was "prover9 -f pa_ava.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file pa_ava.in
+
+assign(max_seconds,300).
+set(prolog_style_variables).
+op(400,infix,"*").
+
+formulas(assumptions).
+X * X = X.
+(Y * X) * X = Y * X.
+(X * Y) * X = Y * X.
+((Z * X) * Y) * X = Z * (Y * X).
+(((Z * X) * Y) * X) * Y = (Z * X) * Y.
+Z * X = Z & Z * Y = Z -> X * Y = Y * X.
+c * a = a.
+a * c = c.
+c * b = b.
+b * c = c.
+x * c = c * x.
+a * x = c * x.
+y * a = a * y.
+b * x = b * y.
+end_of_list.
+
+formulas(goals).
+(c * x) * a = a * y.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 Z * X = Z & Z * Y = Z -> X * Y = Y * X # label(non_clause).  [assumption].
+2 (c * x) * a = a * y # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+A * A = A.  [assumption].
+(A * B) * B = A * B.  [assumption].
+(A * B) * A = B * A.  [assumption].
+((A * B) * C) * B = A * (C * B).  [assumption].
+(((A * B) * C) * B) * C = (A * B) * C.  [assumption].
+A * B != A | A * C != A | C * B = B * C.  [clausify(1)].
+c * a = a.  [assumption].
+a * c = c.  [assumption].
+c * b = b.  [assumption].
+b * c = c.  [assumption].
+x * c = c * x.  [assumption].
+a * x = c * x.  [assumption].
+y * a = a * y.  [assumption].
+b * x = b * y.  [assumption].
+(c * x) * a != a * y.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ c, a, b, x, y, * ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+  % set(hyper_resolution).  % (nonunit Horn with equality)
+    % set(hyper_resolution) -> set(pos_hyper_resolution).
+  % set(neg_ur_resolution).  % (nonunit Horn with equality)
+  % assign(para_lit_limit, 3).  % (nonunit Horn with equality)
+
+Auto_process settings:  (no changes).
+
+kept:      3 A * A = A.  [assumption].
+kept:      4 (A * B) * B = A * B.  [assumption].
+kept:      5 (A * B) * A = B * A.  [assumption].
+kept:      6 ((A * B) * C) * B = A * (C * B).  [assumption].
+           7 (((A * B) * C) * B) * C = (A * B) * C.  [assumption].
+kept:      8 (A * (B * C)) * B = (A * C) * B.  [copy(7),rewrite([6(3)])].
+kept:      9 A * B != A | A * C != A | C * B = B * C.  [clausify(1)].
+kept:      10 c * a = a.  [assumption].
+kept:      11 a * c = c.  [assumption].
+kept:      12 c * b = b.  [assumption].
+kept:      13 b * c = c.  [assumption].
+kept:      14 x * c = c * x.  [assumption].
+kept:      15 a * x = c * x.  [assumption].
+kept:      16 y * a = a * y.  [assumption].
+           17 b * x = b * y.  [assumption].
+kept:      18 b * y = b * x.  [copy(17),flip(a)].
+kept:      19 (c * x) * a != a * y.  [deny(2)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+3 A * A = A.  [assumption].
+4 (A * B) * B = A * B.  [assumption].
+5 (A * B) * A = B * A.  [assumption].
+6 ((A * B) * C) * B = A * (C * B).  [assumption].
+8 (A * (B * C)) * B = (A * C) * B.  [copy(7),rewrite([6(3)])].
+9 A * B != A | A * C != A | C * B = B * C.  [clausify(1)].
+10 c * a = a.  [assumption].
+11 a * c = c.  [assumption].
+12 c * b = b.  [assumption].
+13 b * c = c.  [assumption].
+14 x * c = c * x.  [assumption].
+15 a * x = c * x.  [assumption].
+16 y * a = a * y.  [assumption].
+18 b * y = b * x.  [copy(17),flip(a)].
+19 (c * x) * a != a * y.  [deny(2)].
+end_of_list.
+
+formulas(demodulators).
+3 A * A = A.  [assumption].
+4 (A * B) * B = A * B.  [assumption].
+5 (A * B) * A = B * A.  [assumption].
+6 ((A * B) * C) * B = A * (C * B).  [assumption].
+8 (A * (B * C)) * B = (A * C) * B.  [copy(7),rewrite([6(3)])].
+10 c * a = a.  [assumption].
+11 a * c = c.  [assumption].
+12 c * b = b.  [assumption].
+13 b * c = c.  [assumption].
+14 x * c = c * x.  [assumption].
+15 a * x = c * x.  [assumption].
+16 y * a = a * y.  [assumption].
+18 b * y = b * x.  [copy(17),flip(a)].
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.00 seconds.
+
+given #1 (I,wt=5): 3 A * A = A.  [assumption].
+
+given #2 (I,wt=9): 4 (A * B) * B = A * B.  [assumption].
+
+given #3 (I,wt=9): 5 (A * B) * A = B * A.  [assumption].
+
+given #4 (I,wt=13): 6 ((A * B) * C) * B = A * (C * B).  [assumption].
+
+given #5 (I,wt=13): 8 (A * (B * C)) * B = (A * C) * B.  [copy(7),rewrite([6(3)])].
+
+given #6 (I,wt=17): 9 A * B != A | A * C != A | C * B = B * C.  [clausify(1)].
+
+given #7 (I,wt=5): 10 c * a = a.  [assumption].
+
+given #8 (I,wt=5): 11 a * c = c.  [assumption].
+
+given #9 (I,wt=5): 12 c * b = b.  [assumption].
+
+given #10 (I,wt=5): 13 b * c = c.  [assumption].
+
+given #11 (I,wt=7): 14 x * c = c * x.  [assumption].
+
+given #12 (I,wt=7): 15 a * x = c * x.  [assumption].
+
+given #13 (I,wt=7): 16 y * a = a * y.  [assumption].
+
+given #14 (I,wt=7): 18 b * y = b * x.  [copy(17),flip(a)].
+
+given #15 (A,wt=9): 20 A * (B * A) = B * A.  [para(4(a,1),5(a,1,1)),rewrite([3(3)]),flip(a)].
+
+given #16 (F,wt=7): 62 x * a != a * y.  [back_rewrite(19),rewrite([58(5)])].
+
+given #17 (T,wt=7): 67 y * b = x * b.  [para(18(a,1),5(a,1,1)),rewrite([5(5)]),flip(a)].
+
+given #18 (T,wt=9): 22 A * (A * B) = A * B.  [para(3(a,1),6(a,1,1)),rewrite([4(2),4(3)]),flip(a)].
+
+given #19 (T,wt=9): 47 c * (A * a) = A * a.  [para(10(a,1),6(a,1,1,1)),rewrite([5(4)]),flip(a)].
+
+given #20 (T,wt=9): 49 a * (A * c) = A * c.  [para(11(a,1),6(a,1,1,1)),rewrite([5(4)]),flip(a)].
+
+given #21 (A,wt=13): 23 (A * (B * C)) * C = A * (B * C).  [para(6(a,1),4(a,1,1)),rewrite([6(6)])].
+
+given #22 (T,wt=9): 51 c * (A * b) = A * b.  [para(12(a,1),6(a,1,1,1)),rewrite([5(4)]),flip(a)].
+
+given #23 (T,wt=9): 53 b * (A * c) = A * c.  [para(13(a,1),6(a,1,1,1)),rewrite([5(4)]),flip(a)].
+
+given #24 (T,wt=9): 58 (c * x) * a = x * a.  [para(15(a,1),5(a,1,1))].
+
+given #25 (T,wt=9): 66 (b * x) * y = b * x.  [para(18(a,1),4(a,1,1)),rewrite([18(8)])].
+
+given #26 (A,wt=13): 24 (A * B) * (C * B) = A * (C * B).  [para(4(a,1),6(a,1,1,1)),rewrite([6(3)]),flip(a)].
+
+given #27 (T,wt=7): 101 y * x = x * y.  [hyper(9,a,4,a,b,66,a)].
+
+given #28 (T,wt=9): 68 (x * b) * y = b * x.  [para(18(a,1),5(a,2)),rewrite([67(3)])].
+
+given #29 (T,wt=9): 75 y * (b * x) = b * x.  [para(18(a,1),20(a,1,2)),rewrite([18(8)])].
+
+given #30 (T,wt=9): 83 c * (a * y) = a * y.  [para(16(a,1),47(a,1,2)),rewrite([16(8)])].
+
+given #31 (A,wt=13): 26 (A * B) * (C * A) = B * (C * A).  [para(5(a,1),6(a,1,1,1)),rewrite([6(3)]),flip(a)].
+
+given #32 (T,wt=9): 98 b * (c * x) = c * x.  [para(14(a,1),53(a,1,2)),rewrite([14(8)])].
+
+given #33 (T,wt=9): 103 b * (x * y) = b * x.  [para(66(a,1),6(a,1,1)),rewrite([4(5),101(7)]),flip(a)].
+
+given #34 (T,wt=11): 56 (A * c) * x = A * (c * x).  [para(14(a,1),8(a,1,1,2)),rewrite([23(6)]),flip(a)].
+
+given #35 (T,wt=11): 59 a * (A * x) = c * (A * x).  [para(15(a,1),6(a,1,1,1)),rewrite([6(6)]),flip(a)].
+
+given #36 (A,wt=19): 27 ((A * (B * C)) * D) * C = ((A * C) * B) * (D * C).  [para(6(a,1),6(a,1,1,1))].
+
+given #37 (T,wt=11): 64 (A * a) * y = A * (a * y).  [para(16(a,1),8(a,1,1,2)),rewrite([23(6)]),flip(a)].
+
+given #38 (T,wt=11): 70 (A * y) * b = (A * x) * b.  [para(18(a,1),8(a,1,1,2)),rewrite([8(6)]),flip(a)].
+
+given #39 (T,wt=11): 77 y * (A * b) = x * (A * b).  [para(67(a,1),6(a,1,1,1)),rewrite([6(6)]),flip(a)].
+
+given #40 (T,wt=11): 91 (A * x) * c = A * (c * x).  [para(14(a,1),23(a,1,1,2)),rewrite([8(6),14(7)])].
+
+given #41 (A,wt=13): 28 (A * B) * (B * C) = (A * B) * C.  [para(6(a,1),6(a,1,1)),rewrite([8(3)]),flip(a)].
+
+given #42 (T,wt=11): 92 (A * y) * a = A * (a * y).  [para(16(a,1),23(a,1,1,2)),rewrite([8(6),16(7)])].
+
+given #43 (T,wt=11): 111 (A * x) * y = A * (x * y).  [para(101(a,1),8(a,1,1,2)),rewrite([23(6)]),flip(a)].
+
+given #44 (T,wt=11): 113 (A * y) * x = A * (x * y).  [para(101(a,1),23(a,1,1,2)),rewrite([8(6),101(7)])].
+
+given #45 (T,wt=11): 156 a * (x * y) = c * (x * y).  [para(101(a,1),59(a,1,2)),rewrite([101(9)])].
+
+given #46 (A,wt=17): 31 (A * (B * C)) * (D * B) = (A * C) * (D * B).  [para(8(a,1),6(a,1,1,1)),rewrite([6(4)]),flip(a)].
+
+given #47 (T,wt=11): 234 (x * y) * c = y * (c * x).  [para(101(a,1),91(a,1,1))].
+
+given #48 (T,wt=11): 246 (A * b) * y = (A * b) * x.  [para(18(a,1),28(a,1,2)),rewrite([28(6)]),flip(a)].
+
+given #49 (T,wt=11): 268 (b * x) * a = b * (a * y).  [para(18(a,1),92(a,1,1))].
+
+given #50 (T,wt=9): 377 x * a = b * (a * y).  [para(268(a,1),8(a,2)),rewrite([15(4),98(5),58(5)])].
+
+given #51 (A,wt=23): 32 (A * (B * (C * D))) * ((B * D) * C) = (A * D) * ((B * D) * C).  [para(6(a,1),8(a,1,1,2))].
+
+given #52 (F,wt=9): 385 b * (a * y) != a * y.  [back_rewrite(62),rewrite([377(3)])].
+
+given #53 (T,wt=11): 351 x * (c * y) = c * (x * y).  [para(234(a,1),6(a,1,1)),rewrite([5(7),111(5)]),flip(a)].
+
+given #54 (T,wt=11): 375 (b * a) * (x * y) = c * x.  [para(268(a,1),6(a,1,1)),rewrite([297(7),15(11),98(12)])].
+
+given #55 (T,wt=9): 476 c * (x * y) = c * x.  [para(375(a,1),4(a,1,1)),rewrite([28(7),111(5),375(12)])].
+
+given #56 (T,wt=9): 481 y * (c * x) = c * x.  [para(375(a,1),20(a,1,2)),rewrite([26(7),375(12)])].
+
+given #57 (A,wt=19): 33 (A * (B * (C * D))) * C = (A * D) * ((B * D) * C).  [para(6(a,1),8(a,1,1)),rewrite([27(8),6(9)])].
+
+given #58 (T,wt=9): 482 (b * a) * x = c * x.  [para(375(a,1),22(a,1,2)),rewrite([243(7),375(12)])].
+
+given #59 (T,wt=9): 509 x * (c * y) = c * x.  [back_rewrite(351),rewrite([476(10)])].
+
+given #60 (T,wt=9): 515 a * (x * y) = c * x.  [back_rewrite(156),rewrite([476(10)])].
+
+given #61 (T,wt=9): 518 (x * y) * c = c * x.  [back_rewrite(234),rewrite([481(10)])].
+
+given #62 (A,wt=23): 34 (A * ((B * C) * D)) * (B * (D * C)) = (A * D) * (B * (D * C)).  [para(8(a,1),8(a,1,1,2))].
+
+given #63 (T,wt=11): 386 (c * x) * a = b * (a * y).  [back_rewrite(58),rewrite([377(8)])].
+
+given #64 (T,wt=11): 392 x * (a * y) = b * (a * y).  [para(377(a,1),64(a,1,1)),rewrite([23(7)]),flip(a)].
+
+given #65 (T,wt=12): 37 A * B != A | B * A = A * B.  [para(3(a,1),9(a,1)),xx(a)].
+
+given #66 (T,wt=12): 38 A * B != A | A * B = B * A.  [para(3(a,1),9(b,1)),xx(b)].
+
+given #67 (A,wt=13): 36 A * ((B * A) * C) = (B * A) * C.  [back_rewrite(25),rewrite([31(5),22(4)]),flip(a)].
+
+given #68 (T,wt=12): 663 x * b != y | x * b = b * x.  [para(67(a,1),37(a,1)),rewrite([18(8),67(11)]),flip(b)].
+
+given #69 (T,wt=13): 55 ((c * x) * A) * c = x * (A * c).  [para(14(a,1),6(a,1,1,1))].
+
+given #70 (T,wt=9): 709 x * (y * c) = c * x.  [para(111(a,1),55(a,1,1)),rewrite([476(5),5(5),14(3)]),flip(a)].
+
+given #71 (T,wt=11): 703 (b * (a * y)) * c = c * x.  [para(11(a,1),55(a,2,2)),rewrite([386(5),14(10)])].
+
+given #72 (A,wt=16): 39 (A * B) * C != A * B | C * B = B * C.  [para(4(a,1),9(a,1)),xx(a)].
+
+given #73 (T,wt=11): 738 (b * a) * (c * y) = c * x.  [para(703(a,1),27(a,1,1)),rewrite([111(5),476(5),18(6),734(8),13(6),120(10),203(12)]),flip(a)].
+
+given #74 (T,wt=11): 783 y * (b * a) = x * (b * a).  [para(738(a,1),5(a,1,1)),rewrite([99(7),319(12)]),flip(a)].
+
+given #75 (T,wt=13): 63 ((a * y) * A) * a = y * (A * a).  [para(16(a,1),6(a,1,1,1))].
+
+given #76 (T,wt=13): 69 ((b * x) * A) * y = b * (A * y).  [para(18(a,1),6(a,1,1,1))].
+
+given #77 (A,wt=16): 40 (A * B) * C != A * B | B * C = C * B.  [para(4(a,1),9(b,1)),xx(b)].
+
+given #78 (T,wt=9): 835 b * (c * y) = c * x.  [para(91(a,1),69(a,1,1)),rewrite([98(5),111(5),476(5)]),flip(a)].
+
+given #79 (T,wt=13): 72 A * (B * (C * A)) = B * (C * A).  [para(20(a,1),6(a,1,1,1)),rewrite([5(4)]),flip(a)].
+
+given #80 (T,wt=13): 73 A * (B * (A * C)) = B * (A * C).  [para(20(a,1),6(a,1,1)),rewrite([23(3),23(5)]),flip(a)].
+
+given #81 (T,wt=13): 81 c * (A * (B * a)) = A * (B * a).  [para(47(a,1),6(a,1,1,1)),rewrite([5(6)]),flip(a)].
+
+given #82 (A,wt=23): 41 A * B != B * A | (B * A) * C != B * A | C * B = B * C.  [para(5(a,1),9(a,1))].
+
+given #83 (T,wt=13): 84 a * (A * (B * c)) = A * (B * c).  [para(49(a,1),6(a,1,1,1)),rewrite([5(6)]),flip(a)].
+
+given #84 (T,wt=13): 93 (A * (b * x)) * y = A * (b * x).  [para(18(a,1),23(a,1,1,2)),rewrite([18(9)])].
+
+given #85 (T,wt=13): 94 c * (A * (B * b)) = A * (B * b).  [para(51(a,1),6(a,1,1,1)),rewrite([5(6)]),flip(a)].
+
+given #86 (T,wt=13): 96 b * (A * (B * c)) = A * (B * c).  [para(53(a,1),6(a,1,1,1)),rewrite([5(6)]),flip(a)].
+
+given #87 (A,wt=23): 42 (A * B) * C != A * B | B * A != A * B | A * C = C * A.  [para(5(a,1),9(b,1))].
+
+given #88 (T,wt=13): 99 (c * x) * (A * a) = x * (A * a).  [para(58(a,1),6(a,1,1,1)),rewrite([6(6)]),flip(a)].
+
+given #89 (T,wt=13): 102 (b * x) * (A * y) = b * (A * y).  [para(66(a,1),6(a,1,1,1)),rewrite([69(6)]),flip(a)].
+
+given #90 (T,wt=13): 104 (A * y) * (b * x) = A * (b * x).  [para(66(a,1),6(a,2,2)),rewrite([93(8)])].
+
+given #91 (T,wt=13): 110 ((x * y) * A) * x = y * (A * x).  [para(101(a,1),6(a,1,1,1))].
+
+given #92 (A,wt=31): 43 (A * B) * C != A * (C * B) | ((A * B) * C) * D != (A * B) * C | D * B = B * D.  [para(6(a,1),9(a,1)),flip(a)].
+
+given #93 (T,wt=13): 114 (x * b) * (A * y) = b * (A * y).  [para(68(a,1),6(a,1,1,1)),rewrite([69(6)]),flip(a)].
+
+given #94 (T,wt=13): 118 y * (A * (b * x)) = A * (b * x).  [para(75(a,1),6(a,1,1,1)),rewrite([5(8)]),flip(a)].
+
+given #95 (T,wt=13): 120 c * (A * (a * y)) = A * (a * y).  [para(83(a,1),6(a,1,1,1)),rewrite([5(8)]),flip(a)].
+
+given #96 (T,wt=13): 127 (c * A) * (c * x) = A * (c * x).  [para(14(a,1),26(a,1,2)),rewrite([14(9)])].
+
+given #97 (A,wt=31): 44 ((A * B) * C) * D != (A * B) * C | (A * B) * C != A * (C * B) | B * D = D * B.  [para(6(a,1),9(b,1)),flip(b)].
+
+given #98 (T,wt=13): 128 (a * A) * (a * y) = A * (a * y).  [para(16(a,1),26(a,1,2)),rewrite([16(9)])].
+
+given #99 (T,wt=13): 129 (y * A) * (b * x) = A * (b * x).  [para(18(a,1),26(a,1,2)),rewrite([18(9)])].
+
+given #100 (T,wt=13): 132 (x * A) * (x * y) = A * (x * y).  [para(101(a,1),26(a,1,2)),rewrite([101(9)])].
+
+given #101 (T,wt=13): 134 b * (A * (c * x)) = A * (c * x).  [para(98(a,1),6(a,1,1,1)),rewrite([5(8)]),flip(a)].
+
+given #102 (A,wt=31): 45 (A * B) * C != A * (C * B) | (A * (C * B)) * D != A * (C * B) | D * C = C * D.  [para(8(a,1),9(a,1))].
+
+given #103 (T,wt=12): 1226 b * (a * y) != c * x | a = c.  [para(703(a,1),45(b,1)),rewrite([18(3),734(5),13(3),120(7),10(23),11(24)]),flip(b),xx(a)].
+
+given #104 (T,wt=13): 137 (A * (x * y)) * b = (A * x) * b.  [para(103(a,1),8(a,1,1,2)),rewrite([8(6)]),flip(a)].
+
+given #105 (T,wt=13): 143 (A * x) * (A * c) = x * (A * c).  [para(56(a,1),5(a,1,1)),rewrite([31(7)])].
+
+given #106 (T,wt=13): 202 (A * y) * (A * a) = y * (A * a).  [para(64(a,1),5(a,1,1)),rewrite([31(7)])].
+
+given #107 (A,wt=31): 46 (A * (B * C)) * D != A * (B * C) | (A * C) * B != A * (B * C) | B * D = D * B.  [para(8(a,1),9(b,1))].
+
+given #108 (T,wt=13): 213 ((y * A) * x) * b = (A * x) * b.  [para(5(a,1),70(a,1,1)),rewrite([70(4)]),flip(a)].
+
+given #109 (T,wt=13): 242 (c * x) * (c * A) = (c * x) * A.  [para(14(a,1),28(a,1,1)),rewrite([14(9)])].
+
+given #110 (T,wt=13): 243 (A * a) * (c * x) = (A * a) * x.  [para(15(a,1),28(a,1,2))].
+
+given #111 (T,wt=13): 244 (a * y) * (a * A) = (a * y) * A.  [para(16(a,1),28(a,1,1)),rewrite([16(9)])].
+
+given #112 (A,wt=15): 48 a != c | c * A != c | a * A = A * a.  [para(10(a,1),9(a,1)),flip(c)].
+
+given #113 (T,wt=13): 245 (b * x) * (y * A) = (b * x) * A.  [para(18(a,1),28(a,1,1)),rewrite([18(9)])].
+
+given #114 (T,wt=13): 250 (x * y) * (x * A) = (x * y) * A.  [para(101(a,1),28(a,1,1)),rewrite([101(9)])].
+
+given #115 (T,wt=13): 252 (A * b) * (x * y) = (A * b) * x.  [para(103(a,1),28(a,1,2)),rewrite([28(6)]),flip(a)].
+
+given #116 (T,wt=13): 276 (A * y) * (A * x) = y * (A * x).  [para(111(a,1),5(a,1,1)),rewrite([31(7)])].
+
+given #117 (A,wt=15): 50 a != c | a * A != a | c * A = A * c.  [para(11(a,1),9(a,1)),flip(a),flip(c)].
+
+given #118 (T,wt=13): 319 (c * y) * (A * a) = y * (A * a).  [para(83(a,1),31(a,1,1)),rewrite([26(6)]),flip(a)].
+
+given #119 (T,wt=13): 321 (b * x) * (A * c) = x * (A * c).  [para(98(a,1),31(a,1,1)),rewrite([26(6)]),flip(a)].
+
+given #120 (T,wt=13): 361 y * ((A * b) * x) = (A * b) * x.  [para(246(a,1),20(a,1,2)),rewrite([246(10)])].
+
+given #121 (T,wt=13): 387 (b * x) * (A * a) = x * (A * a).  [para(377(a,1),6(a,1,1,1)),rewrite([174(8),18(3)])].
+
+given #122 (A,wt=15): 52 b != c | c * A != c | b * A = A * b.  [para(12(a,1),9(a,1)),flip(c)].
+
+given #123 (T,wt=13): 483 (A * c) * (x * y) = A * (c * x).  [para(375(a,1),23(a,1,1,2)),rewrite([159(8),283(6),375(13)])].
+
+given #124 (T,wt=13): 485 (A * y) * (c * x) = A * (c * x).  [para(375(a,1),24(a,1,2)),rewrite([31(8),375(13)])].
+
+given #125 (T,wt=13): 504 (A * x) * (c * y) = A * (c * x).  [back_rewrite(467),rewrite([476(11)])].
+
+given #126 (T,wt=13): 506 (A * (c * y)) * x = A * (c * x).  [back_rewrite(465),rewrite([476(11)])].
+
+given #127 (A,wt=15): 54 b != c | b * A != b | c * A = A * c.  [para(13(a,1),9(a,1)),flip(a),flip(c)].
+
+given #128 (T,wt=13): 511 (A * a) * (x * y) = (A * a) * x.  [back_rewrite(305),rewrite([476(7),243(6)]),flip(a)].
+
+given #129 (T,wt=13): 512 (x * y) * (A * a) = x * (A * a).  [back_rewrite(303),rewrite([476(5),99(6)]),flip(a)].
+
+given #130 (T,wt=13): 519 (A * (c * x)) * y = A * (c * x).  [back_rewrite(283),rewrite([483(12)])].
+
+given #131 (T,wt=7): 1675 y * c = c * y.  [hyper(46,a,519,a,b,91,a),flip(a)].
+
+given #132 (A,wt=17): 57 c * x != x | x * A != x | c * A = A * c.  [para(14(a,1),9(a,1)),flip(c)].
+
+given #133 (T,wt=7): 1696 c * y = c * x.  [para(1675(a,1),53(a,1,2)),rewrite([835(5),1675(6)]),flip(a)].
+
+given #134 (T,wt=7): 1708 y * c = c * x.  [back_rewrite(1675),rewrite([1696(6)])].
+
+given #135 (T,wt=11): 1697 y * (A * c) = x * (A * c).  [para(1675(a,1),24(a,1,1)),rewrite([1696(3),26(6)]),flip(a)].
+
+given #136 (T,wt=11): 1704 (A * y) * c = A * (c * x).  [back_rewrite(1695),rewrite([1696(7)])].
+
+given #137 (A,wt=17): 61 c * x != a | a * A != a | x * A = A * x.  [para(15(a,1),9(a,1)),flip(c)].
+
+given #138 (T,wt=11): 1706 (A * c) * y = A * (c * x).  [back_rewrite(1692),rewrite([1696(7)])].
+
+given #139 (T,wt=11): 1718 y * (A * a) = x * (A * a).  [back_rewrite(319),rewrite([1696(3),99(6)]),flip(a)].
+-------- Proof 1 -------- 
+
+============================== PROOF =================================
+
+% Proof 1 at 0.15 (+ 0.00) seconds.
+% Length of proof is 56.
+% Level of proof is 13.
+% Maximum clause weight is 31.000.
+% Given clauses 139 (10.692 givens/level).
+
+1 Z * X = Z & Z * Y = Z -> X * Y = Y * X # label(non_clause).  [assumption].
+2 (c * x) * a = a * y # label(non_clause) # label(goal).  [goal].
+3 A * A = A.  [assumption].
+4 (A * B) * B = A * B.  [assumption].
+5 (A * B) * A = B * A.  [assumption].
+6 ((A * B) * C) * B = A * (C * B).  [assumption].
+7 (((A * B) * C) * B) * C = (A * B) * C.  [assumption].
+8 (A * (B * C)) * B = (A * C) * B.  [copy(7),rewrite([6(3)])].
+9 A * B != A | A * C != A | C * B = B * C.  [clausify(1)].
+10 c * a = a.  [assumption].
+13 b * c = c.  [assumption].
+14 x * c = c * x.  [assumption].
+15 a * x = c * x.  [assumption].
+16 y * a = a * y.  [assumption].
+17 b * x = b * y.  [assumption].
+18 b * y = b * x.  [copy(17),flip(a)].
+19 (c * x) * a != a * y.  [deny(2)].
+23 (A * (B * C)) * C = A * (B * C).  [para(6(a,1),4(a,1,1)),rewrite([6(6)])].
+26 (A * B) * (C * A) = B * (C * A).  [para(5(a,1),6(a,1,1,1)),rewrite([6(3)]),flip(a)].
+27 ((A * (B * C)) * D) * C = ((A * C) * B) * (D * C).  [para(6(a,1),6(a,1,1,1))].
+28 (A * B) * (B * C) = (A * B) * C.  [para(6(a,1),6(a,1,1)),rewrite([8(3)]),flip(a)].
+31 (A * (B * C)) * (D * B) = (A * C) * (D * B).  [para(8(a,1),6(a,1,1,1)),rewrite([6(4)]),flip(a)].
+46 (A * (B * C)) * D != A * (B * C) | (A * C) * B != A * (B * C) | B * D = D * B.  [para(8(a,1),9(b,1))].
+47 c * (A * a) = A * a.  [para(10(a,1),6(a,1,1,1)),rewrite([5(4)]),flip(a)].
+53 b * (A * c) = A * c.  [para(13(a,1),6(a,1,1,1)),rewrite([5(4)]),flip(a)].
+56 (A * c) * x = A * (c * x).  [para(14(a,1),8(a,1,1,2)),rewrite([23(6)]),flip(a)].
+58 (c * x) * a = x * a.  [para(15(a,1),5(a,1,1))].
+62 x * a != a * y.  [back_rewrite(19),rewrite([58(5)])].
+64 (A * a) * y = A * (a * y).  [para(16(a,1),8(a,1,1,2)),rewrite([23(6)]),flip(a)].
+66 (b * x) * y = b * x.  [para(18(a,1),4(a,1,1)),rewrite([18(8)])].
+69 ((b * x) * A) * y = b * (A * y).  [para(18(a,1),6(a,1,1,1))].
+83 c * (a * y) = a * y.  [para(16(a,1),47(a,1,2)),rewrite([16(8)])].
+91 (A * x) * c = A * (c * x).  [para(14(a,1),23(a,1,1,2)),rewrite([8(6),14(7)])].
+92 (A * y) * a = A * (a * y).  [para(16(a,1),23(a,1,1,2)),rewrite([8(6),16(7)])].
+98 b * (c * x) = c * x.  [para(14(a,1),53(a,1,2)),rewrite([14(8)])].
+99 (c * x) * (A * a) = x * (A * a).  [para(58(a,1),6(a,1,1,1)),rewrite([6(6)]),flip(a)].
+101 y * x = x * y.  [hyper(9,a,4,a,b,66,a)].
+111 (A * x) * y = A * (x * y).  [para(101(a,1),8(a,1,1,2)),rewrite([23(6)]),flip(a)].
+113 (A * y) * x = A * (x * y).  [para(101(a,1),23(a,1,1,2)),rewrite([8(6),101(7)])].
+159 (A * (B * C)) * (C * D) = (A * (B * C)) * D.  [para(27(a,1),6(a,1,1)),rewrite([8(5),6(3)]),flip(a)].
+268 (b * x) * a = b * (a * y).  [para(18(a,1),92(a,1,1))].
+283 (A * (c * x)) * y = (A * c) * (x * y).  [para(56(a,1),111(a,1,1))].
+297 (A * (a * y)) * x = (A * a) * (x * y).  [para(64(a,1),113(a,1,1))].
+319 (c * y) * (A * a) = y * (A * a).  [para(83(a,1),31(a,1,1)),rewrite([26(6)]),flip(a)].
+375 (b * a) * (x * y) = c * x.  [para(268(a,1),6(a,1,1)),rewrite([297(7),15(11),98(12)])].
+377 x * a = b * (a * y).  [para(268(a,1),8(a,2)),rewrite([15(4),98(5),58(5)])].
+385 b * (a * y) != a * y.  [back_rewrite(62),rewrite([377(3)])].
+476 c * (x * y) = c * x.  [para(375(a,1),4(a,1,1)),rewrite([28(7),111(5),375(12)])].
+483 (A * c) * (x * y) = A * (c * x).  [para(375(a,1),23(a,1,1,2)),rewrite([159(8),283(6),375(13)])].
+519 (A * (c * x)) * y = A * (c * x).  [back_rewrite(283),rewrite([483(12)])].
+835 b * (c * y) = c * x.  [para(91(a,1),69(a,1,1)),rewrite([98(5),111(5),476(5)]),flip(a)].
+1675 y * c = c * y.  [hyper(46,a,519,a,b,91,a),flip(a)].
+1696 c * y = c * x.  [para(1675(a,1),53(a,1,2)),rewrite([835(5),1675(6)]),flip(a)].
+1718 y * (A * a) = x * (A * a).  [back_rewrite(319),rewrite([1696(3),99(6)]),flip(a)].
+1885 b * (a * y) = a * y.  [para(3(a,1),1718(a,1,2)),rewrite([16(3),3(7),377(6)]),flip(a)].
+1886 $F.  [resolve(1885,a,385,a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=139. Generated=14254. Kept=1881. proofs=1.
+Usable=116. Sos=1318. Demods=852. Limbo=0, Disabled=461. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=12373. Back_subsumed=33.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=1200 (0 lex), Back_demodulated=413. Back_unit_deleted=0.
+Demod_attempts=341071. Demod_rewrites=33252.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=86975. Nonunit_bsub_feature_tests=4472.
+Megabytes=3.83.
+User_CPU=0.15, System_CPU=0.00, Wall_clock=1.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 1400 exit (max_proofs) ------
+
+Process 1400 exit (max_proofs) Sun Sep 13 21:23:14 2026

@@ -1,0 +1,17 @@
+op(400, infix_left, "*").
+assign(max_seconds, 100).
+formulas(assumptions).
+(x*y)*z = x*(y*z).
+(x*y)' = y'*x'.
+x'' = x.
+x*x'*x = x.
+% projections a,b,c,e (= x), f (= y)
+a*a = a. a' = a. b*b = b. b' = b. c*c = c. c' = c. e*e = e. e' = e. f*f = f. f' = f.
+% hypotheses of (R''): a~c, b~c, xc = cx, theta_x(a) = theta_x(c), yb = by, theta_x(b) = theta_y(a)
+a*c*a = a. c*a*c = c. b*c*b = b. c*b*c = c. e*c = c*e. e*a*e = e*c*e. f*b = b*f. e*b*e = f*a*f.
+% consequence of (Q1): xy = yx
+e*f = f*e.
+end_of_list.
+formulas(goals).
+e*b = f*c*b.
+end_of_list.

@@ -1,0 +1,33 @@
+% (I) Lower-bound invariant of the walk.   u <= v  is written  u * v = u  (v u v = u).
+% Step a_i -> b_(i-1) (projection onto the free partner):
+%   x <= a1, cw <= x, m1 <= x   ==>   cz <= x*b3  and  m3 <= x*b3
+% Step b_j -> a_(j-1) (transport through a_(j-1) |><| b_j):
+%   y <= b3, cz <= y, m3 <= y   ==>   cw <= y*a2  and  m2 <= y*a2
+% (The other four steps are the cyclic relabellings.)  Verified in all six Mace4 models.
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+b2 * a1 = a1.   a1 * b2 = b2.
+b3 * a2 = a2.   a2 * b3 = b3.
+b1 * a3 = a3.   a3 * b1 = b1.
+% meets m_i = a_i b_i as constants
+a1 * b1 = m1.   a2 * b2 = m2.   a3 * b3 = m3.
+% the elements c0 (under a1) and d0 (under b3)
+c0 * a1 = c0.   cw * c0 = cw.   m1 * c0 = m1.
+d0 * b3 = d0.   cz * d0 = cz.   m3 * d0 = m3.
+end_of_list.
+
+formulas(goals).
+cz * (c0 * b3) = cz.      % (I1)
+m3 * (c0 * b3) = m3.      % (I2)
+cw * (d0 * a2) = cw.      % (I3)
+m2 * (d0 * a2) = m2.      % (I4)
+end_of_list.

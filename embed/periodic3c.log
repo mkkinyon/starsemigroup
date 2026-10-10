@@ -1,0 +1,17 @@
+m=3, potentials (-1, 0, 1), moduli (0, 1, 2): 460 periodic projections
+tables: 460 elements, 3s, matched pairs: 7322, commuting pairs: 17214
+   ... first variable 100/460 (27s)
+   ... first variable 200/460 (144s)
+   ... first variable 300/460 (196s)
+   ... first variable 400/460 (1034s)
+disjoint: done, 0 counterexample(s) (1188s)
+   ... first variable 100/460 (1s)
+   ... first variable 200/460 (4s)
+   ... first variable 300/460 (6s)
+   ... first variable 400/460 (21s)
+K22: done, 0 counterexample(s) (23s)
+   ... first variable 100/460 (1s)
+   ... first variable 200/460 (3s)
+   ... first variable 300/460 (5s)
+   ... first variable 400/460 (10s)
+C4: done, 0 counterexample(s) (12s)

@@ -1,0 +1,39 @@
+p_K0_E1: 0 proof
+p_K4_E6: 0 proof
+p_K4_S: 0 proof
+p_K6_R: 0 proof
+p_K6_Rpp: 0 proof
+p_K6_W2: 0 proof
+p_Rpp_K6: 0 proof
+p_Rpp_R: 0 proof
+p_Rpp_W2: 0 proof
+p_W2_K6: 0 proof
+p_W2_R: 1 proof
+p_W2_Rpp: 0 proof
+p_W3_K6: 0 proof
+p_W3_R: 1 proof
+p_W3_Rpp: 0 proof
+p_W4_K6: 0 proof
+p_W4_R: 1 proof
+p_W4_Rpp: 0 proof
+m_K0_E1: done up to 8
+m_K4_E6: done up to 8
+m_K4_S: done up to 8
+m_K6_R: done up to 8
+m_K6_Rpp: done up to 8
+m_K6_W2: done up to 8
+m_Rpp_K6: done up to 8
+m_Rpp_R: done up to 8
+m_Rpp_W2: done up to 8
+m_W2_K6: done up to 8
+m_W2_R: done up to 8
+m_W2_Rpp: done up to 8
+m_W3_K6: done up to 8
+m_W3_R: done up to 8
+m_W3_Rpp: done up to 8
+m_W4_K6: domain 8 not exhausted
+m_W4_K6: done up to 8
+m_W4_R: domain 7 not exhausted
+m_W4_R: done up to 7
+m_W4_Rpp: domain 7 not exhausted
+m_W4_Rpp: done up to 7

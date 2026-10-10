@@ -1,0 +1,16 @@
+set(prolog_style_variables).
+assign(max_seconds, 200).
+op(400, infix, "*").
+formulas(assumptions).
+X*X = X.
+(Y*X)*X = Y*X.
+(X*Y)*X = Y*X.
+((Z*X)*Y)*X = Z*(Y*X).
+(((Z*X)*Y)*X)*Y = (Z*X)*Y.
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X.
+% special case x = c of (R''): a~c, b~c, yb = by, theta_y(a) = c
+c*a = a. a*c = c. c*b = b. b*c = c. y*b = b*y. a*y = c.
+end_of_list.
+formulas(goals).
+b*a = a & a*b = b.
+end_of_list.

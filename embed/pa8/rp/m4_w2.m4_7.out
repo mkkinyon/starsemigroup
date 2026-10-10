@@ -1,0 +1,125 @@
+============================== Mace4 =================================
+Mace4 (64) version 2017-11A (CIIRC), November 2017.
+Process 1671 was started by root on vm,
+Sun Sep 13 21:31:51 2026
+The command was "mace4 -n 7 -m 1 -f m4_w2.m4.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file m4_w2.m4.in
+
+set(prolog_style_variables).
+assign(max_seconds,600).
+assign(max_megs,3000).
+op(400,infix,"*").
+
+formulas(assumptions).
+X * X = X.
+(Y * X) * X = Y * X.
+(X * Y) * X = Y * X.
+((Z * X) * Y) * X = Z * (Y * X).
+(((Z * X) * Y) * X) * Y = (Z * X) * Y.
+Z * X = Z & Z * Y = Z -> X * Y = Y * X.
+c * a = a.
+a * c = c.
+c * b = b.
+b * c = c.
+x * c = c * x.
+a * x = c * x.
+y * a = a * y.
+b * x = b * y.
+(a * y) * b = (c * x) * b.
+b * a != a | a * b != b.
+end_of_list.
+    % assign(domain_size, 7) -> assign(start_size, 7).
+    % assign(domain_size, 7) -> assign(end_size, 7).
+
+% From the command line: assign(domain_size, 7).
+
+% From the command line: assign(max_models, 1).
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 Z * X = Z & Z * Y = Z -> X * Y = Y * X # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+A * A = A.
+(A * B) * B = A * B.
+(A * B) * A = B * A.
+((A * B) * C) * B = A * (C * B).
+(((A * B) * C) * B) * C = (A * B) * C.
+A * B != A | A * C != A | C * B = B * C.
+c * a = a.
+a * c = c.
+c * b = b.
+b * c = c.
+x * c = c * x.
+a * x = c * x.
+y * a = a * y.
+b * x = b * y.
+(a * y) * b = (c * x) * b.
+b * a != a | a * b != b.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 7 =========================
+
+=== Mace4 starting on domain size 7. ===
+
+============================== MODEL =================================
+
+interpretation( 7, [number=1, seconds=0], [
+
+        function(a, [ 0 ]),
+
+        function(b, [ 1 ]),
+
+        function(c, [ 2 ]),
+
+        function(x, [ 3 ]),
+
+        function(y, [ 4 ]),
+
+        function(*(_,_), [
+			   0, 5, 2, 3, 6, 5, 6,
+			   6, 1, 2, 3, 3, 5, 6,
+			   0, 1, 2, 3, 3, 5, 6,
+			   6, 5, 3, 3, 3, 5, 6,
+			   6, 5, 3, 3, 4, 5, 6,
+			   6, 5, 3, 3, 3, 5, 6,
+			   6, 5, 3, 3, 6, 5, 6 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 7.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=1144, kept=1067.
+Selections=55, assignments=331, propagations=733, current_models=1.
+Rewrite_terms=68694, rewrite_bools=16575, indexes=7043.
+Rules_from_neg_clauses=14, cross_offs=537.
+
+============================== end of statistics =====================
+
+------ process 1671 exit (max_models) ------
+
+User_CPU=0.01, System_CPU=0.00, Wall_clock=0.
+
+Exiting with 1 model.
+
+Process 1671 exit (max_models) Sun Sep 13 21:31:51 2026
+The process finished Sun Sep 13 21:31:51 2026

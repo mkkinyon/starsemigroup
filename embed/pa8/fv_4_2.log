@@ -1,0 +1,23 @@
+=== candidate 0 ===
+=== candidate 1 ===
+=== candidate 2 ===
+  4 VALID(5) ['xp1=p1x', 'th_x(p0)=th_x(p1)', 'yp0=p0y', 'th_x(p2)=th_y(p2)']   instance P=[5, 1, 7], x=2, y=3
+  4 VALID(5) ['xp1=p1x', 'th_x(p0)=th_x(p1)', 'yp0=p0y', 'x=th_y(p2)']   instance P=[5, 1, 7], x=2, y=3
+  4 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_y(p0)=th_y(p1)', 'th_x(p2)=th_y(p2)']   instance P=[5, 1, 7], x=3, y=2
+  4 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_y(p0)=th_y(p1)', 'y=th_x(p2)']   instance P=[5, 1, 7], x=3, y=2
+  4 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p2)', 'yp2=p2y', 'th_x(p0)=th_y(p0)']   instance P=[7, 1, 5], x=2, y=3
+  4 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p2)', 'yp2=p2y', 'x=th_y(p0)']   instance P=[7, 1, 5], x=2, y=3
+  4 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p2)', 'th_x(p0)=th_y(p0)']   instance P=[7, 1, 5], x=3, y=2
+  4 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p2)', 'y=th_x(p0)']   instance P=[7, 1, 5], x=3, y=2
+  5 VALID(5) ['th_x(p0)=th_x(p1)', 'yp0=p0y', 'yp1=p1y', 'th_x(p1)=th_y(p1)', 'th_x(p2)=th_y(p2)']   instance P=[5, 1, 7], x=2, y=3
+  5 VALID(5) ['th_x(p0)=th_x(p1)', 'yp0=p0y', 'yp1=p1y', 'th_x(p1)=th_y(p1)', 'x=th_y(p2)']   instance P=[5, 1, 7], x=2, y=3
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_y(p0)=th_y(p1)', 'th_x(p1)=th_y(p1)', 'th_x(p2)=th_y(p2)']   instance P=[5, 1, 7], x=3, y=2
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_y(p0)=th_y(p1)', 'th_x(p1)=th_y(p1)', 'y=th_x(p2)']   instance P=[5, 1, 7], x=3, y=2
+  5 VALID(5) ['th_x(p1)=th_x(p2)', 'yp1=p1y', 'yp2=p2y', 'th_x(p0)=th_y(p0)', 'th_x(p1)=th_y(p1)']   instance P=[7, 1, 5], x=2, y=3
+  5 VALID(5) ['th_x(p1)=th_x(p2)', 'yp1=p1y', 'yp2=p2y', 'x=th_y(p0)', 'th_x(p1)=th_y(p1)']   instance P=[7, 1, 5], x=2, y=3
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_y(p1)=th_y(p2)', 'th_x(p0)=th_y(p0)', 'th_x(p1)=th_y(p1)']   instance P=[7, 1, 5], x=3, y=2
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_y(p1)=th_y(p2)', 'y=th_x(p0)', 'th_x(p1)=th_y(p1)']   instance P=[7, 1, 5], x=3, y=2
+=== candidate 3 ===
+=== candidate 4 ===
+=== candidate 5 ===
+=== candidate 6 ===

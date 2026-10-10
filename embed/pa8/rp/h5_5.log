@@ -1,0 +1,3 @@
+instances (a!=c): 278655
+ 38031 fail: S25: class of a∨b∨c∨y has ≤1 C
+ 38031 fail: S26: class of a∨b∨x has ≤1 A

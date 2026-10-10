@@ -1,0 +1,13 @@
+m=3, potentials (-1, 0, 1), moduli (0, 1, 2): 460 periodic projections
+tables: 460 elements, 2s, matched pairs: 7322
+single: done, 3 counterexample(s) (0s)
+   x: ['[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] T', '[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] N', '[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] N']
+   y: ['[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] T', '[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] T', '[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] T']
+   w: [0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] N    z: [0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] T
+   x: ['[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] T', '[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] N', '[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] N']
+   y: ['[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] T', '[0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] T', '[0] phi=[0] N | [1] phi=[0] T | [2] phi=[0] T']
+   w: [0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] N    z: [0] phi=[0] N | [1] phi=[0] N | [2] phi=[0] T
+triangle: done, 0 counterexample(s) (33s)
+hexagon: done, 0 counterexample(s) (1s)
+path: done, 0 counterexample(s) (66s)
+2cycle: done, 0 counterexample(s) (92s)

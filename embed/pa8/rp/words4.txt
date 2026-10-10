@@ -1,0 +1,28 @@
+a = aa = aaa = aba = aca
+b = bb = bab = bbb = bcb
+c = cc = cac = cbc = ccc
+x = xx = xxx
+y = yy = yyy
+ab = aab = abb = acb
+ac = aac = abc = acc
+ax = aax = acx = acy = axc = axx = axy = ayc = ayx = yac = yax
+ay = ya = aay = axa = aya = ayy = yaa = yay = yya
+ba = baa = bba = bca
+bc = bac = bbc = bcc
+bx = by = bbx = bby = bxx = bxy = byx = byy
+ca = caa = cba = cca
+cb = cab = cbb = ccb
+cx = cy = xc = yc = cax = ccx = ccy = cxc = cxx = cxy = cyc = cyx = cyy = xac = xax = xcc = xcx = xcy = xxc = xyc = ycc = ycx = ycy = yxc = yyc
+xa = cay = cxa = cya = xaa = xay = xca = xxa = xya = yca = yxa
+xb = yb = xbb = xxb = xyb = ybb = yxb = yyb
+xy = yx = xxy = xyx = xyy = yxx = yxy = yyx
+abx = aby
+axb = ayb = yab
+bax = bcx = bcy = bxc = byc
+bay = bxa = bya
+bxb = byb
+cbx = cby
+cxb = cyb = xab = xcb = ycb
+xba = yba
+xbc = ybc
+xbx = xby = ybx = yby

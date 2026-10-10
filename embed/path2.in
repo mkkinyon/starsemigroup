@@ -1,0 +1,38 @@
+% Path condition: does a1 |><| b2, a2 |><| b3 alone (with (H1), (H2) on three indices)
+% force w = z?   Mace4 search for a model with w != z.
+%   x * y = y x y  (= x theta_y).  Constants: a1,a2,a3,b1,b2,b3,cw,cz.
+% Hypotheses:
+%   (H1)  a_i a_j = a_j a_i = cw,  b_i b_j = b_j b_i = cz   (cyclic reduction suffices)
+%   (H2)  a_i b_i = b_i a_i
+%   (P)   a1 |><| b2  and  a2 |><| b3   -- ONLY these two matched pairs
+%   cw != cz
+% Nothing is assumed about the pairs (a1,b3), (a2,b1), (a3,b1), (a3,b2).
+% General-position version: excludes the models built around P(Q_0) (all free pairs matched).
+% Any model found: check the hexagon condition in it (Python script mace4parse.py).
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+b2 * a1 = a1.   a1 * b2 = b2.
+b3 * a2 = a2.   a2 * b3 = b3.
+cw != cz.
+
+% general position: none of the four free pairs (a1,b3), (a2,b1), (a3,b1), (a3,b2) is matched
+% (a pair p,q is matched iff q*p = p and p*q = q; so 'not matched' is a disjunction)
+b3 * a1 != a1 | a1 * b3 != b3.
+b1 * a2 != a2 | a2 * b1 != b1.
+b1 * a3 != a3 | a3 * b1 != b1.
+b2 * a3 != a3 | a3 * b2 != b2.
+% weaker alternative (only excludes models whose constants form a hexagon):
+%   b3 * a1 != a1 | a1 * b3 != b3 | b1 * a2 != a2 | a2 * b1 != b1 |
+%   b1 * a3 != a3 | a3 * b1 != b1 | b2 * a3 != a3 | a3 * b2 != b2.
+end_of_list.

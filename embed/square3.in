@@ -1,0 +1,36 @@
+% Ground identities behind the isolated-index construction (Prop. 4.11 of the notes):
+% under the 2-cycle-plus-spare hypotheses a1 |><| b2, a2 |><| b1, (H1), (H2), with
+%   u := a3 z a3,   a3' := a3 b1 a3 = theta_{a3}(b1),   b3' := b3 a1 b3 = theta_{b3}(a1),
+% the following hold in every projection algebra (hand proofs in the notes; please
+% confirm with Prover9, ONE GOAL AT A TIME):
+%   (I1)  z a3 z = z                         a3 * (b1 * b2) = b1 * b2.
+%   (I2)  a3 z a3 = b3 w b3                  (b1 * b2) * a3 = (a1 * a2) * b3.
+%   (I3)  a3 z a3 = m3 m1 m3                 (b1 * b2) * a3 = (a1 * b1) * (a3 * b3).
+%   (I4)  b1 u b1 = z                        ((b1 * b2) * a3) * b1 = b1 * b2.
+%   (I5)  a3' b3' a3' = u                    (a1 * b3) * (b1 * a3) = (b1 * b2) * a3.
+%   (I6)  b3' a3' b3' = u                    (b1 * a3) * (a1 * b3) = (b1 * b2) * a3.
+%   (I7)  a3' z a3' = u                      (b1 * b2) * (b1 * a3) = (b1 * b2) * a3.
+%   (I8)  w <= a3'  (a3' w a3' = w)          (a1 * a2) * (b1 * a3) = a1 * a2.
+% No  cw != cz  and no general-position clauses: these are equational consequences.
+%   x * y = y x y  (= x theta_y).  Constants: a1,a2,a3,b1,b2,b3,cw,cz.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+b2 * a1 = a1.   a1 * b2 = b2.
+b1 * a2 = a2.   a2 * b1 = b1.
+end_of_list.
+
+formulas(goals).
+% (I1)
+a3 * (b1 * b2) = b1 * b2.
+end_of_list.

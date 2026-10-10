@@ -1,0 +1,37 @@
+  eliminated a (52 atoms, 1s)
+cand 0 concl h~i m=4: 10 atoms, 8 vars [22s]
+   dcd=b, ici=i, ded=f, heh=h, cgc=b, hgh=f, g<=i, chc=c, did=g, eie=e
+  eliminated h (52 atoms, 0s)
+  eliminated f (37 atoms, 1s)
+cand 1 concl a~b m=4: 11 atoms, 7 vars [6s]
+   iai=i, cbc=d, ibi=i, ece=e, aea=a, beb=d, iei=g, aga=d, aia=a, bib=b, cic=g
+  eliminated h (52 atoms, 1s)
+cand 1 concl a~f m=4: 12 atoms, 8 vars [18s]
+   cac=d, eae=e, aba=d, ibi=i, fdf=g, aea=a, fef=f, iei=g, bfb=d, f<=c, efe=e, aia=a
+  eliminated h (52 atoms, 1s)
+cand 1 concl e~i m=4: 11 atoms, 8 vars [26s]
+   eae=e, iai=i, ibi=i, d<=c, aea=a, beb=d, cec=f, aga=d, g<=i, aia=a, fif=g
+  eliminated g (54 atoms, 1s)
+cand 3 concl b~d m=4: 10 atoms, 8 vars [17s]
+   dad=d, iai=b, hbh=c, ede=f, hdh=h, aea=a, bhb=f, ehe=e, ihi=c, did=f
+  eliminated g (54 atoms, 1s)
+cand 3 concl b~e m=4: 10 atoms, 8 vars [17s]
+   eae=e, iai=b, hbh=c, ada=a, ded=f, heh=h, bhb=f, dhd=d, ihi=c, eie=f
+  eliminated g (54 atoms, 1s)
+cand 3 concl b~h m=4: 11 atoms, 8 vars [24s]
+   hah=h, iai=b, ebe=f, ada=a, aea=a, ded=f, f<=b, dhd=d, ehe=e, ihi=c, hih=c
+  eliminated g (54 atoms, 1s)
+cand 3 concl d~e m=4: 10 atoms, 8 vars [11s]
+   eae=e, iai=b, ada=a, beb=f, heh=h, dhd=d, ihi=c, did=f, eie=f, hih=c
+  eliminated e (55 atoms, 1s)
+cand 4 concl a~d m=4: 12 atoms, 8 vars [22s]
+   bab=b, iai=f, aba=a, dbd=d, bdb=b, aga=f, g<=h, aha=a, bhb=g, dhd=c, did=d, hih=c
+  eliminated d (55 atoms, 1s)
+cand 4 concl b~e m=4: 12 atoms, 8 vars [23s]
+   bab=b, eae=e, aba=a, hbh=g, aea=a, f<=i, ege=c, bhb=g, ehe=e, aia=f, bib=b, hih=c
+  eliminated e (55 atoms, 1s)
+cand 5 concl d~g m=4: 12 atoms, 8 vars [17s]
+   aba=c, gbg=g, d<=b, fdf=f, dfd=d, gfg=g, aga=i, fgf=f, h<=a, did=c, fif=h, i<=g
+  eliminated d (55 atoms, 1s)
+cand 5 concl e~f m=4: 12 atoms, 8 vars [17s]
+   aba=c, fbf=f, e<=b, geg=g, afa=h, gfg=g, ege=e, fgf=f, i<=a, eie=c, fif=h, i<=g

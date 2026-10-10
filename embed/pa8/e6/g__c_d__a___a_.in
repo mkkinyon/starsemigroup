@@ -1,0 +1,14 @@
+assign(max_seconds,90).
+set(prolog_style_variables).
+op(400, infix, "*").
+formulas(assumptions).
+X*X = X.
+(Y*X)*X = Y*X.
+(X*Y)*X = Y*X.
+((Z*X)*Y)*X = Z*(Y*X).
+(((Z*X)*Y)*X)*Y = (Z*X)*Y.
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X.
+% (E6') hypotheses: aca=a, ada=a, dbd=d, cd=dc, bcb = a(cd)a
+c*a = a. d*a = a. b*d = d. c*d = d*c. c*b = (c*d)*a.
+end_of_list.
+formulas(goals). (c*d)*a = a. end_of_list.

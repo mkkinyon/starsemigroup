@@ -1,0 +1,15 @@
+op(400, infix_left, "*").
+assign(max_seconds, 600).
+formulas(assumptions).
+(x*y)*z = x*(y*z).
+(x*y)' = y'*x'.
+x'' = x.
+x*x'*x = x.
+a*a = a. a' = a. b*b = b. b' = b. c*c = c. c' = c. d*d = d. d' = d. g*g = g. g' = g. k*k = k. k' = k.
+a*c*a = a. c*a*c = c. c*b*c = c. b*c*b = b. b*d*b = b. d*b*d = d.
+g*a = a*g. g*b = b*g. g*c*g = g*b*g.
+a*k*a = k. c*k*c = d*k*d. c*d = d*c.
+end_of_list.
+formulas(goals).
+k*d = k*c*b*d.
+end_of_list.

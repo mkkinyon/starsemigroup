@@ -1,0 +1,17 @@
+u * u = u.
+(v * u) * u = v * u.
+(u * v) * u = v * u.
+((w * u) * v) * u = w * (v * u).
+(((w * u) * v) * u) * v = (w * u) * v.
+w * u != w | w * v != w | u * v = v * u.
+c*a = a.
+a*c = c.
+c*b = b.
+b*c = c.
+e*c = c*e.
+a*e = c*e.
+f*a = a*f.
+b*e = b*f.
+b*(a*f) = (c*e)*b.
+b*a = a.
+a*b = b.

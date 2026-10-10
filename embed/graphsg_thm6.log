@@ -1,0 +1,6 @@
+k=1: 1 coloured graphs, 1 embeddable (explicit *-embedding verified), max |X| used = 3
+k=2: 4 coloured graphs, 3 embeddable (explicit *-embedding verified), max |X| used = 7
+k=3: 14 coloured graphs, 8 embeddable (explicit *-embedding verified), max |X| used = 12
+k=4: 89 coloured graphs, 35 embeddable (explicit *-embedding verified), max |X| used = 18
+k=5: 788 coloured graphs, 190 embeddable (explicit *-embedding verified), max |X| used = 25
+k=6: 13712 coloured graphs, 1824 embeddable (explicit *-embedding verified), max |X| used = 33

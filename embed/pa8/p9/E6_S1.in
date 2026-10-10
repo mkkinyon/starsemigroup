@@ -1,0 +1,22 @@
+assign(max_seconds, 2400).
+op(400, infix, "*").
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+z * x != z | z * y != z | x * y = y * x.
+y * w != w | z * x != x | w * x != x | u * z != u | u * w != u | z * y != u * x | u * x = x.
+c * a = a.
+a * c = c.
+c * b = b.
+b * c = c.
+d * b = b.
+b * d = d.
+d * c = c * d.
+(d * c) * a = (d * c) * b.
+end_of_list.
+formulas(goals).
+d * a = a.
+end_of_list.

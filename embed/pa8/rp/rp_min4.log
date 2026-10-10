@@ -1,0 +1,8 @@
+('cy', 'cx') [2, 3, 4, 5, 6] True 300s
+('ax', 'yac') [2, 3, 4, 5, 6] True 359s
+('xab', 'xcb') [2, 3, 4, 5, 6] True 480s
+('cy', 'cx') [2, 3, 4, 6] False 0s
+('cy', 'cx') [2, 3, 5, 6] False 1s
+('cy', 'cx') [3, 4, 5, 6] False 1s
+('cy', 'cx') [2, 4, 5, 6] False 0s
+('cy', 'cx') [2, 3, 4, 5] False 0s

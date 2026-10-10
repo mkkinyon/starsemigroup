@@ -1,0 +1,75 @@
+% 2-cycle-plus-spare pattern AGAINST the hexagon condition.
+% Same ground hypotheses as square.in (a1 |><| b2, a2 |><| b1, (H1), (H2), cw != cz,
+% general position), plus the matching-pattern condition as a universal clause.
+% Any model is a finite projection algebra satisfying the hexagon condition in which
+% the 2-cycle-plus-spare pattern fails, i.e. a genuine separation (the case not
+% covered by Prop. 4.10 of the notes).  No model up to size n = evidence that the
+% pattern follows from the hexagon condition for finite algebras.
+%
+% The universal clause used is the TRIANGLE condition (14 literals): on finite
+% algebras it is equivalent to the hexagon condition (Theorem 4.8), and it is
+% cheaper for Mace4 than the 20-literal hexagon clause (given below, commented out).
+%   x * y = y x y  (= x theta_y).  Constants: a1,a2,a3,b1,b2,b3,cw,cz.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+b2 * a1 = a1.   a1 * b2 = b2.
+b1 * a2 = a2.   a2 * b1 = b1.
+cw != cz.
+
+% general position: none of the four free pairs (a1,b3), (a2,b3), (a3,b1), (a3,b2) is matched
+% (a pair p,q is matched iff q*p = p and p*q = q; so 'not matched' is a disjunction).
+% Delete these four lines for the raw search (expect P(Q_0)-based models of size 11, 12 first).
+b3 * a1 != a1 | a1 * b3 != b3.
+b3 * a2 != a2 | a2 * b3 != b3.
+b1 * a3 != a3 | a3 * b1 != b1.
+b2 * a3 != a3 | a3 * b2 != b2.
+
+% ---- triangle condition (x_i |><| y_{i+1}), positive form, w and z eliminated ----
+x1 * x2 != x2 * x3 |
+x1 * x2 != x3 * x1 |
+y1 * y2 != y2 * y3 |
+y1 * y2 != y3 * y1 |
+x1 * y1 != y1 * x1 |
+x2 * y2 != y2 * x2 |
+x3 * y3 != y3 * x3 |
+y2 * x1 != x1 |
+x1 * y2 != y2 |
+y3 * x2 != x2 |
+x2 * y3 != y3 |
+y1 * x3 != x3 |
+x3 * y1 != y1 |
+x1 * x2 = y1 * y2.
+
+% ---- alternative: hexagon condition (all six pairs matched), 20 literals ----
+% x1 * x2 != x2 * x3 |
+% x1 * x2 != x3 * x1 |
+% y1 * y2 != y2 * y3 |
+% y1 * y2 != y3 * y1 |
+% x1 * y1 != y1 * x1 |
+% x2 * y2 != y2 * x2 |
+% x3 * y3 != y3 * x3 |
+% y2 * x1 != x1 |
+% x1 * y2 != y2 |
+% y3 * x1 != x1 |
+% x1 * y3 != y3 |
+% y1 * x2 != x2 |
+% x2 * y1 != y1 |
+% y3 * x2 != x2 |
+% x2 * y3 != y3 |
+% y1 * x3 != x3 |
+% x3 * y1 != y1 |
+% y2 * x3 != x3 |
+% x3 * y2 != y2 |
+% x1 * x2 = y1 * y2.
+end_of_list.

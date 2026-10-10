@@ -1,0 +1,25 @@
+\contentsline {section}{\tocsection {}{1}{Setting and the basic facts about $\mathcal {P}_X$}}{2}{section.1}%
+\contentsline {subsection}{\tocsubsection {}{1.1}{Partitions}}{2}{subsection.1.1}%
+\contentsline {subsection}{\tocsubsection {}{1.2}{Products}}{2}{subsection.1.2}%
+\contentsline {section}{\tocsection {}{2}{The projection condition}}{4}{section.2}%
+\contentsline {section}{\tocsection {}{3}{The local structure is unconstrained}}{4}{section.3}%
+\contentsline {section}{\tocsection {}{4}{The triangle condition and its relatives}}{6}{section.4}%
+\contentsline {subsection}{\tocsubsection {}{4.1}{The hexagon condition implies the triangle condition (finite case)}}{9}{subsection.4.1}%
+\contentsline {subsection}{\tocsubsection {}{4.2}{The infinite case: the unrolled hexagon}}{14}{subsection.4.2}%
+\contentsline {subsection}{\tocsubsection {}{4.3}{The witness}}{17}{subsection.4.3}%
+\contentsline {section}{\tocsection {}{5}{The conditions are not sufficient: a wiring obstruction}}{18}{section.5}%
+\contentsline {subsection}{\tocsubsection {}{5.1}{Graph semigroups}}{18}{subsection.5.1}%
+\contentsline {subsection}{\tocsubsection {}{5.2}{The obstruction}}{19}{subsection.5.2}%
+\contentsline {subsection}{\tocsubsection {}{5.3}{The full wiring condition}}{22}{subsection.5.3}%
+\contentsline {subsection}{\tocsubsection {}{5.4}{Graph semigroups: the complete answer}}{24}{subsection.5.4}%
+\contentsline {subsection}{\tocsubsection {}{5.5}{Layered graph semigroups}}{26}{subsection.5.5}%
+\contentsline {subsection}{\tocsubsection {}{5.6}{A fourth obstruction}}{29}{subsection.5.6}%
+\contentsline {subsection}{\tocsubsection {}{5.7}{A uniform view: path-closing conditions}}{33}{subsection.5.7}%
+\contentsline {subsection}{\tocsubsection {}{5.8}{The census of order $8$: seven more candidate obstructions}}{34}{subsection.5.8}%
+\contentsline {subsection}{\tocsubsection {}{5.9}{Proof of (R$'$)}}{41}{subsection.5.9}%
+\contentsline {subsection}{\tocsubsection {}{5.10}{Proof of (P$_1$)}}{45}{subsection.5.10}%
+\contentsline {subsection}{\tocsubsection {}{5.11}{Towards (Q)}}{47}{subsection.5.11}%
+\contentsline {subsection}{\tocsubsection {}{5.12}{Independence of the conditions}}{52}{subsection.5.12}%
+\contentsline {section}{\tocsection {}{6}{Computations}}{52}{section.6}%
+\contentsline {section}{\tocsection {}{7}{General remarks and questions}}{54}{section.7}%
+\contentsline {section}{\tocsection {}{}{Files}}{55}{section*.5}%

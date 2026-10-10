@@ -1,0 +1,39 @@
+% 2-cycle-plus-spare pattern: does a1 |><| b2, a2 |><| b1 alone (with (H1), (H2)
+% on three indices) force w = z?   Mace4 search for a model with w != z.
+%   x * y = y x y  (= x theta_y).  Constants: a1,a2,a3,b1,b2,b3,cw,cz.
+% Hypotheses:
+%   (H1)  a_i a_j = a_j a_i = cw,  b_i b_j = b_j b_i = cz   (cyclic reduction suffices)
+%   (H2)  a_i b_i = b_i a_i
+%   (S)   a1 |><| b2  and  a2 |><| b1   -- ONLY these two matched pairs;
+%         index 3 is isolated (a3, b3 are subject to (H1), (H2) only)
+%   cw != cz
+% Nothing is assumed about the pairs (a1,b3), (a2,b3), (a3,b1), (a3,b2).
+% This is the one 2-edge pattern on three indices NOT covered by the path condition
+% (Prop. 4.10 of the notes); it holds in P_2, P_3, P_4 by direct computation.
+% Any model found: check the hexagon condition in it (Python script mace4parse.py);
+% a model satisfying the hexagon condition would be a genuine separation.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+b2 * a1 = a1.   a1 * b2 = b2.
+b1 * a2 = a2.   a2 * b1 = b1.
+cw != cz.
+
+% general position: none of the four free pairs (a1,b3), (a2,b3), (a3,b1), (a3,b2) is matched
+% (a pair p,q is matched iff q*p = p and p*q = q; so 'not matched' is a disjunction).
+% Delete these four lines for the raw search (expect P(Q_0)-based models of size 11, 12 first).
+b3 * a1 != a1 | a1 * b3 != b3.
+b3 * a2 != a2 | a2 * b3 != b3.
+b1 * a3 != a3 | a3 * b1 != b1.
+b2 * a3 != a3 | a3 * b2 != b2.
+end_of_list.

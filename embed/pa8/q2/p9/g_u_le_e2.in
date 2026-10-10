@@ -1,0 +1,20 @@
+set(prolog_style_variables).
+op(400, infix, "*").
+assign(max_seconds, 120).
+formulas(assumptions).
+X*X = X.
+(Y*X)*X = Y*X.
+(X*Y)*X = Y*X.
+((Z*X)*Y)*X = Z*(Y*X).
+(((Z*X)*Y)*X)*Y = (Z*X)*Y.
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X.
+% path a|><|c|><|b|><|d
+c*a = a. a*c = c. b*c = c. c*b = b. d*b = b. b*d = d.
+% u <= a, theta_c(u) = theta_d(u)
+u*a = u. u*c = u*d.
+% y ~ a, y ~ b, theta_y(c) = theta_y(b)
+y*a = a*y. y*b = b*y. c*y = b*y.
+end_of_list.
+formulas(goals).
+u*(d*a) = u*a.
+end_of_list.

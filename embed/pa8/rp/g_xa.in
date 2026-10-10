@@ -1,0 +1,14 @@
+assign(max_seconds, 120).
+op(400, infix_left, "*").
+formulas(assumptions).
+(x*y)*z = x*(y*z).
+(x*y)' = y'*x'.
+x'' = x.
+x*x'*x = x.
+% projections a,b,c,e,f  (e = x, f = y)
+a*a = a. a' = a. b*b = b. b' = b. c*c = c. c' = c. e*e = e. e' = e. f*f = f. f' = f.
+e*c = c*e. e*a*e = e*c*e.
+end_of_list.
+formulas(goals).
+e*a = e*c*a.
+end_of_list.

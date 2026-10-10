@@ -1,0 +1,197 @@
+============================== Mace4 =================================
+Mace4 (64) version 2017-11A (CIIRC), November 2017.
+Process 2005 was started by root on vm,
+Sat Sep 12 17:41:14 2026
+The command was "mace4 -n 2 -N 9 -m 1 -b 2000 -f pc43_mace_Q1/10.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file pc43_mace_Q1/10.in
+
+op(400,infix,"*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+z * x != z | z * y != z | x * y = y * x.
+a1 * a0 = a0.
+a0 * a1 = a1.
+a2 * a1 = a1.
+a1 * a2 = a2.
+a3 * a2 = a2.
+a2 * a3 = a3.
+a4 * a3 = a3.
+a3 * a4 = a4.
+a0 * c = a0.
+a1 * c = a3 * c.
+a3 * c = a4 * c.
+a4 * a0 != a0 | a0 * a4 != a4.
+end_of_list.
+    % assign(domain_size, 2) -> assign(start_size, 2).
+    % assign(domain_size, 2) -> assign(end_size, 2).
+
+% From the command line: assign(domain_size, 2).
+
+% From the command line: assign(end_size, 9).
+
+% From the command line: assign(max_models, 1).
+
+% From the command line: assign(max_megs, 2000).
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+x * x = x.
+(x * y) * y = x * y.
+(x * y) * x = y * x.
+((x * y) * z) * y = x * (z * y).
+(((x * y) * z) * y) * z = (x * y) * z.
+x * y != x | x * z != x | y * z = z * y.
+a1 * a0 = a0.
+a0 * a1 = a1.
+a2 * a1 = a1.
+a1 * a2 = a2.
+a3 * a2 = a2.
+a2 * a3 = a3.
+a4 * a3 = a3.
+a3 * a4 = a4.
+a0 * c = a0.
+a1 * c = a3 * c.
+a3 * c = a4 * c.
+a4 * a0 != a0 | a0 * a4 != a4.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 2 =========================
+
+============================== STATISTICS ============================
+
+For domain size 2.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.00 seconds).
+Ground clauses: seen=46, kept=34.
+Selections=16, assignments=31, propagations=13, current_models=0.
+Rewrite_terms=505, rewrite_bools=138, indexes=10.
+Rules_from_neg_clauses=3, cross_offs=3.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 3 =========================
+
+============================== STATISTICS ============================
+
+For domain size 3.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.00 seconds).
+Ground clauses: seen=114, kept=93.
+Selections=45, assignments=129, propagations=66, current_models=0.
+Rewrite_terms=4923, rewrite_bools=1259, indexes=190.
+Rules_from_neg_clauses=0, cross_offs=18.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 4 =========================
+
+============================== STATISTICS ============================
+
+For domain size 4.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=240, kept=208.
+Selections=73, assignments=267, propagations=323, current_models=0.
+Rewrite_terms=20925, rewrite_bools=5164, indexes=1341.
+Rules_from_neg_clauses=26, cross_offs=130.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 5 =========================
+
+============================== STATISTICS ============================
+
+For domain size 5.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.01 seconds).
+Ground clauses: seen=442, kept=397.
+Selections=141, assignments=635, propagations=924, current_models=0.
+Rewrite_terms=77154, rewrite_bools=19220, indexes=5896.
+Rules_from_neg_clauses=54, cross_offs=523.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 6 =========================
+
+============================== STATISTICS ============================
+
+For domain size 6.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.02 seconds).
+Ground clauses: seen=738, kept=678.
+Selections=236, assignments=1250, propagations=1761, current_models=0.
+Rewrite_terms=182817, rewrite_bools=46373, indexes=15273.
+Rules_from_neg_clauses=51, cross_offs=1073.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 7 =========================
+
+============================== STATISTICS ============================
+
+For domain size 7.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.04 seconds).
+Ground clauses: seen=1146, kept=1069.
+Selections=326, assignments=1936, propagations=2869, current_models=0.
+Rewrite_terms=316978, rewrite_bools=81104, indexes=30191.
+Rules_from_neg_clauses=55, cross_offs=1956.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 8 =========================
+
+============================== STATISTICS ============================
+
+For domain size 8.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.06 seconds).
+Ground clauses: seen=1684, kept=1588.
+Selections=427, assignments=2803, propagations=4294, current_models=0.
+Rewrite_terms=520636, rewrite_bools=132658, indexes=55373.
+Rules_from_neg_clauses=67, cross_offs=3730.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 9 =========================
+
+============================== STATISTICS ============================
+
+For domain size 9.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.11 seconds).
+Ground clauses: seen=2370, kept=2253.
+Selections=569, assignments=4142, propagations=6395, current_models=0.
+Rewrite_terms=865348, rewrite_bools=217291, indexes=97250.
+Rules_from_neg_clauses=98, cross_offs=7122.
+
+============================== end of statistics =====================
+
+User_CPU=0.11, System_CPU=0.00, Wall_clock=0.
+
+Exiting with failure.
+
+Process 2005 exit (exhausted) Sat Sep 12 17:41:14 2026
+The process finished Sat Sep 12 17:41:14 2026

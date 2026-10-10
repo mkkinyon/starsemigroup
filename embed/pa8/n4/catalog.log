@@ -1,0 +1,35 @@
+path 1 0 8 1: th_a(y)=a | th_y(b)=th_z(x) | th_x(b)=th_a(b)=th_b(a) | th_c(z)=th_x(z)
+    violates cand9 [1], P8 [2], embeddable-census violations 0 [42s]
+    valid m=6: True [55s]
+path 1 0 4 5: th_a(y)=a | th_z(c)=b | th_y(a)=th_y(x) | th_x(c)=th_z(x)=th_a(b) | th_y(z)=th_b(a)
+    violates cand9 [1], P8 [], embeddable-census violations 0 [36s]
+    valid m=6: True [126s]
+path 1 4 0 8: th_b(x)=b | th_y(a)=th_z(y) | th_c(z)=th_x(a)=th_y(x) | th_z(x)=th_b(a)
+    violates cand9 [1], P8 [2], embeddable-census violations 0 [35s]
+    valid m=6: True [159s]
+path 3 1 0 3: th_z(c)=a | th_b(y)=b | th_x(c)=th_x(y) | th_y(b)=th_y(x) | th_x(b)=th_a(b)=th_b(a) | th_y(z)=th_z(y)
+    violates cand9 [3], P8 [], embeddable-census violations 0 [35s]
+    valid m=6: True [137s]
+path 3 1 0 7: th_x(c)=a | th_b(y)=th_b(z)=b | th_y(c)=th_y(b) | th_z(c)=th_z(b) | th_y(z)=th_z(y)=th_a(b) | th_x(b)=th_b(a)
+    violates cand9 [3], P8 [], embeddable-census violations 0 [35s]
+    valid m=6: True [149s]
+path 3 3 7 4: th_b(x)=b | th_x(a)=th_x(b) | th_x(y)=th_y(z) | th_z(y)=th_a(b)=th_b(a) | th_c(z)=th_z(c)
+    violates cand9 [3], P8 [1], embeddable-census violations 0 [37s]
+    valid m=6: True [105s]
+path 4 0 1 3: th_a(y)=a | th_z(b)=b | th_z(y)=th_b(a) | th_z(a)=th_a(b) | th_c(y)=th_y(c)
+    violates cand9 [4], P8 [6], embeddable-census violations 0 [7s]
+    valid m=6: True [391s]
+path 4 1 0 4: th_a(z)=a | th_y(b)=b | th_z(y)=th_b(a) | th_y(a)=th_a(b) | th_c(z)=th_z(c)
+    violates cand9 [4], P8 [], embeddable-census violations 0 [7s]
+    valid m=6: True [115s]
+path 5 3 5 6: th_x(c)=a | th_b(x)=b | th_z(x)=th_a(b) | th_c(z)=th_z(c) | th_z(b)=th_b(a)
+    violates cand9 [5], P8 [], embeddable-census violations 0 [7s]
+    valid m=6: True [16s]
+path 5 4 6 5: th_x(c)=a | th_b(x)=b | th_z(x)=th_a(b) | th_c(z)=th_z(c) | th_z(b)=th_b(a)
+    violates cand9 [5], P8 [], embeddable-census violations 0 [7s]
+    valid m=6: True [15s]
+path 6 0 3 1: th_y(z)=th_z(a) | th_c(z)=th_y(a) | th_z(b)=th_b(a)
+    violates cand9 [6], P8 [], embeddable-census violations 0 [7s]
+    valid m=6: True [18s]
+path 0 7 2 8: th_b(z)=b | th_z(a)=th_z(b) | th_y(z)=th_a(b) | th_c(y)=th_y(c) | th_y(b)=th_b(a)
+    violates cand9 [0], P8 [1], embeddable-census violations 0 [7s]

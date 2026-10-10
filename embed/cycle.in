@@ -1,0 +1,51 @@
+% (C) A closed, half-matched 6-cycle of the walk with the lower bounds is a hexagon
+% with products cz (elements under the b's) and cw (elements under the a's).
+% The six cross matchings A_i |><| B_j (i != j) are the six consecutive pairs of the
+% cycle and follow at once from the half-matching hypotheses; the goals are the
+% products and the three commutations.  Verified in all six Mace4 models.
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+b2 * a1 = a1.   a1 * b2 = b2.
+b3 * a2 = a2.   a2 * b3 = b3.
+b1 * a3 = a3.   a3 * b1 = b1.
+% meets m_i = a_i b_i as constants
+a1 * b1 = m1.   a2 * b2 = m2.   a3 * b3 = m3.
+% closed 6-cycle of the walk:  e0 under b3, e1 under a2, e2 under b1, e3 under a3, e4 under b2, e5 under a1
+e0 * a2 = e1.   e1 * b1 = e2.   e2 * a3 = e3.   e3 * b2 = e4.   e4 * a1 = e5.   e5 * b3 = e0.
+% each element half-matched to the next vertex (stabilisation lemma):  e_j v e_j = e_j
+a2 * e0 = e0.   b1 * e1 = e1.   a3 * e2 = e2.   b2 * e3 = e3.   a1 * e4 = e4.   b3 * e5 = e5.
+% lower bounds (invariant (I))
+cz * e0 = cz.   m3 * e0 = m3.
+cw * e1 = cw.   m2 * e1 = m2.
+cz * e2 = cz.   m1 * e2 = m1.
+cw * e3 = cw.   m3 * e3 = m3.
+cz * e4 = cz.   m2 * e4 = m2.
+cw * e5 = cw.   m1 * e5 = m1.
+end_of_list.
+
+formulas(goals).
+e2 * e4 = cz.   % (C1)
+e5 * e1 = cw.   % (C2)
+e2 * e0 = cz.   % (C3)
+e5 * e3 = cw.   % (C4)
+e2 * e5 = e5 * e2.   % (C5)
+e4 * e2 = cz.   % (C6)
+e1 * e5 = cw.   % (C7)
+e4 * e0 = cz.   % (C8)
+e1 * e3 = cw.   % (C9)
+e4 * e1 = e1 * e4.   % (C10)
+e0 * e2 = cz.   % (C11)
+e3 * e5 = cw.   % (C12)
+e0 * e4 = cz.   % (C13)
+e3 * e1 = cw.   % (C14)
+e0 * e3 = e3 * e0.   % (C15)
+end_of_list.

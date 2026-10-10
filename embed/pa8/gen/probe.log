@@ -1,0 +1,6 @@
+paths: 627392 closed: 469624
+distinct bad signatures: 867265 (30s)
+instances: Q 349343 P1 9519 R' 91172 (9s)
+S_Q done (42s)
+S_P1 done (43s)
+S_R' done (85s)

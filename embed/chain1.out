@@ -1,0 +1,179 @@
+============================== Mace4 =================================
+Mace4 (64) version 2017-11A (CIIRC), November 2017.
+Process 1418 was started by root on vm,
+Wed Sep  9 07:27:54 2026
+The command was "mace4 -n 11 -N 40 -m 1 -f chain1.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file chain1.in
+
+op(400,infix,"*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+a1 * a2 = cw.
+a2 * a3 = cw.
+a3 * a1 = cw.
+b1 * b2 = cz.
+b2 * b3 = cz.
+b3 * b1 = cz.
+a1 * b1 = b1 * a1.
+a2 * b2 = b2 * a2.
+a3 * b3 = b3 * a3.
+b2 * a1 = a1.
+a1 * b2 = b2.
+b3 * a2 = a2.
+a2 * b3 = b3.
+b1 * a3 = a3.
+a3 * b1 = b1.
+cw != cz.
+a1 != (((((a1 * b3) * a2) * b1) * a3) * b2) * a1.
+end_of_list.
+    % assign(domain_size, 11) -> assign(start_size, 11).
+    % assign(domain_size, 11) -> assign(end_size, 11).
+
+% From the command line: assign(domain_size, 11).
+
+% From the command line: assign(end_size, 40).
+
+% From the command line: assign(max_models, 1).
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+x * x = x.
+(x * y) * y = x * y.
+(x * y) * x = y * x.
+((x * y) * z) * y = x * (z * y).
+(((x * y) * z) * y) * z = (x * y) * z.
+a1 * a2 = cw.
+a2 * a3 = cw.
+a3 * a1 = cw.
+b1 * b2 = cz.
+b2 * b3 = cz.
+b3 * b1 = cz.
+a1 * b1 = b1 * a1.
+a2 * b2 = b2 * a2.
+a3 * b3 = b3 * a3.
+b2 * a1 = a1.
+a1 * b2 = b2.
+b3 * a2 = a2.
+a2 * b3 = b3.
+b1 * a3 = a3.
+a3 * b1 = b1.
+cw != cz.
+a1 != (((((a1 * b3) * a2) * b1) * a3) * b2) * a1.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 11 ========================
+
+=== Mace4 starting on domain size 11. ===
+
+============================== STATISTICS ============================
+
+For domain size 11.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.14 seconds).
+Ground clauses: seen=2932, kept=2888.
+Selections=877, assignments=8430, propagations=18901, current_models=0.
+Rewrite_terms=1785652, rewrite_bools=317315, indexes=273590.
+Rules_from_neg_clauses=428, cross_offs=31767.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 12 ========================
+
+=== Mace4 starting on domain size 12. ===
+
+============================== STATISTICS ============================
+
+For domain size 12.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.41 seconds).
+Ground clauses: seen=3773, kept=3725.
+Selections=1298, assignments=13619, propagations=29744, current_models=0.
+Rewrite_terms=3062400, rewrite_bools=545572, indexes=461177.
+Rules_from_neg_clauses=697, cross_offs=57877.
+
+============================== end of statistics =====================
+
+============================== DOMAIN SIZE 13 ========================
+
+=== Mace4 starting on domain size 13. ===
+
+============================== MODEL =================================
+
+interpretation( 13, [number=1, seconds=0], [
+
+        function(a1, [ 0 ]),
+
+        function(a2, [ 1 ]),
+
+        function(a3, [ 2 ]),
+
+        function(b1, [ 3 ]),
+
+        function(b2, [ 4 ]),
+
+        function(b3, [ 5 ]),
+
+        function(cw, [ 6 ]),
+
+        function(cz, [10 ]),
+
+        function(*(_,_), [
+			   0, 6, 6, 7, 4, 5, 6, 7, 8, 9,10,11,12,
+			   6, 1, 6, 3, 8, 5, 6, 7, 8, 9,10, 8, 6,
+			   6, 6, 2, 3,11, 9, 6, 7, 8, 9,10,11, 6,
+			   7, 1, 2, 3,10,10, 6, 7, 8, 9,10,10, 7,
+			   0, 8, 2,10, 4,10, 6, 7, 8, 9,10,11,12,
+			  12, 1, 9,10,10, 5, 6, 7, 8, 9,10,10,12,
+			   6, 6, 6, 7, 8, 9, 6, 7, 8, 9,10, 8, 6,
+			   7, 6, 6, 7,10,10, 6, 7, 8, 9,10,10, 7,
+			   6, 8, 6,10, 8,10, 6, 7, 8, 9,10, 8, 6,
+			   6, 6, 9,10,10, 9, 6, 7, 8, 9,10,10, 6,
+			   7, 8, 9,10,10,10, 6, 7, 8, 9,10,10, 7,
+			  12, 8, 2,10,11,10, 6, 7, 8, 9,10,11,12,
+			  12, 6, 6, 7,11, 5, 6, 7, 8, 9,10,11,12 ])
+]).
+
+============================== end of model ==========================
+
+============================== STATISTICS ============================
+
+For domain size 13.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.80 seconds).
+Ground clauses: seen=4762, kept=4710.
+Selections=1749, assignments=19657, propagations=42714, current_models=1.
+Rewrite_terms=4687266, rewrite_bools=829561, indexes=714002.
+Rules_from_neg_clauses=927, cross_offs=94859.
+
+============================== end of statistics =====================
+
+------ process 1418 exit (max_models) ------
+
+User_CPU=0.80, System_CPU=0.00, Wall_clock=1.
+
+Exiting with 1 model.
+
+Process 1418 exit (max_models) Wed Sep  9 07:27:55 2026
+The process finished Wed Sep  9 07:27:55 2026

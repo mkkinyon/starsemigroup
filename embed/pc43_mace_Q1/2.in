@@ -1,0 +1,17 @@
+op(400, infix, "*").
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+z * x != z | z * y != z | x * y = y * x.
+a1 * a0 = a0. a0 * a1 = a1.
+a2 * a1 = a1. a1 * a2 = a2.
+a3 * a2 = a2. a2 * a3 = a3.
+a4 * a3 = a3. a3 * a4 = a4.
+a4 * c = a4.
+a0 * c = a3 * c.
+a4 * a0 != a0 | a0 * a4 != a4.
+end_of_list.
+

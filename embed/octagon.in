@@ -1,0 +1,73 @@
+% Octagon condition (cyclic 8-gon version) in the language of binary projection
+% algebras (x * y = x theta_y = y x y).  Constants start with a, b, c; variables
+% start with u..z (Prover9 convention).
+%
+% Hypotheses (indices mod 4):
+%   (O1) a_i a_j = a_j a_i = w  for all i != j;  b_i b_j = b_j b_i = z  for all i != j
+%   (O2) a_i b_i = b_i a_i
+%   (O3) a_i |><| b_j  for j = i+1 and j = i-1 only   (8 matched pairs)
+% Conclusion:  w = z.
+%
+% NOTE: with (O3) required for ALL i != j the condition is a trivial consequence
+% of the hexagon condition (drop one index).  With adjacent pairs only, no
+% hexagon is contained in the configuration, and the proof of the hexagon
+% theorem still goes through in every P_X.
+%
+% For (O1), one equation per unordered pair suffices (the reverse order follows:
+% a_j * a_i = (a_i * a_j) * a_i = w * a_i = (a_l * a_i) * a_i = w, as long as every
+% index occurs in the second slot of some listed equation).  w and z are then
+% eliminated by writing every equation against a1 * a2, resp. b1 * b2.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+
+% ---- projection algebra axioms ----
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+% ---- hexagon condition, positive form (20 literals, variables x1..x3, y1..y3) ----
+x1 * x2 != x2 * x3 | x1 * x2 != x3 * x1 |
+y1 * y2 != y2 * y3 | y1 * y2 != y3 * y1 |
+x1 * y1 != y1 * x1 | x2 * y2 != y2 * x2 | x3 * y3 != y3 * x3 |
+y2 * x1 != x1 | x1 * y2 != y2 | y3 * x1 != x1 | x1 * y3 != y3 |
+y1 * x2 != x2 | x2 * y1 != y1 | y3 * x2 != x2 | x2 * y3 != y3 |
+y1 * x3 != x3 | x3 * y1 != y1 | y2 * x3 != x3 | x3 * y2 != y2 |
+x1 * x2 = y1 * y2.
+
+% ---- negated octagon condition: ground instance on constants a1..a4, b1..b4 ----
+% (O1)  (5 + 5 equations; w = a1 * a2, z = b1 * b2 eliminated)
+a2 * a3 = a1 * a2.   a3 * a4 = a1 * a2.   a4 * a1 = a1 * a2.
+a1 * a3 = a1 * a2.   a2 * a4 = a1 * a2.
+b2 * b3 = b1 * b2.   b3 * b4 = b1 * b2.   b4 * b1 = b1 * b2.
+b1 * b3 = b1 * b2.   b2 * b4 = b1 * b2.
+% (O2)
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.   a4 * b4 = b4 * a4.
+% (O3)  a_i |><| b_{i+1}, a_i |><| b_{i-1}:   b_j * a_i = a_i  and  a_i * b_j = b_j
+b2 * a1 = a1.   a1 * b2 = b2.   b4 * a1 = a1.   a1 * b4 = b4.
+b3 * a2 = a2.   a2 * b3 = b3.   b1 * a2 = a2.   a2 * b1 = b1.
+b4 * a3 = a3.   a3 * b4 = b4.   b2 * a3 = a3.   a3 * b2 = b2.
+b1 * a4 = a4.   a4 * b1 = b1.   b3 * a4 = a4.   a4 * b3 = b3.
+% negated conclusion
+a1 * a2 != b1 * b2.
+
+end_of_list.
+
+% ---------------------------------------------------------------------------
+% The octagon condition itself in positive form (31 literals), for use as an
+% assumption (e.g. to test whether it implies the hexagon condition):
+%
+% x1 * x2 != x2 * x3 | x1 * x2 != x3 * x4 | x1 * x2 != x4 * x1 |
+% x1 * x2 != x1 * x3 | x1 * x2 != x2 * x4 |
+% y1 * y2 != y2 * y3 | y1 * y2 != y3 * y4 | y1 * y2 != y4 * y1 |
+% y1 * y2 != y1 * y3 | y1 * y2 != y2 * y4 |
+% x1 * y1 != y1 * x1 | x2 * y2 != y2 * x2 | x3 * y3 != y3 * x3 | x4 * y4 != y4 * x4 |
+% y2 * x1 != x1 | x1 * y2 != y2 | y4 * x1 != x1 | x1 * y4 != y4 |
+% y3 * x2 != x2 | x2 * y3 != y3 | y1 * x2 != x2 | x2 * y1 != y1 |
+% y4 * x3 != x3 | x3 * y4 != y4 | y2 * x3 != x3 | x3 * y2 != y2 |
+% y1 * x4 != x4 | x4 * y1 != y1 | y3 * x4 != x4 | x4 * y3 != y3 |
+% x1 * x2 = y1 * y2.
+% ---------------------------------------------------------------------------

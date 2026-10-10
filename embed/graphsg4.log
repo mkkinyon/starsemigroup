@@ -1,0 +1,21 @@
+k=1 E=[] bot=(0,): |Q|=2, Q1=True, triangle=ok, embeds: 1
+k=2 E=[] bot=(0, 0): |Q|=5, Q1=True, triangle=ok, embeds: 2
+k=2 E=[] bot=(0, 1): |Q|=8, Q1=True, triangle=ok, embeds: 3
+k=2 E=[(0, 1)] bot=(0, 0): |Q|=5, Q1=False, triangle=ok, embeds: None
+k=2 E=[(0, 1)] bot=(0, 1): |Q|=8, Q1=True, triangle=ok, embeds: 2
+k=3 E=[] bot=(0, 0, 0): |Q|=10, Q1=True, triangle=ok, embeds: 3
+k=3 E=[] bot=(0, 0, 1): |Q|=13, Q1=True, triangle=ok, embeds: 3
+k=3 E=[] bot=(0, 1, 1): |Q|=13, Q1=True, triangle=ok, embeds: 3
+k=3 E=[] bot=(0, 1, 2): |Q|=18, Q1=True, triangle=ok, embeds: 4
+k=3 E=[(0, 1)] bot=(0, 0, 0): |Q|=10, Q1=False, triangle=ok, embeds: None
+k=3 E=[(0, 1)] bot=(0, 0, 1): |Q|=13, Q1=False, triangle=ok, embeds: None
+k=3 E=[(0, 1)] bot=(0, 1, 0): |Q|=13, Q1=True, triangle=ok, embeds: 3
+k=3 E=[(0, 1)] bot=(0, 1, 1): |Q|=13, Q1=True, triangle=ok, embeds: 3
+k=3 E=[(0, 1)] bot=(0, 1, 2): |Q|=18, Q1=True, triangle=ok, embeds: 3
+k=3 E=[(0, 1), (0, 2)] bot=(0, 0, 0): |Q|=10, Q1=False, triangle=ok, embeds: None
+k=3 E=[(0, 1), (0, 2)] bot=(0, 0, 1): |Q|=13, Q1=False, triangle=ok, embeds: None
+k=3 E=[(0, 1), (0, 2)] bot=(0, 1, 1): |Q|=13, Q1=True, triangle=ok, embeds: 2
+k=3 E=[(0, 1), (0, 2)] bot=(0, 1, 0): |Q|=13, Q1=False, triangle=ok, embeds: None
+k=3 E=[(0, 1), (0, 2)] bot=(0, 1, 2): |Q|=18, Q1=True, triangle=ok, embeds: 3
+k=3 E=[(0, 1), (0, 2), (1, 2)] bot=(0, 0, 0): |Q|=10, Q1=False, triangle=ok, embeds: None
+k=3 E=[(0, 1), (0, 2), (1, 2)] bot=(0, 0, 1): |Q|=13, Q1=False, triangle=ok, embeds: None

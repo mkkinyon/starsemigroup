@@ -1,0 +1,19 @@
+assign(max_seconds, 120).
+set(prolog_style_variables).
+op(400, infix, "*").
+formulas(assumptions).
+X*X = X.
+(Y*X)*X = Y*X.
+(X*Y)*X = Y*X.
+((Z*X)*Y)*X = Z*(Y*X).
+(((Z*X)*Y)*X)*Y = (Z*X)*Y.
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X.
+(C*A = A & A*C = C & C*B = B & B*C = C &
+ Y*A = A & B*Z = B & Y*C = C*Y & Y*Z = A*B & A*Z = B*A)
+ -> (B*A = A & A*B = B).
+kc*ka = ka & ka*kc = kc & kc*kb = kb & kb*kc = kc & kd*kb = kb & kb*kd = kd &
+ kc*kd = kd*kc & (kc*kd)*ka = (kc*kd)*kb.
+end_of_list.
+formulas(goals).
+kd*ka = ka & ka*kd = kd.
+end_of_list.

@@ -1,0 +1,25 @@
+op(400, infix, "*").
+formulas(assumptions).
+
+% ---- projection algebra axioms ----
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+% ---- triangle hypotheses on constants a1,a2,a3,b1,b2,b3,cw,cz ----
+% (H1) cyclic reduction suffices, as for the hexagon
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+% (H2)
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+% (H3) a1 |><| b2, a2 |><| b3, a3 |><| b1:   b_j * a_i = a_i  and  a_i * b_j = b_j
+b2 * a1 = a1.   a1 * b2 = b2.
+b3 * a2 = a2.   a2 * b3 = b3.
+b1 * a3 = a3.   a3 * b1 = b1.
+
+cw != cz.
+a1 != ((((((a1 * b3) * a2) * b1) * a3) * b2) * a1).
+end_of_list.
+

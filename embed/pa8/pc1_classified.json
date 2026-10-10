@@ -1,0 +1,2502 @@
+[
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    0
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    3
+   ]
+  ],
+  "text": [
+   "p0<=x",
+   "th_x(p0)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 24.1,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    0
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "p0<=x",
+   "th_x(p1)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 49.3,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "p3<=x",
+   "th_x(p0)=th_x(p2)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 59.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    3
+   ]
+  ],
+  "text": [
+   "p3<=x",
+   "th_x(p0)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 29.1,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p1<=x",
+   "th_x(p0)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 10.3,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p1<=x",
+   "th_x(p1)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 17.0,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "zle",
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "x<=p2",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 9.6,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p2<=x",
+   "th_x(p0)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 16.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 9.0,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    2,
+    0
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "th_p1(x)=th_p3(x)",
+   "x=th_p2(p0)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 8.1,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    0
+   ],
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "x<=p0",
+   "xp2=p2x",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 8.2,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    0
+   ],
+   [
+    "x",
+    "zle",
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "x<=p0",
+   "x<=p2",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.7,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    0
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "x<=p0",
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    0
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    2,
+    0
+   ]
+  ],
+  "text": [
+   "x<=p0",
+   "th_p1(x)=th_p3(x)",
+   "x=th_p2(p0)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 6.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    0
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "p0<=x",
+   "th_x(p0)=th_x(p2)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 26.3,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    0
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    2
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "p0<=x",
+   "th_x(p1)=th_x(p2)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 75.7,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    0
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ],
+   [
+    "ch",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "p0<=x",
+   "th_x(p2)=th_x(p3)",
+   "p0~p2"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 22.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "zle",
+    3
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "xp1=p1x",
+   "x<=p3",
+   "th_p0(x)=th_p2(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.8,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp1=p1x",
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 8.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "zeq",
+    3,
+    1
+   ]
+  ],
+  "text": [
+   "xp1=p1x",
+   "th_p0(x)=th_p2(x)",
+   "x=th_p3(p1)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.4,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "x<=p1",
+   "xp3=p3x",
+   "th_p0(x)=th_p2(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 9.7,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    1
+   ],
+   [
+    "x",
+    "zle",
+    3
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "x<=p1",
+   "x<=p3",
+   "th_p0(x)=th_p2(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 6.7,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    1
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "x<=p1",
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 6.6,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    1
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "zeq",
+    3,
+    1
+   ]
+  ],
+  "text": [
+   "x<=p1",
+   "th_p0(x)=th_p2(x)",
+   "x=th_p3(p1)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.8,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    3
+   ]
+  ],
+  "text": [
+   "p1<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 15.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp2=p2x",
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 8.6,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "xp2=p2x",
+   "th_p1(x)=th_p3(x)",
+   "x=th_p0(p2)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.1,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    2
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "x<=p2",
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.7,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "x<=p2",
+   "th_p1(x)=th_p3(x)",
+   "x=th_p0(p2)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.1,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "p2<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p2)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 14.2,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    3
+   ]
+  ],
+  "text": [
+   "p2<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 9.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp3=p3x",
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 9.2,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "zeq",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp3=p3x",
+   "th_p0(x)=th_p2(x)",
+   "x=th_p1(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 8.0,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    3
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "x<=p3",
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 6.8,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "zle",
+    3
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "zeq",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "x<=p3",
+   "th_p0(x)=th_p2(x)",
+   "x=th_p1(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    2
+   ]
+  ],
+  "text": [
+   "p3<=x",
+   "th_x(p0)=th_x(p1)",
+   "th_x(p1)=th_x(p2)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 70.2,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "p3<=x",
+   "th_x(p0)=th_x(p1)",
+   "th_x(p1)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 25.2,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "ch",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "p3<=x",
+   "th_x(p0)=th_x(p1)",
+   "p1~p3"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 22.8,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)",
+   "x=th_p0(p2)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)",
+   "x=th_p1(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 9.9,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    2,
+    0
+   ]
+  ],
+  "text": [
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)",
+   "x=th_p2(p0)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 8.8,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    3,
+    1
+   ]
+  ],
+  "text": [
+   "th_p0(x)=th_p2(x)",
+   "th_p1(x)=th_p3(x)",
+   "x=th_p3(p1)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 9.0,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "zeq",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    3,
+    1
+   ]
+  ],
+  "text": [
+   "th_p0(x)=th_p2(x)",
+   "x=th_p1(p3)",
+   "x=th_p3(p1)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.0,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "zeq",
+    0,
+    2
+   ],
+   [
+    "x",
+    "zeq",
+    2,
+    0
+   ]
+  ],
+  "text": [
+   "th_p1(x)=th_p3(x)",
+   "x=th_p0(p2)",
+   "x=th_p2(p0)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 6.8,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "xp1=p1x",
+   "p2<=x",
+   "th_x(p1)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.8,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "xp1=p1x",
+   "th_p0(x)=th_p2(x)",
+   "th_x(p1)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 3.3,
+  "countermodels": 1,
+  "min_order": 8
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ],
+   [
+    "ch",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "xp1=p1x",
+   "th_x(p1)=th_x(p3)",
+   "p1~p3"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 8.0,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p1<=x",
+   "th_x(p0)=th_x(p2)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 18.3,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    2
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p1<=x",
+   "th_x(p1)=th_x(p2)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 12.5,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ],
+   [
+    "ch",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p1<=x",
+   "th_x(p2)=th_x(p3)",
+   "p0~p2"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 11.9,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "xp2=p2x",
+   "th_x(p0)=th_x(p2)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 4.3,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "xp2=p2x",
+   "th_x(p1)=th_x(p2)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 5.8,
+  "countermodels": 1,
+  "min_order": 8
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "xp2=p2x",
+   "th_p1(x)=th_p3(x)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 5.1,
+  "countermodels": 1,
+  "min_order": 8
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ],
+   [
+    "ch",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "xp2=p2x",
+   "th_x(p2)=th_x(p3)",
+   "p0~p2"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 4.2,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p2<=x",
+   "th_x(p0)=th_x(p1)",
+   "th_x(p1)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 2.6,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p2<=x",
+   "th_x(p0)=th_x(p1)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 10.1,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ],
+   [
+    "ch",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p2<=x",
+   "th_x(p1)=th_x(p3)",
+   "p0~p2"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 10.1,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ],
+   [
+    "ch",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "xp0=p0x",
+   "p2<=x",
+   "th_x(p2)=th_x(p3)",
+   "p0~p2"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 1.6,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    0
+   ],
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "p0<=x",
+   "p2<=x",
+   "th_x(p0)=th_x(p1)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.0,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp1=p1x",
+   "xp2=p2x",
+   "th_x(p0)=th_x(p2)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 1.8,
+  "countermodels": 1,
+  "min_order": 8
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp1=p1x",
+   "xp2=p2x",
+   "th_p0(x)=th_p2(x)",
+   "th_x(p1)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 1.8,
+  "countermodels": 1,
+  "min_order": 8
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "xp1=p1x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p1)",
+   "th_p0(x)=th_p2(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 5.2,
+  "countermodels": 1,
+  "min_order": 8
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "ch",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp1=p1x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p1)",
+   "p1~p3"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 4.8,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    2
+   ]
+  ],
+  "text": [
+   "xp1=p1x",
+   "xp3=p3x",
+   "th_p0(x)=th_p2(x)",
+   "th_x(p1)=th_x(p2)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 6.2,
+  "countermodels": 1,
+  "min_order": 8
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "seen",
+    0,
+    2
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp1=p1x",
+   "xp3=p3x",
+   "th_p0(x)=th_p2(x)",
+   "th_x(p1)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 4.2,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "p1<=x",
+   "xp2=p2x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p2)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 3.4,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "p1<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p1)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 11.4,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "ch",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "p1<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p1)",
+   "p1~p3"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 2.0,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "p1<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p2)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 2.9,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ],
+   [
+    "ch",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "p1<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p2)",
+   "p1~p3"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 9.9,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    1
+   ],
+   [
+    "x",
+    "lez",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "sees",
+    2,
+    3
+   ]
+  ],
+  "text": [
+   "p1<=x",
+   "p3<=x",
+   "th_x(p0)=th_x(p1)",
+   "th_x(p2)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 6.9,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ],
+   [
+    "x",
+    "seen",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "xp2=p2x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p2)",
+   "th_p1(x)=th_p3(x)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 1.7,
+  "countermodels": 1,
+  "min_order": 8
+ },
+ {
+  "H": [
+   [
+    "x",
+    "comm",
+    2
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    2
+   ],
+   [
+    "ch",
+    0,
+    2
+   ]
+  ],
+  "text": [
+   "xp2=p2x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p2)",
+   "p0~p2"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 4.3,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    2
+   ]
+  ],
+  "text": [
+   "p2<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p1)",
+   "th_x(p1)=th_x(p2)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 7.9,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "x",
+    "sees",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "p2<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p1)",
+   "th_x(p1)=th_x(p3)"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 9.4,
+  "countermodels": 0,
+  "min_order": null
+ },
+ {
+  "H": [
+   [
+    "x",
+    "lez",
+    2
+   ],
+   [
+    "x",
+    "comm",
+    3
+   ],
+   [
+    "x",
+    "sees",
+    0,
+    1
+   ],
+   [
+    "ch",
+    1,
+    3
+   ]
+  ],
+  "text": [
+   "p2<=x",
+   "xp3=p3x",
+   "th_x(p0)=th_x(p1)",
+   "p1~p3"
+  ],
+  "valid4": true,
+  "valid5": true,
+  "secs": 12.3,
+  "countermodels": 0,
+  "min_order": null
+ }
+]

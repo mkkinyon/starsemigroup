@@ -1,0 +1,5 @@
+x*x=x OK
+(y*x)*x=y*x OK
+(x*y)*x=y*x OK
+((z*x)*y)*x=z*(y*x) OK
+(((z*x)*y)*x)*y=(z*x)*y OK

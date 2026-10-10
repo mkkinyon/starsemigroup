@@ -1,0 +1,31 @@
+13 atoms
+-- size 1 done: 0 new minimal sets (13 SAT calls, 0s)
+-- size 2 done: 0 new minimal sets (91 SAT calls, 1s)
+size 3:  [('comm', 'x', 'a'), ('comm', 'x', 'c'), ('eq', ('x', 'a'), ('x', 'c'))] [2s]
+size 3:  [('comm', 'x', 'a'), ('comm', 'x', 'c'), ('eq', ('x', 'b'), ('x', 'c'))] [2s]
+size 3:  [('comm', 'x', 'b'), ('comm', 'x', 'c'), ('eq', ('x', 'a'), ('x', 'c'))] [4s]
+size 3:  [('comm', 'x', 'b'), ('comm', 'x', 'c'), ('eq', ('x', 'b'), ('x', 'c'))] [4s]
+size 3:  [('comm', 'y', 'a'), ('comm', 'y', 'c'), ('eq', ('y', 'a'), ('y', 'c'))] [6s]
+size 3:  [('comm', 'y', 'a'), ('comm', 'y', 'c'), ('eq', ('y', 'b'), ('y', 'c'))] [7s]
+size 3:  [('comm', 'y', 'b'), ('comm', 'y', 'c'), ('eq', ('y', 'a'), ('y', 'c'))] [8s]
+size 3:  [('comm', 'y', 'b'), ('comm', 'y', 'c'), ('eq', ('y', 'b'), ('y', 'c'))] [8s]
+-- size 3 done: 8 new minimal sets (377 SAT calls, 9s)
+-- size 4 done: 0 new minimal sets (1020 SAT calls, 24s)
+size 5:  [('comm', 'x', 'a'), ('comm', 'y', 'c'), ('comm', 'x', 'y'), ('eq', ('x', 'a'), ('x', 'c')), ('eq', ('y', 'a'), ('y', 'c'))] [33s]
+size 5:  [('comm', 'x', 'a'), ('comm', 'y', 'c'), ('comm', 'x', 'y'), ('eq', ('x', 'a'), ('x', 'c')), ('eq', ('y', 'b'), ('y', 'c'))] [34s]
+size 5:  [('comm', 'x', 'a'), ('comm', 'y', 'c'), ('comm', 'x', 'y'), ('eq', ('x', 'b'), ('x', 'c')), ('eq', ('y', 'a'), ('y', 'c'))] [35s]
+size 5:  [('comm', 'x', 'a'), ('comm', 'y', 'c'), ('comm', 'x', 'y'), ('eq', ('x', 'b'), ('x', 'c')), ('eq', ('y', 'b'), ('y', 'c'))] [36s]
+size 5:  [('comm', 'x', 'b'), ('comm', 'y', 'c'), ('comm', 'x', 'y'), ('eq', ('x', 'a'), ('x', 'c')), ('eq', ('y', 'a'), ('y', 'c'))] [43s]
+size 5:  [('comm', 'x', 'b'), ('comm', 'y', 'c'), ('comm', 'x', 'y'), ('eq', ('x', 'a'), ('x', 'c')), ('eq', ('y', 'b'), ('y', 'c'))] [44s]
+size 5:  [('comm', 'x', 'b'), ('comm', 'y', 'c'), ('comm', 'x', 'y'), ('eq', ('x', 'b'), ('x', 'c')), ('eq', ('y', 'a'), ('y', 'c'))] [45s]
+size 5:  [('comm', 'x', 'b'), ('comm', 'y', 'c'), ('comm', 'x', 'y'), ('eq', ('x', 'b'), ('x', 'c')), ('eq', ('y', 'b'), ('y', 'c'))] [46s]
+size 5:  [('comm', 'x', 'c'), ('comm', 'y', 'a'), ('comm', 'x', 'y'), ('eq', ('x', 'a'), ('x', 'c')), ('eq', ('y', 'a'), ('y', 'c'))] [49s]
+size 5:  [('comm', 'x', 'c'), ('comm', 'y', 'a'), ('comm', 'x', 'y'), ('eq', ('x', 'a'), ('x', 'c')), ('eq', ('y', 'b'), ('y', 'c'))] [50s]
+size 5:  [('comm', 'x', 'c'), ('comm', 'y', 'a'), ('comm', 'x', 'y'), ('eq', ('x', 'b'), ('x', 'c')), ('eq', ('y', 'a'), ('y', 'c'))] [51s]
+size 5:  [('comm', 'x', 'c'), ('comm', 'y', 'a'), ('comm', 'x', 'y'), ('eq', ('x', 'b'), ('x', 'c')), ('eq', ('y', 'b'), ('y', 'c'))] [52s]
+size 5:  [('comm', 'x', 'c'), ('comm', 'y', 'b'), ('comm', 'x', 'y'), ('eq', ('x', 'a'), ('x', 'c')), ('eq', ('y', 'a'), ('y', 'c'))] [54s]
+size 5:  [('comm', 'x', 'c'), ('comm', 'y', 'b'), ('comm', 'x', 'y'), ('eq', ('x', 'a'), ('x', 'c')), ('eq', ('y', 'b'), ('y', 'c'))] [55s]
+size 5:  [('comm', 'x', 'c'), ('comm', 'y', 'b'), ('comm', 'x', 'y'), ('eq', ('x', 'b'), ('x', 'c')), ('eq', ('y', 'a'), ('y', 'c'))] [56s]
+size 5:  [('comm', 'x', 'c'), ('comm', 'y', 'b'), ('comm', 'x', 'y'), ('eq', ('x', 'b'), ('x', 'c')), ('eq', ('y', 'b'), ('y', 'c'))] [57s]
+-- size 5 done: 16 new minimal sets (2017 SAT calls, 63s)
+-- size 6 done: 0 new minimal sets (3005 SAT calls, 89s)

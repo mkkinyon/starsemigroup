@@ -1,0 +1,1 @@
+sizes [2, 2, 2, 1]: {'total': 16, 'q1': 4, 'uniq': 1, 'tri': 1, 'S': 1, 'emb': 1, 'nonemb': 0, 'timeout': 0} (1s)

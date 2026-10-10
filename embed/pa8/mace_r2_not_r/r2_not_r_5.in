@@ -1,0 +1,19 @@
+assign(max_models, 1).
+assign(domain_size, 5).
+assign(max_seconds, 600).
+op(400, infix, "*").
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+% Q1
+z * x != z | z * y != z | x * y = y * x.
+% (R2): a~c, b~c, xc=cx, th_x(a)=th_x(c), ya=ay, th_x(b)=th_y(b) -> a~b     (x*y = theta_y(x))
+c * a != a | a * c != c | c * b != b | b * c != c | c * x != x * c | a * x != c * x | a * y != y * a | b * x != b * y | b * a = a.
+c * a != a | a * c != c | c * b != b | b * c != c | c * x != x * c | a * x != c * x | a * y != y * a | b * x != b * y | a * b = b.
+% negation of (R): a~c, b~c, xa=ax, xc=cx, th_x(b)=th_x(c), not a~b
+c1 * a1 = a1. a1 * c1 = c1. c1 * b1 = b1. b1 * c1 = c1. a1 * x1 = x1 * a1. c1 * x1 = x1 * c1. b1 * x1 = c1 * x1.
+b1 * a1 != a1 | a1 * b1 != b1.
+end_of_list.

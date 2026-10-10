@@ -1,0 +1,4 @@
+P_3: 22 projections
+  k=4 {12,34}: counterexamples = 0 (2s)
+  k=4 {12,32,14}: counterexamples = 0 (2s)
+  k=4 K_{2,2} {13,14,23,24}: counterexamples = 0 (6s)

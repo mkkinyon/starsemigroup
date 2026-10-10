@@ -1,0 +1,16 @@
+op(400, infix_left, "*").
+assign(max_seconds, 300).
+formulas(assumptions).
+(x*y)*z = x*(y*z).
+(x*y)' = y'*x'.
+x'' = x.
+x*x'*x = x.
+% projections a,b,c,d,g (=y)
+a*a = a. a' = a. b*b = b. b' = b. c*c = c. c' = c. d*d = d. d' = d. g*g = g. g' = g.
+% path
+a*c*a = a. c*a*c = c. c*b*c = c. b*c*b = b. b*d*b = b. d*b*d = d.
+% y-hypotheses
+g*a = a*g. g*b = b*g. g*c*g = g*b*g.
+% (Q1) for projections: common lower bound => commute  -- as a clause on projections p,q,r
+(p*p = p & p' = p & q*q = q & q' = q & r*r = r & r' = r & p*q*p = q & p*r*p = r) -> q*r = r*q.
+end_of_list.

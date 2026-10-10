@@ -1,0 +1,85 @@
+% Triangle condition (directed 3-cycle) in the language of binary projection
+% algebras (x * y = x theta_y = y x y).  Constants start with a, b, c;
+% variables start with u..z (Prover9 convention).
+%
+% Hypotheses:  a_i a_j = a_j a_i = w (i != j),  b_i b_j = b_j b_i = z (i != j),
+%              a_i b_i = b_i a_i,  and only THREE matched pairs:
+%              a1 |><| b2,  a2 |><| b3,  a3 |><| b1.
+% Conclusion:  w = z.
+% The hexagon condition is the special case with all six matched pairs, so the
+% triangle condition implies it.  Both hold in every partition monoid P_X
+% (matching-pattern theorem) and fail in the 11-element projection algebra of Q_0.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+
+% ---- projection algebra axioms ----
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+% ---- triangle hypotheses on constants a1,a2,a3,b1,b2,b3,cw,cz ----
+% (H1) cyclic reduction suffices, as for the hexagon
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+% (H2)
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+% (H3) a1 |><| b2, a2 |><| b3, a3 |><| b1:   b_j * a_i = a_i  and  a_i * b_j = b_j
+b2 * a1 = a1.   a1 * b2 = b2.
+b3 * a2 = a2.   a2 * b3 = b3.
+b1 * a3 = a3.   a3 * b1 = b1.
+
+end_of_list.
+
+formulas(goals).
+cw = cz.
+end_of_list.
+
+% ---------------------------------------------------------------------------
+% Positive form of the triangle condition (14 literals), for use as an assumption:
+%
+% x1 * x2 != x2 * x3 |
+% x1 * x2 != x3 * x1 |
+% y1 * y2 != y2 * y3 |
+% y1 * y2 != y3 * y1 |
+% x1 * y1 != y1 * x1 |
+% x2 * y2 != y2 * x2 |
+% x3 * y3 != y3 * x3 |
+% y2 * x1 != x1 |
+% x1 * y2 != y2 |
+% y3 * x2 != x2 |
+% x2 * y3 != y3 |
+% y1 * x3 != x3 |
+% x3 * y1 != y1 |
+% x1 * x2 = y1 * y2.
+%
+% Positive form of the hexagon condition (20 literals):
+%
+% x1 * x2 != x2 * x3 |
+% x1 * x2 != x3 * x1 |
+% y1 * y2 != y2 * y3 |
+% y1 * y2 != y3 * y1 |
+% x1 * y1 != y1 * x1 |
+% x2 * y2 != y2 * x2 |
+% x3 * y3 != y3 * x3 |
+% y2 * x1 != x1 |
+% x1 * y2 != y2 |
+% y3 * x1 != x1 |
+% x1 * y3 != y3 |
+% y1 * x2 != x2 |
+% x2 * y1 != y1 |
+% y3 * x2 != x2 |
+% x2 * y3 != y3 |
+% y1 * x3 != x3 |
+% x3 * y1 != y1 |
+% y2 * x3 != x3 |
+% x3 * y2 != y2 |
+% x1 * x2 = y1 * y2.
+%
+% To look for a projection algebra satisfying the hexagon condition but not the
+% triangle condition: assume the axioms and the hexagon clause, add the ground
+% triangle hypotheses above and  cw != cz  (no goal), and run Mace4.
+% ---------------------------------------------------------------------------

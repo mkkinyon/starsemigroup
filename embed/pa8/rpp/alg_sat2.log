@@ -1,0 +1,5 @@
+m=6 th_y(c)=th_y(a): True (7s)
+m=6 th_c(y)=th_c(x): True (74s)
+m=6 th_b(y)=th_b(x): True (79s)
+m=7 th_y(c)=th_y(a): True (218s)
+m=7 th_c(y)=th_c(x): True (2153s)

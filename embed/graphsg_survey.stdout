@@ -1,0 +1,91 @@
+{'k': 3, 'E': [(0, 1), (0, 2), (1, 2)], 'bot': [0, 0, 1], 'Q': 13, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 3, 'E': [(0, 1), (0, 2), (1, 2)], 'bot': [0, 1, 2], 'Q': 18, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.2}
+{'k': 4, 'E': [], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1)], 'bot': [0, 1, 0, 0], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1)], 'bot': [0, 1, 0, 1], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1)], 'bot': [0, 1, 0, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.1}
+{'k': 4, 'E': [(0, 1)], 'bot': [0, 1, 2, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 2, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 2, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 0, 1, 0], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 1, 1, 0], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 1, 1, 1], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 1, 1, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 1, 2, 0], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.1}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 1, 2, 1], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.1}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 6, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 2, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3)], 'bot': [0, 1, 1, 1], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3)], 'bot': [0, 1, 1, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (1, 2)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (1, 2)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (1, 2)], 'bot': [0, 0, 1, 0], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (1, 2)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (1, 2)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (1, 2)], 'bot': [0, 1, 2, 0], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (1, 2)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 3), (1, 2)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 3), (1, 2)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 3), (1, 2)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 3), (1, 2)], 'bot': [0, 1, 1, 0], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 3), (1, 2)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 3), (1, 2)], 'bot': [0, 1, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 3), (1, 2)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 6, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 2, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 1, 0, 0], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 1, 0, 1], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 2, 'embeds': None, 'secs': 8.3}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 1, 1, 0], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 1, 0, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 1, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 1, 2, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 3), (1, 2)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 6, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 0, 1, 0], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 2, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 1, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 1, 1, 0], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 1, 1, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 1, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 1, 2, 0], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 1, 2, 1], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 8, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 2, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 1, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 1, 0, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 4, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 4, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 1, 0, 0], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 2, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 1, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 1, 0, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 1, 2, 2], 'Q': 25, 'P': 7, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)], 'bot': [0, 0, 0, 0], 'Q': 17, 'P': 5, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)], 'bot': [0, 0, 0, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)], 'bot': [0, 0, 1, 1], 'Q': 20, 'P': 6, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)], 'bot': [0, 0, 1, 2], 'Q': 25, 'P': 7, 'Q1': False, 'triangle': 'ok', 'S_viol': 0, 'embeds': 'skipped(noQ1)', 'secs': 0.0}
+{'k': 4, 'E': [(0, 1), (0, 2), (0, 3), (1, 2), (1, 3), (2, 3)], 'bot': [0, 1, 2, 3], 'Q': 32, 'P': 8, 'Q1': True, 'triangle': 'ok', 'S_viol': 0, 'embeds': 3, 'secs': 0.0}

@@ -1,0 +1,20 @@
+=== order-9 candidate 0 ===
+  total 0
+=== order-9 candidate 1 ===
+   ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p0)=th_y(p1)', 'th_x(p3)=th_y(p3)']
+   ['xp0=p0x', 'yp1=p1y', 'th_y(p0)=th_y(p1)', 'th_p0(y)=th_p2(y)', 'th_x(p3)=th_y(p3)']
+   ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p0)=th_y(p1)', 'y=th_x(p3)']
+   ['xp0=p0x', 'yp1=p1y', 'th_y(p0)=th_y(p1)', 'th_p0(y)=th_p2(y)', 'y=th_x(p3)']
+   ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p2)', 'th_x(p3)=th_y(p3)']
+   ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p2)', 'y=th_x(p3)']
+  total 64
+=== order-9 candidate 2 ===
+  total 0
+=== order-9 candidate 3 ===
+  total 0
+=== order-9 candidate 4 ===
+  total 0
+=== order-9 candidate 5 ===
+  total 0
+=== order-9 candidate 6 ===
+  total 0

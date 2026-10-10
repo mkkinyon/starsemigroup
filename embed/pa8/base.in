@@ -1,0 +1,23 @@
+assign(domain_size, 8).
+assign(max_models, -1).
+assign(max_seconds, -1).
+
+op(400, infix, "*").
+formulas(assumptions).
+% projection algebra axioms (x * y = y x y)
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+% Q1:  r <= p & r <= q  ->  p q p = q p q
+z * x != z | z * y != z | x * y = y * x.
+% (S)
+v * x != x | x * v != v | v * y != y | y * v != v | w * y != y | y * w != w | w * v != v * w | (w * v) * x != (w * v) * y | w * x = x.
+v * x != x | x * v != v | v * y != y | y * v != v | w * y != y | y * w != w | w * v != v * w | (w * v) * x != (w * v) * y | x * w = w.
+% (R): a~c, b~c, xa=ax, xc=cx, theta_x(b)=theta_x(c) -> a~b   (x1=a, y1=b, z1=c, x aux)
+z1 * x1 != x1 | x1 * z1 != z1 | z1 * y1 != y1 | y1 * z1 != z1 | x1 * x != x * x1 | z1 * x != x * z1 | y1 * x != z1 * x | y1 * x1 = x1.
+z1 * x1 != x1 | x1 * z1 != z1 | z1 * y1 != y1 | y1 * z1 != z1 | x1 * x != x * x1 | z1 * x != x * z1 | y1 * x != z1 * x | x1 * y1 = y1.
+% symmetry breaking: 0 is a minimal element (WLOG)
+x * 0 != x | x = 0.
+end_of_list.

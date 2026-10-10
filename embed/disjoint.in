@@ -1,0 +1,40 @@
+% Two disjoint matched pairs on FOUR indices: a1 |><| b2 and a3 |><| b4, with (H1), (H2)
+% on indices 1..4.  No vertex of the pattern {(1,2),(3,4)} has both an in- and an
+% out-edge, so the walk argument (Theorem 4.8 / Prop. 4.10 of the notes) does not apply;
+% nevertheless exhaustive search finds NO configuration with w != z among the projections
+% of P_2, P_3, P_4, nor in the 57-element projection algebra of P_4/mu_1 (which violates
+% the hexagon condition).  Question: does w = z follow from the projection-algebra axioms
+% alone?  Run Prover9 with the goal below; for Mace4, move  cw != cz  into the assumptions
+% (and delete the goal) to look for a projection algebra with w != z.
+%   x * y = y x y  (= x theta_y).  Constants: a1..a4, b1..b4, cw, cz.
+% (H1) is encoded by one equation per unordered pair, oriented so that every index occurs
+% as the outer element (this is equivalent to full pairwise commutation with product cw:
+% cw <= a_i for all i, and then a_i a_j a_i = (a_i a_j a_i)^2 = a_i (a_j a_i a_j) a_i = cw).
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+% (H1)
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a4 = cw.   a4 * a1 = cw.   a1 * a3 = cw.   a2 * a4 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b4 = cz.   b4 * b1 = cz.   b1 * b3 = cz.   b2 * b4 = cz.
+% (H2)
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.   a4 * b4 = b4 * a4.
+% (H3)  a1 |><| b2,  a3 |><| b4
+b2 * a1 = a1.   a1 * b2 = b2.
+b4 * a3 = a3.   a3 * b4 = b4.
+end_of_list.
+
+formulas(goals).
+cw = cz.
+end_of_list.
+
+% Weaker intermediate goals worth trying first (each on its own):
+%   cz * cw = cw.        (w z w = w)
+%   cw * cz = cz.        (z w z = z)
+%   (b1 * b2) * a2 = a2 * b2.   (a2 z a2 = m2: an 'out-edge' relation at the in-only index 2)

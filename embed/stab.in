@@ -1,0 +1,113 @@
+% Stabilised walk => hexagon.   (Finite-case proof of  hexagon condition => triangle condition.)
+%
+% Triangle hypotheses on a1,a2,a3,b1,b2,b3 (a1|><|b2, a2|><|b3, a3|><|b1);  x * y = y x y.
+% The walk from the free pair (a1, b3):
+%   F1 = a1 * b3            (= theta_{b3}(a1), below b3)
+%   F2 = F1 * a2            (transport through a2 |><| b3; F1 |><| F2 automatically)
+%   F3 = F2 * b1            (projection onto the free partner b1 of a2)
+%   G1 = b3 * a1            (= theta_{a1}(b3), below a1)
+%   G2 = G1 * b2            (transport through a1 |><| b2; G1 |><| G2 automatically)
+%   G3 = G2 * a3            (projection onto the free partner a3 of b2)
+% STABILISATION HYPOTHESES (they hold at every periodic point of the walk, by the
+% J-order argument in a finite regular *-semigroup):
+%   b1 * F2 = F2   (i.e. F2 |><| F3)      a3 * G2 = G2   (i.e. G2 |><| G3)
+% CLAIM:  X = {F1 (under b3), F3 (under b1), G2 (under b2)},  Y = {G1 (under a1), F2 (under a2), G3 (under a3)}
+% satisfy the hexagon hypotheses: X pairwise commuting with product cz, Y with product cw,
+% X_j, Y_j commuting for equal index j, X_j |><| Y_l for j != l.
+% (Equivalent to the stabilisation hypotheses in every configuration of five Mace4 models.)
+% Prove the goals one at a time.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+% triangle hypotheses
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+b2 * a1 = a1.   a1 * b2 = b2.
+b3 * a2 = a2.   a2 * b3 = b3.
+b1 * a3 = a3.   a3 * b1 = b1.
+
+% stabilisation hypotheses
+b1 * ((a1 * b3) * a2) = ((a1 * b3) * a2).
+a3 * ((b3 * a1) * b2) = ((b3 * a1) * b2).
+
+% lemmas (already proved from the triangle hypotheses)
+(a1 * b3) * (a3 * b2) = cz.
+(b2 * a3) * (b1 * a2) = cw.
+(a1 * b3) * (a2 * b1) = cz.
+(b2 * a3) * (b3 * a1) = cw.
+(b3 * a1) * (a1 * b3) = (a1 * b3).
+(a1 * b3) * (b3 * a1) = (b3 * a1).
+(a1 * b3) * (b2 * a3) = (b2 * a3) * (a1 * b3).
+(a3 * b2) * (a1 * b3) = cz.
+(b1 * a2) * (b2 * a3) = cw.
+(b2 * a3) * (a3 * b2) = (a3 * b2).
+(a3 * b2) * (b2 * a3) = (b2 * a3).
+(a3 * b2) * (a2 * b1) = cz.
+(b1 * a2) * (b3 * a1) = cw.
+(a3 * b2) * (b1 * a2) = (b1 * a2) * (a3 * b2).
+(a2 * b1) * (a1 * b3) = cz.
+(b3 * a1) * (b2 * a3) = cw.
+(a2 * b1) * (a3 * b2) = cz.
+(b3 * a1) * (b1 * a2) = cw.
+(b1 * a2) * (a2 * b1) = (a2 * b1).
+(a2 * b1) * (b1 * a2) = (b1 * a2).
+(a2 * b1) * (b3 * a1) = (b3 * a1) * (a2 * b1).
+(a1 * b1) * b2 = cz.
+(a1 * b1) * b3 = cz.
+(a2 * b2) * b1 = cz.
+(a2 * b2) * b3 = cz.
+(a3 * b3) * b1 = cz.
+(a3 * b3) * b2 = cz.
+(a1 * b1) * a2 = cw.
+(a1 * b1) * a3 = cw.
+(a2 * b2) * a1 = cw.
+(a2 * b2) * a3 = cw.
+(a3 * b3) * a1 = cw.
+(a3 * b3) * a2 = cw.
+cz * (a1 * b3) = cz.
+cz * (a2 * b1) = cz.
+cz * (a3 * b2) = cz.
+cw * (b3 * a1) = cw.
+cw * (b1 * a2) = cw.
+cw * (b2 * a3) = cw.
+end_of_list.
+
+formulas(goals).
+(((a1 * b3) * a2) * b1) * ((b3 * a1) * b2) = (((a1 * b3) * a2) * b1) * ((b3 * a1) * b2).   % (S1)
+(b3 * a1) * ((a1 * b3) * a2) = (b3 * a1) * ((a1 * b3) * a2).   % (S2)
+((a1 * b3) * a2) * (((a1 * b3) * a2) * b1) = (((a1 * b3) * a2) * b1).   % (S3)
+(((a1 * b3) * a2) * b1) * ((a1 * b3) * a2) = ((a1 * b3) * a2).   % (S4)
+(((a1 * b3) * a2) * b1) * (a1 * b3) = (((a1 * b3) * a2) * b1) * ((b3 * a1) * b2).   % (S5)
+(b3 * a1) * (((b3 * a1) * b2) * a3) = (b3 * a1) * ((a1 * b3) * a2).   % (S6)
+(((b3 * a1) * b2) * a3) * (((a1 * b3) * a2) * b1) = (((a1 * b3) * a2) * b1).   % (S7)
+(((a1 * b3) * a2) * b1) * (((b3 * a1) * b2) * a3) = (((b3 * a1) * b2) * a3).   % (S8)
+(((a1 * b3) * a2) * b1) * (b3 * a1) = (b3 * a1) * (((a1 * b3) * a2) * b1).   % (S9)
+((b3 * a1) * b2) * (((a1 * b3) * a2) * b1) = (((a1 * b3) * a2) * b1) * ((b3 * a1) * b2).   % (S10)
+((a1 * b3) * a2) * (b3 * a1) = (b3 * a1) * ((a1 * b3) * a2).   % (S11)
+(b3 * a1) * ((b3 * a1) * b2) = ((b3 * a1) * b2).   % (S12)
+((b3 * a1) * b2) * (b3 * a1) = (b3 * a1).   % (S13)
+((b3 * a1) * b2) * (a1 * b3) = (((a1 * b3) * a2) * b1) * ((b3 * a1) * b2).   % (S14)
+((a1 * b3) * a2) * (((b3 * a1) * b2) * a3) = (b3 * a1) * ((a1 * b3) * a2).   % (S15)
+(((b3 * a1) * b2) * a3) * ((b3 * a1) * b2) = ((b3 * a1) * b2).   % (S16)
+((b3 * a1) * b2) * (((b3 * a1) * b2) * a3) = (((b3 * a1) * b2) * a3).   % (S17)
+((b3 * a1) * b2) * ((a1 * b3) * a2) = ((a1 * b3) * a2) * ((b3 * a1) * b2).   % (S18)
+(a1 * b3) * (((a1 * b3) * a2) * b1) = (((a1 * b3) * a2) * b1) * ((b3 * a1) * b2).   % (S19)
+(((b3 * a1) * b2) * a3) * (b3 * a1) = (b3 * a1) * ((a1 * b3) * a2).   % (S20)
+(b3 * a1) * (a1 * b3) = (a1 * b3).   % (S21)
+(a1 * b3) * (b3 * a1) = (b3 * a1).   % (S22)
+(a1 * b3) * ((b3 * a1) * b2) = (((a1 * b3) * a2) * b1) * ((b3 * a1) * b2).   % (S23)
+(((b3 * a1) * b2) * a3) * ((a1 * b3) * a2) = (b3 * a1) * ((a1 * b3) * a2).   % (S24)
+((a1 * b3) * a2) * (a1 * b3) = (a1 * b3).   % (S25)
+(a1 * b3) * ((a1 * b3) * a2) = ((a1 * b3) * a2).   % (S26)
+(a1 * b3) * (((b3 * a1) * b2) * a3) = (((b3 * a1) * b2) * a3) * (a1 * b3).   % (S27)
+(((a1 * b3) * a2) * b1) * ((b3 * a1) * b2) = cz.   % (S28)
+(b3 * a1) * ((a1 * b3) * a2) = cw.   % (S29)
+end_of_list.

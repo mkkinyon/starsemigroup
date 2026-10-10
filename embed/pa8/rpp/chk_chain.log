@@ -1,0 +1,13 @@
+263 non-embeddable algebras of order 8,9
+('W2(aa)', 'W3(aaa)', 'aab', 'aba') None True
+91 ((), None, True)
+25 ((), 'Rprime', False)
+25 ((), 'E6', False)
+24 ((), 'P1', False)
+23 ((), 'P2', False)
+22 ((), 'E1', False)
+22 ((), 'Q', False)
+22 ((), 'V', False)
+7 ((), None, None)
+1 (('W2(aa)', 'W3(aaa)', 'aab', 'aba'), None, True)
+1 ((), 'Rprime', True)

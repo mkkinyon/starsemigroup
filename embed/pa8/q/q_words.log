@@ -1,0 +1,65 @@
+2000 classes 98 (1s)
+10000 classes 104 (5s)
+classes 104 (17s)
+a = aa = aaa = aca = ada
+b = bb = bbb = bcb = bdb
+c = cc = cac = cbc = ccc
+d = dd = dad = dbd = ddd
+x = xx = xxx
+y = yy = yyy
+ab = aab = abb
+ac = aac = acc
+ad = aad = add
+ax = xa = aax = axa = axx = xaa = xax = xxa
+ay = ya = aay = aya = ayy = yaa = yay = yya
+ba = baa = bba
+bc = bbc = bcc
+bd = bbd = bdd
+bx = bbx = bxx
+by = yb = bby = bcy = bdy = byb = byy = ybb = yby = ycb = ycy = ydb = ydy = yyb
+ca = caa = cca
+cb = cbb = ccb
+cd = dc = ccd = cdc = cdd = dcc = dcd = ddc
+cx = dx = ccx = cdx = cxx = dcx = ddx = dxx
+cy = cby = ccy = cyb = cyy
+da = daa = dda
+db = dbb = ddb
+dy = dby = ddy = dyb = dyy
+xb = xbb = xxb
+xc = xd = xcc = xcd = xdc = xdd = xxc = xxd
+xy = xxy = xyy
+yc = byc = ybc = ycc = yyc
+yd = byd = ybd = ydd = yyd
+yx = yxx = yyx
+aby = ayb = yab
+acd = adc
+acx = adx
+axb = xab
+axc = axd = xac = xad
+axy = xay = xya
+ayc = yac
+ayd = yad
+ayx = yax = yxa
+bax = bxa
+bay = bya = yba
+bcd = bdc
+bcx = bdx
+bxc = bxd
+byx = ybx
+cax = cxa = dax = dxa
+cay = cya
+cda = dca
+cdb = dcb
+cdy = dcy
+cxb = dxb
+cxc = cxd = dxc = dxd
+cxy = dxy
+day = dya
+xby = xyb
+xca = xda
+xcb = xdb
+xcx = xdx
+xcy = xdy
+ycd = ydc
+ycx = ydx
+yxc = yxd

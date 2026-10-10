@@ -1,0 +1,17 @@
+op(400, infix, "*"). formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+% Q1
+z * x != z | z * y != z | x * y = y * x.
+% triangle
+x1 * x2 != x2 * x3 | x1 * x2 != x3 * x1 | y1 * y2 != y2 * y3 | y1 * y2 != y3 * y1 |
+x1 * y1 != y1 * x1 | x2 * y2 != y2 * x2 | x3 * y3 != y3 * x3 |
+y2 * x1 != x1 | x1 * y2 != y2 | y3 * x2 != x2 | x2 * y3 != y3 | y1 * x3 != x3 | x3 * y1 != y1 |
+x1 * x2 = y1 * y2.
+% ground hypotheses of (S):  a|><|c, b|><|c, b|><|d, c,d commute, theta_a(z) = theta_b(z), z = d*c
+c * a = a. a * c = c. c * b = b. b * c = c. d * b = b. b * d = d. d * c = c * d.
+(d * c) * a = (d * c) * b.
+d * a = (d * c) * a. a != b. end_of_list.

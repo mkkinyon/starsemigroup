@@ -1,0 +1,6 @@
+violated by order-9 candidates: [0]
+violated by P_8^k: [1]
+embeddable census algebras violating: 0 []  [13s]
+valid m=4: True [0s]
+valid m=5: True [16s]
+valid m=6: True [789s]

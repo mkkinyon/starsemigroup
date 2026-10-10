@@ -1,0 +1,94 @@
+============================== Mace4 =================================
+Mace4 (64) version 2017-11A (CIIRC), November 2017.
+Process 13191 was started by root on vm,
+Sun Sep 13 01:29:15 2026
+The command was "/home/claude/bin/mace4 -f r2_not_r_4.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file r2_not_r_4.in
+
+assign(max_models,1).
+assign(domain_size,4).
+    % assign(domain_size, 4) -> assign(start_size, 4).
+    % assign(domain_size, 4) -> assign(end_size, 4).
+assign(max_seconds,600).
+op(400,infix,"*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+z * x != z | z * y != z | x * y = y * x.
+c * a != a | a * c != c | c * b != b | b * c != c | c * x != x * c | a * x != c * x | a * y != y * a | b * x != b * y | b * a = a.
+c * a != a | a * c != c | c * b != b | b * c != c | c * x != x * c | a * x != c * x | a * y != y * a | b * x != b * y | a * b = b.
+c1 * a1 = a1.
+a1 * c1 = c1.
+c1 * b1 = b1.
+b1 * c1 = c1.
+a1 * x1 = x1 * a1.
+c1 * x1 = x1 * c1.
+b1 * x1 = c1 * x1.
+b1 * a1 != a1 | a1 * b1 != b1.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+x * x = x.
+(x * y) * y = x * y.
+(x * y) * x = y * x.
+((x * y) * z) * y = x * (z * y).
+(((x * y) * z) * y) * z = (x * y) * z.
+x * y != x | x * z != x | y * z = z * y.
+c * a != a | a * c != c | c * b != b | b * c != c | c * x != x * c | a * x != c * x | a * y != y * a | b * x != b * y | b * a = a.
+c * a != a | a * c != c | c * b != b | b * c != c | c * x != x * c | a * x != c * x | a * y != y * a | b * x != b * y | a * b = b.
+c1 * a1 = a1.
+a1 * c1 = c1.
+c1 * b1 = b1.
+b1 * c1 = c1.
+a1 * x = x * a1.
+c1 * x = x * c1.
+b1 * x = c1 * x.
+b1 * a1 != a1 | a1 * b1 != b1.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 4 =========================
+
+=== Mace4 starting on domain size 4. ===
+
+============================== STATISTICS ============================
+
+For domain size 4.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.00 seconds).
+Ground clauses: seen=277, kept=245.
+Selections=55, assignments=195, propagations=276, current_models=0.
+Rewrite_terms=16339, rewrite_bools=1584, indexes=7294.
+Rules_from_neg_clauses=0, cross_offs=0.
+
+============================== end of statistics =====================
+
+------ process 13191 exit (exhausted) ------
+
+User_CPU=0.00, System_CPU=0.00, Wall_clock=0.
+
+Exiting with failure.
+
+Process 13191 exit (exhausted) Sun Sep 13 01:29:15 2026
+The process finished Sun Sep 13 01:29:15 2026

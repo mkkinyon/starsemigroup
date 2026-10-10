@@ -1,0 +1,92 @@
+============================== Mace4 =================================
+Mace4 (64) version 2017-11A (CIIRC), November 2017.
+Process 1729 was started by root on vm,
+Wed Sep  9 08:28:16 2026
+The command was "mace4 -n 31 -N 31 -m 1 -f chain3.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file chain3.in
+
+op(400,infix,"*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+a1 * a2 = cw.
+a2 * a3 = cw.
+a3 * a1 = cw.
+b1 * b2 = cz.
+b2 * b3 = cz.
+b3 * b1 = cz.
+a1 * b1 = b1 * a1.
+a2 * b2 = b2 * a2.
+a3 * b3 = b3 * a3.
+b2 * a1 = a1.
+a1 * b2 = b2.
+b3 * a2 = a2.
+a2 * b3 = b3.
+b1 * a3 = a3.
+a3 * b1 = b1.
+cw != cz.
+a1 != (((((a1 * b3) * a2) * b1) * a3) * b2) * a1.
+(((((a1 * b3) * a2) * b1) * a3) * b2) * a1 != (((((((((((a1 * b3) * a2) * b1) * a3) * b2) * a1) * b3) * a2) * b1) * a3) * b2) * a1.
+(((((((((((a1 * b3) * a2) * b1) * a3) * b2) * a1) * b3) * a2) * b1) * a3) * b2) * a1 != (((((((((((((((((a1 * b3) * a2) * b1) * a3) * b2) * a1) * b3) * a2) * b1) * a3) * b2) * a1) * b3) * a2) * b1) * a3) * b2) * a1.
+end_of_list.
+    % assign(domain_size, 31) -> assign(start_size, 31).
+    % assign(domain_size, 31) -> assign(end_size, 31).
+
+% From the command line: assign(domain_size, 31).
+
+% From the command line: assign(end_size, 31).
+
+% From the command line: assign(max_models, 1).
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+x * x = x.
+(x * y) * y = x * y.
+(x * y) * x = y * x.
+((x * y) * z) * y = x * (z * y).
+(((x * y) * z) * y) * z = (x * y) * z.
+a1 * a2 = cw.
+a2 * a3 = cw.
+a3 * a1 = cw.
+b1 * b2 = cz.
+b2 * b3 = cz.
+b3 * b1 = cz.
+a1 * b1 = b1 * a1.
+a2 * b2 = b2 * a2.
+a3 * b3 = b3 * a3.
+b2 * a1 = a1.
+a1 * b2 = b2.
+b3 * a2 = a2.
+a2 * b3 = b3.
+b1 * a3 = a3.
+a3 * b1 = b1.
+cw != cz.
+a1 != (((((a1 * b3) * a2) * b1) * a3) * b2) * a1.
+(((((a1 * b3) * a2) * b1) * a3) * b2) * a1 != (((((((((((a1 * b3) * a2) * b1) * a3) * b2) * a1) * b3) * a2) * b1) * a3) * b2) * a1.
+(((((((((((a1 * b3) * a2) * b1) * a3) * b2) * a1) * b3) * a2) * b1) * a3) * b2) * a1 != (((((((((((((((((a1 * b3) * a2) * b1) * a3) * b2) * a1) * b3) * a2) * b1) * a3) * b2) * a1) * b3) * a2) * b1) * a3) * b2) * a1.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 31 ========================
+
+=== Mace4 starting on domain size 31. ===

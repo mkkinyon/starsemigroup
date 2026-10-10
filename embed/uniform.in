@@ -1,0 +1,107 @@
+% Uniform derivation of the triangle condition from the hexagon condition.
+%
+% Triangle hypotheses on a1,a2,a3,b1,b2,b3 (a1|><|b2, a2|><|b3, a3|><|b1).
+% Notation (x * y = y x y = x theta_y; indices mod 3):
+%   q_i = b_{i-1} * a_i  (= theta_{a_i}(b_{i-1}) <= a_i)      p_i = a_i * b_{i-1}  (<= b_{i-1})
+%   t_i = p_i * a_{i+1}  (transport of p_i through a_{i+1} |><| b_{i-1})
+%   s_i = q_i * b_{i+1}  (transport of q_i through b_{i+1} |><| a_i)
+%   A_i = t_{i-1} * q_i  (= theta_{q_i}(t_{i-1}) <= a_i)
+%   B_j = s_{j-1} * p_{j+1}  (= theta_{p_{j+1}}(s_{j-1}) <= b_j)
+% CONJECTURE: (A1,A2,A3 | B1,B2,B3) satisfies the hexagon hypotheses with the same
+% w = cw and z = cz:  A_i * A_j = cw, B_i * B_j = cz, A_i * B_i = B_i * A_i,
+% B_j * A_i = A_i and A_i * B_j = B_j for i != j.   (27 ground goals (U1)-(U27) below;
+% verified in every triangle configuration of P_2, P_3, P_4 and of three Mace4 models.)
+% If proved: hexagon condition => triangle condition.
+%
+% Assumptions include, as lemmas, the 21 derived equations Prover9 already proved,
+% the reversed transport relations (a_i*b_i)*b_j = cz, (a_i*b_i)*a_j = cw (all i != j),
+% and cz <= p_i, cw <= q_i (hand proofs).  Prove the goals ONE AT A TIME.
+
+op(400, infix, "*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+
+% triangle hypotheses
+a1 * a2 = cw.   a2 * a3 = cw.   a3 * a1 = cw.
+b1 * b2 = cz.   b2 * b3 = cz.   b3 * b1 = cz.
+a1 * b1 = b1 * a1.   a2 * b2 = b2 * a2.   a3 * b3 = b3 * a3.
+b2 * a1 = a1.   a1 * b2 = b2.
+b3 * a2 = a2.   a2 * b3 = b3.
+b1 * a3 = a3.   a3 * b1 = b1.
+
+% lemmas (proved)
+(a1 * b3) * (a3 * b2) = cz.
+(b2 * a3) * (b1 * a2) = cw.
+(a1 * b3) * (a2 * b1) = cz.
+(b2 * a3) * (b3 * a1) = cw.
+(b3 * a1) * (a1 * b3) = (a1 * b3).
+(a1 * b3) * (b3 * a1) = (b3 * a1).
+(a1 * b3) * (b2 * a3) = (b2 * a3) * (a1 * b3).
+(a3 * b2) * (a1 * b3) = cz.
+(b1 * a2) * (b2 * a3) = cw.
+(b2 * a3) * (a3 * b2) = (a3 * b2).
+(a3 * b2) * (b2 * a3) = (b2 * a3).
+(a3 * b2) * (a2 * b1) = cz.
+(b1 * a2) * (b3 * a1) = cw.
+(a3 * b2) * (b1 * a2) = (b1 * a2) * (a3 * b2).
+(a2 * b1) * (a1 * b3) = cz.
+(b3 * a1) * (b2 * a3) = cw.
+(a2 * b1) * (a3 * b2) = cz.
+(b3 * a1) * (b1 * a2) = cw.
+(b1 * a2) * (a2 * b1) = (a2 * b1).
+(a2 * b1) * (b1 * a2) = (b1 * a2).
+(a2 * b1) * (b3 * a1) = (b3 * a1) * (a2 * b1).
+cz * (a1 * b3) = cz.
+cz * (a2 * b1) = cz.
+cz * (a3 * b2) = cz.
+cw * (b3 * a1) = cw.
+cw * (b1 * a2) = cw.
+cw * (b2 * a3) = cw.
+(a1 * b1) * b2 = cz.
+(a1 * b1) * b3 = cz.
+(a2 * b2) * b1 = cz.
+(a2 * b2) * b3 = cz.
+(a3 * b3) * b1 = cz.
+(a3 * b3) * b2 = cz.
+(a1 * b1) * a2 = cw.
+(a1 * b1) * a3 = cw.
+(a2 * b2) * a1 = cw.
+(a2 * b2) * a3 = cw.
+(a3 * b3) * a1 = cw.
+(a3 * b3) * a2 = cw.
+end_of_list.
+
+formulas(goals).
+(((a3 * b2) * a1) * (b3 * a1)) * (((a1 * b3) * a2) * (b1 * a2)) = cw.   % (U1)
+(((b2 * a3) * b1) * (a2 * b1)) * (((b3 * a1) * b2) * (a3 * b2)) = cz.   % (U2)
+(((b3 * a1) * b2) * (a3 * b2)) * (((a3 * b2) * a1) * (b3 * a1)) = (((a3 * b2) * a1) * (b3 * a1)).   % (U3)
+(((a3 * b2) * a1) * (b3 * a1)) * (((b3 * a1) * b2) * (a3 * b2)) = (((b3 * a1) * b2) * (a3 * b2)).   % (U4)
+(((a3 * b2) * a1) * (b3 * a1)) * (((a2 * b1) * a3) * (b2 * a3)) = cw.   % (U5)
+(((b2 * a3) * b1) * (a2 * b1)) * (((b1 * a2) * b3) * (a1 * b3)) = cz.   % (U6)
+(((b1 * a2) * b3) * (a1 * b3)) * (((a3 * b2) * a1) * (b3 * a1)) = (((a3 * b2) * a1) * (b3 * a1)).   % (U7)
+(((a3 * b2) * a1) * (b3 * a1)) * (((b1 * a2) * b3) * (a1 * b3)) = (((b1 * a2) * b3) * (a1 * b3)).   % (U8)
+(((a3 * b2) * a1) * (b3 * a1)) * (((b2 * a3) * b1) * (a2 * b1)) = (((b2 * a3) * b1) * (a2 * b1)) * (((a3 * b2) * a1) * (b3 * a1)).   % (U9)
+(((a1 * b3) * a2) * (b1 * a2)) * (((a3 * b2) * a1) * (b3 * a1)) = cw.   % (U10)
+(((b3 * a1) * b2) * (a3 * b2)) * (((b2 * a3) * b1) * (a2 * b1)) = cz.   % (U11)
+(((b2 * a3) * b1) * (a2 * b1)) * (((a1 * b3) * a2) * (b1 * a2)) = (((a1 * b3) * a2) * (b1 * a2)).   % (U12)
+(((a1 * b3) * a2) * (b1 * a2)) * (((b2 * a3) * b1) * (a2 * b1)) = (((b2 * a3) * b1) * (a2 * b1)).   % (U13)
+(((a1 * b3) * a2) * (b1 * a2)) * (((a2 * b1) * a3) * (b2 * a3)) = cw.   % (U14)
+(((b3 * a1) * b2) * (a3 * b2)) * (((b1 * a2) * b3) * (a1 * b3)) = cz.   % (U15)
+(((b1 * a2) * b3) * (a1 * b3)) * (((a1 * b3) * a2) * (b1 * a2)) = (((a1 * b3) * a2) * (b1 * a2)).   % (U16)
+(((a1 * b3) * a2) * (b1 * a2)) * (((b1 * a2) * b3) * (a1 * b3)) = (((b1 * a2) * b3) * (a1 * b3)).   % (U17)
+(((a1 * b3) * a2) * (b1 * a2)) * (((b3 * a1) * b2) * (a3 * b2)) = (((b3 * a1) * b2) * (a3 * b2)) * (((a1 * b3) * a2) * (b1 * a2)).   % (U18)
+(((a2 * b1) * a3) * (b2 * a3)) * (((a3 * b2) * a1) * (b3 * a1)) = cw.   % (U19)
+(((b1 * a2) * b3) * (a1 * b3)) * (((b2 * a3) * b1) * (a2 * b1)) = cz.   % (U20)
+(((b2 * a3) * b1) * (a2 * b1)) * (((a2 * b1) * a3) * (b2 * a3)) = (((a2 * b1) * a3) * (b2 * a3)).   % (U21)
+(((a2 * b1) * a3) * (b2 * a3)) * (((b2 * a3) * b1) * (a2 * b1)) = (((b2 * a3) * b1) * (a2 * b1)).   % (U22)
+(((a2 * b1) * a3) * (b2 * a3)) * (((a1 * b3) * a2) * (b1 * a2)) = cw.   % (U23)
+(((b1 * a2) * b3) * (a1 * b3)) * (((b3 * a1) * b2) * (a3 * b2)) = cz.   % (U24)
+(((b3 * a1) * b2) * (a3 * b2)) * (((a2 * b1) * a3) * (b2 * a3)) = (((a2 * b1) * a3) * (b2 * a3)).   % (U25)
+(((a2 * b1) * a3) * (b2 * a3)) * (((b3 * a1) * b2) * (a3 * b2)) = (((b3 * a1) * b2) * (a3 * b2)).   % (U26)
+(((a2 * b1) * a3) * (b2 * a3)) * (((b1 * a2) * b3) * (a1 * b3)) = (((b1 * a2) * b3) * (a1 * b3)) * (((a2 * b1) * a3) * (b2 * a3)).   % (U27)
+end_of_list.

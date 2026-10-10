@@ -1,0 +1,316 @@
+============================== Prover9 ===============================
+Prover9 (64) version 2017-11A (CIIRC), November 2017.
+Process 931 was started by root on vm,
+Sun Sep 13 18:29:57 2026
+The command was "/home/claude/bin/prover9 -f V3.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file V3.in
+
+assign(max_seconds,1500).
+op(400,infix,"*").
+
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+z * x != z | z * y != z | x * y = y * x.
+w * y != y | u * y != u | v * y != v | u * w != v * w | u = v.
+(t * a) * b = t * a.
+(t * c) * a = t * c.
+c * b = b.
+(t * b) * c = t * c.
+end_of_list.
+
+formulas(goals).
+(t * a) * (t * b) = t * a.
+end_of_list.
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 (t * a) * (t * b) = t * a # label(non_clause) # label(goal).  [goal].
+
+============================== end of process non-clausal formulas ===
+
+============================== PROCESS INITIAL CLAUSES ===============
+
+% Clauses before input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+x * x = x.  [assumption].
+(x * y) * y = x * y.  [assumption].
+(x * y) * x = y * x.  [assumption].
+((x * y) * z) * y = x * (z * y).  [assumption].
+(((x * y) * z) * y) * z = (x * y) * z.  [assumption].
+x * y != x | x * z != x | y * z = z * y.  [assumption].
+x * y != y | z * y != z | u * y != u | z * x != u * x | z = u.  [assumption].
+(t * a) * b = t * a.  [assumption].
+(t * c) * a = t * c.  [assumption].
+c * b = b.  [assumption].
+(t * b) * c = t * c.  [assumption].
+(t * a) * (t * b) != t * a.  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+end_of_list.
+
+============================== PREDICATE ELIMINATION =================
+
+No predicates eliminated.
+
+============================== end predicate elimination =============
+
+Auto_denials:  (no changes).
+
+Term ordering decisions:
+Predicate symbol precedence:  predicate_order([ = ]).
+Function symbol precedence:  function_order([ t, c, b, a, * ]).
+After inverse_order:  (no changes).
+Unfolding symbols: (none).
+
+Auto_inference settings:
+  % set(paramodulation).  % (positive equality literals)
+  % set(hyper_resolution).  % (nonunit Horn with equality)
+    % set(hyper_resolution) -> set(pos_hyper_resolution).
+  % set(neg_ur_resolution).  % (nonunit Horn with equality)
+  % assign(para_lit_limit, 5).  % (nonunit Horn with equality)
+
+Auto_process settings:  (no changes).
+
+kept:      2 x * x = x.  [assumption].
+kept:      3 (x * y) * y = x * y.  [assumption].
+kept:      4 (x * y) * x = y * x.  [assumption].
+kept:      5 ((x * y) * z) * y = x * (z * y).  [assumption].
+           6 (((x * y) * z) * y) * z = (x * y) * z.  [assumption].
+kept:      7 (x * (y * z)) * y = (x * z) * y.  [copy(6),rewrite([5(3)])].
+kept:      8 x * y != x | x * z != x | y * z = z * y.  [assumption].
+kept:      9 x * y != y | z * y != z | u * y != u | z * x != u * x | z = u.  [assumption].
+kept:      10 (t * a) * b = t * a.  [assumption].
+kept:      11 (t * c) * a = t * c.  [assumption].
+kept:      12 c * b = b.  [assumption].
+kept:      13 (t * b) * c = t * c.  [assumption].
+kept:      14 (t * a) * (t * b) != t * a.  [deny(1)].
+
+============================== end of process initial clauses ========
+
+============================== CLAUSES FOR SEARCH ====================
+
+% Clauses after input processing:
+
+formulas(usable).
+end_of_list.
+
+formulas(sos).
+2 x * x = x.  [assumption].
+3 (x * y) * y = x * y.  [assumption].
+4 (x * y) * x = y * x.  [assumption].
+5 ((x * y) * z) * y = x * (z * y).  [assumption].
+7 (x * (y * z)) * y = (x * z) * y.  [copy(6),rewrite([5(3)])].
+8 x * y != x | x * z != x | y * z = z * y.  [assumption].
+9 x * y != y | z * y != z | u * y != u | z * x != u * x | z = u.  [assumption].
+10 (t * a) * b = t * a.  [assumption].
+11 (t * c) * a = t * c.  [assumption].
+12 c * b = b.  [assumption].
+13 (t * b) * c = t * c.  [assumption].
+14 (t * a) * (t * b) != t * a.  [deny(1)].
+end_of_list.
+
+formulas(demodulators).
+2 x * x = x.  [assumption].
+3 (x * y) * y = x * y.  [assumption].
+4 (x * y) * x = y * x.  [assumption].
+5 ((x * y) * z) * y = x * (z * y).  [assumption].
+7 (x * (y * z)) * y = (x * z) * y.  [copy(6),rewrite([5(3)])].
+10 (t * a) * b = t * a.  [assumption].
+11 (t * c) * a = t * c.  [assumption].
+12 c * b = b.  [assumption].
+13 (t * b) * c = t * c.  [assumption].
+end_of_list.
+
+============================== end of clauses for search =============
+
+============================== SEARCH ================================
+
+% Starting search at 0.01 seconds.
+
+given #1 (I,wt=5): 2 x * x = x.  [assumption].
+
+given #2 (I,wt=9): 3 (x * y) * y = x * y.  [assumption].
+
+given #3 (I,wt=9): 4 (x * y) * x = y * x.  [assumption].
+
+given #4 (I,wt=13): 5 ((x * y) * z) * y = x * (z * y).  [assumption].
+
+given #5 (I,wt=13): 7 (x * (y * z)) * y = (x * z) * y.  [copy(6),rewrite([5(3)])].
+
+given #6 (I,wt=17): 8 x * y != x | x * z != x | y * z = z * y.  [assumption].
+
+given #7 (I,wt=25): 9 x * y != y | z * y != z | u * y != u | z * x != u * x | z = u.  [assumption].
+
+given #8 (I,wt=9): 10 (t * a) * b = t * a.  [assumption].
+
+given #9 (I,wt=9): 11 (t * c) * a = t * c.  [assumption].
+
+given #10 (I,wt=5): 12 c * b = b.  [assumption].
+
+given #11 (I,wt=9): 13 (t * b) * c = t * c.  [assumption].
+
+given #12 (I,wt=11): 14 (t * a) * (t * b) != t * a.  [deny(1)].
+
+given #13 (A,wt=9): 15 x * (y * x) = y * x.  [para(3(a,1),4(a,1,1)),rewrite([2(3)]),flip(a)].
+
+given #14 (T,wt=7): 61 a * b = b * a.  [hyper(8,a,3,a,b,10,a)].
+
+given #15 (T,wt=7): 70 a * c = c * a.  [hyper(8,a,3,a,b,11,a),flip(a)].
+
+given #16 (T,wt=9): 17 x * (x * y) = x * y.  [para(2(a,1),5(a,1,1)),rewrite([3(2),3(3)]),flip(a)].
+
+given #17 (T,wt=9): 62 b * (t * a) = t * a.  [hyper(8,a,2,a,b,10,a),rewrite([10(5)]),flip(a)].
+
+given #18 (A,wt=13): 18 (x * (y * z)) * z = x * (y * z).  [para(5(a,1),3(a,1,1)),rewrite([5(6)])].
+
+given #19 (F,wt=5): 125 t * b != b.  [ur(9,b,10,a,c,18,a,d,3,a(flip),e,14,a(flip)),rewrite([3(5)])].
+
+given #20 (F,wt=7): 139 b * c != t * c.  [ur(9,a,12,a,b,3,a,c,2,a,e,125,a),rewrite([13(5)]),flip(a)].
+
+given #21 (F,wt=13): 138 ((t * a) * (t * b)) * c != t * c.  [back_rewrite(126),rewrite([137(14),73(14)])].
+
+given #22 (T,wt=9): 64 t * (b * a) = t * a.  [para(10(a,1),5(a,1,1)),rewrite([3(5)]),flip(a)].
+
+given #23 (T,wt=9): 71 a * (t * c) = t * c.  [hyper(8,a,2,a,b,11,a),rewrite([11(5)]),flip(a)].
+
+given #24 (T,wt=9): 73 t * (c * a) = t * c.  [para(11(a,1),5(a,1,1)),rewrite([3(5),70(7)]),flip(a)].
+
+given #25 (T,wt=9): 79 c * (x * b) = x * b.  [para(12(a,1),5(a,1,1,1)),rewrite([4(4)]),flip(a)].
+
+given #26 (A,wt=13): 19 (x * y) * (z * y) = x * (z * y).  [para(3(a,1),5(a,1,1,1)),rewrite([5(3)]),flip(a)].
+
+given #27 (T,wt=9): 86 (t * c) * b = t * b.  [para(13(a,1),5(a,1,1)),rewrite([12(9)])].
+
+given #28 (T,wt=9): 120 (b * a) * t = a * t.  [para(62(a,1),7(a,1,1)),rewrite([4(5)]),flip(a)].
+
+given #29 (T,wt=9): 148 (c * a) * t = c * t.  [para(71(a,1),7(a,1,1)),rewrite([4(5),70(6)]),flip(a)].
+
+given #30 (T,wt=9): 166 c * (b * a) = b * a.  [para(61(a,1),79(a,1,2)),rewrite([61(8)])].
+
+given #31 (A,wt=13): 21 (x * y) * (z * x) = y * (z * x).  [para(4(a,1),5(a,1,1,1)),rewrite([5(3)]),flip(a)].
+
+given #32 (F,wt=7): 203 (x * t) * b != b.  [ur(9,b,3,a,c,2,a,d,21,a,e,125,a)].
+
+given #33 (F,wt=7): 223 x * (t * b) != b.  [para(5(a,1),203(a,1))].
+
+given #34 (F,wt=9): 221 (x * (y * t)) * b != b.  [ur(9,b,3,a,c,2,a,d,21,a,e,203,a)].
+
+given #35 (F,wt=9): 225 x * (y * (t * b)) != b.  [para(5(a,1),223(a,1))].
+
+given #36 (T,wt=9): 177 b * (t * c) = t * c.  [para(86(a,1),4(a,1,1)),rewrite([85(7),17(5)]),flip(a)].
+
+given #37 (T,wt=9): 179 t * (b * c) = t * c.  [para(86(a,1),5(a,1,1)),rewrite([13(5)]),flip(a)].
+
+given #38 (T,wt=9): 231 (b * c) * t = c * t.  [para(177(a,1),7(a,1,1)),rewrite([4(5)]),flip(a)].
+
+given #39 (T,wt=11): 102 (x * b) * a = x * (b * a).  [para(61(a,1),7(a,1,1,2)),rewrite([18(6)]),flip(a)].
+
+given #40 (A,wt=19): 22 ((x * (y * z)) * u) * z = ((x * z) * y) * (u * z).  [para(5(a,1),5(a,1,1,1))].
+
+given #41 (F,wt=9): 228 x * ((y * t) * b) != b.  [para(5(a,1),221(a,1))].
+
+given #42 (F,wt=9): 264 a * (t * b) != t * a.  [back_rewrite(14),rewrite([250(7)])].
+
+given #43 (F,wt=11): 222 ((x * t) * b) * c != b * c.  [ur(9,a,12,a,b,3,a,c,2,a,e,203,a)].
+
+given #44 (F,wt=11): 224 (x * (t * b)) * c != b * c.  [ur(9,a,12,a,b,18,a,c,2,a,e,223,a)].
+
+given #45 (T,wt=11): 108 (x * c) * a = x * (c * a).  [para(70(a,1),7(a,1,1,2)),rewrite([18(6)]),flip(a)].
+
+given #46 (T,wt=11): 136 (x * a) * b = x * (b * a).  [para(61(a,1),18(a,1,1,2)),rewrite([7(6),61(7)])].
+
+given #47 (T,wt=11): 137 (x * a) * c = x * (c * a).  [para(70(a,1),18(a,1,1,2)),rewrite([7(6),70(7)])].
+
+given #48 (T,wt=11): 190 (c * t) * a = c * (t * a).  [para(148(a,1),5(a,1,1))].
+
+given #49 (A,wt=13): 23 (x * y) * (y * z) = (x * y) * z.  [para(5(a,1),5(a,1,1)),rewrite([7(3)]),flip(a)].
+-------- Proof 1 -------- 
+
+============================== PROOF =================================
+
+% Proof 1 at 0.04 (+ 0.00) seconds.
+% Length of proof is 34.
+% Level of proof is 5.
+% Maximum clause weight is 25.000.
+% Given clauses 49 (9.800 givens/level).
+
+1 (t * a) * (t * b) = t * a # label(non_clause) # label(goal).  [goal].
+2 x * x = x.  [assumption].
+3 (x * y) * y = x * y.  [assumption].
+4 (x * y) * x = y * x.  [assumption].
+5 ((x * y) * z) * y = x * (z * y).  [assumption].
+6 (((x * y) * z) * y) * z = (x * y) * z.  [assumption].
+7 (x * (y * z)) * y = (x * z) * y.  [copy(6),rewrite([5(3)])].
+8 x * y != x | x * z != x | y * z = z * y.  [assumption].
+9 x * y != y | z * y != z | u * y != u | z * x != u * x | z = u.  [assumption].
+10 (t * a) * b = t * a.  [assumption].
+11 (t * c) * a = t * c.  [assumption].
+12 c * b = b.  [assumption].
+13 (t * b) * c = t * c.  [assumption].
+14 (t * a) * (t * b) != t * a.  [deny(1)].
+17 x * (x * y) = x * y.  [para(2(a,1),5(a,1,1)),rewrite([3(2),3(3)]),flip(a)].
+18 (x * (y * z)) * z = x * (y * z).  [para(5(a,1),3(a,1,1)),rewrite([5(6)])].
+23 (x * y) * (y * z) = (x * y) * z.  [para(5(a,1),5(a,1,1)),rewrite([7(3)]),flip(a)].
+26 (x * (y * z)) * (u * y) = (x * z) * (u * y).  [para(7(a,1),5(a,1,1,1)),rewrite([5(4)]),flip(a)].
+61 a * b = b * a.  [hyper(8,a,3,a,b,10,a)].
+70 a * c = c * a.  [hyper(8,a,3,a,b,11,a),flip(a)].
+73 t * (c * a) = t * c.  [para(11(a,1),5(a,1,1)),rewrite([3(5),70(7)]),flip(a)].
+74 (x * a) * (t * c) = x * (t * c).  [para(11(a,1),7(a,1,1,2)),rewrite([3(8)]),flip(a)].
+85 (t * b) * (x * c) = t * (x * c).  [para(13(a,1),5(a,1,1,1)),rewrite([5(6)]),flip(a)].
+86 (t * c) * b = t * b.  [para(13(a,1),5(a,1,1)),rewrite([12(9)])].
+102 (x * b) * a = x * (b * a).  [para(61(a,1),7(a,1,1,2)),rewrite([18(6)]),flip(a)].
+126 ((t * a) * (t * b)) * c != (t * a) * c.  [ur(9,a,12,a,b,10,a,c,18,a,e,14,a(flip)),flip(a)].
+137 (x * a) * c = x * (c * a).  [para(70(a,1),18(a,1,1,2)),rewrite([7(6),70(7)])].
+138 ((t * a) * (t * b)) * c != t * c.  [back_rewrite(126),rewrite([137(14),73(14)])].
+177 b * (t * c) = t * c.  [para(86(a,1),4(a,1,1)),rewrite([85(7),17(5)]),flip(a)].
+180 (x * (t * b)) * (t * c) = (x * b) * (t * c).  [para(86(a,1),7(a,1,1,2))].
+250 (x * a) * (x * b) = a * (x * b).  [para(102(a,1),4(a,1,1)),rewrite([26(7)])].
+263 (a * (t * b)) * c != t * c.  [back_rewrite(138),rewrite([250(7)])].
+369 (x * (t * b)) * c = (x * b) * (t * c).  [para(13(a,1),23(a,1,2)),rewrite([180(8)]),flip(a)].
+393 $F.  [back_rewrite(263),rewrite([369(7),61(3),74(7),177(5)]),xx(a)].
+
+============================== end of proof ==========================
+
+============================== STATISTICS ============================
+
+Given=49. Generated=2088. Kept=390. proofs=1.
+Usable=45. Sos=291. Demods=166. Limbo=24, Disabled=42. Hints=0.
+Kept_by_rule=0, Deleted_by_rule=0.
+Forward_subsumed=1697. Back_subsumed=4.
+Sos_limit_deleted=0. Sos_displaced=0. Sos_removed=0.
+New_demodulators=190 (0 lex), Back_demodulated=26. Back_unit_deleted=0.
+Demod_attempts=30479. Demod_rewrites=3121.
+Res_instance_prunes=0. Para_instance_prunes=0. Basic_paramod_prunes=0.
+Nonunit_fsub_feature_tests=3623. Nonunit_bsub_feature_tests=795.
+Megabytes=0.77.
+User_CPU=0.04, System_CPU=0.00, Wall_clock=0.
+
+============================== end of statistics =====================
+
+============================== end of search =========================
+
+THEOREM PROVED
+
+THEOREM PROVED
+
+Exiting with 1 proof.
+
+------ process 931 exit (max_proofs) ------
+
+Process 931 exit (max_proofs) Sun Sep 13 18:29:57 2026

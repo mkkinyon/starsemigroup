@@ -1,0 +1,6 @@
+m=6 all4: Lemma A HOLDS (22s)
+m=6 all4+b: Lemma A HOLDS (25s)
+m=6 drop x~c: Lemma A FAILS (0s)
+m=6 drop x id: Lemma A FAILS (0s)
+m=6 drop x~y: Lemma A FAILS (0s)
+m=6 drop y id: Lemma A FAILS (0s)

@@ -1,0 +1,17 @@
+assign(max_seconds, 1200).
+assign(max_weight, 40).
+op(400, infix, "*").
+formulas(assumptions).
+x * x = x.
+(y * x) * x = y * x.
+(x * y) * x = y * x.
+((z * x) * y) * x = z * (y * x).
+(((z * x) * y) * x) * y = (z * x) * y.
+% Q1
+z * x != z | z * y != z | x * y = y * x.
+k*a = k.
+a*b = b*a.
+end_of_list.
+formulas(goals).
+(k*b)*a = k*b.
+end_of_list.

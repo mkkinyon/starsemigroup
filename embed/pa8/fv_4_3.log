@@ -1,0 +1,523 @@
+=== candidate 0 ===
+=== candidate 1 ===
+  4 VALID(5) ['th_p0(x)=th_p2(x)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  4 VALID(5) ['yp1=p1y', 'yp2=p2y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  4 VALID(5) ['yp0=p0y', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  4 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=0
+  4 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)']   instance P=[2, 7, 3, 5], x=1, y=0
+  4 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=0
+  4 VALID(5) ['xp0=p0x', 'th_p0(y)=th_p2(y)', 'y=th_p1(p3)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'th_p0(y)=th_p2(y)', 'y=th_p1(p3)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'y<=p1', 'th_p0(y)=th_p2(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'th_p0(y)=th_p2(y)', 'y=th_p1(x)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'y<=p1', 'th_p0(y)=th_p2(y)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(y)=th_p2(y)', 'y=th_p1(p3)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(y)=th_p2(y)', 'y=th_p1(p3)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'y<=p1', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'y<=p1', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'y=th_p1(x)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'y=th_p1(x)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'th_p0(y)=th_p2(y)', 'y=th_p1(x)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'y=th_p1(x)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'y=th_p1(p3)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'y=th_p1(p3)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'y<=p1', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'y<=p1', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'y=th_p1(x)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'y=th_p1(p3)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'y=th_p1(p3)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'y<=p1', 'th_p0(y)=th_p2(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(y)=th_p2(y)', 'y=th_p1(x)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'y<=p1', 'th_p0(y)=th_p2(y)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['xp2=p2x', 'th_p0(y)=th_p2(y)', 'y=th_p1(x)', 'y=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=6
+  4 VALID(5) ['x<=p1', 'th_p0(x)=th_p2(x)', 'yp0=p0y', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p1(p3)', 'yp0=p0y', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['th_p0(x)=th_p2(x)', 'yp2=p2y', 'x=th_p1(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x<=p1', 'th_p0(x)=th_p2(x)', 'yp0=p0y', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['th_p0(x)=th_p2(x)', 'yp2=p2y', 'x=th_p1(y)', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x=th_p1(p3)', 'yp0=p0y', 'th_p0(y)=th_p2(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['th_p0(x)=th_p2(x)', 'yp0=p0y', 'x=th_p1(y)', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['th_p0(x)=th_p2(x)', 'yp0=p0y', 'x=th_p1(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p1(p3)', 'yp0=p0y', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p1(p3)', 'yp2=p2y', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p1(p3)', 'yp2=p2y', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['yp0=p0y', 'th_p0(y)=th_p2(y)', 'x=th_p1(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['yp0=p0y', 'th_p0(y)=th_p2(y)', 'x=th_p1(y)', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x=th_p1(p3)', 'yp0=p0y', 'th_p0(y)=th_p2(y)', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x=th_p1(p3)', 'yp2=p2y', 'th_p0(y)=th_p2(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x=th_p1(p3)', 'yp2=p2y', 'th_p0(y)=th_p2(y)', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['yp2=p2y', 'th_p0(y)=th_p2(y)', 'x=th_p1(y)', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x<=p1', 'yp0=p0y', 'th_p0(y)=th_p2(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x<=p1', 'yp0=p0y', 'th_p0(y)=th_p2(y)', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['yp2=p2y', 'th_p0(y)=th_p2(y)', 'x=th_p1(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x<=p1', 'th_p0(x)=th_p2(x)', 'yp2=p2y', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x<=p1', 'th_p0(x)=th_p2(x)', 'yp2=p2y', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x<=p1', 'yp2=p2y', 'th_p0(y)=th_p2(y)', 'th_x(p3)=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['x<=p1', 'yp2=p2y', 'th_p0(y)=th_p2(y)', 'x=th_y(p3)']   instance P=[2, 7, 3, 5], x=6, y=1
+  4 VALID(5) ['yp1=p1y', 'yp2=p2y', 'th_y(p0)=th_y(p2)', 'th_p1(y)=th_p3(y)']   instance P=[5, 3, 7, 2], x=0, y=1
+  4 VALID(5) ['yp2=p2y', 'yp3=p3y', 'th_y(p0)=th_y(p2)', 'th_p1(y)=th_p3(y)']   instance P=[5, 3, 7, 2], x=0, y=1
+  4 VALID(5) ['th_p1(x)=th_p3(x)', 'yp2=p2y', 'yp3=p3y', 'th_y(p0)=th_y(p2)']   instance P=[5, 3, 7, 2], x=0, y=1
+  4 VALID(5) ['xp2=p2x', 'xp3=p3x', 'th_x(p0)=th_x(p2)', 'th_p1(y)=th_p3(y)']   instance P=[5, 3, 7, 2], x=1, y=0
+  4 VALID(5) ['xp2=p2x', 'xp3=p3x', 'th_x(p0)=th_x(p2)', 'th_p1(x)=th_p3(x)']   instance P=[5, 3, 7, 2], x=1, y=0
+  4 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p0)=th_x(p2)', 'th_p1(x)=th_p3(x)']   instance P=[5, 3, 7, 2], x=1, y=0
+  4 VALID(5) ['xp1=p1x', 'th_p1(x)=th_p3(x)', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'th_p1(y)=th_p3(y)', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'th_p1(x)=th_p3(x)', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'th_p1(x)=th_p3(x)', 'y<=p2', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'th_p1(x)=th_p3(x)', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(x)=th_p3(x)', 'y<=p2', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(x)=th_p3(x)', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(x)=th_p3(x)', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(x)=th_p3(x)', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(y)=th_p3(y)', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(y)=th_p3(y)', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'y<=p2', 'th_p1(y)=th_p3(y)', 'y=th_x(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'th_p1(y)=th_p3(y)', 'y=th_x(p0)', 'y=th_p2(x)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'th_p1(x)=th_p3(x)', 'y<=p2', 'y=th_x(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'th_p1(x)=th_p3(x)', 'y=th_x(p0)', 'y=th_p2(x)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(x)=th_p3(x)', 'y<=p2', 'y=th_x(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(x)=th_p3(x)', 'y=th_x(p0)', 'y=th_p2(x)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'y<=p2', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'y<=p2', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'y<=p2', 'th_p1(y)=th_p3(y)', 'y=th_x(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp3=p3x', 'th_p1(y)=th_p3(y)', 'y=th_x(p0)', 'y=th_p2(x)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['xp1=p1x', 'th_p1(y)=th_p3(y)', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[5, 3, 7, 2], x=1, y=6
+  4 VALID(5) ['x<=p2', 'yp3=p3y', 'th_p1(y)=th_p3(y)', 'x=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['th_p1(x)=th_p3(x)', 'yp3=p3y', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['th_p1(x)=th_p3(x)', 'yp1=p1y', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['th_p1(x)=th_p3(x)', 'x=th_p2(p0)', 'yp1=p1y', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x<=p2', 'th_p1(x)=th_p3(x)', 'yp1=p1y', 'x=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x<=p2', 'th_p1(x)=th_p3(x)', 'yp1=p1y', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x<=p2', 'yp1=p1y', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x<=p2', 'th_p1(x)=th_p3(x)', 'yp3=p3y', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['yp1=p1y', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x=th_p2(p0)', 'yp3=p3y', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['yp3=p3y', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['th_p1(x)=th_p3(x)', 'x=th_p2(p0)', 'yp1=p1y', 'x=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['th_p1(x)=th_p3(x)', 'yp1=p1y', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_p1(y)=th_p3(y)', 'x=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x<=p2', 'yp3=p3y', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['yp3=p3y', 'th_p1(y)=th_p3(y)', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_p1(y)=th_p3(y)', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['th_p1(x)=th_p3(x)', 'x=th_p2(p0)', 'yp3=p3y', 'x=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x<=p2', 'yp1=p1y', 'th_p1(y)=th_p3(y)', 'x=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x<=p2', 'th_p1(x)=th_p3(x)', 'yp3=p3y', 'x=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['th_p1(x)=th_p3(x)', 'x=th_p2(p0)', 'yp3=p3y', 'th_x(p0)=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['th_p1(x)=th_p3(x)', 'yp3=p3y', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['yp1=p1y', 'th_p1(y)=th_p3(y)', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[5, 3, 7, 2], x=6, y=1
+  4 VALID(5) ['x=th_p2(p0)', 'yp3=p3y', 'th_p1(y)=th_p3(y)', 'x=th_y(p0)']   instance P=[5, 3, 7, 2], x=6, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p0)=th_y(p2)', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'th_p0(x)=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x=th_p2(p0)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x=th_p2(p0)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'xp2=p2x', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x<=p2', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x<=p2', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp0=p0y', 'yp1=p1y', 'yp2=p2y', 'th_y(p0)=th_y(p2)', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p0(y)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'x=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'x=th_p0(p2)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'x=th_p0(p2)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'th_p2(x)=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p0', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'x=th_p2(p0)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p0(y)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p0(y)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp0=p0y', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p2(p0)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'yp2=p2y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_p0(y)=th_p2(y)', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'x=th_p2(p0)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p0(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y', 'x=th_p0(y)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_p0(y)', 'th_x(p2)=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp0=p0x', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p2)', 'x=th_p2(y)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x<=y']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp2=p2x', 'x=th_p0(p2)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'x=th_y(p0)']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['x<=p2', 'th_p0(x)=th_p2(x)', 'yp1=p1y', 'th_y(p1)=th_y(p3)', 'xy=yx']   instance P=[2, 7, 3, 5], x=0, y=1
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_p0(x)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y<=p0', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_p0(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_p2(p0)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y<=p2', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'y=th_p0(x)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'yp2=p2y']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'yp2=p2y', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_p2(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y<=p2']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'th_p0(x)=th_p0(y)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'yp2=p2y', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'yp2=p2y', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'th_p0(y)=th_p2(y)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_x(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_x(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p2(p0)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'y=th_x(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_p2(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_p2(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_p2(p0)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_p2(p0)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_p0(x)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'yp2=p2y', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'xy=yx', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y<=p2', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'th_p0(y)=th_p2(y)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'xy=yx', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_p0(p2)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(p2)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'th_p0(y)=th_p2(y)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'xy=yx', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p0(p2)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'th_p2(x)=th_p2(y)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y=th_p0(x)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y=th_p0(x)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y=th_p0(x)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p2(p0)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_p2(p0)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_p2(p0)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'xy=yx', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_p2(p0)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'yp2=p2y', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_x(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p0)=th_x(p2)', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'xp2=p2x', 'th_x(p0)=th_x(p2)', 'th_x(p1)=th_x(p3)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y<=p0', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_p0(x)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'th_x(p2)=th_y(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y<=p2', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y<=p2', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'th_p0(y)=th_p2(y)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'th_p0(y)=th_p2(y)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'th_p0(y)=th_p2(y)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y<=p2', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(p2)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p0(p2)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_x(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y<=p2']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_p0(p2)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y<=p2', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'xy=yx', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'xy=yx', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'xy=yx']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y<=p0', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'yp2=p2y', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'th_p0(y)=th_p2(y)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'th_p0(y)=th_p2(y)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'th_p0(y)=th_p2(y)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_x(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y<=p2', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y<=p2', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'th_p0(y)=th_p2(y)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_x(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_x(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_p0(p2)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(p2)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p0(p2)', 'y=th_x(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_x(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_x(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_p2(p0)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_p2(p0)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p2(p0)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_p2(p0)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_p2(p0)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'th_x(p0)=th_y(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_x(p0)=th_y(p0)', 'y=th_p0(x)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p0(p2)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'th_x(p0)=th_y(p0)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'yp2=p2y', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_p0(p2)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(p2)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'th_x(p0)=th_y(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'xy=yx', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'xy=yx', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'xy=yx', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'xy=yx', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'xp2=p2x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y<=p2', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_p0(x)=th_p2(x)', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(x)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p0(x)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(x)', 'y=th_x(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_p0(x)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(x)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p0(x)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(x)', 'th_x(p2)=th_y(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(x)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp0=p0x', 'xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'th_p0(y)=th_p2(y)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'y<=p2', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y<=p2', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'th_p0(y)=th_p2(y)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'th_p0(y)=th_p2(y)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'th_p0(y)=th_p2(y)', 'th_x(p0)=th_y(p0)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'y=th_x(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_x(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_x(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_x(p0)', 'y=th_p0(x)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p2(p0)', 'y=th_p0(x)', 'y=th_x(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'xy=yx', 'y=th_p0(x)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp2=p2y', 'th_x(p0)=th_y(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'th_x(p0)=th_y(p0)', 'y=th_p0(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'y=th_x(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'th_p0(y)=th_p2(y)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'th_p0(y)=th_p2(y)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'th_x(p2)=th_y(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'yp0=p0y', 'th_x(p2)=th_y(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p0', 'th_x(p2)=th_y(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y<=p2', 'y=th_p0(p2)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'th_p0(y)=th_p2(y)', 'y=th_p0(p2)', 'th_x(p2)=th_y(p2)']   instance P=[2, 7, 3, 5], x=1, y=0
+  5 VALID(5) ['xp1=p1x', 'th_x(p1)=th_x(p3)', 'y=th_p0(p2)', 'th_x(p2)=th_y(p2)', 'y=th_p2(x)']   instance P=[2, 7, 3, 5], x=1, y=0

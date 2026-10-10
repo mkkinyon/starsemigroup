@@ -1,0 +1,13 @@
+assign(max_seconds,100).
+set(prolog_style_variables).
+op(400, infix, "*").
+formulas(assumptions).
+X*X = X.
+(Y*X)*X = Y*X.
+(X*Y)*X = Y*X.
+((Z*X)*Y)*X = Z*(Y*X).
+(((Z*X)*Y)*X)*Y = (Z*X)*Y.
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X.
+(t*b)*c = t*b. (t*c)*b = t*c.
+end_of_list.
+formulas(goals). t*b = t*c. end_of_list.

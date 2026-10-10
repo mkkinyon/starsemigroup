@@ -1,0 +1,14 @@
+cand 4 (8 vars, 11 atoms):  aba=a, aea=a, f≤a, gfg=g, f≤i, g≤b, ege=c, g≤h, ehe=e, bib=b, hih=c  ⇒  a⋈c
+cand 0 (9 vars, 13 atoms):  gag=g, aba=a, b≤c, b≤d, ded=f, heh=h, iei=i, g≤d, fgf=f, g≤i, chc=c, cic=c, hih=f  ⇒  a⋈c
+cand 0 (9 vars, 14 atoms):  a≤e, gag=g, b≤c, b≤d, ici=i, aea=a, ded=f, heh=h, g≤d, fgf=f, g≤i, chc=c, eie=e, hih=f  ⇒  a⋈e
+cand 1 (8 vars, 11 atoms):  iai=i, ibi=i, d≤a, d≤c, aea=a, beb=d, g≤i, chc=g, h≤e, aia=a, bib=b  ⇒  a⋈b
+cand 1 (8 vars, 9 atoms):  ibi=i, d≤c, aea=a, beb=d, g≤i, aha=d, chc=g, h≤e, aia=a  ⇒  a⋈d
+cand 4 (9 vars, 14 atoms):  bab=b, aba=a, dbd=d, fdf=f, aea=a, f≤a, gfg=g, f≤i, g≤b, ege=c, g≤h, ehe=e, bib=b, hih=c  ⇒  a⋈d
+cand 5 (8 vars, 10 atoms):  aba=c, dbd=d, gbg=g, dfd=d, dgd=c, fgf=f, h≤a, h≤f, i≤a, i≤g  ⇒  c⋈d
+cand 2 (9 vars, 11 atoms):  cec=c, dfd=d, efe=a, g≤c, g≤d, h≤c, h≤f, aia=a, i≤d, i≤e, fif=b  ⇒  a≤b
+cand 5 (9 vars, 13 atoms):  aba=c, dbd=d, fdf=f, e≤b, iei=i, gfg=g, dgd=c, ege=e, h≤a, h≤f, i≤a, cic=c, i≤g  ⇒  c⋈e
+cand 2 (8 vars, 10 atoms):  cec=c, dfd=d, efe=a, g≤c, g≤d, h≤c, h≤f, aia=a, i≤d, i≤e  ⇒  a≤f
+cand 3 (8 vars, 12 atoms):  hah=h, gcg=g, c≤h, c≤i, ada=a, aea=a, ded=f, f≤e, g≤a, igi=f, dhd=d, ehe=e  ⇒  a⋈c
+cand 6 (9 vars, 11 atoms):  dad=d, dbd=d, c≤h, ada=a, bdb=b, e≤b, e≤i, hfh=g, ifi=c, g≤d, aia=f  ⇒  a⋈b
+cand 3 (8 vars, 11 atoms):  hah=h, c≤h, c≤i, ada=a, aea=a, ded=f, f≤e, g≤a, igi=f, dhd=d, ehe=e  ⇒  a⋈f
+cand 6 (9 vars, 10 atoms):  aba=f, dbd=d, c≤h, ada=a, e≤b, e≤i, hfh=g, ifi=c, g≤d, fif=f  ⇒  a⋈c

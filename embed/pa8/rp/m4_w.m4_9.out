@@ -1,0 +1,97 @@
+============================== Mace4 =================================
+Mace4 (64) version 2017-11A (CIIRC), November 2017.
+Process 1678 was started by root on vm,
+Sun Sep 13 21:31:51 2026
+The command was "mace4 -n 9 -m 1 -f m4_w.m4.in".
+============================== end of head ===========================
+
+============================== INPUT =================================
+
+% Reading from file m4_w.m4.in
+
+set(prolog_style_variables).
+assign(max_seconds,600).
+assign(max_megs,3000).
+op(400,infix,"*").
+
+formulas(assumptions).
+X * X = X.
+(Y * X) * X = Y * X.
+(X * Y) * X = Y * X.
+((Z * X) * Y) * X = Z * (Y * X).
+(((Z * X) * Y) * X) * Y = (Z * X) * Y.
+Z * X = Z & Z * Y = Z -> X * Y = Y * X.
+c * a = a.
+a * c = c.
+c * b = b.
+b * c = c.
+x * c = c * x.
+a * x = c * x.
+y * a = a * y.
+b * x = b * y.
+(a * y) * b != (c * x) * b.
+end_of_list.
+    % assign(domain_size, 9) -> assign(start_size, 9).
+    % assign(domain_size, 9) -> assign(end_size, 9).
+
+% From the command line: assign(domain_size, 9).
+
+% From the command line: assign(max_models, 1).
+
+============================== end of input ==========================
+
+============================== PROCESS NON-CLAUSAL FORMULAS ==========
+
+% Formulas that are not ordinary clauses:
+1 Z * X = Z & Z * Y = Z -> X * Y = Y * X # label(non_clause).  [assumption].
+
+============================== end of process non-clausal formulas ===
+
+============================== CLAUSES FOR SEARCH ====================
+
+formulas(mace4_clauses).
+A * A = A.
+(A * B) * B = A * B.
+(A * B) * A = B * A.
+((A * B) * C) * B = A * (C * B).
+(((A * B) * C) * B) * C = (A * B) * C.
+A * B != A | A * C != A | C * B = B * C.
+c * a = a.
+a * c = c.
+c * b = b.
+b * c = c.
+x * c = c * x.
+a * x = c * x.
+y * a = a * y.
+b * x = b * y.
+(a * y) * b != (c * x) * b.
+end_of_list.
+
+============================== end of clauses for search =============
+
+% There are no natural numbers in the input.
+
+============================== DOMAIN SIZE 9 =========================
+
+=== Mace4 starting on domain size 9. ===
+
+============================== STATISTICS ============================
+
+For domain size 9.
+
+Current CPU time: 0.00 seconds (total CPU time: 0.02 seconds).
+Ground clauses: seen=2367, kept=2250.
+Selections=207, assignments=1504, propagations=3726, current_models=0.
+Rewrite_terms=372186, rewrite_bools=85222, indexes=48222.
+Rules_from_neg_clauses=87, cross_offs=4647.
+
+============================== end of statistics =====================
+
+------ process 1678 exit (exhausted) ------
+
+User_CPU=0.02, System_CPU=0.00, Wall_clock=1.
+
+Exiting with failure.
+
+Process 1678 exit (exhausted) Sun Sep 13 21:31:52 2026
+The process finished Sun Sep 13 21:31:52 2026
