@@ -1,0 +1,13 @@
+21 clauses without b
+m=5: G1 does not follow from the b-free clauses
+m=5: G1 (all clauses): minimal set of 1 local clauses implying it:
+    J(ab) | ~J(bc)   [x-link]
+m=5: GOAL does not follow from the b-free clauses
+Traceback (most recent call last):
+  File "/home/claude/pa8w/embed/pa8/red/goal5.py", line 21, in <module>
+    minimise(goal, S, label + ' (all clauses)')
+    ~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/pa8w/embed/pa8/red/goal5.py", line 7, in minimise
+    assert holds(weak, cur, goal), label + ': not even with all'
+           ~~~~~^^^^^^^^^^^^^^^^^
+AssertionError: GOAL (all clauses): not even with all

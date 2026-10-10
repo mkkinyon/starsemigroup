@@ -1,0 +1,47 @@
+S1: 41 minimal valid clauses of <= 3 literals under (c~x, x id), 2048 tested (4s)
+S2: 25 of these valid at chain position 2 (5s)
+S3: 21 valid at chain position 3 (5s)
+    ~E(x) | J(ax)
+    ~E(x) | J(cx)
+    ~E(a) | J(ax)
+    ~E(a) | J(ac)
+    ~E(c) | J(ax)
+    ~E(c) | J(ac)
+    ~E(c) | J(cx)
+    J(ax) | ~J(ac)
+    J(ax) | ~J(cx)
+    ~E(x) | ~E(a) | E(c)
+    ~E(x) | E(c) | ~J(ac)
+    ~E(x) | T(x,u) | ~T(x,v)
+    ~E(x) | ~T(x,u) | T(x,v)
+    ~E(a) | E(c) | ~J(cx)
+    ~E(a) | T(a,u) | ~T(a,v)
+    ~E(a) | ~T(a,u) | T(a,v)
+    E(c) | ~J(ac) | ~J(cx)
+    ~E(c) | T(c,u) | ~T(c,v)
+    ~E(c) | ~T(c,u) | T(c,v)
+    ~T(x,u) | ~T(a,u) | T(c,u)
+    ~T(x,v) | ~T(a,v) | T(c,v)
+propagation of Q = S3 (for x) to y:
+    ~E(x) | J(ax) PROPAGATES
+    ~E(x) | J(cx) PROPAGATES
+    ~E(a) | J(ax) PROPAGATES
+    ~E(a) | J(ac) PROPAGATES
+    ~E(c) | J(ax) PROPAGATES
+    ~E(c) | J(ac) PROPAGATES
+    ~E(c) | J(cx) PROPAGATES
+    J(ax) | ~J(ac) PROPAGATES
+    J(ax) | ~J(cx) PROPAGATES
+    ~E(x) | ~E(a) | E(c) PROPAGATES
+    ~E(x) | E(c) | ~J(ac) PROPAGATES
+    ~E(x) | T(x,u) | ~T(x,v) PROPAGATES
+    ~E(x) | ~T(x,u) | T(x,v) PROPAGATES
+    ~E(a) | E(c) | ~J(cx) PROPAGATES
+    ~E(a) | T(a,u) | ~T(a,v) PROPAGATES
+    ~E(a) | ~T(a,u) | T(a,v) PROPAGATES
+    E(c) | ~J(ac) | ~J(cx) PROPAGATES
+    ~E(c) | T(c,u) | ~T(c,v) PROPAGATES
+    ~E(c) | ~T(c,u) | T(c,v) PROPAGATES
+    ~T(x,u) | ~T(a,u) | T(c,u) fails
+    ~T(x,v) | ~T(a,v) | T(c,v) fails
+19 of 21 propagate (6s)

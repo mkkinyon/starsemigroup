@@ -65,6 +65,9 @@ def search(name, atoms, concl, ends):
             ready = [at for at in atoms if all(w in A for w in set().union(*(allvars(x) for x in at[1:]))) and any(v in allvars(x) for x in at[1:])]
             if all(holds(at, A, I) for at in ready for I in sample): rec(A, i + 1, sample)
             del A[v]
+    import pickle, os
+    ck = f'ck_{os.path.basename(sys.argv[1])}_{level}_{name}_{ends[0]}.pkl'
+    if os.path.exists(ck): return pickle.load(open(ck, 'rb'))
     rec({}, 0, S1)
     out = []
     pathv = [v for v in cv if any(at[0] == 'mt' and v in at[1:] for at in atoms)]
@@ -75,6 +78,7 @@ def search(name, atoms, concl, ends):
     for A in found:
         if all(holds(at, A, I) for at in atoms for I in S2) and all(holds(at, A, I) for at in atoms for I in ALL):
             out.append(A); print(f"  {name}: " + ', '.join(f"{v}={fmt(A[v])}" for v in cv), flush=True)
+    pickle.dump(out, open(ck, 'wb'))
     return out
 for name, (atoms, concl) in COND.items():
     for ends in ((V[0], V[2]), (V[2], V[0])):

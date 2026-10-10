@@ -1,0 +1,35 @@
+91 equalities on the sample (20s)
+91 equalities on all 244469 instances (57s)
+a = aca = aba
+b = bab = bcb
+c = cac = cbc
+ab = acb
+ac = abc
+ax = acx = axc
+ay = acy
+ba = bca
+bc = bac
+by = yb = byb = yby
+ca = cba
+cb = cab
+cx = xc = cax = cxc = xac = xax = xcx
+cy = cay
+xa = cxa = xca
+xy = yx = xyx = yxy
+ya = yca
+yc = yac
+aby = ayb
+axy = ayx
+bax = bcx = bxc
+bay = bcy
+bxy = byx = ybx
+bya = yba
+byc = ybc
+cby = cyb
+cxb = xab = xcb
+cxy = cyx = xay = xcy
+xby = xyb = yxb
+xya = yxa
+xyc = yax = ycx = yxc
+yab = ycb
+yay = ycy

@@ -1,0 +1,139 @@
+S1: 109 minimal valid clauses of <= 4 literals under (c~x, x id), 9968 tested (17s)
+S2: 67 of these valid at chain position 2 (18s)
+S3: 67 valid at chain position 3 (22s)
+    ~E(x) | J(ax)
+    ~E(x) | J(cx)
+    ~E(a) | J(ax)
+    ~E(a) | J(ac)
+    ~E(c) | J(ax)
+    ~E(c) | J(ac)
+    ~E(c) | J(cx)
+    J(ax) | ~J(ac)
+    J(ax) | ~J(cx)
+    ~E(x) | ~E(a) | E(c)
+    ~E(x) | E(c) | ~J(ac)
+    ~E(x) | T(x,u) | ~T(x,v)
+    ~E(x) | ~T(x,u) | T(x,v)
+    ~E(a) | E(c) | ~J(cx)
+    ~E(a) | T(a,u) | ~T(a,v)
+    ~E(a) | ~T(a,u) | T(a,v)
+    E(c) | ~J(ac) | ~J(cx)
+    ~E(c) | T(c,u) | ~T(c,v)
+    ~E(c) | ~T(c,u) | T(c,v)
+    ~T(x,u) | ~T(a,u) | T(c,u)
+    ~T(x,v) | ~T(a,v) | T(c,v)
+    E(x) | ~E(c) | ~T(a,u) | T(c,u)
+    E(x) | ~E(c) | ~T(a,u) | T(c,v)
+    E(x) | ~E(c) | T(c,u) | ~T(a,v)
+    E(x) | ~E(c) | ~T(a,v) | T(c,v)
+    E(x) | ~T(a,u) | T(c,u) | ~J(cx)
+    E(x) | ~T(a,v) | T(c,v) | ~J(cx)
+    ~E(x) | ~T(x,u) | ~T(a,v) | T(c,v)
+    ~E(x) | ~T(a,u) | T(c,u) | ~T(x,v)
+    E(a) | ~E(c) | ~T(a,u) | ~T(a,v)
+    E(a) | ~T(a,u) | ~T(a,v) | ~J(ac)
+    ~E(a) | E(c) | ~T(x,u) | ~T(x,v)
+    ~E(a) | E(c) | ~T(x,u) | ~T(c,v)
+    ~E(a) | E(c) | ~T(c,u) | ~T(x,v)
+    ~E(a) | E(c) | ~T(c,u) | ~T(c,v)
+    ~E(a) | ~T(x,u) | T(c,u) | ~T(a,v)
+    ~E(a) | ~T(x,u) | T(c,u) | ~T(c,v)
+    ~E(a) | ~T(x,u) | ~T(x,v) | J(cx)
+    ~E(a) | ~T(x,u) | ~T(c,v) | J(cx)
+    ~E(a) | ~T(a,u) | ~T(x,v) | T(c,v)
+    ~E(a) | ~T(c,u) | ~T(x,v) | T(c,v)
+    ~E(a) | ~T(c,u) | ~T(x,v) | J(cx)
+    ~E(a) | ~T(c,u) | ~T(c,v) | J(cx)
+    E(c) | ~T(x,u) | ~T(x,v) | ~J(ac)
+    E(c) | ~T(x,u) | ~T(c,v) | ~J(ac)
+    E(c) | ~T(c,u) | ~T(x,v) | ~J(ac)
+    E(c) | ~T(c,u) | ~T(c,v) | ~J(ac)
+    ~E(c) | ~T(x,u) | ~T(a,u) | T(c,v)
+    ~E(c) | ~T(x,u) | T(c,u) | ~T(a,v)
+    ~E(c) | ~T(x,u) | ~T(a,v) | T(c,v)
+    ~E(c) | ~T(a,u) | T(c,u) | ~T(x,v)
+    ~E(c) | ~T(a,u) | ~T(x,v) | T(c,v)
+    ~E(c) | T(c,u) | ~T(x,v) | ~T(a,v)
+    ~T(x,u) | T(c,u) | ~T(a,v) | ~J(ac)
+    ~T(x,u) | T(c,u) | ~T(c,v) | ~J(ac)
+    ~T(x,u) | ~T(x,v) | ~J(ax) | J(cx)
+    ~T(x,u) | ~T(x,v) | ~J(ac) | J(cx)
+    ~T(x,u) | ~T(a,v) | T(c,v) | ~J(cx)
+    ~T(x,u) | ~T(c,v) | ~J(ax) | J(cx)
+    ~T(x,u) | ~T(c,v) | ~J(ac) | J(cx)
+    ~T(a,u) | T(c,u) | ~T(x,v) | ~J(cx)
+    ~T(a,u) | ~T(x,v) | T(c,v) | ~J(ac)
+    ~T(c,u) | ~T(x,v) | T(c,v) | ~J(ac)
+    ~T(c,u) | ~T(x,v) | ~J(ax) | J(cx)
+    ~T(c,u) | ~T(x,v) | ~J(ac) | J(cx)
+    ~T(c,u) | ~T(c,v) | ~J(ax) | J(cx)
+    ~T(c,u) | ~T(c,v) | ~J(ac) | J(cx)
+propagation of Q = S3 (for x) to y:
+    ~E(x) | J(ax) PROPAGATES
+    ~E(x) | J(cx) PROPAGATES
+    ~E(a) | J(ax) PROPAGATES
+    ~E(a) | J(ac) PROPAGATES
+    ~E(c) | J(ax) PROPAGATES
+    ~E(c) | J(ac) PROPAGATES
+    ~E(c) | J(cx) PROPAGATES
+    J(ax) | ~J(ac) PROPAGATES
+    J(ax) | ~J(cx) PROPAGATES
+    ~E(x) | ~E(a) | E(c) PROPAGATES
+    ~E(x) | E(c) | ~J(ac) PROPAGATES
+    ~E(x) | T(x,u) | ~T(x,v) PROPAGATES
+    ~E(x) | ~T(x,u) | T(x,v) PROPAGATES
+    ~E(a) | E(c) | ~J(cx) PROPAGATES
+    ~E(a) | T(a,u) | ~T(a,v) PROPAGATES
+    ~E(a) | ~T(a,u) | T(a,v) PROPAGATES
+    E(c) | ~J(ac) | ~J(cx) PROPAGATES
+    ~E(c) | T(c,u) | ~T(c,v) PROPAGATES
+    ~E(c) | ~T(c,u) | T(c,v) PROPAGATES
+    ~T(x,u) | ~T(a,u) | T(c,u) PROPAGATES
+    ~T(x,v) | ~T(a,v) | T(c,v) PROPAGATES
+    E(x) | ~E(c) | ~T(a,u) | T(c,u) PROPAGATES
+    E(x) | ~E(c) | ~T(a,u) | T(c,v) PROPAGATES
+    E(x) | ~E(c) | T(c,u) | ~T(a,v) PROPAGATES
+    E(x) | ~E(c) | ~T(a,v) | T(c,v) PROPAGATES
+    E(x) | ~T(a,u) | T(c,u) | ~J(cx) PROPAGATES
+    E(x) | ~T(a,v) | T(c,v) | ~J(cx) PROPAGATES
+    ~E(x) | ~T(x,u) | ~T(a,v) | T(c,v) PROPAGATES
+    ~E(x) | ~T(a,u) | T(c,u) | ~T(x,v) PROPAGATES
+    E(a) | ~E(c) | ~T(a,u) | ~T(a,v) PROPAGATES
+    E(a) | ~T(a,u) | ~T(a,v) | ~J(ac) PROPAGATES
+    ~E(a) | E(c) | ~T(x,u) | ~T(x,v) PROPAGATES
+    ~E(a) | E(c) | ~T(x,u) | ~T(c,v) PROPAGATES
+    ~E(a) | E(c) | ~T(c,u) | ~T(x,v) PROPAGATES
+    ~E(a) | E(c) | ~T(c,u) | ~T(c,v) PROPAGATES
+    ~E(a) | ~T(x,u) | T(c,u) | ~T(a,v) PROPAGATES
+    ~E(a) | ~T(x,u) | T(c,u) | ~T(c,v) PROPAGATES
+    ~E(a) | ~T(x,u) | ~T(x,v) | J(cx) PROPAGATES
+    ~E(a) | ~T(x,u) | ~T(c,v) | J(cx) PROPAGATES
+    ~E(a) | ~T(a,u) | ~T(x,v) | T(c,v) PROPAGATES
+    ~E(a) | ~T(c,u) | ~T(x,v) | T(c,v) PROPAGATES
+    ~E(a) | ~T(c,u) | ~T(x,v) | J(cx) PROPAGATES
+    ~E(a) | ~T(c,u) | ~T(c,v) | J(cx) PROPAGATES
+    E(c) | ~T(x,u) | ~T(x,v) | ~J(ac) PROPAGATES
+    E(c) | ~T(x,u) | ~T(c,v) | ~J(ac) PROPAGATES
+    E(c) | ~T(c,u) | ~T(x,v) | ~J(ac) PROPAGATES
+    E(c) | ~T(c,u) | ~T(c,v) | ~J(ac) PROPAGATES
+    ~E(c) | ~T(x,u) | ~T(a,u) | T(c,v) PROPAGATES
+    ~E(c) | ~T(x,u) | T(c,u) | ~T(a,v) PROPAGATES
+    ~E(c) | ~T(x,u) | ~T(a,v) | T(c,v) PROPAGATES
+    ~E(c) | ~T(a,u) | T(c,u) | ~T(x,v) PROPAGATES
+    ~E(c) | ~T(a,u) | ~T(x,v) | T(c,v) PROPAGATES
+    ~E(c) | T(c,u) | ~T(x,v) | ~T(a,v) PROPAGATES
+    ~T(x,u) | T(c,u) | ~T(a,v) | ~J(ac) PROPAGATES
+    ~T(x,u) | T(c,u) | ~T(c,v) | ~J(ac) PROPAGATES
+    ~T(x,u) | ~T(x,v) | ~J(ax) | J(cx) PROPAGATES
+    ~T(x,u) | ~T(x,v) | ~J(ac) | J(cx) PROPAGATES
+    ~T(x,u) | ~T(a,v) | T(c,v) | ~J(cx) PROPAGATES
+    ~T(x,u) | ~T(c,v) | ~J(ax) | J(cx) PROPAGATES
+    ~T(x,u) | ~T(c,v) | ~J(ac) | J(cx) PROPAGATES
+    ~T(a,u) | T(c,u) | ~T(x,v) | ~J(cx) PROPAGATES
+    ~T(a,u) | ~T(x,v) | T(c,v) | ~J(ac) PROPAGATES
+    ~T(c,u) | ~T(x,v) | T(c,v) | ~J(ac) PROPAGATES
+    ~T(c,u) | ~T(x,v) | ~J(ax) | J(cx) PROPAGATES
+    ~T(c,u) | ~T(x,v) | ~J(ac) | J(cx) PROPAGATES
+    ~T(c,u) | ~T(c,v) | ~J(ax) | J(cx) PROPAGATES
+    ~T(c,u) | ~T(c,v) | ~J(ac) | J(cx) PROPAGATES
+67 of 67 propagate (24s)
