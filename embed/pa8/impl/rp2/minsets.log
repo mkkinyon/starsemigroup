@@ -1,0 +1,6 @@
+full valid m=4: True
+minimal (m=4): [2, 3, 6, 8, 9, 10] [('comm', 'p', 'c'), ('comm', 'p', 'q'), ('comm', 'k', 'a'), ('eq', ('p', 'a'), ('p', 'c')), ('eq', ('q', 'a'), ('q', 'c')), ('eq', ('k', 'b'), 'q')]
+minimal (m=4): [2, 3, 6, 8, 9, 11] [('comm', 'p', 'c'), ('comm', 'p', 'q'), ('comm', 'k', 'a'), ('eq', ('p', 'a'), ('p', 'c')), ('eq', ('q', 'a'), ('q', 'c')), ('eq', ('k', 'b'), ('q', 'b'))]
+2 minimal sets; checking at m=5
+[2, 3, 6, 8, 9, 10] m=5: True
+[2, 3, 6, 8, 9, 11] m=5: True
