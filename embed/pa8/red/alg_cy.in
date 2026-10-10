@@ -1,0 +1,16 @@
+set(prolog_style_variables).
+assign(max_seconds, 240).
+op(400, infix, "*").
+formulas(assumptions).
+X*X = X.
+(Y*X)*X = Y*X.
+(X*Y)*X = Y*X.
+((Z*X)*Y)*X = Z*(Y*X).
+(((Z*X)*Y)*X)*Y = (Z*X)*Y.
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X.
+% (R'_2) hypotheses, binary notation p*q = theta_q(p): a~c, b~c, c~x1, x1~x2, th_x1(a)=th_x1(c), th_x2(a)=th_x2(c), y~a, th_x2(b)=th_y(b)
+c*a = a. a*c = c. c*b = b. b*c = c. x1*c = c*x1. x1*x2 = x2*x1. a*x1 = c*x1. a*x2 = c*x2. y*a = a*y. b*x2 = b*y.
+end_of_list.
+formulas(goals).
+c*y = y*c.
+end_of_list.

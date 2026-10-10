@@ -1,0 +1,59 @@
+168 equalities on the sample (55s)
+168 equalities on all 1213522 instances (395s)
+a = aca = aba
+b = bab = bcb
+c = cac = cbc
+ab = acb
+ac = abc
+ax = acx = axc
+ay = ya = aya = yay
+az = acz
+ba = bca
+bc = bac
+bz = by = bzy = byz
+ca = cba
+cb = cab
+cx = xc = cax = cxc = xac = xax = xcx
+cy = yc = cyc = ycy
+cz = caz
+xa = cxa = xca
+xz = zx = xzx = zxz
+za = zca
+zb = yb = zyb = yzb
+zc = zac
+zy = yz = zyz = yzy
+abz = aby
+acy = ayc = yac
+axz = azx
+ayx = yax
+azb = ayb = yab
+azy = ayz = yaz
+bax = bcx = bxc
+bay = bza = bya
+baz = bcz
+bcy = bzc = byc
+bxz = bzx = byx
+bzb = byb
+cay = cya = yca
+cbz = cby
+cxb = xab = xcb
+cxy = xcy = xyc
+cxz = czx = xaz = xcz
+cyx = ycx = yxc
+czb = cyb = ycb
+czy = cyz = ycz
+xay = xya
+xbz = xby
+xza = zxa
+xzb = xyb = zxb
+xzc = zax = zcx = zxc
+xzy = xyz = zxy
+zab = zcb
+zay = zya = yza
+zaz = zcz
+zba = yba
+zbc = ybc
+zbx = ybx
+zbz = zby = ybz = yby
+zcy = zyc = yzc
+zyx = yxz = yzx
