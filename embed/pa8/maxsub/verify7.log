@@ -1,0 +1,98 @@
+n=1 omit a: m=5, 0 wrong products
+n=1 omit c: m=5, 0 wrong products
+n=1 omit b: m=5, 0 wrong products
+n=1 omit 1: m=3, 0 wrong products
+n=2 omit a: m=7, 0 wrong products
+n=2 omit c: m=7, 0 wrong products
+n=2 omit b: m=7, 0 wrong products
+n=2 omit 1: m=5, 0 wrong products
+n=2 omit 2: m=5, 0 wrong products
+n=3 omit a: m=9, 0 wrong products
+n=3 omit c: m=9, 0 wrong products
+n=3 omit b: m=9, 0 wrong products
+n=3 omit 1: m=7, 0 wrong products
+n=3 omit 2: m=7, 0 wrong products
+n=3 omit 3: m=7, 0 wrong products
+n=4 omit a: m=11, 0 wrong products
+n=4 omit c: m=11, 0 wrong products
+n=4 omit b: m=11, 0 wrong products
+n=4 omit 1: m=9, 0 wrong products
+n=4 omit 2: m=9, 0 wrong products
+n=4 omit 3: m=9, 0 wrong products
+n=4 omit 4: m=9, 0 wrong products
+n=5 omit a: m=13, 0 wrong products
+n=5 omit c: m=13, 0 wrong products
+n=5 omit b: m=13, 0 wrong products
+n=5 omit 1: m=11, 0 wrong products
+n=5 omit 2: m=11, 0 wrong products
+n=5 omit 3: m=11, 0 wrong products
+n=5 omit 4: m=11, 0 wrong products
+n=5 omit 5: m=11, 0 wrong products
+n=6 omit a: m=15, 0 wrong products
+n=6 omit c: m=15, 0 wrong products
+n=6 omit b: m=15, 0 wrong products
+n=6 omit 1: m=13, 0 wrong products
+n=6 omit 2: m=13, 0 wrong products
+n=6 omit 3: m=13, 0 wrong products
+n=6 omit 4: m=13, 0 wrong products
+n=6 omit 5: m=13, 0 wrong products
+n=6 omit 6: m=13, 0 wrong products
+n=7 omit a: m=17, 0 wrong products
+n=7 omit c: m=17, 0 wrong products
+n=7 omit b: m=17, 0 wrong products
+n=7 omit 1: m=15, 0 wrong products
+n=7 omit 2: m=15, 0 wrong products
+n=7 omit 3: m=15, 0 wrong products
+n=7 omit 4: m=15, 0 wrong products
+n=7 omit 5: m=15, 0 wrong products
+n=7 omit 6: m=15, 0 wrong products
+n=7 omit 7: m=15, 0 wrong products
+n=1 omit a: m=5, 0 wrong products []
+n=1 omit c: m=5, 0 wrong products []
+n=1 omit b: m=5, 0 wrong products []
+n=1 omit k: m=4, 0 wrong products []
+n=2 omit a: m=7, 0 wrong products []
+n=2 omit c: m=7, 0 wrong products []
+n=2 omit b: m=7, 0 wrong products []
+n=2 omit k: m=6, 0 wrong products []
+n=2 omit 1: m=6, 0 wrong products []
+n=3 omit a: m=9, 0 wrong products []
+n=3 omit c: m=9, 0 wrong products []
+n=3 omit b: m=9, 0 wrong products []
+n=3 omit k: m=8, 0 wrong products []
+n=3 omit 1: m=8, 0 wrong products []
+n=3 omit 2: m=8, 0 wrong products []
+n=4 omit a: m=11, 0 wrong products []
+n=4 omit c: m=11, 0 wrong products []
+n=4 omit b: m=11, 0 wrong products []
+n=4 omit k: m=10, 0 wrong products []
+n=4 omit 1: m=10, 0 wrong products []
+n=4 omit 2: m=10, 0 wrong products []
+n=4 omit 3: m=10, 0 wrong products []
+n=5 omit a: m=13, 0 wrong products []
+n=5 omit c: m=13, 0 wrong products []
+n=5 omit b: m=13, 0 wrong products []
+n=5 omit k: m=12, 0 wrong products []
+n=5 omit 1: m=12, 0 wrong products []
+n=5 omit 2: m=12, 0 wrong products []
+n=5 omit 3: m=12, 0 wrong products []
+n=5 omit 4: m=12, 0 wrong products []
+n=6 omit a: m=15, 0 wrong products []
+n=6 omit c: m=15, 0 wrong products []
+n=6 omit b: m=15, 0 wrong products []
+n=6 omit k: m=14, 0 wrong products []
+n=6 omit 1: m=14, 0 wrong products []
+n=6 omit 2: m=14, 0 wrong products []
+n=6 omit 3: m=14, 0 wrong products []
+n=6 omit 4: m=14, 0 wrong products []
+n=6 omit 5: m=14, 0 wrong products []
+n=7 omit a: m=17, 0 wrong products []
+n=7 omit c: m=17, 0 wrong products []
+n=7 omit b: m=17, 0 wrong products []
+n=7 omit k: m=16, 0 wrong products []
+n=7 omit 1: m=16, 0 wrong products []
+n=7 omit 2: m=16, 0 wrong products []
+n=7 omit 3: m=16, 0 wrong products []
+n=7 omit 4: m=16, 0 wrong products []
+n=7 omit 5: m=16, 0 wrong products []
+n=7 omit 6: m=16, 0 wrong products []

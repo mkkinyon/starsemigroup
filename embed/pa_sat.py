@@ -105,6 +105,13 @@ def solve(T, m, distinct=True, verbose=True, timeout=None, symbreak=True, extra=
             cls.append([Tl(0, x), -Tl(0, x + 1)])
     if extra is not None: extra(pool, E, Tl, J, cls, X)   # user clauses, e.g. block-level statements to refute
     if verbose: print(f"m={m}: {pool.top} variables, {len(cls)} clauses", flush=True)
+    import os
+    if os.environ.get('PA_SAT_DUMP'):      # write the CNF (DIMACS) for an external solver instead of solving; counts as UNSAT
+        from pysat.formula import CNF
+        k_ = int(os.environ.get('PA_SAT_DUMP_N', '0')) + 1; os.environ['PA_SAT_DUMP_N'] = str(k_)
+        path = f"{os.environ['PA_SAT_DUMP']}_{k_}.cnf"; CNF(from_clauses=cls).to_file(path)
+        print(f"dumped {path}: {pool.top} variables, {len(cls)} clauses (m={m})", flush=True)
+        return None
     t = time.time()
     with Cadical153(bootstrap_with=cls) as s:
         ok = s.solve()
