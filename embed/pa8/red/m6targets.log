@@ -1,0 +1,3 @@
+sh: 1: Syntax error: Unterminated quoted string
+m=6: G2 under (W_2): True (83s)
+m=6: G1 under (W_2): True (94s)

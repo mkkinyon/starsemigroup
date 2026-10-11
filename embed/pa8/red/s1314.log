@@ -1,0 +1,16 @@
+m=5: [S13:] <= ('A', 'M', 'Np_cblock') (7s)
+m=5: [S13:] <= ('A', 'M', 'cx_classes') (7s)
+m=5: [S13:] <= ('M', 'ac_le_ap', 'Np_cblock') (12s)
+m=5: [S13:] <= ('M', 'ac_le_ap', 'cx_classes') (12s)
+m=5: [S13:] <= ('M', 'cp_le_ap', 'Np_cblock') (12s)
+m=5: [S13:] <= ('M', 'cp_le_ap', 'cx_classes') (13s)
+      without ('eq', ('x', 'a'), ('x', 'c')): False
+      without ('eq', ('y', 'a'), ('y', 'c')): False
+m=5: [S14:] <= ('A', 'M', 'Np_cblock') (33s)
+m=5: [S14:] <= ('A', 'M', 'cx_classes') (33s)
+m=5: [S14:] <= ('M', 'ac_le_ap', 'Np_cblock') (38s)
+m=5: [S14:] <= ('M', 'ac_le_ap', 'cx_classes') (38s)
+m=5: [S14:] <= ('M', 'cp_le_ap', 'Np_cblock') (38s)
+m=5: [S14:] <= ('M', 'cp_le_ap', 'cx_classes') (39s)
+      without ('eq', ('x', 'a'), ('x', 'c')): False
+      without ('eq', ('y', 'a'), ('y', 'c')): False

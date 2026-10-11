@@ -1,0 +1,15 @@
+m=5: valid at position 1: 23; valid at position 2 (for y): ['a_Gamma', 'A', 'M', "G2'", "G2'a", 'N1', 'N2', 'S', 'ac_le_ap', 'cp_le_ap', 'pAC', 'aCP', 'Np_unionC']
+derivations of y-statements from x-statements (x~y, y id, x id, a|><|c):
+   a_Gamma(y) <= needs >= 3 x-statements
+   A(y) <= needs >= 3 x-statements
+   M(y) <= ('A', 'M')
+   G2'(y) <= needs >= 3 x-statements
+   G2'a(y) <= needs >= 3 x-statements
+   N1(y) <= ('N1', 'S')
+   N2(y) <= ('N2', 'S')
+   S(y) <= needs >= 3 x-statements
+   ac_le_ap(y) <= needs >= 3 x-statements
+   cp_le_ap(y) <= needs >= 3 x-statements
+   pAC(y) <= ('A', 'M')
+   aCP(y) <= ('A', 'M')
+   Np_unionC(y) <= ()
