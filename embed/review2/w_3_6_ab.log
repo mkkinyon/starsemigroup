@@ -1,0 +1,4 @@
+(W_3) in P(P_6), refuting ab: 14 elements
+m=6: 24204 variables, 86118 clauses
+   UNSAT (391s)
+result: none (valid) 392s

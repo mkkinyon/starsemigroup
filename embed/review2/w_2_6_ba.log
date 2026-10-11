@@ -1,0 +1,4 @@
+(W_2) in P(P_6), refuting ba: 11 elements
+m=6: 14817 variables, 53088 clauses
+   UNSAT (131s)
+result: none (valid) 131s

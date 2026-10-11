@@ -1,0 +1,13 @@
+ecc 2: a=(0)(1 5 6)(2)(3)[4] c=(0 3 6)(1)(2 5)[4] (component 14, identifiers 5468) t=1s
+ecc 3: a=(0)(1)(2 5)(3 4)[6] c=(0 2)[1 6](3)(4)(5) (component 98, identifiers 4934) t=4s
+ecc 4: a=(0 2 3)(1)(4 5)[6] c=(0 3 5)(1)(2)(4)[6] (component 390, identifiers 7332) t=22s
+ecc 4: a=(0 4 6)(1)[2](3)(5) c=(0 4)[1 2](3)(5)(6) (component 1100, identifiers 6696) t=50s
+ecc 4: a=(0)(1 2)(3 4 5)[6] c=(0)[1 6](2)(3)(4 5) (component 196, identifiers 6302) t=115s
+ecc 4: a=(0 2 6)(1 4)[3 5] c=(0 1 6)(2 4)[3 5] (component 954, identifiers 9958) t=156s
+ecc 4: a=(0 4 6)[1](2 3)(5) c=(0)[1](2 3)(4)(5)(6) (component 2050, identifiers 6842) t=211s
+ecc 4: a=(0)(1 2 4)(3)[5](6) c=(0)(1)(2 4)(3)[5 6] (component 1100, identifiers 6696) t=246s
+ecc 4: a=(0 2 6)(1 3)(4)[5] c=(0 1 6)(2)(3)(4)[5] (component 390, identifiers 7332) t=340s
+ecc 4: a=(0)(1 3 6)(2 4)[5] c=(0 4)(1 6)(2)(3)[5] (component 370, identifiers 6644) t=369s
+ecc 4: a=(0)(1 4)[2 5](3)(6) c=(0 3 4)(1)[2 5](6) (component 318, identifiers 7176) t=382s
+ecc 4: a=(0 3 4 5)(1)(2)[6] c=(0)(1)(2)(3 5)(4)[6] (component 1534, identifiers 7020) t=428s
+tried 158 best 4

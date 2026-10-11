@@ -105,7 +105,7 @@ X*X = X                                        # label("PA1").
  X*C = C*X & A*X = C*X & Y*B = B*Y & B*X = A*Y)
  -> (B*A = A & A*B = B)                         # label("(R'')").
 
-% --- (W2), (W3): Section 5.14; verified in P(P_m) for m <= 5 only (W2 at m = 6 running) -------
+% --- (W2), (W3): Section 5.14; verified in P(P_m) for m <= 6 (W2, W3, W4 at m = 6: cold read of 11 Oct) -------
 % A|><|C, B|><|C, XC = CX, YB = BY, XY = YX, theta_X(A) = theta_X(C), theta_Y(A) = theta_Y(C)  =>  A|><|B.
 (C*A = A & A*C = C & C*B = B & B*C = C &
  X*C = C*X & Y*B = B*Y & X*Y = Y*X & A*X = C*X & A*Y = C*Y)
