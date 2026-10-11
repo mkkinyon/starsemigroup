@@ -1,0 +1,20 @@
+  K=1: 0 valid so far (44 tested, 0s)
+  K=2: 47 valid so far (968 tested, 4s)
+  K=3: 197 valid so far (11643 tested, 53s)
+Traceback (most recent call last):
+  File "/home/claude/pa8w/embed/pa8/red/t1loc.py", line 59, in <module>
+    print(f"m={m}: T1 from the {len(S)} local clauses: {holds(one, S, T1)}", flush=True)
+                                                        ~~~~~^^^^^^^^^^^^
+  File "/home/claude/pa8w/embed/pa8/red/t1loc.py", line 44, in holds
+    return solve(T, m, distinct=False, verbose=False, symbreak=False, extra=extra) is None
+           ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/pa8w/embed/pa_sat.py", line 106, in solve
+    if extra is not None: extra(pool, E, Tl, J, cls, X)   # user clauses, e.g. block-level statements to refute
+                          ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/claude/pa8w/embed/pa8/red/t1loc.py", line 42, in extra
+    for l in goal: cls.append([-w_, -lit_val(c, u, v, l)])
+                                     ~~~~~~~^^^^^^^^^^^^
+  File "/home/claude/pa8w/embed/pa8/red/t1loc.py", line 20, in lit_val
+    else: x = c.J3s[a[1:]](u, v)
+              ~~~~~^^^^^^^
+KeyError: ('b', 'c', 'x')

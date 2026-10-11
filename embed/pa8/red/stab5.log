@@ -1,0 +1,8 @@
+1500 matched pairs (a,c) with rank >= 1
+{'pairs': 1500, 'E2!=E1': 861, 'E3!=E2': 109, 'E4!=E3': 0} (50s)
+example: a = (0)  (1)  [2 4]  (3)  c = (0 1)  [2 3 4]
+   new at length 3: z = (0 3 4)  (1 2)
+   new at length 3: z = [0 2 3]  (1 4)
+   new at length 3: z = [0 4]  (1 2 3)
+   new at length 3: z = (0 2 3)  [1 4]
+   new at length 3: z = (0 3 4)  [1 2]

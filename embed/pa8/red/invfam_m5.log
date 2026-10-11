@@ -1,0 +1,30 @@
+m=5 a_Gamma  : positions 1,2,3: (True, True, True)
+m=5 A        : positions 1,2,3: (True, True, True)
+m=5 M        : positions 1,2,3: (True, True, True)
+m=5 G2'      : positions 1,2,3: (True, True, True)
+m=5 G2'a     : positions 1,2,3: (True, True, True)
+m=5 N1       : positions 1,2,3: (True, True, True)
+m=5 N2       : positions 1,2,3: (True, True, True)
+m=5 S        : positions 1,2,3: (True, True, True)
+m=5 Cin      : positions 1,2,3: (True, False, False)
+m=5 Nin      : positions 1,2,3: (True, False, False)
+m=5 Tc_in_p  : positions 1,2,3: (True, False, False)
+m=5 ac_le_ap : positions 1,2,3: (True, True, True)
+m=5 cp_le_ap : positions 1,2,3: (True, True, True)
+m=5 Ma       : positions 1,2,3: (False, False, False)
+m=5 Mp       : positions 1,2,3: (False, False, False)
+m=5 pAC      : positions 1,2,3: (True, True, True)
+m=5 aCP      : positions 1,2,3: (True, True, True)
+chain-valid: ['a_Gamma', 'A', 'M', "G2'", "G2'a", 'N1', 'N2', 'S', 'ac_le_ap', 'cp_le_ap', 'pAC', 'aCP'] (19s)
+propagation: 9 of 12: ['a_Gamma', 'M', "G2'", "G2'a", 'N1', 'N2', 'S', 'pAC', 'aCP'] (21s)
+propagation: 3 of 9: ['N1', 'N2', 'S'] (21s)
+propagation: 2 of 3: ['N1', 'N2'] (21s)
+propagation: 0 of 2: [] (21s)
+propagation: 0 of 0: [] (21s)
+fixed point: []
+end step: I(y) + y~b + b|><|c => a_Gamma(b): False
+end step: I(y) + y~b + b|><|c => A(b): False
+end step: I(y) + y~b + b|><|c => M(b): False
+end step: I(y) + y~b + b|><|c => G2'(b): False
+end step: I(y) + y~b + b|><|c => Cin(b): False
+end step: I(y) + y~b + b|><|c => Nin(b): False
