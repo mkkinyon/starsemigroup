@@ -11,7 +11,7 @@
 % constant, so goals may use any lowercase names (a, b, c, p0, ... ).
 % Each formula carries a label; delete or comment out the ones not wanted.
 % The formulas in this list hold in the projection algebra of every partition
-% monoid, except that (E6), (E1) are only verified for P_m, m <= 7, and (R''), K0, K4, K5, K6 for m <= 6
+% monoid, except that (E6), (E1) are only verified for P_m, m <= 7, and K0, K4, K5, K6 for m <= 6
 % (see notes-embedding, Prop. 5.19 and Section 5.9); (Q), and hence (P2)
 % and (S), are proved in Section 5.11 (Theorem thm:Q).
 % Known implications: (Q) -> (P2) -> (S);  (R') -> (R)  [from the axioms alone: instantiate
@@ -99,13 +99,13 @@ X*X = X                                        # label("PA1").
  -> B*A = A                                     # label("(E1)").
 
 
-% --- (R''): Section 5.13; verified in P(P_m) for m <= 6 only --------------------
+% --- (R''): Section 5.13; PROVED: a consequence of (Q1) and (W2) in every projection algebra (Prover9, M.K., 11 Oct 2026; p9/rpp_vs_chain.pf)
 % A|><|C, B|><|C, XC = CX, theta_X(A) = theta_X(C), YB = BY, theta_X(B) = theta_Y(A)  =>  A|><|B.
 (C*A = A & A*C = C & C*B = B & B*C = C &
  X*C = C*X & A*X = C*X & Y*B = B*Y & B*X = A*Y)
  -> (B*A = A & A*B = B)                         # label("(R'')").
 
-% --- (W2), (W3): Section 5.14; verified in P(P_m) for m <= 6 (W2, W3, W4 at m = 6: cold read of 11 Oct) -------
+% --- (W2), (W3): Section 5.14; PROVED for all n (11 Oct 2026, Section 5.20: counting invariant) -------
 % A|><|C, B|><|C, XC = CX, YB = BY, XY = YX, theta_X(A) = theta_X(C), theta_Y(A) = theta_Y(C)  =>  A|><|B.
 (C*A = A & A*C = C & C*B = B & B*C = C &
  X*C = C*X & Y*B = B*Y & X*Y = Y*X & A*X = C*X & A*Y = C*Y)
