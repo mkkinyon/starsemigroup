@@ -1,0 +1,45 @@
+% Prover9 proof (M. Kinyon, 11 Oct 2026, 4.3 s with the hints of rpp_vs_chain, 41 steps): axioms + (Q1) + (W2) |- K6.
+% Key steps: 276 theta_y(a) <= c; 1395 y ~ c [(Q1): theta_y(a) is a common lower bound of y and c]; 277 theta_z(a) = theta_z(c);
+% 1640 theta_y(a) = theta_y(c); 328/330 theta_z(y) = theta_y(z) = theta_z(c) [y ~ z]; 332 theta_b(z) = theta_b(a) = theta_z(b) [z ~ b];
+% so c ~ y ~ z ~ b with y and z identifying a with c, and 2219/2221 are (W2).
+1 A * B = A & A * C = A -> B * C = C * B # label("Q1") # label(non_clause).  [assumption].
+2 A * B = B & B * A = A & A * C = C & C * A = A & D * A = A * D & E * C = C * E & D * E = E * D & B * D = A * D & B * E = A * E -> C * B = B # label("W2a") # label(non_clause).  [assumption].
+3 A * B = B & B * A = A & A * C = C & C * A = A & D * A = A * D & E * C = C * E & D * E = E * D & B * D = A * D & B * E = A * E -> B * C = C # label("W2b") # label(non_clause).  [assumption].
+13 A * A = A.  [assumption].
+14 (A * B) * B = A * B.  [assumption].
+15 (A * B) * A = B * A.  [assumption].
+16 ((A * B) * C) * B = A * (C * B).  [assumption].
+17 (((A * B) * C) * B) * C = (A * B) * C.  [assumption].
+18 (A * (B * C)) * B = (A * C) * B.  [copy(17),rewrite([16(3)])].
+19 A * B != A | A * C != A | C * B = B * C # label("Q1").  [clausify(1)].
+20 A * B != B | B * A != A | A * C != C | C * A != A | A * D != D * A | C * E != E * C | E * D != D * E | B * D != A * D | B * E != A * E | C * B = B # label("W2a") # label(false).  [clausify(2)].
+21 A * B != B | B * A != A | A * C != C | C * A != A | A * D != D * A | C * E != E * C | E * D != D * E | B * D != A * D | B * E != A * E | B * C = C # label("W2b") # label(false).  [clausify(3)].
+22 c * a = a.  [assumption].
+23 a * c = c.  [assumption].
+24 c * b = b.  [assumption].
+25 b * c = c.  [assumption].
+26 z * y = a * z.  [assumption].
+27 z * c = a * y.  [assumption].
+28 b * z = a * b.  [assumption].
+29 b * a != a | a * b != b.  [assumption].
+32 A * (A * B) = A * B.  [para(13(a,1),16(a,1,1)),rewrite([14(2),14(3)]),flip(a)].
+33 (A * (B * C)) * C = A * (B * C).  [para(16(a,1),14(a,1,1)),rewrite([16(6)])].
+49 (A * B) * C != A * B | C * B = B * C.  [para(14(a,1),19(a,1)),xx(a)].
+175 c * A != A | A * c != c | c * B != B * c | A * C != C * A | C * B != B * C | a * B != c * B | a * C != c * C | A * a = a.  [para(22(a,1),20(a,1)),rewrite([23(6)]),xx(a),xx(b)].
+188 c * A != A | A * c != c | c * B != B * c | A * C != C * A | C * B != B * C | a * B != c * B | a * C != c * C | a * A = A.  [para(22(a,1),21(a,1)),rewrite([23(6)]),xx(a),xx(b)].
+246 y * z = a * z.  [para(26(a,1),15(a,1,1)),rewrite([14(5)]),flip(a)].
+248 (A * y) * z = A * (a * z).  [para(26(a,1),18(a,1,1,2)),rewrite([33(6)]),flip(a)].
+276 (a * y) * c = a * y # label(false).  [para(27(a,1),14(a,1,1)),rewrite([27(8)])].
+277 a * z = c * z.  [para(27(a,1),15(a,1,1)),rewrite([248(5),32(5)])].
+328 y * z = c * z.  [back_rewrite(246),rewrite([277(6)])].
+330 z * y = c * z.  [back_rewrite(26),rewrite([277(6)])].
+332 z * b = a * b.  [para(28(a,1),15(a,1,1)),rewrite([14(5)]),flip(a)].
+884 c * A != A * c | b * B != B * b | B * A != A * B | a * A != c * A | a * B != c * B | b * a = a.  [para(24(a,1),175(a,1)),rewrite([25(6)]),xx(a),xx(b)].
+999 c * A != A * c | b * B != B * b | B * A != A * B | a * A != c * A | a * B != c * B | a * b = b.  [para(24(a,1),188(a,1)),rewrite([25(6)]),xx(a),xx(b)].
+1395 y * c = c * y # label(false).  [hyper(49,a,276,a),flip(a)].
+1396 a * (c * y) = a * y.  [para(276(a,1),16(a,1,1)),rewrite([14(5)]),flip(a)].
+1469 (A * c) * y = A * (c * y) # label(false).  [para(1395(a,1),18(a,1,1,2)),rewrite([33(6)]),flip(a)].
+1640 a * y = c * y # label(false).  [para(23(a,1),1469(a,1,1)),rewrite([1396(8)]),flip(a)].
+2219 b * a = a.  [para(328(a,1),884(c,2)),rewrite([1395(6),28(10),332(13),330(17),1640(24),277(31)]),xx(a),xx(b),xx(c),xx(d),xx(e)].
+2221 a * b = b.  [para(328(a,1),999(c,2)),rewrite([1395(6),28(10),332(13),330(17),1640(24),277(31)]),xx(a),xx(b),xx(c),xx(d),xx(e)].
+2232 $F.  [back_rewrite(29),rewrite([2219(3),2221(6)]),xx(a),xx(b)].

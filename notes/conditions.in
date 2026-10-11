@@ -11,7 +11,7 @@
 % constant, so goals may use any lowercase names (a, b, c, p0, ... ).
 % Each formula carries a label; delete or comment out the ones not wanted.
 % The formulas in this list hold in the projection algebra of every partition
-% monoid, except that (E6), (E1) are only verified for P_m, m <= 7, and K0, K4, K5, K6 for m <= 6
+% monoid, except that (E6), (E1) are only verified for P_m, m <= 7, and K0, K4, K5 for m <= 6 (K6 is proved via (W2))
 % (see notes-embedding, Prop. 5.19 and Section 5.9); (Q), and hence (P2)
 % and (S), are proved in Section 5.11 (Theorem thm:Q).
 % Known implications: (Q) -> (P2) -> (S);  (R') -> (R)  [from the axioms alone: instantiate
@@ -137,7 +137,7 @@ X*X = X                                        # label("PA1").
 (C*A = A & A*C = C & C*B = B & B*C = C &
  C*X = A & X*B = B & Z*C = C*Z & X*Z = B*A & B*Z = A*B)
  -> (B*A = A & A*B = B)                         # label("(K5)").
-% K6: theta_Y(Z) = theta_Z(A), theta_C(Z) = theta_Y(A), theta_Z(B) = V  =>  A|><|B.
+% K6: theta_Y(Z) = theta_Z(A), theta_C(Z) = theta_Y(A), theta_Z(B) = V  =>  A|><|B.   PROVED: consequence of (Q1)+(W2) (Prover9, M.K., 11 Oct; p9/k6_vs_chain.pf)
 (C*A = A & A*C = C & C*B = B & B*C = C &
  Z*Y = A*Z & Z*C = A*Y & B*Z = A*B)
  -> (B*A = A & A*B = B)                         # label("(K6)").
