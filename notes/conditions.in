@@ -91,7 +91,7 @@ X*X = X                                        # label("PA1").
 (B*D = D & C*A = A & D*A = A & U*C = U & U*D = U & C*B = U*A)
  -> U*A = A                                     # label("(E6)").
 
-% --- (E1): the condition violated by P_8^1 -----------------------------------
+% --- (E1): the condition violated by P_8^1; a consequence of (Q1)+(W2)+K0 (Prover9, M.K., 13 Oct 2026; p9/k0_implies_e1.pf) ---
 % Z <= B, ABA = Z, DBD = D, XCX = Z, ACA = A, BCB = B, E <= X, E <= D, ADA = A
 %   =>  ABA = A.
 (Z*B = Z & B*A = Z & B*D = D & C*X = Z & C*A = A & C*B = B &
