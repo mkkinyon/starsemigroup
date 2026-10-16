@@ -17,7 +17,8 @@ Working repository for the project on regular *-semigroups and partition monoids
 * `notes/` — the notes, status table, `conditions.in`, the K-catalogue, the cold-read
   reports (10, 11, 16 Oct 2026) and the handoff files. State on 16 Oct 2026 (evening): all seven
   order-8 candidates are proved minimal non-embeddable (the last two by K4, Thm 5.49, and K0, Thm 5.50);
-  open are K5 (order 9) and the chain family (R'_n).
+  the variant K0'' of K0 (same proof) settles the order-9 candidate 5, and K0, K4 settle candidates 0 and 4;
+  open are the order-9 candidates 1, 2, 3, K5 as a condition, and the chain family (R'_n).
 * `embed/` — all code and logs of the embedding thread (Python 3; SAT via `pysat`;
   Prover9/Mace4 inputs `*.in`, outputs `*.out`). The directory structure is described
   in the "Files" paragraph of the notes (Section "Computations"). Recent subdirectories:
