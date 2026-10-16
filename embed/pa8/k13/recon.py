@@ -18,6 +18,7 @@ COND = {
          ('th_y(b)=th_y(x)', th('y','b'), th('y','x')), ('th_x(b)=u', th('x','b'), 'u'), ('u=v', 'u', 'v'), ('yz=zy', th('y','z'), th('z','y'))],
  'K3b': [('th_x(c)=a', th('x','c'), 'a'), ('byb=b', th('b','y'), 'b'), ('bzb=b', th('b','z'), 'b'), ('th_y(c)=th_y(b)', th('y','c'), th('y','b')),
          ('th_z(c)=th_z(b)', th('z','c'), th('z','b')), ('th_y(z)=u', th('y','z'), 'u'), ('th_z(y)=u', th('z','y'), 'u'), ('th_x(b)=v', th('x','b'), 'v')],
+ 'K1d': [('th_a(b)=th_a(x)', th('a','b'), th('a','x')), ('th_y(a)=th_y(z)', th('y','a'), th('y','z')), ('c~x', th('c','x'), th('x','c')), ('b~z', th('b','z'), th('z','b')), ('x~y', th('x','y'), th('y','x')), ('z<=y', th('y','z'), 'z'), ('bxb=b', th('b','x'), 'b')],
  'K3c': [('bxb=b', th('b','x'), 'b'), ('th_x(a)=th_x(b)', th('x','a'), th('x','b')), ('th_x(y)=th_y(z)', th('x','y'), th('y','z')),
          ('th_z(y)=u', th('z','y'), 'u'), ('u=v', 'u', 'v'), ('zc=cz', th('z','c'), th('c','z'))],
 }

@@ -1,0 +1,57 @@
+K1d in P_4: 56 consequence atoms; hypotheses each one needs (9s)
+  th_a(a)=th_a(c)    needs none (path only)
+  th_a(c)=a          needs none (path only)
+  th_b(c)=b          needs none (path only)
+  th_b(c)=th_b(b)    needs none (path only)
+  th_c(a)=c          needs none (path only)
+  th_c(a)=th_c(b)    needs none (path only)
+  th_c(a)=th_c(c)    needs none (path only)
+  th_c(b)=c          needs none (path only)
+  th_c(c)=th_c(b)    needs none (path only)
+  u=th_a(b)          needs none (path only)
+  v=th_b(a)          needs none (path only)
+  b~z                needs ['b~z']
+  c~x                needs ['c~x']
+  th_a(b)=th_a(x)    needs ['th_a(b)=th_a(x)']
+  th_b(b)=th_b(x)    needs ['bxb=b']
+  th_b(c)=th_b(x)    needs ['bxb=b']
+  th_b(x)=b          needs ['bxb=b']
+  th_y(a)=th_y(z)    needs ['th_y(a)=th_y(z)']
+  th_y(z)=th_z(z)    needs ['z<=y']
+  th_z(y)=th_z(z)    needs ['z<=y']
+  th_z(y)=z          needs ['z<=y']
+  u=th_a(x)          needs ['th_a(b)=th_a(x)']
+  x~y                needs ['x~y']
+  y~z                needs ['z<=y']
+  z<=y               needs ['z<=y']
+  b~y                needs ['b~z', 'z<=y']
+  th_a(y)=th_a(z)    needs ['th_y(a)=th_y(z)', 'z<=y']
+  th_y(a)=th_z(a)    needs ['th_y(a)=th_y(z)', 'z<=y']
+  th_y(a)=th_z(y)    needs ['th_y(a)=th_y(z)', 'z<=y']
+  th_y(a)=th_z(z)    needs ['th_y(a)=th_y(z)', 'z<=y']
+  th_y(z)=th_z(a)    needs ['th_y(a)=th_y(z)', 'z<=y']
+  th_z(a)=th_z(y)    needs ['th_y(a)=th_y(z)', 'z<=y']
+  th_z(a)=th_z(z)    needs ['th_y(a)=th_y(z)', 'z<=y']
+  th_z(a)=z          needs ['th_y(a)=th_y(z)', 'z<=y']
+  z=th_y(a)          needs ['th_y(a)=th_y(z)', 'z<=y']
+  a=u                needs ALL
+  b=v                needs ALL
+  th_a(a)=th_a(b)    needs ALL
+  th_a(a)=th_a(x)    needs ALL
+  th_a(b)=a          needs ALL
+  th_a(c)=th_a(b)    needs ALL
+  th_a(c)=th_a(x)    needs ALL
+  th_a(x)=a          needs ALL
+  th_b(a)=b          needs ALL
+  th_b(a)=th_b(b)    needs ALL
+  th_b(a)=th_b(c)    needs ALL
+  th_b(a)=th_b(x)    needs ALL
+  th_b(y)=th_b(z)    needs ALL
+  th_b(y)=th_z(b)    needs ALL
+  th_b(z)=th_y(b)    needs ALL
+  th_y(b)=th_z(b)    needs ALL
+  u=th_a(a)          needs ALL
+  u=th_a(c)          needs ALL
+  v=th_b(b)          needs ALL
+  v=th_b(c)          needs ALL
+  v=th_b(x)          needs ALL

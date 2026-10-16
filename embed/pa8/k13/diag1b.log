@@ -1,0 +1,2 @@
+seed 1 prio {'eq': 0, 'ident': 1, 'half': 2, 'comm': 3, 'order': 4}: 8 atoms: ident x: a=y | ident y: a=z | ident z: b=x | half b=th_b(x) | comm c~x | comm b~z | comm x~y | order z<=y
+Terminated

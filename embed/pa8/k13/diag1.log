@@ -1,0 +1,11 @@
+81 atoms in the diagram; by kind: {'half': 10, 'order': 1, 'comm': 6, 'ident': 24, 'eq': 40}
+full diagram valid at m=4: True (0s)
+minimal (structure-first) hypothesis set, 7 atoms:
+    ident a: b=x
+    ident y: a=z
+    comm c~x
+    comm b~z
+    comm x~y
+    order z<=y
+    half b=th_b(x)
+valid at m=6: True (2241s)

@@ -1,0 +1,25 @@
+full: 69762 instances (3s)
+-th_y(a)=th_z(y): 1070898 instances (43s)
+-th_c(z)=th_x(a): 2132908 instances (123s)
+-th_x(a)=th_y(x): 1186698 instances (169s)
+-th_z(x)=v: 3015566 instances (286s)
+statement (FAILS/instances)                                 full    -th_y(a)=th_z(y)    -th_c(z)=th_x(a)    -th_x(a)=th_y(x)          -th_z(x)=v
+TARGET th_b(x)=v                                         0/69762       11148/1070898      165510/2132908        6936/1186698      927433/3015566
+(S23) each W meets <=1 T(v)-block                        0/69762           0/1070898           0/2132908           0/1186698      140319/3015566
+(S24) each W meets <=1 N(v)-block inside supp b             0/69762           0/1070898           0/2132908           0/1186698         384/3015566
+(S25) each W meets <=1 T(u)-block                        0/69762           0/1070898           0/2132908           0/1186698      140415/3015566
+(S26) each T(v)-block meets <=1 W                        0/69762           0/1070898           0/2132908           0/1186698        6852/3015566
+(S27) each Y meets <=1 T(v)-block                        0/69762           0/1070898           0/2132908       28233/1186698      111111/3015566
+(S28) each Y meets <=1 W                                 0/69762           0/1070898           0/2132908       25341/1186698           0/3015566
+(S29) each T(r)-block meets <=1 T(v)-block               0/69762          72/1070898           0/2132908       28377/1186698      136959/3015566
+(S30) each T(v)-block lies in a T(r)-block              96/69762      298636/1070898       36144/2132908      531510/1186698      880942/3015566
+(S31) each X meets <=1 T(r)-block                       72/69762        6564/1070898       28188/2132908        1848/1186698       13968/3015566
+(S32) each W meets <=1 T(r)-block                       72/69762        6564/1070898       28188/2132908        1824/1186698       13968/3015566
+(S33) class of a v b of a W-A meets W in supp b: W&supp b subset D_j             0/69762         624/1070898        5676/2132908         264/1186698      510343/3015566
+(S34) each W meets <=1 class of a v b                 6796/69762       91544/1070898      142808/2132908      118440/1186698      851447/3015566
+(S35) each W meets <=1 class of a v b among those meeting supp a u supp b             0/69762         816/1070898        6252/2132908         552/1186698      518983/3015566
+(S36) two X in one W meeting the same T(v)-block are in one class of x v b             0/69762         432/1070898       27048/2132908         264/1186698        1296/3015566
+(S37) X in a W meets supp b or supp a                 1104/69762       42888/1070898       24240/2132908       40776/1186698      244344/3015566
+(S38) every X in W meets supp y                          0/69762           0/1070898           0/2132908      441596/1186698           0/3015566
+(S39) eps_x <= eps_y v eps_b                         10615/69762      268866/1070898      340910/2132908      534185/1186698      625760/3015566
+(S40) eps_x <= eps_y v eps_c                             0/69762        5940/1070898      496395/2132908        3552/1186698           0/3015566

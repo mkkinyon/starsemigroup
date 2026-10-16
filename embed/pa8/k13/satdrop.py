@@ -16,6 +16,7 @@ C = {
          ('th_y(b)=th_y(x)', ('eq',E('y','b'),E('y','x'))), ('th_x(b)=u', ('eq',E('x','b'),E('a','b'))), ('u=v', ('comm','a','b')), ('yz=zy', ('comm','y','z'))],
  'K3b': [('th_x(c)=a', ('eq',E('x','c'),'a')), ('byb=b', ('fix','b','y')), ('bzb=b', ('fix','b','z')), ('th_y(c)=th_y(b)', ('eq',E('y','c'),E('y','b'))),
          ('th_z(c)=th_z(b)', ('eq',E('z','c'),E('z','b'))), ('th_y(z)=u', ('eq',E('y','z'),E('a','b'))), ('th_z(y)=u', ('eq',E('z','y'),E('a','b'))), ('th_x(b)=v', ('eq',E('x','b'),E('b','a')))],
+ 'K1d': [('th_a(b)=th_a(x)', ('eq',E('a','b'),E('a','x'))), ('th_y(a)=th_y(z)', ('eq',E('y','a'),E('y','z'))), ('c~x', ('comm','c','x')), ('b~z', ('comm','b','z')), ('x~y', ('comm','x','y')), ('z<=y', ('le','z','y')), ('bxb=b', ('fix','b','x'))],
  'K3c': [('bxb=b', ('fix','b','x')), ('th_x(a)=th_x(b)', ('eq',E('x','a'),E('x','b'))), ('th_x(y)=th_y(z)', ('eq',E('x','y'),E('y','z'))),
          ('th_z(y)=u', ('eq',E('z','y'),E('a','b'))), ('u=v', ('comm','a','b')), ('zc=cz', ('comm','z','c'))],
 }
