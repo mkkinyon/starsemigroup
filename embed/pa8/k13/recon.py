@@ -14,9 +14,9 @@ COND = {
          ('th_x(c)=u', th('x','c'), 'u'), ('th_z(x)=u', th('z','x'), 'u'), ('th_y(z)=v', th('y','z'), 'v')],
  'K1c': [('bxb=b', th('b','x'), 'b'), ('th_y(a)=th_z(y)', th('y','a'), th('z','y')), ('th_c(z)=th_x(a)', th('c','z'), th('x','a')),
          ('th_x(a)=th_y(x)', th('x','a'), th('y','x')), ('th_z(x)=v', th('z','x'), 'v')],
- 'K3a': [('th_z(c)=a', th('z','c'), 'a'), ('b<=y', th('y','b'), 'b'), ('th_x(c)=th_x(y)', th('x','c'), th('x','y')),
+ 'K3a': [('th_z(c)=a', th('z','c'), 'a'), ('byb=b', th('b','y'), 'b'), ('th_x(c)=th_x(y)', th('x','c'), th('x','y')),
          ('th_y(b)=th_y(x)', th('y','b'), th('y','x')), ('th_x(b)=u', th('x','b'), 'u'), ('u=v', 'u', 'v'), ('yz=zy', th('y','z'), th('z','y'))],
- 'K3b': [('th_x(c)=a', th('x','c'), 'a'), ('b<=y', th('y','b'), 'b'), ('b<=z', th('z','b'), 'b'), ('th_y(c)=th_y(b)', th('y','c'), th('y','b')),
+ 'K3b': [('th_x(c)=a', th('x','c'), 'a'), ('byb=b', th('b','y'), 'b'), ('bzb=b', th('b','z'), 'b'), ('th_y(c)=th_y(b)', th('y','c'), th('y','b')),
          ('th_z(c)=th_z(b)', th('z','c'), th('z','b')), ('th_y(z)=u', th('y','z'), 'u'), ('th_z(y)=u', th('z','y'), 'u'), ('th_x(b)=v', th('x','b'), 'v')],
  'K3c': [('bxb=b', th('b','x'), 'b'), ('th_x(a)=th_x(b)', th('x','a'), th('x','b')), ('th_x(y)=th_y(z)', th('x','y'), th('y','z')),
          ('th_z(y)=u', th('z','y'), 'u'), ('u=v', 'u', 'v'), ('zc=cz', th('z','c'), th('c','z'))],
@@ -29,7 +29,7 @@ P = projections(n); N = len(P); idx = {p: i for i, p in enumerate(P)}
 TH = [[idx[theta(P[i], P[j])] for j in range(N)] for i in range(N)]       # TH[i][j] = theta_{P_i}(P_j)
 MT = [[TH[i][j] == i and TH[j][i] == j for j in range(N)] for i in range(N)]
 def vars_of(t):
-    if isinstance(t, str): return set() if t in ('u', 'v') else {t}
+    if isinstance(t, str): return {'a', 'b'} if t in ('u', 'v') else {t}
     return vars_of(t[1]) | vars_of(t[2])
 def ev(t, env):
     if isinstance(t, str):
@@ -75,7 +75,7 @@ def rows(insts):
     return R
 def ab(R):  # a><b per row
     A = R[:, 0]; B = R[:, order.index('b')]
-    return np.array([MT[a][b] for a, b in zip(A, B)])
+    return np.array([MT[a][b] for a, b in zip(A, B)], dtype=bool)
 TRIPLES = [(a, c, b) for a in range(N) for c in range(N) if MT[a][c] for b in range(N) if MT[c][b]]
 random.shuffle(TRIPLES)
 def strip(insts):
