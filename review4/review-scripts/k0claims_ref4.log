@@ -1,0 +1,49 @@
+P_4: 68455 instances checked (7s); rows = FAILS/instances; "(info)" rows = instances where the property holds
+distribution of m = rk a: [(0, 12854), (1, 50743), (2, 4731), (3, 126), (4, 1)]
+hyp                                                                                0 / 68455
+u<=a,v<=b,u<=y,v<=y                                                                0 / 68455
+ya=ay, by=yb                                                                       0 / 68455
+theta_y(a)=u                                                                       0 / 68455
+theta_y(b)=v                                                                       0 / 68455
+rk p = m                                                                           0 / 68455
+theta_a(z)=a                                                                       0 / 68455
+L_i distinct, Lp_i distinct                                                        0 / 68455
+some diagonal cell empty (info)                                                   24 / 68455
+every A_i meets supp y                                                             0 / 68455
+every B_i meets supp y                                                             0 / 68455
+no N(y)-block is a union of T(a)-blocks                                            0 / 68455
+no N(y)-block is a union of T(b)-blocks                                            0 / 68455
+N(y)-blocks are N(a)-blocks                                                        0 / 68455
+N(y)-blocks are N(b)-blocks                                                        0 / 68455
+N(y)-blocks are N(c)-blocks (not claimed)                                          0 / 68455
+T(y)-block in supp a or in an N(a)-block                                           0 / 68455
+T(y)-block in supp b or in an N(b)-block                                           0 / 68455
+T(y)-block in supp c or in an N(c)-block                                           0 / 68455
+N-block of a,b,c meeting a T(y)-block contains it                                  0 / 68455
+U_j = M_j & supp a (as sets)                                                       0 / 68455
+every M_j meets supp b                                                             0 / 68455
+#U = n                                                                             0 / 68455
+rk(ya) = n                                                                         0 / 68455
+u <= ya                                                                            0 / 68455
+classes of y v z meeting supp y: K_j (meets supp z) / K_F (misses supp z)          0 / 68455
+K_F & supp a = 0 (Step 5 wording)                                                  0 / 68455
+crossing Y in U(A_i&B_i&C_i), i with Y&A_i!=0                                      0 / 68455
+crossing Y in U D_i                                                                0 / 68455
+crossing Y meets an N(b)-block (info)                                              0 / 68455
+instance has a crossing block (info)                                               0 / 68455
+some T(y)-block meets a point outside supp a|supp b|supp c (info)              32296 / 68455
+non-crossing T(y)-block in one cell                                                0 / 68455
+N(y)-block in one cell                                                             0 / 68455
+z-block in one cell                                                                0 / 68455
+class of y v z: one cell if no crossing block, else in U D_i                       0 / 68455
+A_i in D_i if K_j has a crossing block, else in one cell                           0 / 68455
+A_i in Lp_i always (not claimed)                                                  24 / 68455
+eps_a <= eps_b v eps_z                                                             0 / 68455
+eps_a v eps_b <= eps_b v eps_z                                                     0 / 68455
+U_j with >=2 A_i contains a crossing block                                         0 / 68455
+n = m                                                                              0 / 68455
+a><b                                                                               0 / 68455
+m = 1 (info)                                                                   50743 / 68455
+m = 0 (info)                                                                   12854 / 68455
+a = b (info)                                                                   17531 / 68455
+each A_i in exactly one U_j                                                        0 / 68455

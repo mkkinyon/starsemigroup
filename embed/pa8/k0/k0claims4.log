@@ -1,4 +1,4 @@
-P_4, 1512 of 1512 (a,c) pairs, (140s) entries: FAILS/instances
+P_4, 1512 of 1512 (a,c) pairs, (139s) entries: FAILS/instances
 statement                                                       full              -y~c        -th_y(b)=v        -th_b(z)=b  -th_z(a)=th_z(b)        -th_y(z)=u
 a><b                                                         0/68455      33206/316666        168/187470         5868/5868           996/996      9852/2073599
 th_a(z)=a                                                    0/68455          0/316666          0/187470         5868/5868           996/996         0/2073599

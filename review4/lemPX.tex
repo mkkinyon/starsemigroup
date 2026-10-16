@@ -1,0 +1,26 @@
+\end{itemize}
+We shall use this only for projections, in the following forms. For projections $p,q$ the middle join is $\varepsilon_p\vee\varepsilon_q$, and $U_K$ (resp.\ $L_K$) is the union of the $\T(p)$-blocks (resp.\ $\T(q)$-blocks) contained in $K$.
+
+\begin{lemma}\label{lem:PX}
+Let $p,q$ be projections of $\P_X$.
+\begin{enumerate}[label=\textup{(\alph*)}]
+\item The blocks of $\theta_p(q)=pqp$ are: all $\N(p)$-blocks, and the sets $U_K$ for the classes $K$ of $\varepsilon_p\vee\varepsilon_q$ meeting $\supp(p)$; the latter is a $\T$-block of $\theta_p(q)$ iff $K$ meets $\supp(q)$. In particular the blocks of $\theta_p(q)$ not contained in $\supp(p)$ are exactly the $\N(p)$-blocks. Consequently, if $e\le p$ then $\supp(e)\subseteq\supp(p)$ and every block of $e$ not contained in $\supp(p)$ is an $\N(p)$-block.
+\item Suppose $pq=qp$. Then every class $K$ of $\varepsilon_p\vee\varepsilon_q$ is of one of the following types: \textup{(i)} $K=U_K=L_K$; \textup{(ii)} $K=U_K$ is a single $\N(q)$-block; \textup{(iii)} $K=L_K$ is a single $\N(p)$-block; \textup{(iv)} $K$ is a single block of both $p$ and $q$. The $\T$-blocks of $pq$ are the classes of type \textup{(i)}; hence $\supp(p)\cap\supp(q)=\supp(pq)$, and every $\N(q)$-block contained in $\supp(p)$ is a union of $\T(p)$-blocks.
+\item Suppose $pqp=p$ and $qpq=q$. Then every class of $\varepsilon_p\vee\varepsilon_q$ meeting $\supp(p)\cup\supp(q)$ contains exactly one $\T(p)$-block and exactly one $\T(q)$-block. In particular $\rk p=\rk q$, and no $\T(p)$-block is an $\N(q)$-block.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(a) $\theta_p(q)=(pq)(pq)^*$ is the projection whose $\T$-blocks are the upper parts of the transversal blocks of $pq$ and whose $\N$-blocks are the upper nontransversal blocks of $pq$; now read off the description of $pq$. For the last sentence use $e=\theta_p(e)$.
+
+(b) Since $pq$ is symmetric, $U_K\cup L_K$ is a block only if $U_K=L_K$ (when both are nonempty), and the family of upper nontransversal blocks $\N(p)\cup\{U_K:L_K=\emptyset\ne U_K\}$ equals the family of lower ones $\N(q)\cup\{L_K:U_K=\emptyset\ne L_K\}$. Let $K$ be a class. If $U_K\ne\emptyset\ne L_K$, an $\N(p)$-block inside $K$ would be an $\N$-block of $pq$, hence (as $U_K\neq\emptyset$) an $\N(q)$-block; but a set that is a block of both $p$ and $q$ is a class by itself, so $K$ contains no $\N(p)$-blocks and dually no $\N(q)$-blocks: $K=U_K=L_K$, type (i). If $U_K\ne\emptyset=L_K$ then $U_K$ is an $\N(q)$-block; $K$ is a union of $q$-blocks containing the $q$-block $U_K$ and $p$-blocks; as before the remaining $p$-blocks in $K$ would be common blocks, so $K=U_K$, type (ii). Type (iii) is dual, and if $U_K=L_K=\emptyset$ then $K$ consists of $\N(p)$- and $\N(q)$-blocks, which must coincide as above, type (iv). Finally, an $\N(q)$-block $B\subseteq\supp(p)$ lies in a class $K$; $K$ is not of type (i) or (iii) (these consist of $\T(q)$-blocks only), nor of type (iv) ($B$ meets $\supp(p)$), so $K=B$ is of type (ii).
+
+(c) $pqp=p$ says that the upper projection of $pq$ is $p$: its $\T$-blocks $\{U_K: U_K\ne\emptyset\ne L_K\}$ are exactly the $\T(p)$-blocks, and its $\N$-blocks $\N(p)\cup\{U_K:U_K\ne\emptyset=L_K\}$ are exactly the $\N(p)$-blocks. So every class meeting $\supp(p)$ contains exactly one $\T(p)$-block and at least one $\T(q)$-block; by symmetry, exactly one of each. A $\T(p)$-block which is an $\N(q)$-block would be a class by itself, containing no $\T(q)$-block.
+\end{proof}
+
+We say that projections $p,q$ form a \emph{matched pair}, $p\bowtie q$, if $pqp=p$ and $qpq=q$; by (c) this means that $p$ and $q$ have the same rank and their product has that rank (in the trace of the $\D$-class, $pq\ne0$), and it gives a bijection $\T(p)\to\T(q)$ (``the block in the same class''). This is exactly the \emph{friendly} relation $p\,\mathcal F\,q$ of East, Gray, Azeef Muhammed and Ru\v skuc (2025), defined by $pqp=p$ and $qpq=q$; we keep the symbol $\bowtie$ and the word ``matched'' to emphasise the bijection of $\T$-blocks, but the reader may read $\bowtie$ as $\mathcal F$ throughout. Note that $\mathcal F$ is reflexive and symmetric but not transitive, even in $\P(\P_X)$: in $\P_2$ the projection $p$ with the single $\T$-block $\{1,2\}$ is matched with $q=(\{1\}\ \T,\ \{2\}\ \N)$ and with $r=(\{2\}\ \T,\ \{1\}\ \N)$, but $qrq$ has rank $0$ (a $\T$-block and its partner need not meet, they need only lie in the same class of the join).
+
+\section{The projection condition}\label{sec:Q1}
+
+The known necessary condition is
+\begin{equation}\label{eq:Q1}\tag{Q1}

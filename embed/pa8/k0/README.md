@@ -14,3 +14,9 @@ Scripts (fast.py bit calculus from review2/review-scripts):
                            (k0claims4.log: all of P_4; k0claims5.log: random (a,c) pairs of P_5).
 - k0pp.py               : the variant K0'' (theta_z(a)=theta_z(b) replaced by theta_a(z)=a) in P_4.
 - idtest.py, l0test.py  : two side checks (theta_z(a)=theta_z(b) does not imply theta_z(aba)=theta_z(a)).
+
+Note: k0claims5_sum.log is a first P_5 run (1420 pairs, 3000 s) of a version in which the union of the
+diagonal cells was built by summing bitmasks; this is wrong only in the dropped columns where the L_i
+may coincide (192 spurious failures in the column -th_b(z)=b). k0claims5.log is the corrected run
+(448 pairs, 900 s); the full-hypothesis column of both runs is unaffected.
+Cold read of the proof: ../../../review4/ (REPORT.md: one missing justification in Step 1, repaired).

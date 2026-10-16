@@ -36,7 +36,8 @@ def statements(a, b, c, y, z):
     cells = [L & Lp for L in Jaz for Lp in Jbz if L & Lp]
     S['noncrossing Y in one cell'] = all(one_class(cells, Y) for Y in noncross)
     S['N(y)-block in one cell'] = all(one_class(cells, N) for N in NY)
-    diag = sum(cls_of(Jaz, A) & cls_of(Jbz, match[A][1]) for A in TA)
+    diag = 0
+    for A in TA: diag |= cls_of(Jaz, A) & cls_of(Jbz, match[A][1])   # OR, not sum: the D_i may coincide when th_a(z)=a fails
     S['class of y v z: one cell or in diagonal cells'] = all(one_class(cells, K) or K & ~diag == 0 for K in Jyz)
     S['A_i in Lp-class of B_i'] = all(cls_of(Jbz, match[A][1]) & A == A for A in TA)
     S['eps_a <= eps_b v eps_z'] = all(one_class(Jbz, B) for B in a[0])
