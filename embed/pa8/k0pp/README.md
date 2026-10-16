@@ -7,6 +7,6 @@ Theorem 5.50 (it only uses theta_a(z)=a and theta_b(z)=b of the z-conditions).
 - mk9_k0pp.json : M.K.'s Mace4 model of order 9 satisfying (Q1) and K0 but not K0'' (T[i][j] = i*j = theta_j(i);
                   a,b,c,y,z = 0,1,2,3,4). It is isomorphic to candidate 5 of the order-9 census (cand9.json).
 - evalcond.log  : all labelled conditions of notes/conditions.in evaluated on it (w3/evalcond2.py): it violates
-                  exactly K0'' and K5 and satisfies everything else, so K0'' is independent of all other listed
-                  conditions, and candidate 5 is proved non-embeddable without K5.
+                  exactly K0'' and K5 and satisfies everything else, so K0'' is not a consequence of the other listed
+                  conditions, and candidate 5 is proved non-embeddable without K5. Whether K0'' implies K0 is open.
 - k0pp5.py/.log : K0'' on a random sample of P(P_5): 769 385 instances, 0 violations.
