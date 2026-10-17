@@ -1,0 +1,52 @@
+============================== prooftrans ============================
+Prover9 (64) version 2026-5B, May 2026.
+Process 2050 was started by michaelkinyon on NSM-4QZTQJ4-u,
+Thu Oct 15 14:03:13 2026
+The command was "prover9 -f k4.in".
+============================== end of head ===========================
+
+set(prolog_style_variables).
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 0.02 (+ 0.01) seconds.
+% Length of proof: 30 (15 new hints)
+% Level of proof: 8
+% Maximum clause weight: 13.000
+% Given clauses in run: 74
+% Given clauses in proof: 23 (12 new hints)
+
+2 -(b * a = a & a * b = b) # label(non_clause).  [assumption].
+4 (A * B) * B = A * B # label("PA2").  [assumption].
+5 (A * B) * A = B * A # label("PA3").  [assumption].
+6 ((A * B) * C) * B = A * (C * B) # label("PA4").  [assumption].
+7 (((A * B) * C) * B) * C = (A * B) * C # label("PA5").  [assumption].
+8 (A * (B * C)) * B = (A * C) * B.  [copy(7),rewrite([6(3)])].
+11 a * c = c.  [assumption].
+14 y * a = a.  [assumption].
+15 b * z = b.  [assumption].
+17 y * z = a * b.  [assumption].
+18 a * z = b * a.  [assumption].
+19 c * z = b.  [assumption].
+20 (b * y) * a = a.  [assumption].
+21 b * a != a | a * b != b.  [clausify(2)].
+61 (A * z) * b = A * b.  [para(15(a,1),8(a,1,1,2)),rewrite([4(4)]),flip(a)].
+67 (a * b) * y = z * y.  [para(17(a,1),5(a,1,1))].
+69 (A * (a * b)) * y = (A * z) * y.  [para(17(a,1),8(a,1,1,2))].
+71 b * a = z * a.  [para(18(a,1),5(a,1,1)),rewrite([4(5)])].
+72 ((z * a) * A) * z = a * (A * z).  [para(18(a,1),6(a,1,1,1)),rewrite([71(3)])].
+75 z * a != a | a * b != b.  [back_rewrite(21),rewrite([71(3)])].
+76 a * z = z * a.  [back_rewrite(18),rewrite([71(6)])].
+131 y * b = a * b.  [para(17(a,1),61(a,1,1)),rewrite([4(5)]),flip(a)].
+132 b * y = z * y.  [para(131(a,1),5(a,1,1)),rewrite([67(5)]),flip(a)].
+134 (A * b) * y = (A * z) * y.  [para(131(a,1),8(a,1,1,2)),rewrite([69(6)]),flip(a)].
+138 (z * y) * a = a.  [back_rewrite(20),rewrite([132(3)])].
+139 (z * a) * y = z * y.  [back_rewrite(67),rewrite([134(5),76(3)])].
+175 z * a = a.  [para(139(a,1),6(a,1,1)),rewrite([138(5),14(5)]),flip(a)].
+187 a * b != b.  [back_rewrite(75),rewrite([175(3)]),xx(a)].
+190 (a * A) * z = a * (A * z).  [back_rewrite(72),rewrite([175(3)])].
+661 $F.  [para(11(a,1),190(a,1,1)),rewrite([19(3),19(5)]),flip(a),unit_del(a,187)].
+
+============================== end of proof ==========================
