@@ -4,3 +4,9 @@ __pycache__/
 *.neg
 *.aux
 *.log.synctex
+paper/*.aux
+paper/*.log
+paper/*.out
+paper/*.bbl
+paper/*.blg
+paper/*.toc
