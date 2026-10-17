@@ -779,7 +779,163 @@ Assume the hypotheses of \Kzero\ and put $p=\theta_z(a)=\theta_z(b)$. Then $b=\t
 
 %==============================================================================
 \section{The chain conditions and the counting invariant}\label{sec:chain}
-\todo{Phase 2. Port Sections 5.14 (the identification graph, the conditions (W$_n$)), 5.20 (Lemma 5.40 invariance, Corollary 5.41 separation, Lemmas 5.42--5.43 contraction and value, Theorem 5.44 end step, Theorem 5.45 (W$_\infty$)), 5.15 (the witnesses $\mathfrak P^{\mathrm{ch}}_n$ and Theorem 5.46 no finite basis), with the radius lemma 5.39 as a remark; (R$'_n$) as a remark with its witnesses and the statement that it is verified for small $m$ only.}
+
+\subsection{The chain conditions}\label{subsec:chaindef}
+
+The hypotheses of \Rcond\ say that a single auxiliary $x$ commutes with $a$ and $c$ and identifies $b$ with $c$. Exchanging the roles of $a$ and $b$ and allowing a chain of commuting auxiliaries, each of which identifies $a$ with $c$, gives for every $n\ge1$ the quasi-identity
+\[
+\Wn:\qquad a\mt c,\ b\mt c,\quad c\sim x_1\sim x_2\sim\dots\sim x_n\sim b,\quad \theta_{x_i}(a)=\theta_{x_i}(c)\ (1\le i\le n)\ \Longrightarrow\ a\mt b ,
+\]
+in $n+3$ variables. \Wn[1] is \Rcond\ with $a$ and $b$ exchanged, and \Wn[2] is the condition that settles one of the candidates of order $9$ (Section~\ref{sec:open}). One direction between consecutive members is trivial: \Wn[n+1] implies \Wn\ in every projection algebra, since an instance of \Wn\ becomes an instance of \Wn[n+1] by repeating its last auxiliary. The family is nevertheless strictly increasing (Theorem~\ref{thm:nfbW}).
+
+In $\P_X$ two projections commute iff they have a common lower bound (Proposition~\ref{prop:Q1}(4)), and the set $\Id(a,c)=\{y:\theta_y(a)=\theta_y(c)\}$ of \emph{identifiers} of $a$ and $c$ is a down-set, since $\theta_z(a)=\theta_z(\theta_y(a))$ for $z\le y$ (Section~\ref{subsec:rss}). So a chain $c\sim x_1\sim\dots\sim x_n$ of identifiers is a zigzag $c\ge m_0\le x_1\ge m_1\le x_2\ge\dots$ in the poset $\Id(a,c)$, and the possible chain ends are exactly the vertices of the connected component $\Comp(c)$ of $c$ in the comparability graph of $\Id(a,c)$. The validity of all \Wn\ in $\P_X$ is therefore the single statement
+\[
+\text{(W$_\infty$)}\qquad \text{for every } y\in\Comp(c) \text{ and every } b\mt c \text{ with } b\sim y:\ a\mt b .
+\]
+No bounded number of links suffices: the component of $c$ has unbounded radius.
+
+\begin{lemma}[radius]\label{lem:radius}
+Let $k\ge1$, $X=\{p_1,\dots,p_k,q_1,\dots,q_k,t\}$, and let $a,c,z$ be the projections of $\P_X$ with the single transversal block $\{t\}$ and the nontransversal blocks $\{p_1,\dots,p_k\},\{q_1\},\dots,\{q_k\}$ for $a$, all singletons for $c$, and $\{p_1,q_1\},\dots,\{p_k,q_k\}$ for $z$. Then $a\mt c$, $z\in\Id(a,c)$, and $z$ is at distance exactly $k+1$ from $c$ in the comparability graph of $\Id(a,c)$.
+\end{lemma}
+
+\begin{proof}
+$a\mt c$ since both have the single transversal block $\{t\}$. A projection $y$ identifies $a$ with $c$ iff the partitions of $\supp y$ induced by $\varepsilon_y\vee\varepsilon_a$ and by $\varepsilon_y\vee\varepsilon_c$ coincide and a part is bright for $a$ iff it is bright for $c$; here a part is bright iff it contains $t$ (for both), so only the partitions matter. For $z$ both partitions of $\supp z=\{t\}$ are trivial, so $z$ identifies. Let $B=\{p_1,\dots,p_k\}$. Let $y_i$ ($1\le i\le k$) have the nontransversal blocks $\{p_j,q_j\}$ for $j<i$, the transversal blocks $\{p_i\}$, $\{q_i\}$, $\{t\}$, and singletons elsewhere. Then $y_i$ identifies: the part of $p_i$ is $\{p_i\}$ for both joins (via $a$ its class is $B\cup\{q_j:j<i\}$, which meets $\supp y_i$ only in $p_i$; via $c$ it is $\{p_i\}$), and likewise for $q_i$ and $t$. Consecutive members commute by Lemma~\ref{lem:PX}(b): from $y_i$ to $y_{i+1}$ the two transversal blocks $\{p_i\},\{q_i\}$ merge into the nontransversal block $\{p_i,q_i\}$ (type (ii)), the singletons $\{p_{i+1}\},\{q_{i+1}\}$ become transversal (type (iii)) and all other blocks are common; the same for $c\sim y_1$ and $y_k\sim z$. So $\operatorname{dist}(c,z)\le k+1$.
+
+For the lower bound, note first that an identifier $y$ has at most one transversal block meeting $B$: two such blocks lie in one class of $\varepsilon_y\vee\varepsilon_a$ (through the block $B$ of $a$), but in different classes of $\varepsilon_y\vee\varepsilon_c$, since every block of $c$ is a singleton. Now let $c=y_0\sim y_1\sim\dots\sim y_n=z$ be any chain of identifiers. Fix $i$ and let $j$ be the largest index such that $\{p_i,q_i\}$ is not a block of $y_j$ ($j$ exists, since it is not a block of $c$, and $j<n$). Then $\{p_i,q_i\}$ is a nontransversal block of $y_{j+1}$ which is not a block of $y_j$, so by Lemma~\ref{lem:PX}(b) it is a union of transversal blocks of $y_j$; hence $y_j$ has a transversal block containing $p_i$ and contained in $\{p_i,q_i\}$. Call $j=j(i)$. Since $y_{j(i)}$ has exactly one transversal block meeting $B$, and that block determines $i$, the indices $j(1),\dots,j(k)$ are distinct; they lie in $\{1,\dots,n-1\}$ ($y_0=c$ has no transversal block meeting $B$). Hence $n-1\ge k$.
+\end{proof}
+
+So a proof of the family has to handle arbitrary $n$ at once. The tool is the counting invariant of Lemma~\ref{lem:count}, which is constant on $\Comp(c)$ and whose value at $c$ carries enough information to close the chain.
+
+\subsection{Separation and the meaning of the count}\label{subsec:value}
+
+\begin{corollary}[separation]\label{cor:acomp}
+Let $a\mt c$ in $\P(\P_X)$ and $\kappa=|\varepsilon_a\vee\varepsilon_c|$. Then $\delta_{ac}(c)=\kappa-|\varepsilon_c|\le0\le|\varepsilon_a|-\kappa=\delta_{ac}(a)$ and $\delta'_{ac}(c)=\delta'_{ac}(a)=0$; the two values of $\delta_{ac}$ coincide iff $a=c$. Hence for $a\ne c$ the projections $a$ and $c$ lie in different components of the comparability graph of $\Id(a,c)$, and every $y\in\Comp(c)$ has $\delta_{ac}(y)=\kappa-|\varepsilon_c|$ and $\delta'_{ac}(y)=0$.
+\end{corollary}
+
+\begin{proof}
+$c$ identifies $a$ with $c$ ($\theta_c(a)=c=\theta_c(c)$) and so does $a$. $\varepsilon_c\vee\varepsilon_a$ has $\kappa$ classes and $\varepsilon_c\vee\varepsilon_c=\varepsilon_c$ has $|\varepsilon_c|\ge\kappa$; symmetrically for $a$. Both inequalities are equalities iff $\varepsilon_a\le\varepsilon_c\le\varepsilon_a$, and if $\varepsilon_a=\varepsilon_c$ then each block is a class of $\varepsilon_a\vee\varepsilon_c$ by itself and $a\mt c$ forces it to be transversal in $a$ iff in $c$ (Lemma~\ref{lem:PX}(c)), so $a=c$. For $\delta'$: the classes of $\varepsilon_a\vee\varepsilon_c$ meeting $\supp a$ are the classes $\Gamma_i$, as many as the $\T(c)$-blocks. The rest is Lemma~\ref{lem:count} along a chain in $\Comp(c)$.
+\end{proof}
+
+The value of the count has structural content, which we extract with a lemma on contracting partitions.
+
+\begin{lemma}[contraction]\label{lem:contr}
+Let $\pi\le\pi'$ and $\rho$ be equivalence relations on $X$. Then $|\pi|-|\pi\vee\rho|\ge|\pi'|-|\pi'\vee\rho|$, and the inequality is strict as soon as two $\pi$-classes lying in a common $\pi'$-class lie in a common class of $\pi\vee\rho$.
+\end{lemma}
+
+\begin{proof}
+Let $H$ be the graph on the $\pi$-classes in which two classes are adjacent iff they meet a common $\rho$-class; its components are the classes of $\pi\vee\rho$, so $|\pi|-|\pi\vee\rho|=|V(H)|-c(H)$. Identify, one pair at a time, the $\pi$-classes lying in a common $\pi'$-class. Each identification lowers $|V|$ by one and $c$ by at most one, by exactly one iff the two vertices lie in different components at that moment; at the end the vertices are the $\pi'$-classes and the components are the classes of $\pi'\vee\rho$. So $|V|-c$ never increases, and if some identification joins two vertices of one component we may perform that identification first, so that $|V|-c$ drops by one at that step and never increases afterwards.
+\end{proof}
+
+\begin{lemma}[the value of the count]\label{lem:value}
+Let $a\mt c$, $\kappa=|\varepsilon_a\vee\varepsilon_c|$, and let $\varepsilon$ be an equivalence relation on $X$ with $|\varepsilon\vee\varepsilon_a|-|\varepsilon\vee\varepsilon_c|=\kappa-|\varepsilon_c|$ (for instance $\varepsilon=\varepsilon_y$ with $y\in\Comp(c)$). Then
+\begin{itemize}[nosep]
+\item[(A)] $\varepsilon_c\le\varepsilon\vee\varepsilon_a$: every block of $c$ lies in one class of $\varepsilon\vee\varepsilon_a$;
+\item[(M)] $(\varepsilon\vee\varepsilon_c)\wedge(\varepsilon_a\vee\varepsilon_c)=\varepsilon_c$: two blocks of $c$ in one class of $\varepsilon_a\vee\varepsilon_c$ lie in different classes of $\varepsilon\vee\varepsilon_c$.
+\end{itemize}
+If moreover $|\varepsilon\vee\varepsilon_a|_{\supp a}=|\varepsilon\vee\varepsilon_c|_{\supp c}$, then
+\begin{itemize}[nosep]
+\item[(G2$'$)] two $\T(c)$-blocks lying in one class of $\varepsilon\vee\varepsilon_a\vee\varepsilon_c$ lie in one class of $\varepsilon\vee\varepsilon_c$.
+\end{itemize}
+\end{lemma}
+
+\begin{proof}
+Put $g_a=|\varepsilon\vee\varepsilon_a|-|\varepsilon\vee\varepsilon_a\vee\varepsilon_c|\ge0$ and $g_c=|\varepsilon\vee\varepsilon_c|-|\varepsilon\vee\varepsilon_a\vee\varepsilon_c|\ge0$; by Lemma~\ref{lem:contr} with $\pi=\varepsilon_c\le\pi'=\varepsilon\vee\varepsilon_c$ and $\rho=\varepsilon_a$, $g_c\le|\varepsilon_c|-\kappa$. The hypothesis reads $g_a-g_c=\kappa-|\varepsilon_c|$, so $g_a=g_c-(|\varepsilon_c|-\kappa)\le0$, whence $g_a=0$ and $g_c=|\varepsilon_c|-\kappa$. The first equation is (A); the second is the equality case of Lemma~\ref{lem:contr}, which is (M). For (G2$'$): by (A), $\varepsilon\vee\varepsilon_a=\varepsilon\vee\varepsilon_a\vee\varepsilon_c$, whose classes are unions of classes of $\varepsilon_a\vee\varepsilon_c$; such a class meets $\supp a$ iff it contains some $\Gamma_i$ iff it meets $\supp c$. So $|\varepsilon\vee\varepsilon_a\vee\varepsilon_c|_{\supp c}=|\varepsilon\vee\varepsilon_a|_{\supp a}=|\varepsilon\vee\varepsilon_c|_{\supp c}$. Every class of $\varepsilon\vee\varepsilon_a\vee\varepsilon_c$ meeting $\supp c$ contains at least one class of the finer relation $\varepsilon\vee\varepsilon_c$ meeting $\supp c$; equal counts force exactly one.
+\end{proof}
+
+\subsection{The end step and the chain theorem}\label{subsec:endstep}
+
+\begin{theorem}[end step]\label{thm:endstep}
+Let $a\mt c$ and $b\mt c$ in $\P(\P_X)$, let $\mu$ be an equivalence relation on $X$ whose nontrivial classes are unions of $\T(b)$-blocks, and put $\varepsilon=\varepsilon_b\vee\mu$. If
+\[
+|\varepsilon\vee\varepsilon_a|-|\varepsilon\vee\varepsilon_c|=|\varepsilon_a\vee\varepsilon_c|-|\varepsilon_c|
+\qquad\text{and}\qquad
+|\varepsilon\vee\varepsilon_a|_{\supp a}=|\varepsilon\vee\varepsilon_c|_{\supp c},
+\]
+then \textup{(G1)} and \textup{(G2)} of Section~\ref{subsec:closing} hold, and hence $a\mt b$.
+\end{theorem}
+
+\begin{proof}
+We use the notation $B_i,C_i,\Delta_i$ of Section~\ref{subsec:PX} for the pair $b\mt c$ (so $\Delta_i\cap\supp b=B_i$, $\Delta_i\cap\supp c=C_i$, and the other classes of $\varepsilon_b\vee\varepsilon_c$ meet neither support). Write $\kappa=|\varepsilon_a\vee\varepsilon_c|$, $\kappa_{bc}=|\varepsilon_b\vee\varepsilon_c|$, $\pi=\varepsilon_a\vee\varepsilon_b\vee\varepsilon_c$ and $N=|\pi\vee\mu|$. Call the nontrivial classes of $\mu$ the \emph{groups}; let there be $g$ groups and let $s'$ be the number of $\T(b)$-blocks lying in groups. Choose one point $p_i$ in each $B_i$ and a set $\Lambda$ of $s'-g$ pairs $(p_i,p_j)$ forming a spanning tree on the $\T(b)$-blocks of each group; then $\varepsilon_b\vee\mu=\varepsilon_b\vee\nu$ for the equivalence $\nu$ generated by $\Lambda$, and for every equivalence relation $\tau\ge\varepsilon_b$ the relation $\tau\vee\mu=\tau\vee\nu$ is obtained from $\tau$ by adding the pairs of $\Lambda$ one at a time, each addition lowering the number of classes by at most one. Hence
+\begin{itemize}[nosep]
+\item[(i)] $|\tau|-|\tau\vee\mu|\le s'-g$ for every $\tau\ge\varepsilon_b$, with equality only if no pair of $\Lambda$ joins two points already in one $\tau$-class; since $\Lambda$ may be chosen to contain any given pair $(p_i,p_j)$ with $B_i,B_j$ in one group, equality implies that two $\T(b)$-blocks of one group lie in different $\tau$-classes;
+\item[(ii)] $|\varepsilon\vee\varepsilon_c|=|\varepsilon_b\vee\varepsilon_c\vee\nu|=\kappa_{bc}-(s'-g)$: the pairs of $\Lambda$ join the distinct classes $\Delta_i$, and a tree edge always joins two different pieces.
+\end{itemize}
+By Lemma~\ref{lem:value}(A), $\varepsilon\vee\varepsilon_a=\varepsilon\vee\varepsilon_a\vee\varepsilon_c=\pi\vee\mu$, so the first hypothesis and (ii) give
+\begin{equation}\label{eq:N}
+N=|\varepsilon\vee\varepsilon_a|=|\varepsilon\vee\varepsilon_c|+\kappa-|\varepsilon_c|=\kappa_{bc}-(s'-g)+\kappa-|\varepsilon_c|.
+\end{equation}
+Put $r_1=\kappa-|\pi|\ge0$ and $r_2=|\pi|-N\ge0$, so that $r_1+r_2=\kappa-N=(|\varepsilon_c|-\kappa_{bc})+(s'-g)$. Lemma~\ref{lem:contr} with $\varepsilon_c\le\varepsilon_a\vee\varepsilon_c$ and $\rho=\varepsilon_b$ gives $|\varepsilon_c|-\kappa_{bc}\ge\kappa-|\pi|=r_1$, and (i) with $\tau=\pi$ gives $r_2\le s'-g$. Hence both are equalities, $r_1=|\varepsilon_c|-\kappa_{bc}$ and $r_2=s'-g$, and the equality clause of (i) yields
+\begin{equation}\label{eq:star}
+\text{two $\T(b)$-blocks of one group lie in different classes of }\pi=\varepsilon_a\vee\varepsilon_b\vee\varepsilon_c.
+\end{equation}
+
+\emph{(G1).} Let $r_c=|\varepsilon_a\vee\varepsilon_b|-|\pi|\ge0$. By \eqref{eq:N} and (i) with $\tau=\varepsilon_a\vee\varepsilon_b$, $N=|\varepsilon_a\vee\varepsilon_b\vee\mu|\ge|\varepsilon_a\vee\varepsilon_b|-(s'-g)$, while $N=|\pi|-r_2=|\varepsilon_a\vee\varepsilon_b|-r_c-(s'-g)$. So $r_c\le0$, i.e.\ $|\varepsilon_a\vee\varepsilon_b|=|\varepsilon_a\vee\varepsilon_b\vee\varepsilon_c|$, which says $\varepsilon_c\le\varepsilon_a\vee\varepsilon_b$.
+
+\emph{(G2).} Suppose $C_i$ and $C_j$, $i\ne j$, lie in one class of $\pi$. Since $\Delta_i$ and $\Delta_j$ lie inside classes of $\pi$, so do $B_i$ and $B_j$, in that same class. If $B_i,B_j$ lie in one group this contradicts \eqref{eq:star}. Otherwise $\Delta_i$ and $\Delta_j$ lie in different classes of $\varepsilon\vee\varepsilon_c=\varepsilon_b\vee\varepsilon_c\vee\mu$ (the classes of this relation meeting $\supp c$ are the unions of the $\Delta_i$ over the $\T(b)$-blocks of a group, together with the $\Delta_i$ of the $\T(b)$-blocks in no group, and these are distinct because $\Delta_i\cap\supp b=B_i$), but in one class of $\pi\le\pi\vee\mu=\varepsilon\vee\varepsilon_a\vee\varepsilon_c$; this contradicts (G2$'$) of Lemma~\ref{lem:value}, which applies by the second hypothesis. The conclusion $a\mt b$ is Lemma~\ref{lem:closing}.
+\end{proof}
+
+\begin{theorem}[the chain family]\label{thm:Wn}
+\Wn\ holds in every partition monoid $\P_X$ for every $n\ge1$. More generally \textup{(W$_\infty$)} holds: if $a\mt c$, $b\mt c$, $y\in\Comp(c)$, or merely $y\in\Id(a,c)$ with $\delta_{ac}(y)=\delta_{ac}(c)$ and $\delta'_{ac}(y)=0$, and $yb=by$, then $a\mt b$.
+\end{theorem}
+
+\begin{proof}
+By Corollary~\ref{cor:acomp} every $y\in\Comp(c)$ has $\delta_{ac}(y)=\kappa-|\varepsilon_c|$ and $\delta'_{ac}(y)=0$; the end $x_n$ of a chain $c\sim x_1\sim\dots\sim x_n$ of identifiers is such a $y$. Let $m=yb=by$. Then $m\le y$, so by Lemma~\ref{lem:count} $\delta_{ac}(m)=\delta_{ac}(y)$ and $\delta'_{ac}(m)=\delta'_{ac}(y)$. By Lemma~\ref{lem:PX}(b) the classes of $\varepsilon_m=\varepsilon_y\vee\varepsilon_b$ are common $\N$-blocks, $\N(y)$-blocks which are unions of $\T(b)$-blocks, $\N(b)$-blocks which are unions of $\T(y)$-blocks, and classes inside $\supp y\cap\supp b$, which are unions of $\T(b)$-blocks; so $\varepsilon_m=\varepsilon_b\vee\mu$, where $\mu$ identifies the $\T(b)$-blocks lying in a common class. Theorem~\ref{thm:endstep} applies and gives $a\mt b$.
+\end{proof}
+
+\begin{remark}\label{rem:chain}
+(1) Both counts are needed: in $\P(\P_4)$ and $\P(\P_5)$ there are instances with $y\in\Id(a,c)$, $\delta_{ac}(y)=\delta_{ac}(c)$, $b\mt c$, $b\sim y$ and $a\not\mt b$, in none of which $\delta'_{ac}(y)=0$. The pair $(\delta_{ac},\delta'_{ac})$ separates $a$ from $c$ but does not characterise $\Comp(c)$: in $\P(\P_4)$ there are matched pairs for which another component of the comparability graph of $\Id(a,c)$ has the same values; this does not matter for the chain conditions. (2) The invariant is global. The search for a proof of \Wn[2] had looked for a \emph{local} property of the chain end $y$, closed under the two kinds of steps of the zigzag (down: $z\le y$; up: $z\le w\in\Id(a,c)$), and several natural candidates, such as $\varepsilon_c\le\varepsilon_y\vee\varepsilon_a$ (statement (A) above) or (M), are indeed true at every chain end but are not closed under the up step by themselves; the pair of counts is.
+\end{remark}
+
+\subsection{The witnesses and the non-finite basis theorem}\label{subsec:chainwit}
+
+\begin{definition}\label{def:chainwit}
+For $n\ge1$ let $\mathfrak P^{\mathrm{ch}}_n$ be the set of $2n+5$ elements $a,c,b,x_1,\dots,x_n$ (\emph{top}) and $d,e_0,e_1,\dots,e_n$ (\emph{bottom}) with the operation $\theta$ defined by: $\theta_e\equiv e$ for every bottom element $e$; $\theta_a(c)=a$, $\theta_a(y)=d$ for $y\ne a,c$; $\theta_c(a)=\theta_c(b)=c$, $\theta_c(y)=e_0$ for $y\ne a,b,c$; $\theta_b(c)=b$, $\theta_b(y)=e_n$ for $y\ne b,c$; and, for $1\le i\le n$, $\theta_{x_i}(y)=e_{i-1}$ if $y\in\{a,c,d,e_0,\dots,e_{i-1},x_1,\dots,x_{i-1}\}$ (the elements to the \emph{left} of $x_i$) and $\theta_{x_i}(y)=e_i$ if $y\in\{e_i,\dots,e_n,x_{i+1},\dots,x_n,b\}$ (to the \emph{right}); and $\theta_{x_i}(x_i)=x_i$.
+\end{definition}
+
+So the bottom elements form a rectangular band of pairwise matched elements, $d$ is the bottom of $a$, and $e_0=\theta_c(x_1)=\theta_{x_1}(c)$, $e_i=\theta_{x_i}(x_{i+1})=\theta_{x_{i+1}}(x_i)$, $e_n=\theta_{x_n}(b)=\theta_b(x_n)$ are the shared lower bounds along the chain $c\sim x_1\sim\dots\sim x_n\sim b$. We have $a\mt c\mt b$, every $x_i$ identifies $a$ with $c$ ($\theta_{x_i}(a)=\theta_{x_i}(c)=e_{i-1}$), and $a\not\mt b$ ($\theta_b(a)=e_n$). Hence $\mathfrak P^{\mathrm{ch}}_n$ violates \Wn, and \Wn[k] for every $k\ge n$. For $n=1$ it is the witness $\mathfrak P_7$ of \Rcond\ with $a$ and $b$ exchanged, and for $n=2$ it is one of the candidates of order $9$ (Section~\ref{sec:open}); for $n=3$ it was found by Mace4 as a projection algebra satisfying \Qone\ and \Wn[2] but not \Wn[3].
+
+\begin{proposition}\label{prop:chainwit}
+For every $n\ge1$, $\mathfrak P^{\mathrm{ch}}_n$ is a projection algebra satisfying \eqref{eq:Q1} and \Wn[n-1] and violating \Wn.
+\end{proposition}
+
+\begin{proof}
+Write $B$ for the bottoms and $T$ for the tops, and for a top $t$ let $M_t=\{y:\theta_t(y)=t\}$ ($M_a=\{a,c\}$, $M_c=\{a,b,c\}$, $M_b=\{b,c\}$, $M_{x_i}=\{x_i\}$; note $y\in M_t\Leftrightarrow t\in M_y$) and $\beta_t(y)=\theta_t(y)\in B$ for $y\notin M_t$ ($\beta_a\equiv d$, $\beta_c\equiv e_0$, $\beta_b\equiv e_n$, $\beta_{x_i}=e_{i-1}$ on the left of $x_i$ and $e_i$ on the right). The one fact used repeatedly is ($*$): for a top $t\ne x_i$, $\beta_t$ maps every element to the same side of $x_i$ as $t$ itself ($a,c,d,e_0$ are left of every $x_i$, $b,e_n$ right, and for $x_j$ the value $e_j$ is left of $x_i$ when $j<i$ while $e_{j-1}$ is right when $j>i$), and $\beta_{x_i}$ maps left to $e_{i-1}$ (left) and right to $e_i$ (right).
+
+The axioms in $\theta$-notation (Section~\ref{subsec:rss}). $\theta_x(x)=x$ holds by definition. $\theta_x(\theta_x(y))=\theta_x(y)$ is trivial for $x\in B$ or $\theta_x(y)=x$, and otherwise $\theta_x(\beta)=\beta$ for $\beta=\beta_x(y)$ since $d\notin M_a$, $e_0\notin M_c$, $e_n\notin M_b$ and $e_{i-1},e_i$ lie on the correct sides of $x_i$. $\theta_x(\theta_y(x))=\theta_x(y)$ is trivial unless $x,y$ are distinct tops with $y\notin M_x$, and then $\theta_x(\beta_y(x))=\beta_x(y)$ by ($*$). For $\theta_x(\theta_y(\theta_x(z)))=\theta_{\theta_x(y)}(z)$: if $x\in B$ both sides are $x$; if $y\in B$ both are $\beta_x(y)$; if $y\in M_x$ the right side is $\theta_x(z)$, and so is the left side (for $z\in M_x$ use $y\in M_x\Leftrightarrow x\in M_y$, otherwise $\beta_x(\beta_y(\beta_x(z)))=\beta_x(z)$ by ($*$)); if $y\notin M_x$ the right side is $\beta_x(y)$ and the left side is $\theta_x(\beta_y(x))=\beta_x(y)$ for $z\in M_x$ and $\beta_x(\beta_y(\beta_x(z)))=\beta_x(y)$ otherwise, by ($*$). For $\theta_y\theta_x\theta_y\theta_x(z)=\theta_y\theta_x(z)$ put $w=\theta_y(\theta_x(z))$: if $w=y$ then $\theta_x(z)\in M_y$ forces $\theta_x(z)=x\in M_y$ and $\theta_y\theta_x(y)=\theta_y(x)=y$; if $w\in B$ then $\beta_y(\beta_x(w))=w$ by ($*$), since $w=\beta_y(t)$ with $t\in\{x\}\cup B$ on the same side of $y$ as $x$.
+
+\eqref{eq:Q1}: $\theta_x(z)=\theta_y(z)=z$ with $x\ne y$ forces $z\in B$ below both; the only tops sharing a bottom are consecutive chain members ($e_0\le c,x_1$; $e_i\le x_i,x_{i+1}$; $e_n\le x_n,b$), and these commute.
+
+\Wn[n-1]: the matched pairs of $\mathfrak P^{\mathrm{ch}}_n$ are $a\mt c$, $c\mt b$, the pairs of bottoms, and the trivial pairs $x\mt x$; so the only instances of \Wn[n-1] whose conclusion is not automatic are the paths $a\mt c\mt b$ and $b\mt c\mt a$. For the first, the identifiers of $(a,c)$ are $c$, the $x_i$ and the bottoms, and the commuting graph on them is the path $c-x_1-\dots-x_n$ with $e_0$ adjacent to $c,x_1$, $e_i$ to $x_i,x_{i+1}$ and $e_n$ to $x_n$; the only elements commuting with $b$ are $b,x_n,e_n$, at distance $n$ or $n+1$ from $c$, so no chain of $n-1$ identifiers joins $c$ to a neighbour of $b$. For the second, the identifiers of $(b,c)$ are $b$, $c$ and the bottoms, the only one commuting with $a$ is $d$, and $d$ commutes with no identifier other than itself while $c\not\sim d$; so there is no chain at all. Hence \Wn[n-1] holds, and \Wn\ fails as noted.
+\end{proof}
+
+\begin{proposition}\label{prop:maxsub}
+For every $n\ge1$, every maximal proper subalgebra of $\mathfrak P^{\mathrm{ch}}_n$ embeds in $\P(\P_m)$ for some $m\le2n+3$.
+\end{proposition}
+
+\begin{proof}
+The top elements are irreducible ($\theta_x(y)$ is a top element only when it equals $x$), so the maximal proper subalgebras are obtained by omitting one top element; there are $n+3$ of them. We give explicit embeddings. A projection of rank $0$ is a partition $\varepsilon_e$ of $X$ with no transversal block; by Lemma~\ref{lem:PX}(a), $\theta_e(y)=e$ for every $y$, and $\theta_p(e)$ is the rank-$0$ projection whose blocks are the $\N(p)$-blocks and the unions of the $\T(p)$-blocks lying in a common class of $\varepsilon_p\vee\varepsilon_e$. So all rank-$0$ projections are pairwise matched, as the bottom elements are, and the bottoms will be realised by rank-$0$ projections. Each chain element $x_l$ present is realised with exactly two $\T$-blocks, the singletons $\{p_l\}$, $\{q_l\}$ of a \emph{pair} $X_l=\{p_l,q_l\}$ of points reserved for it; every other element has $X_l$ either as one $\N$-block (``$X_l$ merged'') or as two singleton $\N$-blocks (``$X_l$ separate''), and no other block meets $X_l$. Then for every element $y\ne x_l$, $\theta_{x_l}(y)$ is $\N(x_l)$ together with $X_l$ merged if $X_l$ is merged in $y$, and with $X_l$ separate otherwise; this realises the dichotomy left/right of Definition~\ref{def:chainwit}, with ``left'' $=$ ``$X_l$ merged''. Accordingly, the bottom element $e_j$ has $X_l$ separate for $l\le j$ and merged for $l>j$; $d$, $a$, $c$ have all pairs merged, $b$ all pairs separate, and $x_l$ has $X_k$ separate for $k<l$ and merged for $k>l$. Writing $[\,\cdot\,]$ for a $\T$-block and $(\,\cdot\,)$ for an $\N$-block, and listing only the blocks on the remaining points $R$, the embeddings are:
+\begin{itemize}[nosep]
+\item \emph{omit $x_i$} ($R=\{\alpha,\beta,\gamma\}$, $2n+1$ points): $a=[\alpha](\beta\gamma)$, $c=[\alpha\beta](\gamma)$, $b=[\beta](\alpha)(\gamma)$, $d=(\alpha)(\beta\gamma)$; every $x_l$ with $l<i$ and every $e_j$ with $j<i$ is $(\alpha\beta)(\gamma)$ on $R$, every $x_l$ with $l>i$ and every $e_j$ with $j\ge i$ is $(\alpha)(\beta)(\gamma)$ on $R$;
+\item \emph{omit $b$} ($2n+3$ points): as before, with all $x_l$, $e_j$ equal to $(\alpha\beta)(\gamma)$ on $R$;
+\item \emph{omit $c$}: $a=[\alpha](\beta\gamma)$, $b=[\beta](\alpha)(\gamma)$, $d=(\alpha)(\beta\gamma)$, all $x_l$, $e_j$ equal to $(\alpha)(\beta)(\gamma)$ on $R$;
+\item \emph{omit $a$}: $c=[\alpha][\beta](\gamma)$ with all pairs merged, $b=[\alpha][\beta](\gamma)$ with all pairs separate, $d=(\alpha)(\beta\gamma)$, all $x_l$, $e_j$ equal to $(\alpha)(\beta)(\gamma)$ on $R$.
+\end{itemize}
+Each map is injective (distinct elements differ in a block of $R$ or in a pair), and each value $\theta_y(x)$ is computed by Lemma~\ref{lem:PX}(a) from the classes of $\varepsilon_y\vee\varepsilon_x$. The point set is $R\sqcup X_1\sqcup\dots\sqcup X_n$ and no block of any listed projection meets two of these parts; hence $\varepsilon_y\vee\varepsilon_x$ is the disjoint union of the joins of the restrictions, $\theta_y(x)$ is computed part by part, and the maps are embeddings into $\P_R\times\prod_l\P_{X_l}\le\P_X$. On a pair $X_l$ the restriction of every element is one of $[p_l][q_l]$, $(p_l\,q_l)$, $(p_l)(q_l)$, and the pair rule above is immediate: for $y\ne x_l$ no class of $\varepsilon_{x_l}\vee\varepsilon_y$ contains a $\T(y)$-block together with $[p_l]$ or $[q_l]$ (the $\T(y)$-blocks lie in $R$, where the blocks of $x_l$ are $\N$-blocks), so $\theta_{x_l}(y)$ is $\N(x_l)$ with $X_l$ merged or separate, i.e.\ $e_{l-1}$ or $e_l$, as $y$ is to the left or right of $x_l$. On $R$ the restriction of every element takes one of finitely many values independent of $n$, and the restriction to $R$ of $\theta_y(x)$ is a function of the restrictions of $x$ and $y$; the finitely many combinations that occur are checked directly (for instance $a\mt c$ and $c\mt b$ through $[\alpha\beta]$, $\theta_a(b)=d$ since the class $\{\alpha\}$ of $[\alpha]$ in $\varepsilon_a\vee\varepsilon_b$ does not meet $\supp b$, and the rank-$0$ values of $\theta_a,\theta_b,\theta_c$ on bottoms and chain elements). All combinations that occur for any $n$ already occur for $n=3$, and the tables were verified by computer for $n\le7$.
+\end{proof}
+
+\begin{theorem}[non-finite basis]\label{thm:nfbW}
+For every $n\ge1$, $\mathfrak P^{\mathrm{ch}}_n$ is a minimal non-embeddable projection algebra of order $2n+5$ which satisfies every quasi-identity in at most $n+2$ variables that is valid in all $\P(\P_X)$. Consequently the quasivariety generated by the projection algebras $\P(\P_X)$ is not finitely based, the class of finite projection algebras embeddable in some $\P(\P_X)$ is not the class of finite models of any finite set of quasi-identities, and \Wn[n+1] is not a consequence of \Wn[1],\dots,\Wn\ together with any valid quasi-identities in at most $n+3$ variables.
+\end{theorem}
+
+\begin{proof}
+A subalgebra of $\mathfrak P^{\mathrm{ch}}_n$ generated by $k$ elements contains at most $k$ top elements, the tops being irreducible; for $k\le n+2$ it omits one of the $n+3$ tops, hence lies in a maximal proper subalgebra, which embeds in some $\P(\P_X)$ by Proposition~\ref{prop:maxsub}. Let $\sigma$ be a quasi-identity in $k\le n+2$ variables valid in all $\P(\P_X)$, and suppose an assignment violates $\sigma$ in $\mathfrak P^{\mathrm{ch}}_n$; it violates $\sigma$ in the subalgebra generated by its values, which embeds in some $\P(\P_X)$, a contradiction. So $\mathfrak P^{\mathrm{ch}}_n$ satisfies $\sigma$. On the other hand it violates \Wn, which is valid in all $\P(\P_X)$ by Theorem~\ref{thm:Wn}; so it embeds in none, and it is minimal since every proper subalgebra lies in a maximal one. If a finite set $\Sigma$ of quasi-identities valid in all $\P(\P_X)$ axiomatised the quasivariety, or had the embeddable finite algebras as its finite models, then $\mathfrak P^{\mathrm{ch}}_n$ with $n+2$ at least the number of variables of every member of $\Sigma$ would be a model of $\Sigma$, hence embeddable: a contradiction. The last assertion is the case $\Sigma=\{\Wn[1],\dots,\Wn\}\cup\Sigma'$ applied to $\mathfrak P^{\mathrm{ch}}_{n+1}$, which has $n+4$ top elements.
+\end{proof}
+
+In particular $\mathfrak P^{\mathrm{ch}}_n$ satisfies \Tri\ and the eight wiring conditions of Section~\ref{sec:wiring} (which have at most seven variables) for $n\ge5$, and by direct computation also for $n\le4$; this is the statement of Theorem~\ref{thm:main-chain}. The theorem also explains why the family was found late: \Wn\ has $n+3$ variables and its smallest witness has order $2n+5$, so the first member beyond \Rcond\ needs order $9$ and five variables, the next order $11$ and six.
+
+\begin{remark}\label{rem:W2}
+In every projection algebra satisfying \eqref{eq:Q1}, \Wn[2] implies the two-auxiliary condition $a\mt c\mt b,\ xc=cx,\ \theta_x(a)=\theta_x(c),\ yb=by,\ \theta_x(b)=\theta_y(a)\Rightarrow a\mt b$, a relative of \Rp\ which the census of order $9$ produced first (Prover9, $99$ steps: the work is to show that $y$ identifies $a$ with $c$, after which $c\sim x\sim y\sim b$ is an instance of \Wn[2]). The chain conditions also enter the derivation of \Eone\ from \Kzero\ (Proposition~\ref{prop:K0E1}).
+\end{remark}
 
 %==============================================================================
 \section{Graph semigroups: sufficiency}\label{sec:graph}
