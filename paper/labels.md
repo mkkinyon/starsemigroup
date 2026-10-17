@@ -27,3 +27,5 @@ per M.K., 17 Oct); nothing has been renamed yet. (Tri) is the model of a good na
 Principles for the final choice (to be settled with M.K.): one letter family per mechanism (commuting
 auxiliary, half-matched auxiliary, auxiliary above a vertex, chains); no label that is a prefix of another
 ((Q) vs (Q1)); the witness table in §5.1 and the status table must use the same names.
+
+Notation (17 Oct): the projection algebra of a regular *-semigroup is `\PA(S)` = $\mathsf{P}(S)$ in the paper; `\P` = $\mathcal P$ is reserved for partition monoids $\mathcal P_X$. The notes still use $\mathcal P$ for both.
