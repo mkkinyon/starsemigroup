@@ -1,0 +1,47 @@
+============================== prooftrans ============================
+Prover9 (64) version 2026-5B, May 2026.
+Process 1378 was started by michaelkinyon on NSM-4QZTQJ4-u,
+Thu Oct 15 11:33:22 2026
+The command was "prover9 -f k4.in".
+============================== end of head ===========================
+
+set(prolog_style_variables).
+============================== end of input ==========================
+
+============================== PROOF =================================
+
+% -------- Comments from original proof --------
+% Proof 1 at 3.48 (+ 0.02) seconds.
+% Length of proof: 25 (12 new hints)
+% Level of proof: 6
+% Maximum clause weight: 18.000
+% Given clauses in run: 669
+% Given clauses in proof: 21 (11 new hints)
+
+1 A * B = A & A * C = A -> B * C = C * B # label("(Q1)") # label(non_clause).  [assumption].
+3 (A * B) * B = A * B # label("PA2").  [assumption].
+5 ((A * B) * C) * B = A * (C * B) # label("PA4").  [assumption].
+6 (((A * B) * C) * B) * C = (A * B) * C # label("PA5").  [assumption].
+7 (A * (B * C)) * B = (A * C) * B.  [copy(6),rewrite([5(3)])].
+8 A * B != A | A * C != A | C * B = B * C # label("(Q1)").  [clausify(1)].
+11 c * b = b.  [assumption].
+12 b * c = c.  [assumption].
+14 b * z = b.  [assumption].
+15 y * c = c * y.  [assumption].
+16 y * z = a * b.  [assumption].
+18 c * z != b.  [assumption].
+27 (A * B) * (B * C) = (A * B) * C.  [para(5(a,1),5(a,1,1)),rewrite([7(3)]),flip(a)].
+38 (A * B) * C != A * B | C * B = B * C.  [para(3(a,1),8(a,1)),xx(a)].
+57 (b * A) * z = b * (A * z).  [para(14(a,1),5(a,1,1,1))].
+58 (A * z) * b = A * b.  [para(14(a,1),7(a,1,1,2)),rewrite([3(4)]),flip(a)].
+120 y * b = a * b.  [para(16(a,1),58(a,1,1)),rewrite([3(5)]),flip(a)].
+159 (c * y) * (c * A) = (c * y) * A.  [para(15(a,1),27(a,1,1)),rewrite([15(9)])].
+161 (A * y) * (a * b) = (A * y) * z.  [para(16(a,1),27(a,1,2))].
+167 (A * y) * b = (A * y) * z.  [para(120(a,1),27(a,1,2)),rewrite([161(6)]),flip(a)].
+311 b * (c * z) = c * z.  [para(12(a,1),57(a,1,1)),flip(a)].
+708 (A * B) * C != A * (C * B) | B * C = C * B.  [para(5(a,1),38(a,1)),flip(a)].
+19236 (A * (c * z)) * b != A * (c * z) | c * z = b.  [para(311(a,1),708(a,2,2)),rewrite([58(16),11(14),311(17)]),flip(b)].
+21617 c * z = b.  [para(159(a,1),19236(a,1,1)),rewrite([58(7),167(5),159(12)]),xx(a)].
+21618 $F.  [resolve(21617,a,18,a)].
+
+============================== end of proof ==========================
