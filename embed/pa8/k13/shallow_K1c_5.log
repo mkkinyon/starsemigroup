@@ -1,0 +1,222 @@
+K1c in P_5: 221 consequence atoms; hypotheses each one needs (461s)
+  th_a(a)=th_a(c)    needs none (path only)
+  th_a(c)=a          needs none (path only)
+  th_b(c)=b          needs none (path only)
+  th_b(c)=th_b(b)    needs none (path only)
+  th_c(a)=c          needs none (path only)
+  th_c(a)=th_c(b)    needs none (path only)
+  th_c(a)=th_c(c)    needs none (path only)
+  th_c(b)=c          needs none (path only)
+  th_c(c)=th_c(b)    needs none (path only)
+  u=th_a(b)          needs none (path only)
+  v=th_b(a)          needs none (path only)
+  b~z                needs ['th_z(x)=v']
+  c~x                needs ['th_c(z)=th_x(a)']
+  th_b(a)=th_b(z)    needs ['th_z(x)=v']
+  th_b(a)=th_z(b)    needs ['th_z(x)=v']
+  th_b(a)=th_z(x)    needs ['th_z(x)=v']
+  th_b(b)=th_b(x)    needs ['bxb=b']
+  th_b(c)=th_b(x)    needs ['bxb=b']
+  th_b(x)=b          needs ['bxb=b']
+  th_b(z)=th_z(x)    needs ['th_z(x)=v']
+  th_c(x)=th_c(z)    needs ['th_c(z)=th_x(a)']
+  th_c(x)=th_x(a)    needs ['th_c(z)=th_x(a)']
+  th_c(z)=th_x(a)    needs ['th_c(z)=th_x(a)']
+  th_c(z)=th_x(c)    needs ['th_c(z)=th_x(a)']
+  th_x(a)=th_x(c)    needs ['th_c(z)=th_x(a)']
+  th_x(a)=th_x(y)    needs ['th_x(a)=th_y(x)']
+  th_x(a)=th_y(x)    needs ['th_x(a)=th_y(x)']
+  th_y(a)=th_y(z)    needs ['th_y(a)=th_z(y)']
+  th_z(b)=th_z(x)    needs ['th_z(x)=v']
+  th_z(y)=th_y(a)    needs ['th_y(a)=th_z(y)']
+  v=th_b(z)          needs ['th_z(x)=v']
+  v=th_z(b)          needs ['th_z(x)=v']
+  v=th_z(x)          needs ['th_z(x)=v']
+  x~y                needs ['th_x(a)=th_y(x)']
+  z~y                needs ['th_y(a)=th_z(y)']
+  c~y                needs ['th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_b(a)=th_z(c)    needs ['th_c(z)=th_x(a)', 'th_z(x)=v']
+  th_b(z)=th_z(c)    needs ['th_c(z)=th_x(a)', 'th_z(x)=v']
+  th_c(x)=th_x(y)    needs ['th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(x)=th_y(x)    needs ['th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(z)=th_x(y)    needs ['th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(z)=th_y(x)    needs ['th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_x(c)=th_x(y)    needs ['th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_x(c)=th_y(x)    needs ['th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_z(c)=th_z(b)    needs ['th_c(z)=th_x(a)', 'th_z(x)=v']
+  th_z(c)=th_z(x)    needs ['th_c(z)=th_x(a)', 'th_z(x)=v']
+  v=th_z(c)          needs ['th_c(z)=th_x(a)', 'th_z(x)=v']
+  b~y                needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_a(b)=th_a(x)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(a)=th_b(y)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(a)=th_y(b)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(y)=th_z(b)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(y)=th_z(x)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(z)=th_b(y)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(z)=th_y(b)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_c(x)=th_c(y)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(x)=th_y(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(y)=th_x(a)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(y)=th_x(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(y)=th_x(y)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(y)=th_y(x)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(z)=th_c(y)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_c(z)=th_y(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_x(a)=th_x(z)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(a)=th_y(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_x(c)=th_y(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_x(y)=th_y(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_x(z)=th_x(y)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(z)=th_y(x)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_y(c)=th_y(x)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)']
+  th_z(b)=th_y(b)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_z(x)=th_y(b)    needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  u=th_a(x)          needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  v=th_b(y)          needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  v=th_y(b)          needs ['th_y(a)=th_z(y)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(a)=th_b(x)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(x)=th_b(y)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(x)=th_b(z)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(x)=th_y(b)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(x)=th_z(b)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(x)=th_z(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(x)=th_z(x)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_b(y)=th_z(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_c(x)=th_x(b)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_c(x)=th_x(z)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_c(y)=th_x(b)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_c(y)=th_x(z)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_c(z)=th_x(b)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_c(z)=th_x(z)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(a)=th_x(b)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(b)=th_x(y)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(b)=th_x(z)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(b)=th_y(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(b)=th_y(x)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(c)=th_x(b)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(c)=th_x(z)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_x(z)=th_y(c)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  th_z(c)=th_y(b)    needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  v=th_b(x)          needs ['th_y(a)=th_z(y)', 'th_c(z)=th_x(a)', 'th_x(a)=th_y(x)', 'th_z(x)=v']
+  a=u                needs ALL
+  b<=y               needs ALL
+  b<=z               needs ALL
+  b=th_y(a)          needs ALL
+  b=th_y(z)          needs ALL
+  b=th_z(c)          needs ALL
+  b=th_z(x)          needs ALL
+  b=th_z(y)          needs ALL
+  b=v                needs ALL
+  c<=x               needs ALL
+  c<=y               needs ALL
+  c=th_x(a)          needs ALL
+  c=th_x(b)          needs ALL
+  c=th_x(y)          needs ALL
+  c=th_x(z)          needs ALL
+  c=th_y(x)          needs ALL
+  th_a(a)=th_a(b)    needs ALL
+  th_a(a)=th_a(x)    needs ALL
+  th_a(a)=th_a(y)    needs ALL
+  th_a(a)=th_a(z)    needs ALL
+  th_a(b)=a          needs ALL
+  th_a(b)=th_a(y)    needs ALL
+  th_a(b)=th_a(z)    needs ALL
+  th_a(c)=th_a(b)    needs ALL
+  th_a(c)=th_a(x)    needs ALL
+  th_a(c)=th_a(y)    needs ALL
+  th_a(c)=th_a(z)    needs ALL
+  th_a(x)=a          needs ALL
+  th_a(x)=th_a(y)    needs ALL
+  th_a(x)=th_a(z)    needs ALL
+  th_a(y)=a          needs ALL
+  th_a(z)=a          needs ALL
+  th_a(z)=th_a(y)    needs ALL
+  th_b(a)=b          needs ALL
+  th_b(a)=th_b(b)    needs ALL
+  th_b(a)=th_b(c)    needs ALL
+  th_b(a)=th_y(a)    needs ALL
+  th_b(a)=th_y(z)    needs ALL
+  th_b(a)=th_z(y)    needs ALL
+  th_b(b)=th_b(y)    needs ALL
+  th_b(b)=th_b(z)    needs ALL
+  th_b(b)=th_y(a)    needs ALL
+  th_b(b)=th_y(b)    needs ALL
+  th_b(b)=th_y(z)    needs ALL
+  th_b(b)=th_z(b)    needs ALL
+  th_b(b)=th_z(c)    needs ALL
+  th_b(b)=th_z(x)    needs ALL
+  th_b(b)=th_z(y)    needs ALL
+  th_b(c)=th_b(y)    needs ALL
+  th_b(c)=th_b(z)    needs ALL
+  th_b(c)=th_y(a)    needs ALL
+  th_b(c)=th_y(b)    needs ALL
+  th_b(c)=th_y(z)    needs ALL
+  th_b(c)=th_z(b)    needs ALL
+  th_b(c)=th_z(c)    needs ALL
+  th_b(c)=th_z(x)    needs ALL
+  th_b(c)=th_z(y)    needs ALL
+  th_b(x)=th_y(a)    needs ALL
+  th_b(x)=th_y(z)    needs ALL
+  th_b(x)=th_z(y)    needs ALL
+  th_b(y)=b          needs ALL
+  th_b(y)=th_y(a)    needs ALL
+  th_b(y)=th_y(z)    needs ALL
+  th_b(y)=th_z(y)    needs ALL
+  th_b(z)=b          needs ALL
+  th_b(z)=th_y(a)    needs ALL
+  th_b(z)=th_y(z)    needs ALL
+  th_b(z)=th_z(y)    needs ALL
+  th_c(a)=th_c(x)    needs ALL
+  th_c(a)=th_c(y)    needs ALL
+  th_c(a)=th_c(z)    needs ALL
+  th_c(a)=th_x(a)    needs ALL
+  th_c(a)=th_x(b)    needs ALL
+  th_c(a)=th_x(c)    needs ALL
+  th_c(a)=th_x(y)    needs ALL
+  th_c(a)=th_x(z)    needs ALL
+  th_c(a)=th_y(c)    needs ALL
+  th_c(a)=th_y(x)    needs ALL
+  th_c(b)=th_c(x)    needs ALL
+  th_c(b)=th_c(y)    needs ALL
+  th_c(b)=th_c(z)    needs ALL
+  th_c(b)=th_x(a)    needs ALL
+  th_c(b)=th_x(b)    needs ALL
+  th_c(b)=th_x(c)    needs ALL
+  th_c(b)=th_x(y)    needs ALL
+  th_c(b)=th_x(z)    needs ALL
+  th_c(b)=th_y(c)    needs ALL
+  th_c(b)=th_y(x)    needs ALL
+  th_c(c)=th_c(x)    needs ALL
+  th_c(c)=th_c(y)    needs ALL
+  th_c(c)=th_c(z)    needs ALL
+  th_c(c)=th_x(a)    needs ALL
+  th_c(c)=th_x(b)    needs ALL
+  th_c(c)=th_x(c)    needs ALL
+  th_c(c)=th_x(y)    needs ALL
+  th_c(c)=th_x(z)    needs ALL
+  th_c(c)=th_y(c)    needs ALL
+  th_c(c)=th_y(x)    needs ALL
+  th_c(x)=c          needs ALL
+  th_c(y)=c          needs ALL
+  th_c(z)=c          needs ALL
+  th_y(a)=th_y(b)    needs ALL
+  th_y(b)=th_y(z)    needs ALL
+  th_z(b)=th_y(a)    needs ALL
+  th_z(b)=th_y(z)    needs ALL
+  th_z(b)=th_z(y)    needs ALL
+  th_z(c)=th_y(a)    needs ALL
+  th_z(c)=th_y(z)    needs ALL
+  th_z(c)=th_z(y)    needs ALL
+  th_z(x)=th_y(a)    needs ALL
+  th_z(x)=th_y(z)    needs ALL
+  th_z(x)=th_z(y)    needs ALL
+  th_z(y)=th_y(b)    needs ALL
+  u=th_a(a)          needs ALL
+  u=th_a(c)          needs ALL
+  u=th_a(y)          needs ALL
+  u=th_a(z)          needs ALL
+  v=th_b(b)          needs ALL
+  v=th_b(c)          needs ALL
+  v=th_y(a)          needs ALL
+  v=th_y(z)          needs ALL
+  v=th_z(y)          needs ALL

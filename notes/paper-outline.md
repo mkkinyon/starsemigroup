@@ -87,7 +87,15 @@ conditions (R'), (W_2), K0, K4, K0'' and whatever settles 1, 2, 3.
   rpp_vs_chain, k6_vs_chain); Prover9 proofs as supplementary files in the repository.
 - All "added on <date>" chronology.
 
-## 5. Decisions needed
+## 5. Decisions (settled 17 Oct)
+
+1. Scope: order 8 now; candidates 1, 2, 3 of order 9 go into the open-problems section (segment rule applied after
+   the (L1c) segment, notes §5.23(f)).
+2. Digraph conditions stay; §4.2 (unrolled hexagon, infinite case) compressed to a remark.
+3. Notation: `\mt` macro (currently `\bowtie`); EGMR's `\mathcal F` is a one-line change.
+4. Title and journal: still open.
+
+## 5'. Decisions as originally posed
 
 1. Scope: order-8 classification only (ready now) versus waiting for order 9 (candidates 1, 2, 3). My
    suggestion: write for order 8 now, with order 9 as a section "partial results and candidates"; if 1, 2, 3

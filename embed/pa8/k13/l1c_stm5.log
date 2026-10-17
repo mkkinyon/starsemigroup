@@ -1,0 +1,35 @@
+l1c_inst5_s1.npy: 521200 instances with a not>< b (41s)
+  TARGET th_b(x)=v                                               FAILS 0/521200
+  a><b                                                           FAILS 521200/521200
+  (Z1) each T(z)-block in one class of x v b                     FAILS 0/521200
+  (Z2) each T(z)-block meets <=1 B                               FAILS 489430/521200
+  (Z3) each T(z)-block in one class of c v b                     FAILS 489430/521200
+  (Z4) T(z) meeting B1,B2: B1,B2 share an X                      FAILS 480/521200
+  (Z5) eps_z <= eps_x v eps_c                                    FAILS 496570/521200
+  (Z6) eps_z <= eps_y v eps_b                                    FAILS 0/521200
+  (Z7) eps_z <= eps_w                                            FAILS 496570/521200
+  (Z8) eps_z <= eps_x v eps_a                                    FAILS 0/521200
+  (Z9) eps_z <= eps_a v eps_b                                    FAILS 0/521200
+  (Z10) eps_y <= eps_x v eps_b                                   FAILS 0/521200
+  (Z11) each T(z)-block meets <=1 X                              FAILS 188520/521200
+  (Z12) each X meets <=1 T(z)-block                              FAILS 376860/521200
+  (Z13) each T(z) in one class of a v c                          FAILS 489430/521200
+  (Z14) each T(y)-block meets <=1 B                              FAILS 489430/521200
+  (Z15) each T(y)-block in one Delta or T-less class of c v b    FAILS 489430/521200
+  (Z16) T(y) meeting B1,B2: B1,B2 share an X                     FAILS 480/521200
+  (Z17) two X of one W share a b-block                           FAILS 2640/521200
+  (Z18) two X of one W share a c-block                           FAILS 2640/521200
+  (Z19) eps_x <= eps_z v eps_b                                   FAILS 60150/521200
+  (Z20) eps_x <= eps_y v eps_b                                   FAILS 60150/521200
+  (Z21) each X meets <=1 T(v)-block                              FAILS 0/521200
+  (Z22) each W meets <=1 T(v)-block                              FAILS 0/521200
+  (Z23) eps_b <= eps_z v eps_x                                   FAILS 0/521200
+  (Z24) each N(v)-block in one class of x v b                    FAILS 0/521200
+  (Z25) class of x v b of an N(v)-block misses supp x            FAILS 0/521200
+  (Z26) every T(v)-block class meets supp x                      FAILS 0/521200
+  (Z27) eps_c <= eps_x v eps_a                                   FAILS 0/521200
+  (Z28) eps_b <= eps_x v eps_a                                   FAILS 0/521200
+  (Z29) each W meets <=1 T(r)-block                              FAILS 27060/521200
+  (Z30) T(z) meeting B1,B2 (B1,B2 in V): share a Y               FAILS 0/521200
+  (Z31) each T(z) lies in one T(r)-block                         FAILS 38760/521200
+  (Z32) each T(v) lies in one T(r)-block                         FAILS 34800/521200
