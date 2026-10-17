@@ -1,0 +1,21 @@
+base 0/1662: 8 labelled, 8 distinct (0s)
+base 100/1662: 1589 labelled, 906 distinct (2s)
+base 200/1662: 3210 labelled, 1617 distinct (4s)
+base 300/1662: 4718 labelled, 2424 distinct (6s)
+base 400/1662: 6579 labelled, 3286 distinct (7s)
+base 500/1662: 8141 labelled, 3945 distinct (9s)
+base 600/1662: 9778 labelled, 4664 distinct (11s)
+base 700/1662: 11838 labelled, 5335 distinct (13s)
+base 800/1662: 13239 labelled, 5944 distinct (14s)
+base 900/1662: 15218 labelled, 6788 distinct (16s)
+base 1000/1662: 16706 labelled, 7327 distinct (18s)
+base 1100/1662: 18479 labelled, 8030 distinct (20s)
+base 1200/1662: 20275 labelled, 8707 distinct (22s)
+base 1300/1662: 22022 labelled, 9327 distinct (24s)
+base 1400/1662: 23390 labelled, 9792 distinct (25s)
+base 1500/1662: 24449 labelled, 10187 distinct (27s)
+base 1600/1662: 25865 labelled, 10725 distinct (29s)
+order 8: 26447 labelled extensions, 10932 up to isomorphism (31s)
+satisfying (S),(R): 10828 (all in ord8.json: True); violating (S) or (R): 104
+of these, containing a known non-embeddable proper subalgebra: 104; minimal non-embeddable: 0
+done

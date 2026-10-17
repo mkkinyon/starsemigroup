@@ -1,0 +1,8 @@
+base 0/295: 7 labelled, 7 distinct (0s)
+base 100/295: 1340 labelled, 708 distinct (1s)
+base 200/295: 2726 labelled, 1305 distinct (3s)
+order 7: 3671 labelled extensions, 1671 up to isomorphism (4s)
+satisfying (S),(R): 1662 (all in ord7.json: True); violating (S) or (R): 9
+of these, containing a known non-embeddable proper subalgebra: 8; minimal non-embeddable: 1
+  base 136: S=True R=False table=[[0, 0, 0, 3, 3, 5, 5], [0, 1, 0, 3, 3, 5, 5], [0, 0, 2, 3, 4, 5, 6], [0, 0, 0, 3, 3, 5, 5], [0, 0, 2, 3, 4, 5, 5], [0, 5, 0, 3, 3, 5, 5], [0, 5, 2, 3, 3, 5, 6]]
+done

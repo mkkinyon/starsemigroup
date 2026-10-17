@@ -1,0 +1,1 @@
+Census of minimal non-embeddable projection algebras with (Q1) only (17 Oct): q1ext.py expects the ord<n>.json files and post8.log of embed/pa8/ in its own directory (run it from there or copy it up); logs and summaries for orders 6-9 included.
