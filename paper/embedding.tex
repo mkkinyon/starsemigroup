@@ -3,6 +3,8 @@
 \usepackage{amsmath,amssymb,amsthm}
 \usepackage{enumitem}
 \usepackage{booktabs}
+\usepackage{tikz}
+\tikzset{matched/.style={double,double distance=1.2pt,thick}, comm/.style={dashed}, above/.style={gray!70,thin}, every node/.style={inner sep=1.5pt}}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[colorlinks=true,linkcolor=MidnightBlue,citecolor=MidnightBlue,urlcolor=MidnightBlue]{hyperref}
 
@@ -357,7 +359,27 @@ Let $k\ge3$ and let $E$ be a set of ordered pairs $(i,j)$ of distinct elements o
 \item $a_ib_i=b_ia_i=:m_i$ for all $i$;
 \item $a_i\mt b_j$ for all $(i,j)\in E$,
 \end{enumerate}
-and let $(\mathrm D_E)$ be the quasi-identity ``(H1)--(H3) imply $w=z$''. By Lemma~\ref{lem:comm} all hypotheses are equations of the projection algebra, so $(\mathrm D_E)$ is a quasi-identity in $2k$ variables. (In (H1) it suffices to assume the ``cyclic'' equations $\theta_{a_2}(a_1)=\theta_{a_3}(a_2)=\theta_{a_1}(a_3)$ and so on: if $w$ denotes the common value, then $\theta_{a_1}(a_2)=a_1a_2a_1=(a_1a_2a_1)^2=a_1(a_2a_1a_2)a_1=a_1wa_1=a_1(a_3a_1a_3)a_1=(a_1a_3a_1)^2=w$, and the $a_i$ pairwise commute with product $w$ by Lemma~\ref{lem:comm}.) Two instances are of particular interest: $k=3$ with $E$ all six pairs, the \emph{hexagon condition}, in which the six matched pairs form the hexagon $a_1\,b_2\,a_3\,b_1\,a_2\,b_3$; and $k=3$ with $E=\{(1,2),(2,3),(3,1)\}$ a directed $3$-cycle, the \emph{triangle condition} \Tri, which assumes only $a_1\mt b_2$, $a_2\mt b_3$, $a_3\mt b_1$ and therefore implies the hexagon condition trivially. Call $E$ a \emph{star} if it is empty, or all its edges have the same tail, or all have the same head; $E$ is not a star iff it has two distinct tails and two distinct heads. The hypothesis $k\ge3$ cannot be dropped: for two matched pairs $a_1\mt b_2$, $a_2\mt b_1$ the statement fails already in $\P_2$.
+and let $(\mathrm D_E)$ be the quasi-identity ``(H1)--(H3) imply $w=z$''. By Lemma~\ref{lem:comm} all hypotheses are equations of the projection algebra, so $(\mathrm D_E)$ is a quasi-identity in $2k$ variables. (In (H1) it suffices to assume the ``cyclic'' equations $\theta_{a_2}(a_1)=\theta_{a_3}(a_2)=\theta_{a_1}(a_3)$ and so on: if $w$ denotes the common value, then $\theta_{a_1}(a_2)=a_1a_2a_1=(a_1a_2a_1)^2=a_1(a_2a_1a_2)a_1=a_1wa_1=a_1(a_3a_1a_3)a_1=(a_1a_3a_1)^2=w$, and the $a_i$ pairwise commute with product $w$ by Lemma~\ref{lem:comm}.) Two instances are of particular interest: $k=3$ with $E$ all six pairs, the \emph{hexagon condition}, in which the six matched pairs form the hexagon $a_1\,b_2\,a_3\,b_1\,a_2\,b_3$; and $k=3$ with $E=\{(1,2),(2,3),(3,1)\}$ a directed $3$-cycle, the \emph{triangle condition} \Tri\ (Figure~\ref{fig:tri}), which assumes only $a_1\mt b_2$, $a_2\mt b_3$, $a_3\mt b_1$ and therefore implies the hexagon condition trivially. Call $E$ a \emph{star} if it is empty, or all its edges have the same tail, or all have the same head; $E$ is not a star iff it has two distinct tails and two distinct heads. The hypothesis $k\ge3$ cannot be dropped: for two matched pairs $a_1\mt b_2$, $a_2\mt b_1$ the statement fails already in $\P_2$.
+
+\begin{figure}[htbp]
+\centering
+\begin{tikzpicture}[scale=0.9]
+  \foreach \i/\y in {1/2,2/1,3/0} {
+     \node (a\i) at (0,\y) {$a_\i$};
+     \node (b\i) at (2.6,\y) {$b_\i$};
+     \draw[comm] (a\i) -- (b\i);
+  }
+  \draw[matched] (a1) -- (b2);
+  \draw[matched] (a2) -- (b3);
+  \draw[matched] (a3) -- (b1);
+  \node (w) at (-1.1,-1.2) {$w$};
+  \node (z) at (3.7,-1.2) {$z$};
+  \foreach \i in {1,2,3} { \draw[above] (a\i) -- (w); \draw[above] (b\i) -- (z); }
+  \node at (1.3,-1.9) {$\Longrightarrow\ w=z$};
+\end{tikzpicture}
+\caption{The triangle condition \Tri. Double lines are matched pairs, dashed lines commuting pairs; $w=a_ia_j$ and $z=b_ib_j$ for $i\ne j$.}\label{fig:tri}
+\end{figure}
+
 
 The matchings contribute through the following \emph{transport relations}.
 
