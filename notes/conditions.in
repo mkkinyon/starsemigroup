@@ -18,6 +18,10 @@
 % and (S), are proved in Section 5.11 (Theorem thm:Q).
 % Known implications: (Q) -> (P2) -> (S);  (R') -> (R)  [from the axioms alone: instantiate
 % (R') at X := x*c, Y := x; Prover9 closes the instance in seconds].
+% Labels (18 Oct 2026, final paper labels; research names in brackets):
+%   (PC) [(Q1)], (Sq) [(S)], (A1) [(R)], (A2) [(R')], (A2') [(R'')], (X) [(V)], (Ab) [K4], (Hm) [K0], (Hm') [K0''];
+%   (Tri), (P1), (P2), (Q), (E1), (E6), (W2), (W3), (R'2), (R'3), (K5), (K6) unchanged.
+% The comments below still use the research names.
 % ---------------------------------------------------------------------------
 
 set(prolog_style_variables).
@@ -33,7 +37,7 @@ X*X = X                                        # label("PA1").
 (((Z*X)*Y)*X)*Y = (Z*X)*Y                      # label("PA5").
 
 % --- (Q1): a common lower bound forces commutation --------------------------
-(Z*X = Z & Z*Y = Z) -> X*Y = Y*X                # label("(Q1)").
+(Z*X = Z & Z*Y = Z) -> X*Y = Y*X                # label("(PC)").
 
 % --- triangle condition (matching pattern E = {(1,2),(2,3),(3,1)}) -----------
 % A1,A2,A3 pairwise commuting with common meet W; B1,B2,B3 likewise with meet Z;
@@ -48,27 +52,27 @@ X*X = X                                        # label("PA1").
 % A|><|C, B|><|C, B|><|D, CD = DC, theta_A(CD) = theta_B(CD)  =>  A|><|D.
 (C*A = A & A*C = C & C*B = B & B*C = C & D*B = B & B*D = D &
  C*D = D*C & (C*D)*A = (C*D)*B)
- -> (D*A = A & A*D = D)                         # label("(S)").
+ -> (D*A = A & A*D = D)                         # label("(Sq)").
 
 % --- (R): Theorem thm:R ------------------------------------------------------
 % A|><|C, B|><|C, XA = AX, XC = CX, theta_X(B) = theta_X(C)  =>  A|><|B.
 (C*A = A & A*C = C & C*B = B & B*C = C &
  X*A = A*X & X*C = C*X & B*X = C*X)
- -> (B*A = A & A*B = B)                         # label("(R)").
+ -> (B*A = A & A*B = B)                         # label("(A1)").
 
 % --- (R'): Theorem thm:Rp; implies (R) -----------------------------------------
 % A|><|C, B|><|C, XC = CX, theta_X(A) = theta_X(C), YA = AY, theta_X(B) = theta_Y(B)
 %   =>  A|><|B.
 (C*A = A & A*C = C & C*B = B & B*C = C &
  X*C = C*X & A*X = C*X & Y*A = A*Y & B*X = B*Y)
- -> (B*A = A & A*B = B)                         # label("(R')").
+ -> (B*A = A & A*B = B)                         # label("(A2)").
 
 % --- (V): Theorem thm:V ------------------------------------------------------
 % BCB = B, ATA <= B, CTC <= A  =>  ATA <= BTB   (in fact ATA = BTB in P_X).
 (C*B = B & (T*A)*B = T*A & (T*C)*A = T*C)
- -> (T*A)*(T*B) = T*A                           # label("(V)").
+ -> (T*A)*(T*B) = T*A                           # label("(X)").
 % equality form, valid in every P_X:
-% (C*B = B & (T*A)*B = T*A & (T*C)*A = T*C) -> T*A = T*B   # label("(V=)").
+% (C*B = B & (T*A)*B = T*A & (T*C)*A = T*C) -> T*A = T*B   # label("(X=)").
 
 % --- path-closing conditions on a path P0|><|P1|><|P2|><|P3 -------------------
 % (P1) [Theorem thm:P1]: X commutes with P0,P1; theta_P0(X) = theta_P2(X); theta_X(P1) = theta_X(P3).
@@ -105,7 +109,7 @@ X*X = X                                        # label("PA1").
 % A|><|C, B|><|C, XC = CX, theta_X(A) = theta_X(C), YB = BY, theta_X(B) = theta_Y(A)  =>  A|><|B.
 (C*A = A & A*C = C & C*B = B & B*C = C &
  X*C = C*X & A*X = C*X & Y*B = B*Y & B*X = A*Y)
- -> (B*A = A & A*B = B)                         # label("(R'')").
+ -> (B*A = A & A*B = B)                         # label("(A2')").
 
 % --- (W2), (W3): Section 5.14; PROVED for all n (11 Oct 2026, Section 5.20: counting invariant) -------
 % A|><|C, B|><|C, XC = CX, YB = BY, XY = YX, theta_X(A) = theta_X(C), theta_Y(A) = theta_Y(C)  =>  A|><|B.
@@ -130,7 +134,7 @@ X*X = X                                        # label("PA1").
 % K0: YC = CY, theta_Y(B) = V, BZB = B, theta_Z(A) = theta_Z(B), theta_Y(Z) = U  =>  A|><|B.   PROVED in every P_X (Thm 5.50, 16 Oct 2026).
 (C*A = A & A*C = C & C*B = B & B*C = C &
  Y*C = C*Y & B*Y = A*B & Z*B = B & A*Z = B*Z & Z*Y = B*A)
- -> (B*A = A & A*B = B)                         # label("(K0)").
+ -> (B*A = A & A*B = B)                         # label("(Hm)").
 % K0'': the variant proved by the same argument (Thm 5.50 and the paragraph after it): theta_Z(A) = theta_Z(B) replaced by
 % theta_A(Z) = A, i.e. Z is a common matched partner of A and B.  PROVED in every P_X (16 Oct 2026). In P(P_4) its instance
 % set coincides with that of K0. NOT a consequence of K0 or of any other condition in this file: M.K.'s Mace4 model of order 9
@@ -141,11 +145,11 @@ X*X = X                                        # label("PA1").
 % 17 Oct), and whether it holds in infinite projection algebras is open and irrelevant for finite embeddability.
 (C*A = A & A*C = C & C*B = B & B*C = C &
  Y*C = C*Y & B*Y = A*B & Z*A = A & Z*B = B & Z*Y = B*A)
- -> (B*A = A & A*B = B)                         # label("(K0'')").
+ -> (B*A = A & A*B = B)                         # label("(Hm')").
 % K4a: AYA = A, B <= Z, YC = CY, theta_Z(Y) = V, theta_Z(A) = U  =>  A|><|B.   PROVED in every P_X (Thm 5.49, 16 Oct 2026).
 (C*A = A & A*C = C & C*B = B & B*C = C &
  Y*A = A & B*Z = B & Y*C = C*Y & Y*Z = A*B & A*Z = B*A)
- -> (B*A = A & A*B = B)                         # label("(K4)").
+ -> (B*A = A & A*B = B)                         # label("(Ab)").
 % K5: theta_X(C) = A, BXB = B, ZC = CZ, theta_Z(X) = U, theta_Z(B) = V  =>  A|><|B.
 (C*A = A & A*C = C & C*B = B & B*C = C &
  C*X = A & X*B = B & Z*C = C*Z & X*Z = B*A & B*Z = A*B)
@@ -159,3 +163,16 @@ end_of_list.
 
 % formulas(goals).
 % end_of_list.
+
+% ---------------------------------------------------------------------------
+% Finite-descent clauses (notes/infinite-X.md, 18 Oct 2026).  NOT valid in every P_X:
+% Phi0 holds in every finite projection algebra (Lemma descent(d)) and every finite P_m,
+% but fails in P(P_N) (Hilbert hotel).  Use as a TEST: if (PC) + Sigma proves Phi0, then
+% Sigma fails in P(P_N).  Ladder: Psi0_2 <= Phi0 <= Psi0_3 <= Phi0_3 (each implies the
+% previous); Psi0_2 holds in every P_X (block proof), so Phi0 is the sensitive test.
+% Commented out so that they are not picked up as assumptions.
+%
+% (C*A = A & A*C = C & C*B = B & B*C = C & B*A = A) -> A*B = B        # label("Phi0").
+% (C*A = A & A*C = C & C*B = B & B*C = C & P*B = B & B*P = P & A*P = P) -> P*A = A   # label("Phi0_3").
+% (Q*P = Q & R*Q = Q & Q*R = R & P*R = R & R*P = P) -> Q = P           # label("Psi0_2").
+% (Q*P = Q & R*Q = Q & Q*R = R & S*R = R & R*S = S & P*S = S & S*P = P) -> Q = P   # label("Psi0_3").
