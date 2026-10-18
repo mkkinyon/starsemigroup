@@ -1,0 +1,124 @@
+% Figure: the eight wiring conditions.  Vocabulary (also in the caption):
+%   double line = matched pair (hypothesis); dotted double line = the conclusion;
+%   dashed = commuting; thin grey = order (lower element drawn lower);
+%   half double line = half-matched (the double half at the vertex p with theta_p(x)=p);
+%   arrow p -> x = "p sees x"; a forked arrow x -> {p,q} = x sees p and q alike;
+%   two arrows merging into x = p and q see x alike; a label u or v on an arrow = the value
+%   theta_p(x) equals u = theta_a(b) or v = theta_b(a).
+\tikzset{
+  wd/.style={scale=0.78, every node/.style={inner sep=1.5pt}},
+  concl/.style={double,double distance=1.2pt,thick,dotted},
+  sees/.style={-{Stealth[length=5pt]},semithick},
+  seesline/.style={semithick},
+  half/.style={thick},
+  lbl/.style={font=\scriptsize,inner sep=1pt,fill=white},
+  cname/.style={font=\small,anchor=north west,inner sep=0pt}
+}
+% half-matched: double on the half next to #1, single on the half next to #2
+\newcommand{\halfmatch}[2]{\draw[matched] (#1) -- ($(#1)!0.5!(#2)$); \draw[half] ($(#1)!0.5!(#2)$) -- (#2);}
+% fork: #1 sees #2 and #3 alike
+\newcommand{\fork}[3]{\coordinate (j) at ($(#1)!0.62!($(#2)!0.5!(#3)$)$); \draw[seesline] (#1) -- (j); \draw[sees] (j) -- (#2); \draw[sees] (j) -- (#3);}
+% merge: #1 and #2 see #3 alike
+\newcommand{\merge}[3]{\coordinate (j) at ($(#3)!0.25!($(#1)!0.5!(#2)$)$); \draw[seesline] (#1) -- (j); \draw[seesline] (#2) -- (j); \draw[sees] (j) -- (#3);}
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{@{}cc@{}}
+% ---------------------------------------------------------------- (S)
+\begin{tikzpicture}[wd]
+  \node[cname] at (-0.9,2.3) {\Wire};
+  \node (a) at (0,0) {$a$}; \node (c) at (1.9,0) {$c$}; \node (b) at (3.8,0) {$b$}; \node (d) at (5.7,0) {$d$};
+  \draw[matched] (a) -- (c); \draw[matched] (c) -- (b); \draw[matched] (b) -- (d);
+  \draw[comm] (c) to[bend left=35] (d);
+  \node (cd) at (3.8,2.1) {$cd$};
+  \draw[ord] (cd) -- (c); \draw[ord] (cd) -- (d);
+  \merge{a}{b}{cd}
+  \draw[concl] (a) to[bend right=30] (d);
+\end{tikzpicture}
+&
+% ---------------------------------------------------------------- (R)
+\begin{tikzpicture}[wd]
+  \node[cname] at (-0.9,2.3) {\Rcond};
+  \node (a) at (0,0) {$a$}; \node (c) at (1.9,0) {$c$}; \node (b) at (3.8,0) {$b$};
+  \draw[matched] (a) -- (c); \draw[matched] (c) -- (b);
+  \node (x) at (0.2,2.1) {$x$};
+  \draw[comm] (x) -- (a); \draw[comm] (x) to[bend left=15] (c);
+  \fork{x}{c}{b}
+  \draw[concl] (a) to[bend right=30] (b);
+\end{tikzpicture}
+\\[1.5ex]
+% ---------------------------------------------------------------- (V)
+\begin{tikzpicture}[wd]
+  \node[cname] at (-0.9,2.3) {\Vcond};
+  \node (a) at (0,0) {$a$}; \node (c) at (1.9,0) {$c$}; \node (b) at (3.8,0) {$b$};
+  \halfmatch{b}{c}
+  \node (t) at (1.9,2.1) {$t$};
+  \draw[sees] (a) -- (t); \draw[sees] (c) -- (t); \draw[sees] (b) -- (t);
+  \node[font=\footnotesize] at (1.9,-0.9) {$\theta_a(t)\le b,\ \theta_c(t)\le a\ \Longrightarrow\ \theta_a(t)=\theta_b(t)$};
+\end{tikzpicture}
+&
+% ---------------------------------------------------------------- (R')
+\begin{tikzpicture}[wd]
+  \node[cname] at (-0.9,2.3) {\Rp};
+  \node (a) at (0,0) {$a$}; \node (c) at (1.9,0) {$c$}; \node (b) at (3.8,0) {$b$};
+  \draw[matched] (a) -- (c); \draw[matched] (c) -- (b);
+  \node (x) at (2.9,2.2) {$x$}; \node (y) at (-0.7,1.5) {$y$};
+  \draw[comm] (x) to[bend left=15] (c); \draw[comm] (y) -- (a);
+  \fork{x}{a}{c}
+  \merge{x}{y}{b}
+  \draw[concl] (a) to[bend right=30] (b);
+\end{tikzpicture}
+\\[1.5ex]
+% ---------------------------------------------------------------- (P1)
+\begin{tikzpicture}[wd]
+  \node[cname] at (-0.9,2.3) {\Pone};
+  \node (a) at (0,0) {$a$}; \node (c) at (1.9,0) {$c$}; \node (b) at (3.8,0) {$b$}; \node (d) at (5.7,0) {$d$};
+  \draw[matched] (a) -- (c); \draw[matched] (c) -- (b); \draw[matched] (b) -- (d);
+  \node (x) at (3.8,2.2) {$x$};
+  \draw[comm] (x) to[bend right=22] (a); \draw[comm] (x) to[bend right=12] (c);
+  \merge{a}{b}{x}
+  \fork{x}{c}{d}
+  \draw[concl] (a) to[bend right=30] (d);
+\end{tikzpicture}
+&
+% ---------------------------------------------------------------- (Q)
+\begin{tikzpicture}[wd]
+  \node[cname] at (-0.9,2.3) {\Qcond};
+  \node (a) at (0,0) {$a$}; \node (c) at (1.9,0) {$c$}; \node (b) at (3.8,0) {$b$}; \node (d) at (5.7,0) {$d$};
+  \draw[matched] (a) -- (c); \draw[matched] (c) -- (b); \draw[matched] (b) -- (d);
+  \node (x) at (4.8,2.2) {$x$}; \node (y) at (0.9,2.2) {$y$};
+  \draw[comm] (x) to[bend right=28] (a); \draw[comm] (y) -- (a); \draw[comm] (y) to[bend left=18] (b);
+  \merge{c}{d}{x}
+  \fork{y}{c}{b}
+  \draw[concl] (a) to[bend right=30] (d);
+\end{tikzpicture}
+\\[1.5ex]
+% ---------------------------------------------------------------- (K4)
+\begin{tikzpicture}[wd]
+  \node[cname] at (-0.9,2.3) {\Kfour};
+  \node (a) at (0,0) {$a$}; \node (c) at (1.9,0) {$c$}; \node (b) at (3.8,0) {$b$};
+  \draw[matched] (a) -- (c); \draw[matched] (c) -- (b);
+  \node (y) at (0.5,2.2) {$y$}; \node (z) at (3.8,2.2) {$z$};
+  \halfmatch{a}{y}
+  \draw[comm] (y) -- (c);
+  \draw[ord] (z) -- (b);
+  \draw[sees] (z) -- node[lbl] {$v$} (y);
+  \draw[sees] (z) to[bend left=14] node[lbl,pos=0.55] {$u$} (a);
+  \draw[concl] (a) to[bend right=30] (b);
+\end{tikzpicture}
+&
+% ---------------------------------------------------------------- (K0)
+\begin{tikzpicture}[wd]
+  \node[cname] at (-0.9,2.3) {\Kzero};
+  \node (a) at (0,0) {$a$}; \node (c) at (1.9,0) {$c$}; \node (b) at (3.8,0) {$b$};
+  \draw[matched] (a) -- (c); \draw[matched] (c) -- (b);
+  \node (y) at (1.9,2.2) {$y$}; \node (z) at (5.3,2.1) {$z$};
+  \draw[comm] (y) -- (c);
+  \draw[sees] (y) -- node[lbl] {$v$} (b);
+  \draw[sees] (y) -- node[lbl] {$u$} (z);
+  \halfmatch{b}{z}
+  \fork{z}{a}{b}
+  \draw[concl] (a) to[bend right=30] (b);
+\end{tikzpicture}
+\end{tabular}
+\caption{The eight wiring conditions. Double lines are matched pairs and the dotted double line is the conclusion; dashed lines are commuting pairs; thin lines are order, the lower element drawn lower; a line that is double at one end only, at $p$, is a half-matching $\theta_p(x)=p$. An arrow from $p$ to $x$ stands for $\theta_p(x)$: a forked arrow from $x$ to $p$ and $q$ means that $x$ sees $p$ and $q$ alike, $\theta_x(p)=\theta_x(q)$; two arrows merging into $x$ mean that their sources see $x$ alike; a label $u$ or $v$ on an arrow gives its value, $u=\theta_a(b)$, $v=\theta_b(a)$. In \Vcond\ the arrows are the three restrictions of $t$, and the hypotheses on them are written out.}\label{fig:wiring}
+\end{figure}
