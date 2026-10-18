@@ -83,6 +83,32 @@ one class of e_b v e_c. So this particular base configuration admits no y; a dif
 base (where the merging of B_0, B_1 is witnessed through chains rather than a single
 block) has not been tried.
 
+## 3a. (Hm) FAILS in P(P_N)  (18 Oct, evening)
+
+The SAT search `embed/hotel_sat.py` (points (index, fibre), blocks of span <= 1, 1-periodic
+beyond a defect, join classes of span <= B, hypotheses on a safe window, models re-verified
+by brute-force partition multiplication on a window of 24 indices) finds, at f = 4, d = 1,
+B = 1, an instance of (Hm) in P(P_N) with a not|><| b.  Reading the model: y = 1 (the identity)
+and z = u = theta_a(b).  Indeed, in any projection algebra with identity 1 and with (PC),
+if a |><| c |><| b and theta_b(a) = b, then (y, z) := (1, theta_a(b)) satisfies all hypotheses
+of (Hm): yc = cy; theta_y(b) = b = theta_b(a); theta_b(z) = b; theta_z(a) = theta_z(b);
+theta_y(z) = z = theta_a(b)  (Prover9, 4 given clauses, `scratchpad/phi0/hm_y1.in`).  So (Hm)
+specialises to the mirror of Phi_0, and the Phi_0 hotel of section 1 (with a, b exchanged) violates
+(Hm).  Hence:
+
+    (Hm) holds in every finite P_m and in every finite subalgebra of every P(P_X), but
+    fails in P(P_X) for infinite X.
+
+The paper's Theorem thm:K0 as stated ("in every P_X") is false; the correct statement is
+the finite one.  (Hm') does not admit this instantiation (theta_a(z) = a would force
+u = a), and no hotel was found for (Hm') at f = 4, d = 1, B = 1 in 30 minutes.
+
+Existential Prover9 test (`scratchpad/phi0/exist.py`): with the axioms, (PC), an identity
+e, the Phi_0 hypotheses on constants a, b, c, ask for exists-auxiliaries satisfying the
+condition's hypotheses.  (Hm) is proved at once; (Hm'), (Ab), (W2), (W3), (A2'), (K5),
+(K6), (R'2), (R'3) give no proof in 15 s (auxiliaries that are terms in a, b, c, 1 do not
+suffice for them).
+
 ## 4. Options for the paper
 
 (a) State (Ab), (Hm), (W_n) for finite X and for finite subalgebras of any P(P_X)
