@@ -11,10 +11,14 @@ Conditions are given as lists of equations between terms  ('th', x, w) = theta_x
 and ('p', x) = x;  the conclusion a |><| b is required to FAIL.
 
 Usage: hotel_sat.py COND f d B [solver]
+       hotel_sat.py COND f d B --cnf out.cnf        (write DIMACS for kissat/cadical)
+       hotel_sat.py COND f d B --model model.txt   (read a solver's "v ..." lines, print and verify)
 """
 import sys, itertools, math
-from pysat.solvers import Solver
-from pysat.formula import CNF
+try:
+    from pysat.solvers import Solver
+except ImportError:
+    Solver = None
 
 def th(x, w): return ('th', x, w)
 def pr(x): return ('p', x)
@@ -169,7 +173,7 @@ class Enc:
             s.cl += [[-x, a, b], [-x, -a, -b]]
         return lits
 
-def run(name, f, d, B, solver='cadical153'):
+def run(name, f, d, B, solver='cadical153', cnf_out=None, model_in=None):
     C = CONDS[name]; e = Enc(f, d, B)
     for x in C['vars']: e.proj_axioms(x)
     for (t1, t2) in C['hyp']:
@@ -186,29 +190,45 @@ def run(name, f, d, B, solver='cadical153'):
         lits = e.differ_lits(t1, t2)
     e.cl.append(lits)
     print(f'{name}: f={f} d={d} B={B} M={e.M}  vars={e.nv} clauses={len(e.cl)}', flush=True)
-    with Solver(name=solver, bootstrap_with=e.cl) as S:
-        ok = S.solve()
-        print('SAT' if ok else 'UNSAT', flush=True)
-        if ok:
-            model = set(l for l in S.get_model() if l > 0)
-            for x in C['vars']:
-                # print blocks of x on the window
-                par = {p: p for p in e.pts}
-                def find(p):
-                    while par[p] != p: p = par[p]
-                    return p
-                for p in e.pts:
-                    for q in e.pts:
-                        if p < q and abs(p[0]-q[0]) <= 1 and e.S(x,p,q) in model: par[find(p)] = find(q)
-                blocks = {}
-                for p in e.pts: blocks.setdefault(find(p), []).append(p)
-                desc = []
-                for bl in sorted(blocks.values()):
-                    mark = 'T' if e.T(x, bl[0]) in model else 'N'
-                    if mark == 'N' and len(bl) == 1: continue
-                    desc.append(mark + '{' + ','.join(f'{i}.{j}' for (i,j) in bl) + '}')
-                print(f'  {x}: ' + ' '.join(desc) + '   (N-singletons omitted)')
-            verify(e, model, C)
+    if cnf_out:
+        with open(cnf_out, 'w') as fh:
+            fh.write(f'p cnf {e.nv} {len(e.cl)}\n')
+            for c in e.cl: fh.write(' '.join(map(str, c)) + ' 0\n')
+        print('wrote', cnf_out, '-- run e.g.:  kissat', cnf_out, '> model.txt ; then', sys.argv[0], name, f, d, B, '--model model.txt')
+        return None
+    if model_in:
+        model = set()
+        for line in open(model_in):
+            if line.startswith('v'):
+                model.update(int(t) for t in line.split()[1:] if int(t) > 0)
+        if not model and 'UNSAT' in open(model_in).read().upper():
+            print('UNSAT'); return False
+        ok = True; print('SAT (model file)')
+    else:
+        if Solver is None:
+            print('python-sat not installed: use --cnf FILE to export DIMACS, then --model FILE'); return None
+        with Solver(name=solver, bootstrap_with=e.cl) as S:
+            ok = S.solve()
+            print('SAT' if ok else 'UNSAT', flush=True)
+            model = set(l for l in S.get_model() if l > 0) if ok else set()
+    if ok:
+        for x in C['vars']:
+            par = {p: p for p in e.pts}
+            def find(p):
+                while par[p] != p: p = par[p]
+                return p
+            for p in e.pts:
+                for q in e.pts:
+                    if p < q and abs(p[0]-q[0]) <= 1 and e.S(x,p,q) in model: par[find(p)] = find(q)
+            blocks = {}
+            for p in e.pts: blocks.setdefault(find(p), []).append(p)
+            desc = []
+            for bl in sorted(blocks.values()):
+                mark = 'T' if e.T(x, bl[0]) in model else 'N'
+                if mark == 'N' and len(bl) == 1: continue
+                desc.append(mark + '{' + ','.join(f'{i}.{j}' for (i,j) in bl) + '}')
+            print(f'  {x}: ' + ' '.join(desc) + '   (N-singletons omitted)')
+        verify(e, model, C)
     return ok
 
 # ---------------------------------------------------------------------------
@@ -294,8 +314,14 @@ def verify(e, model, C, MM=24, margin=4):
     print('  verification on window', MM, ':', 'OK' if ok else 'FAILED')
     return ok
 
-if __name__ == '__main__':
-    name, f, d, B = sys.argv[1], int(sys.argv[2]), int(sys.argv[3]), int(sys.argv[4])
-    solver = sys.argv[5] if len(sys.argv) > 5 else 'cadical153'
-    run(name, f, d, B, solver)
 
+if __name__ == '__main__':
+    args = sys.argv[1:]
+    cnf_out = model_in = None
+    if '--cnf' in args:
+        i = args.index('--cnf'); cnf_out = args[i+1]; del args[i:i+2]
+    if '--model' in args:
+        i = args.index('--model'); model_in = args[i+1]; del args[i:i+2]
+    name, f, d, B = args[0], int(args[1]), int(args[2]), int(args[3])
+    solver = args[4] if len(args) > 4 else 'cadical153'
+    run(name, f, d, B, solver, cnf_out, model_in)
