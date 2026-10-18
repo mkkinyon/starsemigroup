@@ -29,3 +29,20 @@ auxiliary, half-matched auxiliary, auxiliary above a vertex, chains); no label t
 ((Q) vs (Q1)); the witness table in §5.1 and the status table must use the same names.
 
 Notation (17 Oct): the projection algebra of a regular *-semigroup is `\PA(S)` = $\mathsf{P}(S)$ in the paper; `\P` = $\mathcal P$ is reserved for partition monoids $\mathcal P_X$. The notes still use $\mathcal P$ for both.
+
+## Decisions of 18 Oct (M.K.): final labels in the paper
+
+| research | paper | macro |
+|---|---|---|
+| (Q1) | (PC) | `\Qone` |
+| (S) | (Sq) | `\Wire` |
+| (R) | (A1) | `\Rcond` |
+| (R') | (A2) | `\Rp` |
+| (R'') | (A2') | `\Rpp` |
+| (V) | (X) | `\Vcond` |
+| K4 | (Ab) | `\Kfour` |
+| K0 | (Hm) | `\Kzero` |
+| K0'' | (Hm') | `\Hmp` |
+| (Tri), (P_1), (P_2), (Q), (E_1), (E_6), (W_n), (D_E) | unchanged | |
+
+"matched" and `\mt` are kept (not "friendly"/F). Internal LaTeX labels (`subsec:K0`, `thm:K4`, ...) and the notes keep the research names.
