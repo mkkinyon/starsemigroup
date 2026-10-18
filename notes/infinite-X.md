@@ -150,6 +150,43 @@ v ~ c gives a common lower bound of b and c, so b = c (no hotel); z = u forces b
 and Psi0_2 gives a = b; z = b gives u = v and a ~ b, a genuine 4-variable instance
 (a ~ b with a |><| c |><| b does not force a = b, 1358 instances in P_4), status unknown.
 
+## 3c. (Ab): Step 4 is count-free after all; the gap is again v = b
+
+The proof of Lemma lem:count is a bijection, and the counts are only its shadow.  Read
+structurally it says: let w identify p with q, z <= w, S = supp w, rho_p = e_w v e_p,
+rho_q = e_w v e_q, sigma the common partition of S induced by rho_p and rho_q, and
+e_z = e_w v mu with the nontrivial classes of mu inside S.  Then the classes of e_z v e_p
+are (first kind) the rho_p-classes disjoint from S, unchanged, and (second kind) the
+unions of rho_p-classes meeting S, two of them merged iff their parts of sigma lie in one
+class of sigma v mu|_S; the same for q with the same sigma and mu|_S.  No cardinalities
+are involved; this holds for every X.
+
+Apply it in the proof of (Ab) with w = a (a identifies a with c, and a identifies y with c
+since theta_a(y) = a), z = u <= a, S = supp a, mu|_S = the partition of supp a into the
+generalised K's (K_j n supp a and the Z^(k)).
+
+* p = c, q = a: rho_c = e_a v e_c, sigma = {A_i}; two classes Gamma_i, Gamma_i' lie in one
+  class of e_a v e_c v mu = e_u v e_c = Omega iff A_i, A_i' lie in one generalised K.  This
+  is (C1): every class of Omega meeting supp c contains exactly one generalised K.
+* p = y, q = a: rho_y = e_a v e_y, sigma = {A_i} (theta_a(y) = a: E_i n supp a = A_i); two
+  classes E_i, E_i' lie in one class of e_a v e_y v mu = e_u v e_y = M iff A_i, A_i' lie in one
+  generalised K, and the classes of M not meeting supp a are the E-type classes disjoint
+  from supp a.  This is (C2): M_j = U_{i in I_j} E_i, M(Z) = U_{A_i <= Z} E_i, all distinct.
+
+So Steps 2-5 of thm:K4 are valid for every X; Step 6 ("n < m, so some |I_j| >= 2") is used
+only in the direction "some |I_j| >= 2 gives a contradiction", so u = a follows for every X
+(t = 0 by Step 5, |I_j| = 1 by Steps 6-7).  What remains, as for (Hm), is v = b: that no
+class of e_a v e_b contains two T(b)-blocks.  Here y does not commute with a (only
+theta_a(y) = a), so the crossing-block mirror of 3b does not apply verbatim.  With u = a
+one has a <= z and b <= z, theta_z(c) = b, theta_z(y) = v, theta_y(a) = theta_y(z), and by the
+friends lemma v |><| theta_y(a) |><| a; a chain of length 2 from v to b, which Psi0_2 would
+turn into v = b, has not been found.  Status: open; the SAT search is the arbiter.
+
+The same structural reading of lem:count applies along the zigzags of Section 6, but the
+end step (lem:contr, lem:value, thm:endstep) is genuinely numeric; no structural
+replacement is known, and Remark rem:chain(2) records that the natural local candidates are
+not closed under the up step.
+
 ## 4. Options for the paper
 
 (a) State (Ab), (Hm), (W_n) for finite X and for finite subalgebras of any P(P_X)
