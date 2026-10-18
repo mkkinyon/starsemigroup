@@ -109,6 +109,47 @@ condition's hypotheses.  (Hm) is proved at once; (Hm'), (Ab), (W2), (W3), (A2'),
 (K6), (R'2), (R'3) give no proof in 15 s (auxiliaries that are terms in a, b, c, 1 do not
 suffice for them).
 
+## 3b. (Hm') HOLDS in every P_X: a count-free completion of the proof (18 Oct, evening)
+
+Hypotheses of (Hm'): a |><| c |><| b, yc = cy, theta_y(b) = v := theta_b(a), theta_a(z) = a,
+theta_b(z) = b, theta_y(z) = u := theta_a(b).  Steps 1-5 of the proof of thm:K0 use only
+theta_a(z) = a and theta_b(z) = b from z, and are block arguments valid for every X (Step 1
+gives u, v <= y, ay = ya, by = yb, theta_y(a) = ya = u, theta_y(b) = yb = v; Step 2 gives: every
+N(y)-block is an N(a)- and an N(b)-block, every T(y)-block lies in a union of T(a)-blocks or
+in an N(a)-block, likewise for b and for c; the T-blocks of u = ya are the type (i) classes
+U_j of e_y v e_a, U_j = M_j n supp a for the classes M_j of e_a v e_b meeting supp a, and
+every M_j meets supp b; I_j = {i : A_i <= U_j}).  Step 6 shows, without counting, that no
+I_j has two elements (a crossing T(y)-block would put A_1, A_2 into two classes of
+e_b v e_z, while M_j lies in one).  Hence every class of e_a v e_b meeting supp a contains
+exactly one T(a)-block and meets supp b:  u = a.   The finite proof now ends by rank; for
+arbitrary X one needs v = b separately, and the missing half is symmetric:
+
+  (*) No T(y)-block meets two T(b)-blocks.  Let Y meet B_k and B_l, k != l.  Y is not inside
+  an N(c)-block (a block of c lies in one class of e_b v e_c, but B_k <= Delta_k, B_l <= Delta_l),
+  so Y lies in a union of T(c)-blocks, and Y n B_k <= C_k, Y n B_l <= C_l (a point of C_i n B_k
+  has i = k).  Y is not inside an N(a)-block either (a block of a lies in one class of
+  e_a v e_c, but C_k <= Gamma_k, C_l <= Gamma_l), so Y lies in a union of T(a)-blocks, and
+  Y n C_k <= A_k, Y n C_l <= A_l.  So Y is a crossing block, A_k and A_l lie in one type (i)
+  class of e_y v e_a, and |I_j| >= 2 for that class: contradiction with Step 6.
+
+  (**) v = b.  By Lemma lem:PX(b) for the commuting pair (y, b), each B_k lies in a type (i)
+  class of e_y v e_b or in an N(y)-block; the latter is an N(b)-block (Step 2), impossible.
+  So B_k lies in a T-block V of v = yb, and V is a union of T(b)-blocks connected through
+  T(y)-blocks; by (*) V = B_k.  As v = theta_b(a), V = M n supp b for a class M of e_a v e_b
+  meeting supp a (Lemma lem:PX(a)).  So every class of e_a v e_b meeting supp b meets supp a
+  and contains exactly one T(b)-block; with u = a, Lemma lem:PX(c) gives a |><| b.
+
+So (Hm') is valid in every P_X, while (Hm) is valid exactly in the finite ones (and in finite
+subalgebras of all of them).  This is the infinite-X face of Corollary cor:K0pp: (Hm') -> (Hm)
+needs finite descent, and P(P_N) is where descent fails.  For the paper: Theorem thm:K0 should
+state (Hm') for all X and (Hm) for finite X (and for finite subalgebras of any P(P_X)); the
+witness P_8^1 violates both, so the census is unaffected.
+
+Degenerate instantiations of (Ab) checked by hand: z = 1 forces y = v and u = a, and then
+v ~ c gives a common lower bound of b and c, so b = c (no hotel); z = u forces b <= u <= a,
+and Psi0_2 gives a = b; z = b gives u = v and a ~ b, a genuine 4-variable instance
+(a ~ b with a |><| c |><| b does not force a = b, 1358 instances in P_4), status unknown.
+
 ## 4. Options for the paper
 
 (a) State (Ab), (Hm), (W_n) for finite X and for finite subalgebras of any P(P_X)
