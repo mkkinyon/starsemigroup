@@ -202,6 +202,7 @@ not closed under the up step.
 | Q    | 2 1 1 | UNSAT |
 | Sq   | 3 1 1 | UNSAT (referee pass) |
 | Sq   | 4 1 1 | none, 12 h (M.K., 20 Oct) |
+| Sq   | 5 1 1 | none, 5 h 30 min (M.K.) |
 | W2   | 5 1 2 | none, 2 h (M.K.) |
 | A1 (control, valid) | 4 1 1 | no UNSAT proof in 30 min: the encoding is slow to refute |
 
