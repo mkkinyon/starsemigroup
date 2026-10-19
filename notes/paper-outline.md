@@ -123,3 +123,27 @@ Phase 4: introduction last.
 A reasonable first deliverable is a 10-page "Section 2 + Section 6 skeleton" with all theorem statements and
 the proofs of K0 and (V) rewritten in the common notation, to settle the notation before the long proofs are
 touched.
+
+## 7. Deferred: presentation pass (recorded 20 Oct 2026, not yet done)
+
+Agreed with M.K. that this is for later, after the mathematics has settled.
+
+1. Section 5.6 ((Q)): a half-page "plan of the proof" before Step 1, saying that Steps 1-5
+   set up the groups G, the classes Gamma_G, the hubs, the traces E_G and the map pi; that
+   Step 4 and Propositions Qnh/Qh each split into a count-free half (every T(d)-block ends up
+   alone in its rho-class, giving theta_d(a) = d for every X) and a finite half (the pigeonhole
+   facts that also give one T(a)-block per class); and that part (c) of thm:Q is exactly the
+   failure of the pigeonhole half on the hubs. Plus a one-line dictionary of the local
+   notation: groups, Gamma_G, hub / non-hub, E_G, pi, classes of the first and second kind,
+   (*), N-type and b-type blocks, index pairs (lambda, delta), rigidity, components kappa / nu,
+   attachment, tau. Possibly a schematic of pi on the hubs (the (Q) hotel is a good picture:
+   pi(G_i) = G_{i-1}).
+2. The same, shorter, for 5.4 ((A2)) and 5.7 ((Ab)): what each step establishes and which later
+   step uses it; for (Ab) the bright/dark classes, generalised K's, sides and labels.
+3. ChatGPT report III.7: a diagram of the four class types of Lemma lem:PX(b) and of a matched
+   component next to the lemma.
+4. ChatGPT report III.5 / C1 of review6: the status table (now Table tab:status) could grow
+   into the one-page reference table hypothesis / conclusion / implications / minimal witness /
+   number of variables.
+5. Remark after thm:nfbW vs Question q:infinite: keep one (review6 C2).
+6. Draft-only items: \date{Draft of \today}, the \todo macro, the (PC) attribution \todo.
