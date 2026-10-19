@@ -187,6 +187,22 @@ end step (lem:contr, lem:value, thm:endstep) is genuinely numeric; no structural
 replacement is known, and Remark rem:chain(2) records that the natural local candidates are
 not closed under the up step.
 
+## 3d. Search log (hotel_sat.py; "none" = no model before the run was stopped)
+
+| condition | f d B | result |
+|---|---|---|
+| Phi0 | 4 1 1 | hotel, 1 s (verified) |
+| Hm   | 4 1 1 | hotel, < 30 min (verified); y = 1, z = theta_a(b) |
+| Hm'  | 4 1 1 | none, 30 min  (now proved valid for all X, 3b) |
+| W2   | 4 1 1 | none, 20 min |
+| Ab   | 4 1 1 | none, 20 min |
+| W2   | 4 2 2 | none, 2 h 10 min (M.K.) |
+| Ab   | 4 2 2 | none, 3 h 10 min (M.K.) |
+| A1 (control, valid) | 4 1 1 | no UNSAT proof in 30 min: the encoding is slow to refute |
+
+So no hotel of span <= 2 with four fibres and a defect of two indices exists for (W2) or (Ab);
+this is evidence of absence at that size only.
+
 ## 4. Options for the paper
 
 (a) State (Ab), (Hm), (W_n) for finite X and for finite subalgebras of any P(P_X)
