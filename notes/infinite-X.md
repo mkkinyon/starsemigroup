@@ -198,6 +198,11 @@ not closed under the up step.
 | Ab   | 4 1 1 | none, 20 min |
 | W2   | 4 2 2 | none, 2 h 10 min (M.K.) |
 | Ab   | 4 2 2 | none, 3 h 10 min (M.K.) |
+| Q    | 4 1 1 | hotel, 3 min (referee pass, verified): (Q) fails in P(P_N) |
+| Q    | 2 1 1 | UNSAT |
+| Sq   | 3 1 1 | UNSAT (referee pass) |
+| Sq   | 4 1 1 | none, 12 h (M.K., 20 Oct) |
+| W2   | 5 1 2 | none, 2 h (M.K.) |
 | A1 (control, valid) | 4 1 1 | no UNSAT proof in 30 min: the encoding is slow to refute |
 
 So no hotel of span <= 2 with four fibres and a defect of two indices exists for (W2) or (Ab);
