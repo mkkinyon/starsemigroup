@@ -203,6 +203,23 @@ not closed under the up step.
 So no hotel of span <= 2 with four fibres and a defect of two indices exists for (W2) or (Ab);
 this is evidence of absence at that size only.
 
+## 3e. (Q) FAILS in P(P_N) (19 Oct; found by the referee pass, review6/REPORT.md A1)
+
+The proof of thm:Q has three pigeonhole steps (Step 4: pi is a permutation of the hubs;
+Step 7: sum |pi(G)| = sum |G|; prop:Qnh: tau surjective hence bijective).  hotel_sat.py with
+(Q) added finds a 1-periodic violation with four fibres (points p_i, q_i, r_i, s_i; see the
+paper, Theorem thm:Q(c), and review6/REPORT.md); verified independently on a window of 40
+indices (scratchpad qhotel_check.py).  The hubs G_i = {A_{p_i}, A_{r_i}} have pi(G_i) = G_{i-1}
+and E_{G_0} = empty: Hilbert's hotel on the hubs.  The count-free parts of the proof give
+theta_d(a) = d for every X (prop:Qnh (a)-(c), prop:Qh Claims 1-2), and finite descent
+(lem:descent(b) on theta_a(d) <= a, theta_a(d) |><| d |><| b |><| c |><| a) gives a |><| d in finite
+subalgebras: (Q) is finitely valid.  (P2) and (Sq) are finitely valid; their validity for
+infinite X is open (no (Sq)-hotel with three fibres).
+
+Final status (paper, Table tab:status): valid: (A1), (A2), (X), (P1), (Hm'), (Tri), (D_E);
+finitely valid and false in P(P_N): (Q), (Hm); finitely valid, open in P(P_N): (Sq), (P2), (Ab);
+valid in finite P_m, finite validity open: (W_n), n >= 2.
+
 ## 4. Options for the paper
 
 (a) State (Ab), (Hm), (W_n) for finite X and for finite subalgebras of any P(P_X)

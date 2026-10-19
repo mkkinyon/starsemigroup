@@ -37,6 +37,12 @@ CONDS = {
                  +[(th('y','b'), th('b','a')), (th('b','z'), pr('b')), (th('a','z'), pr('a')), (th('y','z'), th('a','b'))]),
   'Ab':    dict(vars='abcyz', hyp=matched('a','c')+matched('c','b')+comm('y','c')
                  +[(th('a','y'), pr('a')), (th('z','b'), pr('b')), (th('z','y'), th('b','a')), (th('z','a'), th('a','b'))]),
+  'Sq':    dict(vars='abcdg', hyp=matched('a','c')+matched('c','b')+matched('b','d')
+                 +[(pr('g'), th('c','d')), (pr('g'), th('d','c')), (th('a','g'), th('b','g'))], concl=('mt','a','d')),
+  'P2':    dict(vars='abcdx', hyp=matched('a','c')+matched('c','b')+matched('b','d')+comm('x','a')+comm('x','b')
+                 +[(th('x','c'), th('x','b')), (th('c','x'), th('d','x'))], concl=('mt','a','d')),
+  'Q':     dict(vars='abcdxy', hyp=matched('a','c')+matched('c','b')+matched('b','d')+comm('x','a')+comm('y','a')+comm('y','b')
+                 +[(th('c','x'), th('d','x')), (th('y','c'), th('y','b'))], concl=('mt','a','d')),
   'X':     dict(vars='abct', hyp=[(th('b','c'), pr('b')), (th(th('a','t'),'b'), th('a','t')), (th(th('c','t'),'a'), th('c','t'))],
                  concl=('eq', th('a','t'), th('b','t'))),
 }
