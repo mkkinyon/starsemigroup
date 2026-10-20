@@ -205,6 +205,7 @@ not closed under the up step.
 | Sq   | 5 1 1 | none, 5 h 30 min (M.K.) |
 | W2   | 5 1 2 | none, 2 h (M.K.) |
 | A1 (control, valid) | 4 1 1 | no UNSAT proof in 30 min: the encoding is slow to refute |
+| P2   | 5 1 1 | none, 4 h (M.K.) |
 
 So no hotel of span <= 2 with four fibres and a defect of two indices exists for (W2) or (Ab);
 this is evidence of absence at that size only.
